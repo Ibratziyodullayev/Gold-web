@@ -1083,12 +1083,22 @@
         </span>
       </div>
 
-      <!-- Quick Concierge Hotline -->
-      <div class="flex items-center gap-3">
+      <!-- Quick Concierge Hotline & Wishlist -->
+      <div class="flex items-center gap-2 sm:gap-3">
         <a href="tel:+998712000888" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
           <span>+998 (71) 200-08-88</span>
         </a>
+        <!-- Wishlist Button inside Product View -->
+        <button 
+          onclick="openWishlistPage()" 
+          class="relative p-2 rounded-full bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
+          aria-label="Sevimlilar (Wishlist)"
+          title="Sevimlilar"
+        >
+          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
+          <span class="wishlist-badge-sync absolute -top-1 -right-1 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
+        </button>
         <button onclick="closeProductDetail()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
@@ -1356,7 +1366,7 @@
   </div>
 
   <!-- ================= DEDICATED FULLSCREEN WISHLIST VIEW (ALOHIDA SAHIFA) ================= -->
-  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
+  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-[70] bg-[#FAF9F6] overflow-y-auto view-hidden">
     
     <!-- Top Sticky Bar inside Wishlist view -->
     <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
@@ -1571,19 +1581,6 @@
     <span class="text-gold-300 underline ml-1 font-bold">Ko'rish →</span>
   </div>
 
-  <!-- ================= FLOATING WISHLIST PILL (APPEARS WHEN ITEMS > 0) ================= -->
-  <button 
-    id="floating-wishlist-pill" 
-    onclick="openWishlistPage()" 
-    class="fixed bottom-20 right-4 z-40 bg-ink-900/95 hover:bg-gold-600 text-white px-3.5 py-2.5 rounded-full border border-gold-metallic/50 shadow-2xl flex items-center gap-2 text-xs font-bold transition-all duration-300 opacity-0 pointer-events-none translate-y-4 hover:scale-105 active:scale-95 cursor-pointer"
-    title="Sevimlilar ro'yxatini ochish"
-  >
-    <div class="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center pointer-events-none">
-      <i data-lucide="heart" class="w-3.5 h-3.5 fill-white text-white"></i>
-    </div>
-    <span class="pointer-events-none font-medium">Sevimlilar</span>
-    <span id="floating-wishlist-badge" class="bg-gold-400 text-ink-900 px-1.5 py-0.2 rounded-full text-[10px] font-bold font-mono pointer-events-none">0</span>
-  </button>
 
   <!-- ================= DIRECT PRODUCT CONCIERGE MODAL (FALLBACK / QUICK) ================= -->
   <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
@@ -1916,6 +1913,7 @@
 
     // ================= WISHLIST ENGINE =================
     const WISHLIST_STORAGE_KEY = 'aurum_gold_wishlist';
+    const UZS_RATE = 12850;
 
     function getWishlist() {
       try {
@@ -2003,30 +2001,16 @@
       const list = getWishlist();
       const count = list.length;
 
-      // Update Header Badge
-      const badge = document.getElementById('wishlist-badge-header');
-      if (badge) {
+      // Update Header & Bar Badges
+      const badges = document.querySelectorAll('#wishlist-badge-header, .wishlist-badge-sync');
+      badges.forEach(badge => {
         if (count > 0) {
           badge.innerText = count;
           badge.classList.remove('hidden');
         } else {
           badge.classList.add('hidden');
         }
-      }
-
-      // Update Floating Pill
-      const pill = document.getElementById('floating-wishlist-pill');
-      const pillBadge = document.getElementById('floating-wishlist-badge');
-      if (pill && pillBadge) {
-        if (count > 0) {
-          pillBadge.innerText = count;
-          pill.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-          pill.classList.add('opacity-100', 'translate-y-0');
-        } else {
-          pill.classList.remove('opacity-100', 'translate-y-0');
-          pill.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-        }
-      }
+      });
 
       // Update Mobile Menu Text
       const mobText = document.getElementById('wishlist-count-text-mob');
@@ -2115,7 +2099,11 @@
 
     // ================= FULLSCREEN WISHLIST PAGE HANDLERS =================
     function openWishlistPage() {
-      renderWishlistPage();
+      try {
+        renderWishlistPage();
+      } catch (err) {
+        console.error("renderWishlistPage error:", err);
+      }
       const wView = document.getElementById('wishlist-fullscreen-view');
       if (wView) {
         wView.classList.remove('view-hidden');
@@ -2123,7 +2111,11 @@
         document.body.style.overflow = 'hidden';
         wView.scrollTop = 0;
       }
-      lucide.createIcons();
+      try {
+        if (window.lucide && lucide.createIcons) {
+          lucide.createIcons();
+        }
+      } catch (e) {}
     }
 
     function openWishlistModal() {
@@ -3142,14 +3134,28 @@
       }
     });
 
-    // Initial render
+    // Initial render & listeners
+    function initWishlistListeners() {
+      const headerBtn = document.getElementById('header-wishlist-btn');
+      if (headerBtn) {
+        headerBtn.onclick = (e) => {
+          if (e) e.preventDefault();
+          openWishlistPage();
+        };
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderProductCards();
       updateWishlistUI();
-      lucide.createIcons();
+      initWishlistListeners();
+      try {
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+      } catch (e) {}
     });
     renderProductCards();
     updateWishlistUI();
+    initWishlistListeners();
   </script>
 </body>
 </html>
