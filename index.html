@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURUM GOLD | Certified 18K Italian Gold & Fine Diamond Jewelry Tashkent</title>
+  <meta name="description" content="Toshkentdagi sertifikatlangan 18K Italiya oltini va tabiiy olmoslar butiki. Eksklyuziv zargarlik buyumlari, to'y to'plamlari va xususiy konsyerj xizmati. Mirabad Avenue.">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#FDFBF7',
+              100: '#FAF5EA',
+              200: '#F3E8CE',
+              300: '#E7D4A4',
+              400: '#D6B970',
+              500: '#BF9842',
+              600: '#A47D2E',
+              700: '#835E21',
+              800: '#68481D',
+              900: '#4D3418',
+              metallic: '#C59A3F',
+              champagne: '#D4AF37',
+              amber: '#B8860B'
+            },
+            ivory: {
+              50: '#FFFFFF',
+              100: '#FCFBF9',
+              200: '#F7F5F0',
+              300: '#EFECE4',
+              400: '#E2DDCF'
+            },
+            ink: {
+              900: '#111113',
+              800: '#1D1E22',
+              700: '#2E3038',
+              600: '#4B4E5B',
+              500: '#717482'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          backgroundImage: {
+            'gold-shimmer': 'linear-gradient(135deg, #DFBE74 0%, #C59A3F 50%, #9B7423 100%)',
+            'gold-light': 'linear-gradient(135deg, #FFF9ED 0%, #F5E5C0 60%, #E2C682 100%)',
+            'radial-luxury': 'radial-gradient(circle at 50% 15%, rgba(212,175,55,0.09) 0%, rgba(253,251,247,0) 70%)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background: #C59A3F;
+      color: #FFFFFF;
+    }
+
+    body {
+      background-color: #FAF9F6;
+      color: #111113;
+    }
+    
+    .gold-text-glow {
+      text-shadow: 0 1px 12px rgba(197, 154, 63, 0.25);
+    }
+
+    .luxury-white-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 154, 63, 0.22);
+      box-shadow: 0 10px 30px -8px rgba(197, 154, 63, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      cursor: pointer;
+    }
+
+    .luxury-white-card:hover {
+      border-color: rgba(197, 154, 63, 0.6);
+      box-shadow: 0 16px 36px -10px rgba(197, 154, 63, 0.22), 0 6px 16px -2px rgba(0, 0, 0, 0.06);
+      transform: translateY(-3px);
+    }
+
+    .img-swap-container .product-worn {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .img-swap-container:hover .product-worn {
+      opacity: 1;
+    }
+    .img-swap-container:hover .product-studio {
+      opacity: 0;
+    }
+    .product-studio {
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Thumbnail active border */
+    .thumb-btn.active {
+      border-color: #C59A3F;
+      box-shadow: 0 0 0 2px rgba(197, 154, 63, 0.4);
+    }
+
+    /* Fullscreen View Animations */
+    #product-fullscreen-view {
+      transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #product-fullscreen-view.view-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.985);
+    }
+    #product-fullscreen-view.view-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D6B970;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C59A3F;
+    }
+  </style>
+</head>
+<body class="bg-[#FAF9F6] text-ink-900 font-sans antialiased overflow-x-hidden">
+
+  <!-- ================= TOP LUXURY STATUS & CONCIERGE BAR ================= -->
+  <aside aria-label="Announcement Bar" class="bg-ivory-200 border-b border-gold-metallic/20 text-xs tracking-wider uppercase py-2 px-4 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-gold-700 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span data-i18n="top_bar_location">Flagship Boutique Mirabad Avenue</span>
+        </span>
+        <span class="text-zinc-400 hidden sm:inline">•</span>
+        <span class="text-ink-600 hidden sm:inline" data-i18n="top_bar_hours">Du-Yak 10:00 — 21:00</span>
+      </div>
+      <div class="flex items-center gap-6 text-ink-700">
+        <a href="tel:+998712000888" class="hover:text-gold-600 transition-colors flex items-center gap-1.5 font-medium">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <span>+998 (71) 200-08-88</span>
+        </a>
+        <div class="h-3 w-px bg-zinc-300"></div>
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-1.5 font-medium">
+          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-700 font-bold">UZ</button>
+          <span class="text-zinc-400">/</span>
+          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-ink-500 hover:text-ink-900">RU</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= LUXURY HEADER / NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gold-metallic/15 transition-all duration-300 shadow-sm" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Mobile Menu Trigger -->
+      <button onclick="toggleMobileNav()" class="lg:hidden text-ink-800 hover:text-gold-600 p-1" aria-label="Open Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Brand Logo -->
+      <div class="flex flex-col items-center lg:items-start text-center">
+        <a href="#" class="group">
+          <span class="font-serif text-2xl sm:text-3xl tracking-[0.25em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase transition group-hover:opacity-90">
+            AURUM GOLD
+          </span>
+          <span class="block text-[9px] tracking-[0.4em] uppercase text-ink-500 group-hover:text-gold-600 transition">
+            MILANO • TASHKENT
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm tracking-widest uppercase font-medium">
+        <a href="#collections" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_collections">Kolleksiyalar</a>
+        <a href="#italian-gold" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_quality">18K Italiya Standarti</a>
+        <a href="#diamonds" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_diamonds">GIA Olmoslar</a>
+        <a href="#concierge" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_concierge">Xususiy Konsyerj</a>
+        <a href="#boutique" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_boutique">Butik</a>
+      </nav>
+
+      <!-- Primary Action CTA -->
+      <div class="flex items-center gap-4">
+        <button onclick="openVipCatalogModal()" class="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-ink-900 hover:bg-gold-600 text-white font-semibold text-xs tracking-widest uppercase overflow-hidden shadow-md transition-all duration-300">
+          <span class="relative z-10 flex items-center gap-2">
+            <i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-300"></i>
+            <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
+          </span>
+        </button>
+
+        <a href="https://t.me/aurumgold_uz" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-gold-700 hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram Concierge">
+          <i data-lucide="send" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Slideout Navigation -->
+    <div id="mobile-nav" class="fixed inset-0 bg-white/98 backdrop-blur-xl z-50 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-between p-6">
+      <div>
+        <div class="flex justify-between items-center pb-6 border-b border-zinc-200">
+          <span class="font-serif text-2xl tracking-[0.2em] text-gold-metallic font-bold">AURUM GOLD</span>
+          <button onclick="toggleMobileNav()" class="text-ink-700 hover:text-ink-900 p-2">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-6 mt-8 text-base tracking-widest uppercase font-medium">
+          <a href="#collections" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600" data-i18n="nav_collections">Kolleksiyalar</a>
+          <a href="#italian-gold" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600" data-i18n="nav_quality">18K Italiya Standarti</a>
+          <a href="#diamonds" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600" data-i18n="nav_diamonds">GIA Olmoslar</a>
+          <a href="#concierge" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600" data-i18n="nav_concierge">Xususiy Konsyerj</a>
+          <a href="#boutique" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600" data-i18n="nav_boutique">Butik Manzili</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-zinc-200 space-y-4">
+        <button onclick="toggleMobileNav(); openVipCatalogModal();" class="w-full py-3.5 bg-ink-900 text-white font-bold uppercase text-xs tracking-widest rounded-sm text-center">
+          <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
+        </button>
+        <div class="flex justify-center gap-4 text-xs tracking-widest">
+          <button onclick="switchLanguage('uz')" class="text-gold-700 font-bold">O'ZBEKCHA</button>
+          <span class="text-zinc-400">|</span>
+          <button onclick="switchLanguage('ru')" class="text-ink-500">РУССКИЙ</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CINEMATIC HERO MODULE ================= -->
+  <section class="relative min-h-[88vh] flex items-center justify-center overflow-hidden bg-radial-luxury">
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gold-300/20 blur-[130px] rounded-full pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#c59a3f12_1px,transparent_1px)] [background-size:28px_28px] opacity-60 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Editorial Value Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-gold-metallic/35 text-xs tracking-[0.2em] uppercase text-gold-700 font-semibold shadow-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-metallic"></i>
+            <span data-i18n="hero_badge">Eksklyuziv Zargarlik Uyi • Toshkent</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal leading-[1.08] tracking-tight text-ink-900">
+            <span class="italic font-light text-ink-600" data-i18n="hero_title_part1">Mukammal Chiroy.</span><br>
+            <span class="text-transparent bg-clip-text bg-gold-shimmer font-semibold gold-text-glow" data-i18n="hero_title_part2">18K Sertifikatlangan</span><br>
+            <span data-i18n="hero_title_part3">Italiya Oltini & Olmoslar.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-ink-600 font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
+            Vicenza va Arezzo ustaxonalarining oliy darajadagi 750° asillikdagi oltin buyumlari hamda xalqaro GIA sertifikatli benuqson toza olmoslar. Toshkent elitasining ishonchli tanlovi.
+          </p>
+
+          <!-- Dual Conversion CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <button onclick="openVipCatalogModal()" class="w-full sm:w-auto px-8 py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+              <i data-lucide="crown" class="w-4 h-4 text-gold-300"></i>
+              <span data-i18n="hero_cta_catalog">2026 VIP Lookbook Yuklash</span>
+            </button>
+            <a href="#collections" class="w-full sm:w-auto px-8 py-4 bg-white text-ink-800 hover:text-gold-700 font-medium text-xs tracking-[0.2em] uppercase rounded-sm border border-gold-metallic/35 hover:border-gold-metallic transition shadow-sm flex items-center justify-center gap-2">
+              <span data-i18n="hero_cta_explore">Kolleksiyani Ko'rish</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4 text-gold-metallic"></i>
+            </a>
+          </div>
+
+          <!-- Micro Trust Elements -->
+          <div class="pt-8 border-t border-gold-metallic/20 grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">18K / 750°</div>
+              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat1">Italiya Qonuniy Asilligi</div>
+            </div>
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">GIA / IGI</div>
+              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat2">Sertifikatlangan Olmos</div>
+            </div>
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">100%</div>
+              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat3">Davlat Probir Nazorati</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Cinematic Visual Showcase -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-md aspect-[4/5] rounded-t-[140px] rounded-b-2xl p-1 bg-gradient-to-b from-gold-metallic/40 via-gold-metallic/15 to-gold-metallic/30 shadow-xl">
+            <div class="relative w-full h-full rounded-t-[138px] rounded-b-xl overflow-hidden bg-ivory-100 group cursor-pointer" onclick="openProductDetail('AUR-REG-01')">
+              <img 
+                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85" 
+                alt="Aurum Gold 18K Italian Diamond Necklace" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/10 to-transparent"></div>
+              
+              <!-- Floating VIP Product Badge -->
+              <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 shadow-lg flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-gold-700 font-bold" data-i18n="hero_card_tag">Milan Fashion Week Highlight</span>
+                  <h4 class="font-serif text-base text-ink-900 font-semibold" data-i18n="hero_card_title">Collezione Regina • 18K Yellow Gold</h4>
+                  <p class="text-xs text-ink-500">0.85ct VVS1 Antwerp Cut • Batafsil ko'rish &rarr;</p>
+                </div>
+                <button class="p-2.5 bg-ink-900 hover:bg-gold-600 text-white rounded-full transition shadow" title="To'liq ekranda ochish">
+                  <i data-lucide="maximize-2" class="w-4 h-4 font-bold text-gold-300"></i>
+                </button>
+              </div>
+
+              <!-- Top Hallmark Seal Stamp -->
+              <div class="absolute top-6 right-6 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-gold-700 border border-gold-metallic/40 shadow-sm flex items-center gap-1.5 font-bold">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-metallic"></i>
+                <span>750 ITALIA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST & ASSAY BAR ================= -->
+  <section class="border-y border-gold-metallic/20 bg-white py-10 relative z-20 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item1_title">18K (750°) Italiya Oltini</h4>
+            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item1_desc">Arezzo va Vicenza zavodlarining rasmiy tamg'ali toza qotishmasi.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+            <i data-lucide="badge-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item2_title">Davlat Asillik Tamg'asi</h4>
+            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item2_desc">O'zbekiston Respublikasi Probir Palatasining qat'iy tekshiruvi va muhri.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+            <i data-lucide="gem" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item3_title">GIA / IGI Sertifikati</h4>
+            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item3_desc">Har bir 0.30ct+ tosh uchun lazerli xalqaro seriya raqami va pasporti.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+            <i data-lucide="sparkle" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item4_title">Cheksiz Kafolat & O'lcham</h4>
+            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item4_desc">Bepul individual o'lchamga moslash, tozalash va yillik parvarish.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE CURATED COLLECTION MODULE ================= -->
+  <section id="collections" class="py-24 relative bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="col_tag">Aurum Eksklyuziv Kolleksiyasi</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="col_title">
+            Oliy San'at Namunasi <span class="italic font-light text-ink-500">& Benuqson Did</span>
+          </h2>
+        </div>
+        <div class="text-right">
+          <span class="inline-flex items-center gap-1.5 text-xs text-gold-700 font-semibold bg-white px-3 py-1.5 rounded-full border border-gold-metallic/30 shadow-sm">
+            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            <span data-i18n="hint_click_full">Taqinchoq ustiga bosing — to'liq sahifa ochiladi</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar border-b border-zinc-200">
+        <button onclick="filterCategory('all')" class="cat-btn active px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-ink-900 text-white shadow-sm" data-cat="all" data-i18n="cat_all">
+          Barcha Buyumlar
+        </button>
+        <button onclick="filterCategory('rings')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="rings" data-i18n="cat_rings">
+          Uzuklar & Soliter
+        </button>
+        <button onclick="filterCategory('necklaces')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="necklaces" data-i18n="cat_necklaces">
+          Marjonlar & Zanjirlar
+        </button>
+        <button onclick="filterCategory('bridal')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="bridal" data-i18n="cat_bridal">
+          Kelin Sarpolar & To'plamlar
+        </button>
+        <button onclick="filterCategory('investment')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="investment" data-i18n="cat_investment">
+          Investitsion Oltin 999.9
+        </button>
+      </div>
+
+      <!-- Products Grid (Dynamic Container) -->
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered via JavaScript for perfect synchronization with Fullscreen View -->
+      </div>
+
+      <!-- Private VIP Catalog CTA Banner inside Collections -->
+      <div class="mt-16 p-8 sm:p-12 bg-white rounded-sm border border-gold-metallic/35 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold-200/40 blur-[80px] rounded-full pointer-events-none"></div>
+        
+        <div class="space-y-3 text-center lg:text-left max-w-2xl">
+          <span class="text-[11px] uppercase tracking-[0.25em] text-gold-700 font-bold flex items-center justify-center lg:justify-start gap-2">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-gold-metallic"></i>
+            <span data-i18n="banner_lock">Cheklangan Xususiy Kolleksiya</span>
+          </span>
+          <h3 class="font-serif text-2xl sm:text-4xl text-ink-900 font-normal" data-i18n="banner_title">
+            Vitrinalarda Ko'rsatilmagan 120+ Maxsus Zargarlik Buyumlari
+          </h3>
+          <p class="text-sm text-ink-600 leading-relaxed" data-i18n="banner_desc">
+            Antwerp va Milan kimoshdi savdolaridan keltirilgan noyob namunalar, xususiy buyurtma asosidagi toshlar katalogimizda jamlangan.
+          </p>
+        </div>
+
+        <button onclick="openVipCatalogModal()" class="shrink-0 px-8 py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm hover:scale-105 active:scale-95 transition shadow-lg">
+          <span data-i18n="cta_vip_catalog">VIP Katalog Olish (PDF)</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ITALIAN GOLD CRAFTSMANSHIP & PURITY ================= -->
+  <section id="italian-gold" class="py-24 bg-white border-t border-zinc-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Visual Craftsmanship Collage -->
+        <div class="lg:col-span-6 relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-ivory-200 border border-gold-metallic/25 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80" alt="Italian Master Goldsmith at work" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4 bg-ivory-100 rounded-sm border border-gold-metallic/30 text-center shadow-sm">
+                <span class="font-serif text-2xl text-gold-700 font-bold block">18K / 750°</span>
+                <span class="text-[11px] text-ink-500 uppercase tracking-widest font-medium" data-i18n="craft_pure_label">Eng Oliy Italiya Standarti</span>
+              </div>
+            </div>
+            <div class="space-y-4 pt-8">
+              <div class="p-4 bg-ivory-100 rounded-sm border border-gold-metallic/30 text-center shadow-sm">
+                <span class="font-serif text-2xl text-ink-900 font-bold block">Vicenza & Arezzo</span>
+                <span class="text-[11px] text-ink-500 uppercase tracking-widest font-medium" data-i18n="craft_origin">Asl Kelib Chiqish joyi</span>
+              </div>
+              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-ivory-200 border border-gold-metallic/25 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=800&q=80" alt="Handcrafted Italian Gold Ring detail" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrative & Value Engineering -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ivory-200 border border-gold-metallic/30 text-xs uppercase tracking-widest text-gold-700 font-bold">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-metallic"></i>
+            <span data-i18n="craft_badge">Nima Uchun 18K (750°) Italiya Oltini?</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal leading-tight" data-i18n="craft_title">
+            Hech Qachon Xiralashmaydigan, <span class="italic font-light text-ink-500">Avlodlarga Qoluvchi</span> Asillik.
+          </h2>
+
+          <p class="text-ink-600 text-sm sm:text-base leading-relaxed" data-i18n="craft_p1">
+            Oddiy 585° (14K) oltindan farqli o'laroq, Italiyaning 750° asillikdagi qotishmasi 75.0% sof oltin va maxsus patentlangan ligaturadan (kumush va mis balansi) iborat. Bu unga betakror "italyancha shaffof jilo", yuqori zichlik va teriga nisbatan 100% gipoallergen xususiyat beradi.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#FAF9F6] border-l-2 border-l-gold-metallic border border-zinc-200/70 shadow-sm">
+              <div class="text-gold-700 shrink-0 mt-0.5">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="craft_point1_t">O'zbekiston Davlat Probir Palatasi Nazorati</h4>
+                <p class="text-xs text-ink-600 mt-1" data-i18n="craft_point1_d">Har bir buyum O'zbekistonga olib kirilgach, davlat ekspertizasi va lazerli tamg'alash jarayonidan o'tadi.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#FAF9F6] border-l-2 border-l-gold-metallic border border-zinc-200/70 shadow-sm">
+              <div class="text-gold-700 shrink-0 mt-0.5">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="craft_point2_t">Patentlangan Zichlik va Qotishma</h4>
+                <p class="text-xs text-ink-600 mt-1" data-i18n="craft_point2_d">Oddiy quyma emas, balki sovuq bosim texnologiyasi orqali har bir zanjir va qisqich sinishga chidamli qilib ishlanadi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center gap-6">
+            <button onclick="openVipCatalogModal()" class="px-6 py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-widest uppercase rounded-sm transition shadow-md">
+              <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
+            </button>
+            <a href="tel:+998712000888" class="text-xs uppercase tracking-widest text-gold-700 hover:text-ink-900 font-bold flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-gold-metallic"></i>
+              <span data-i18n="craft_call_expert">Zargarga Qo'ng'iroq Qilish</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GIA DIAMONDS EXCELLENCE ================= -->
+  <section id="diamonds" class="py-24 bg-[#FAF9F6] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-gold-700 block mb-2" data-i18n="dia_tag">Benuqson Geometriya & Tozalik</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="dia_title">
+          GIA & IGI Sertifikatlangan <span class="italic font-light text-ink-500">Tabiiy Olmoslar</span>
+        </h2>
+        <p class="text-ink-600 text-sm mt-4" data-i18n="dia_desc">
+          Biz faqat konfliktlardan xoli qazib olingan, eng yuqori D-F rang va VVS tozalikdagi Antwerp hamda Tel-Aviv fasetkali toshlarini tanlaymiz.
+        </p>
+      </div>
+
+      <!-- 4C Diamond Interactive Guide -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">1</div>
+          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c1_t">Carat (Og'irlik)</h4>
+          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c1_d">0.30 karatdan 5.00+ karatgacha bo'lgan toshlar individual tanlov va sertifikat bilan taqdim etiladi.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">2</div>
+          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c2_t">Clarity (Tozalik)</h4>
+          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c2_d">IF (Internally Flawless), VVS1 va VVS2 toifalari. Mikroskop ostida ham ko'rinmaydigan tabiiy tozalik.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">3</div>
+          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c3_t">Color (Rang)</h4>
+          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c3_d">D, E, F toifalari — mutlaqo rangsiz, muzdek tiniq va yorug'likni maksimal darajada sindiruvchi toshlar.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">4</div>
+          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c4_t">Cut (Ishlov Berilishi)</h4>
+          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c4_d">Triple Excellent fasetka — toshning yuragidagi betakror nur o'yini.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DIRECT VIP CONCIERGE & LEAD MAGNET ================= -->
+  <section id="concierge" class="py-24 bg-white border-y border-zinc-200 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-ivory-100 rounded-sm p-8 sm:p-14 border border-gold-metallic/35 shadow-xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-5">
+            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block" data-i18n="lead_tag">Shaxsiy Zargarlik Xizmati</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="lead_title">
+              VIP Katalog Yuklab Oling <br>
+              <span class="italic font-light text-ink-500">& Shaxsiy Konsultatsiyaga Yoziling</span>
+            </h2>
+            <p class="text-ink-600 text-sm leading-relaxed" data-i18n="lead_desc">
+              Raqamingizni qoldiring va biz sizning Telegramingizga 2026-yilgi yopiq to'plam narxlari bilan to'liq PDF lookbook'ni 2 daqiqada yuboramiz. Shuningdek, butikimizda yopiq qahva va o'lcham tanlash seansiga taklifnoma taqdim etiladi.
+            </p>
+
+            <div class="flex flex-wrap gap-6 pt-2 text-xs text-ink-700 font-medium">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <span data-i18n="lead_perk1">Haqiqiy narxlar va vazn ro'yxati</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <span data-i18n="lead_perk2">Maxsus individual o'lchamga bepul buyurtma</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <span data-i18n="lead_perk3">Telegram orqali zudlik bilan javob</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- High Converting Lead Capture Form -->
+          <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-sm border border-gold-metallic/30 shadow-lg">
+            <form id="vip-catalog-form" onsubmit="handleVipFormSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_name_label">Ismingiz / Familiyangiz</label>
+                <input 
+                  type="text" 
+                  id="lead-name" 
+                  required 
+                  placeholder="Shaxzod Alimov" 
+                  class="w-full px-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
+                >
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_phone_label">Telefon Raqamingiz</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-3.5 text-zinc-500 text-sm font-mono">+998</span>
+                  <input 
+                    type="tel" 
+                    id="lead-phone" 
+                    required 
+                    placeholder="(90) 123-45-67" 
+                    class="w-full pl-16 pr-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_interest_label">Sizni Qiziqtirgan Yo'nalish</label>
+                <select id="lead-interest" class="w-full px-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic transition">
+                  <option value="all" data-i18n="opt_all">To'liq 2026 Lookbook (Barcha to'plam)</option>
+                  <option value="bridal" data-i18n="opt_bridal">Kelin Sarpo va Nikoh To'plami</option>
+                  <option value="diamonds" data-i18n="opt_diamonds">GIA Brilliant Soliter Uzuklar</option>
+                  <option value="investment" data-i18n="opt_invest">Investitsion 999.9 Oltin Quymalari</option>
+                </select>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm active:scale-[0.99] transition shadow-md flex items-center justify-center gap-2"
+              >
+                <i data-lucide="download" class="w-4 h-4 text-gold-300"></i>
+                <span data-i18n="form_submit_btn">VIP Katalogni Telegramga Olish</span>
+              </button>
+
+              <p class="text-[10px] text-ink-500 text-center leading-normal" data-i18n="form_privacy">
+                Ma'lumotlaringiz maxfiy saqlanadi. Spam yo'q, faqat rasmiy zargarlik katalogi.
+              </p>
+            </form>
+
+            <div id="form-success-msg" class="hidden text-center py-8 space-y-4">
+              <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center border border-emerald-300">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+              </div>
+              <h4 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="form_success_t">Tashakkur! So'rovingiz qabul qilindi</h4>
+              <p class="text-xs text-ink-600" data-i18n="form_success_d">Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.</p>
+              <a href="https://t.me/aurumgold_uz" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span data-i18n="form_success_tg">Telegramda Zudlik Bilan Ochish</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BOUTIQUE EXPERIENCE & TASHKENT LOCATION ================= -->
+  <section id="boutique" class="py-24 bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block" data-i18n="btq_tag">Flagship Butik Manzili</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="btq_title">
+            Toshkent Markazidagi <br>
+            <span class="italic font-light text-ink-500">Xususiy Zargarlik Loungi</span>
+          </h2>
+          <p class="text-ink-600 text-sm leading-relaxed" data-i18n="btq_desc">
+            Sizni Mirabad Avenue markazidagi shinam VIP zallarimizda kutib olamiz. Qulay to'xtash joyi, xavfsiz xususiy xarid xonalari va sertifikatlangan gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_addr_title">Manzilimiz:</h4>
+                <p class="text-xs text-ink-700 mt-0.5">Toshkent shahri, Mirobod tumani, Mirabad Avenue D-blok, 1-qavat.</p>
+                <p class="text-[11px] text-ink-500 mt-0.5">Mo'ljal: Tashkent City Mall va Amir Temur xiyobonidan 5 daqiqa.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_hours_title">Ish Tartibi:</h4>
+                <p class="text-xs text-ink-700 mt-0.5">Dushanba — Yakshanba: 10:00 dan 21:00 gacha (Dam olish kunlarisiz).</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_contact_title">Aloqa va Konsyerj:</h4>
+                <p class="text-xs text-ink-700 mt-0.5">+998 (71) 200-08-88 | Telegram: @aurumgold_uz</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a 
+              href="https://yandex.com/maps/?text=Mirabad+Avenue+Tashkent" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="px-6 py-3.5 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm"
+            >
+              <i data-lucide="map" class="w-4 h-4 text-gold-700"></i>
+              <span>Yandex Xaritada Ochish</span>
+            </a>
+            <a 
+              href="https://instagram.com/aurumgold.uz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="px-6 py-3.5 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm"
+            >
+              <i data-lucide="instagram" class="w-4 h-4 text-gold-700"></i>
+              <span>Instagram @aurumgold.uz</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Boutique Photo & Map Card -->
+        <div class="lg:col-span-6 relative">
+          <div class="bg-white rounded-sm overflow-hidden p-2 border border-gold-metallic/35 shadow-md">
+            <div class="relative aspect-[16/10] rounded-sm overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1200&q=80" 
+                alt="Aurum Gold Luxury VIP Boutique Interior" 
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 flex items-center justify-between shadow-lg">
+                <div>
+                  <span class="text-[10px] text-gold-700 uppercase tracking-widest font-bold block">VIP Lounge Seanslari</span>
+                  <span class="text-xs text-ink-900 font-medium">Xususiy qabul va qahva bilan kutib olish</span>
+                </div>
+                <a href="https://t.me/aurumgold_uz" target="_blank" class="px-3 py-1.5 bg-ink-900 hover:bg-gold-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-sm transition">
+                  Yozilish
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= AUTHENTIC CLIENT EXPERIENCES ================= -->
+  <section class="py-20 bg-white border-t border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="rev_tag">Xaridorlarimiz Fikrlari</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ink-900 font-normal" data-i18n="rev_title">
+          Ishonch & Yuqori Ehtirom
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+          <div class="space-y-3">
+            <div class="flex text-gold-600 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev1_text">
+              "Kelin sarposi uchun to'liq 18K to'plam oldik. Toshkentda bunday toza italyan dizaynini va sertifikatli olmoslarni topish qiyin edi. Xizmat ko'rsatish va xususiy qabul madaniyati 10/10."
+            </p>
+          </div>
+          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
+            <span class="font-serif text-sm text-ink-900 font-bold">Nigora R.</span>
+            <span class="text-[10px] text-ink-500 font-mono">Mirabad Avenue Boutique</span>
+          </div>
+        </div>
+
+        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+          <div class="space-y-3">
+            <div class="flex text-gold-600 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev2_text">
+              "0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Aurum Gold!"
+            </p>
+          </div>
+          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
+            <span class="font-serif text-sm text-ink-900 font-bold">Javohir K.</span>
+            <span class="text-[10px] text-ink-500 font-mono">Tashkent City</span>
+          </div>
+        </div>
+
+        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+          <div class="space-y-3">
+            <div class="flex text-gold-600 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev3_text">
+              "Investitsion 999.9 oltin quymalari xaridi bo'yicha eng ishonchli manzil. Spot narxlari halol, barcha hujjatlar joyida. Xususiy xarid xonasidagi maxfiylik juda ma'qul keldi."
+            </p>
+          </div>
+          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
+            <span class="font-serif text-sm text-ink-900 font-bold">Azizbek M.</span>
+            <span class="text-[10px] text-ink-500 font-mono">Xususiy Investor</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-ivory-200 border-t border-zinc-300 text-ink-600 text-xs py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        <div class="space-y-4 md:col-span-1">
+          <span class="font-serif text-2xl tracking-[0.2em] text-gold-700 font-bold uppercase block">
+            AURUM GOLD
+          </span>
+          <p class="text-[11px] text-ink-600 leading-relaxed" data-i18n="footer_about">
+            O'zbekiston Respublikasi hududida sertifikatlangan 18K (750°) Italiya oltini va GIA tabiiy brilliantlari rasmiy yetkazib beruvchisi.
+          </p>
+          <div class="flex items-center gap-3 text-gold-700">
+            <a href="https://instagram.com/aurumgold.uz" target="_blank" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://t.me/aurumgold_uz" target="_blank" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram">
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </a>
+            <a href="tel:+998712000888" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Phone">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_col_title">Kolleksiyalar</h5>
+          <ul class="space-y-2.5 text-ink-600 text-[11px]">
+            <li><a href="#collections" class="hover:text-gold-700 transition">18K Nikoh va Soliter Uzuklar</a></li>
+            <li><a href="#collections" class="hover:text-gold-700 transition">Italiya Zanjirlari va Marjonlar</a></li>
+            <li><a href="#collections" class="hover:text-gold-700 transition">Kelin Sarpo To'liq To'plamlari</a></li>
+            <li><a href="#collections" class="hover:text-gold-700 transition">LBMA 999.9 Quyma Oltin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_srv_title">Mijozlar Xizmati</h5>
+          <ul class="space-y-2.5 text-ink-600 text-[11px]">
+            <li><a href="#italian-gold" class="hover:text-gold-700 transition">Oltin Asilligi va Probir Nazorati</a></li>
+            <li><a href="#diamonds" class="hover:text-gold-700 transition">GIA Olmos Pasportlarini Tekshirish</a></li>
+            <li><button onclick="openVipCatalogModal()" class="hover:text-gold-700 transition text-left">VIP Katalog So'rovi</button></li>
+            <li><a href="https://t.me/aurumgold_uz" target="_blank" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_loc_title">Butik & Manzil</h5>
+          <p class="text-ink-600 text-[11px] leading-relaxed">
+            Mirabad Avenue D-blok, 1-qavat<br>
+            Toshkent, O'zbekiston<br>
+            Telefon: +998 (71) 200-08-88<br>
+            Har kuni: 10:00 — 21:00
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-zinc-300 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-ink-500">
+        <div>
+          © 2026 AURUM GOLD. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston.
+        </div>
+        <div class="flex gap-4">
+          <span>18K Certified Italian Gold</span>
+          <span>•</span>
+          <span>Davlat Probir Nazorati №750</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= STICKY MOBILE ACTION BAR ================= -->
+  <aside aria-label="Mobile Contact Bar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-t border-gold-metallic/30 p-2.5 flex items-center justify-between gap-2 shadow-xl">
+    <a 
+      href="tel:+998712000888" 
+      class="flex-1 py-3 px-3 bg-ivory-100 rounded-sm text-gold-700 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 border border-gold-metallic/35 active:scale-95 transition"
+    >
+      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+      <span data-i18n="mob_call">Qo'ng'iroq</span>
+    </a>
+
+    <a 
+      href="https://t.me/aurumgold_uz" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="flex-1 py-3 px-3 bg-[#2AABEE]/15 border border-[#2AABEE]/30 text-[#0088cc] rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
+    >
+      <i data-lucide="send" class="w-3.5 h-3.5"></i>
+      <span>Telegram</span>
+    </a>
+
+    <button 
+      onclick="openVipCatalogModal()" 
+      class="flex-1 py-3 px-3 bg-ink-900 text-white rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
+    >
+      <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-300"></i>
+      <span data-i18n="mob_catalog">Katalog</span>
+    </button>
+  </aside>
+
+  <!-- ================= DEDICATED FULLSCREEN PRODUCT VIEW ================= -->
+  <div id="product-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
+    
+    <!-- Top Sticky Bar inside Fullscreen view -->
+    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
+      <button onclick="closeProductDetail()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
+        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </div>
+        <span data-i18n="fs_back_btn">Katalogga qaytish</span>
+      </button>
+
+      <!-- Brand Center -->
+      <div class="text-center hidden sm:block">
+        <span class="font-serif text-lg tracking-[0.25em] text-gold-700 font-bold uppercase">
+          AURUM GOLD
+        </span>
+        <span class="block text-[8px] tracking-[0.3em] uppercase text-ink-500">
+          PRIVATO • TASHKENT
+        </span>
+      </div>
+
+      <!-- Quick Concierge Hotline -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+998712000888" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <span>+998 (71) 200-08-88</span>
+        </a>
+        <button onclick="closeProductDetail()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Content Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-ink-500 mb-6 font-medium">
+        <a href="#collections" onclick="closeProductDetail()" class="hover:text-gold-700 transition" data-i18n="nav_collections">Kolleksiyalar</a>
+        <span>/</span>
+        <span id="fs-breadcrumb-category" class="text-ink-700 uppercase tracking-wider">Uzuklar</span>
+        <span>/</span>
+        <span id="fs-breadcrumb-title" class="text-gold-700 font-semibold">Venezia Solitaire Diamond Ring</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        
+        <!-- Left Column: Interactive Multi-Angle Gallery -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- Main Large Image View -->
+          <div class="relative w-full aspect-square rounded-sm overflow-hidden bg-white border border-gold-metallic/30 shadow-md">
+            <img 
+              id="fs-main-image" 
+              src="" 
+              alt="Aurum Gold High Resolution View" 
+              class="w-full h-full object-cover object-center transition-all duration-500"
+            >
+            <div class="absolute top-4 left-4 flex flex-col gap-2">
+              <span id="fs-badge-purity" class="px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[11px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/35 shadow-sm">
+                750° • 18K Yellow Gold
+              </span>
+              <span id="fs-badge-extra" class="px-3 py-0.5 bg-emerald-50 text-emerald-800 rounded-full text-[10px] font-semibold border border-emerald-300 shadow-sm w-fit">
+                GIA Sertifikat
+              </span>
+            </div>
+
+            <div class="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-ink-700 border border-zinc-200 shadow-sm flex items-center gap-1.5 font-medium">
+              <i data-lucide="sparkles" class="w-3 h-3 text-gold-metallic"></i>
+              <span id="fs-image-caption">1/4 • Studiya Makro Ko'rinishi</span>
+            </div>
+          </div>
+
+          <!-- Gallery Thumbnails (Only shown if multiple relevant images exist) -->
+          <div id="fs-thumbnails-wrapper" class="pt-1">
+            <div id="fs-thumbnails" class="flex flex-wrap items-center gap-3">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <!-- Hallmark & Assay Guarantee Banner -->
+          <div class="p-4 bg-white rounded-sm border border-gold-metallic/25 shadow-sm flex items-center gap-4">
+            <div class="w-12 h-12 rounded-sm bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-700 shrink-0 font-serif font-bold text-lg">
+              750
+            </div>
+            <div>
+              <h5 class="text-xs uppercase font-bold tracking-wider text-ink-900" data-i18n="fs_hallmark_t">Davlat Probir Palatasi Rasmiy Tamg'asi</h5>
+              <p class="text-xs text-ink-600 mt-0.5" data-i18n="fs_hallmark_d">Ushbu buyum O'zbekiston Davlat Asillik Palatasi lazerli probir tekshiruvidan to'liq o'tgan va 100% halol 750° qotishmaga ega.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Product Detail & High-Converting Action Box -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div>
+            <div class="flex items-center justify-between">
+              <span id="fs-sku" class="text-xs text-ink-500 uppercase tracking-widest font-mono font-semibold">SKU: AUR-RN-082</span>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span data-i18n="fs_stock_status">Butikda Mavjud (1 dona)</span>
+              </span>
+            </div>
+
+            <h1 id="fs-title" class="font-serif text-3xl sm:text-4xl text-ink-900 font-bold mt-2 leading-tight">
+              Venezia Solitaire Diamond Ring
+            </h1>
+
+            <!-- Price Display -->
+            <div class="mt-4 p-4 bg-white rounded-sm border border-gold-metallic/30 shadow-sm flex items-baseline justify-between">
+              <div>
+                <span class="text-[11px] text-ink-500 block uppercase tracking-wider" data-i18n="price_label">Katalog Narxi:</span>
+                <span id="fs-price-usd" class="font-serif text-3xl text-gold-700 font-bold">$2,450</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[11px] text-ink-500 block uppercase tracking-wider" data-i18n="fs_uzs_label">So'mdagi ekvivalenti:</span>
+                <span id="fs-price-uzs" class="font-mono text-sm text-ink-800 font-bold">~ 31,500,000 UZS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Narrative -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-ink-800" data-i18n="fs_desc_title">Taqinchoq Haqida</h4>
+            <p id="fs-description" class="text-sm text-ink-600 leading-relaxed">
+              Markaziy 0.70ct VVS2 brilliant, 18K italyan oltini asosida klassik 6 oyoqli fiksatsiya. Vicenza zargarlik ustaxonasining qo'l mehnati namunasi.
+            </p>
+          </div>
+
+          <!-- Full Specification Table -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-ink-800" data-i18n="fs_specs_title">Zargarlik Parametrlari:</h4>
+            <div class="bg-white rounded-sm border border-zinc-200 divide-y divide-zinc-100 text-xs shadow-sm">
+              <div class="p-3 flex justify-between">
+                <span class="text-ink-500" data-i18n="spec_metal">Metall & Asillik:</span>
+                <span id="fs-spec-metal" class="font-semibold text-ink-900">18K (750°) Italiya Oltini</span>
+              </div>
+              <div class="p-3 flex justify-between">
+                <span class="text-ink-500" data-i18n="spec_stones">Toshlar Xususiyati:</span>
+                <span id="fs-spec-stones" class="font-semibold text-ink-900">Tabiiy Brilliant GIA 0.70ct VVS2</span>
+              </div>
+              <div class="p-3 flex justify-between">
+                <span class="text-ink-500" data-i18n="spec_weight">Umumiy Og'irligi:</span>
+                <span id="fs-spec-weight" class="font-semibold text-ink-900">4.85 gramm</span>
+              </div>
+              <div class="p-3 flex justify-between">
+                <span class="text-ink-500" data-i18n="spec_origin">Ishlab chiqarilgan joy:</span>
+                <span id="fs-spec-origin" class="font-semibold text-ink-900">Vicenza, Italiya</span>
+              </div>
+              <div class="p-3 flex justify-between">
+                <span class="text-ink-500" data-i18n="spec_service">Kafolat & O'lcham:</span>
+                <span class="font-semibold text-emerald-700" data-i18n="spec_service_val">Bepul individual o'lchamga to'g'irlash</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HIGH CONVERSION CONTACT & BOOKING BOX -->
+          <div class="p-6 bg-ivory-100 rounded-sm border border-gold-metallic/40 shadow-lg space-y-4">
+            
+            <div class="space-y-1">
+              <span class="text-[10px] uppercase tracking-widest text-gold-700 font-bold block" data-i18n="fs_cta_sub">Xususiy Konsyerj Xizmati</span>
+              <h3 class="font-serif text-xl text-ink-900 font-bold" data-i18n="fs_cta_head">
+                Ushbu Taqinchoqni Shaxsan Ko'rish & Band Qilish
+              </h3>
+              <p class="text-xs text-ink-600 leading-relaxed" data-i18n="fs_cta_body">
+                Toshkentdagi Mirabad Avenue butikimizda yopiq xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:
+              </p>
+            </div>
+
+            <!-- Primary Action 1: Pre-filled Telegram Button -->
+            <a 
+              id="fs-telegram-action" 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full py-4 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 hover:from-gold-700 hover:to-gold-700 text-white font-bold text-xs uppercase tracking-[0.18em] rounded-sm shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition flex items-center justify-center gap-2.5 text-center"
+            >
+              <i data-lucide="send" class="w-4 h-4 text-white"></i>
+              <span data-i18n="fs_btn_tg">Telegram Orqali So'rash (Pre-filled)</span>
+            </a>
+
+            <!-- Primary Action 2: Direct Call Concierge -->
+            <div class="grid grid-cols-2 gap-3">
+              <a 
+                href="tel:+998712000888" 
+                class="py-3 px-2 bg-white hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-wider rounded-sm border border-zinc-300 flex items-center justify-center gap-2 transition shadow-sm"
+              >
+                <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+                <span data-i18n="fs_btn_call">Qo'ng'iroq Qilish</span>
+              </a>
+
+              <button 
+                onclick="toggleFittingForm()" 
+                class="py-3 px-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm flex items-center justify-center gap-1.5 transition shadow-sm"
+              >
+                <i data-lucide="calendar" class="w-4 h-4 text-gold-300"></i>
+                <span data-i18n="fs_btn_fit">VIP Zalda Kiyish</span>
+              </button>
+            </div>
+
+            <!-- Expandable VIP Lounge Fitting Booking Form -->
+            <div id="fs-fitting-form-container" class="hidden pt-3 border-t border-gold-metallic/25">
+              <form id="fs-fitting-form" onsubmit="handleFittingSubmit(event)" class="space-y-3">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-ink-800" data-i18n="fs_form_head">
+                  Mirabad Avenue Butikida Kiyib Ko'rishga Yozilish:
+                </div>
+                <div>
+                  <input 
+                    type="text" 
+                    id="fit-name" 
+                    required 
+                    placeholder="Ismingiz" 
+                    class="w-full px-3.5 py-2.5 bg-white border border-zinc-300 rounded-sm text-xs text-ink-900 focus:outline-none focus:border-gold-metallic"
+                  >
+                </div>
+                <div class="relative">
+                  <span class="absolute left-3 top-2.5 text-zinc-500 text-xs font-mono">+998</span>
+                  <input 
+                    type="tel" 
+                    id="fit-phone" 
+                    required 
+                    placeholder="(90) 123-45-67" 
+                    class="w-full pl-14 pr-3.5 py-2.5 bg-white border border-zinc-300 rounded-sm text-xs text-ink-900 font-mono focus:outline-none focus:border-gold-metallic"
+                  >
+                </div>
+                <button 
+                  type="submit" 
+                  class="w-full py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm transition"
+                >
+                  <span data-i18n="fs_form_submit">Vaqtni Belgilash</span>
+                </button>
+              </form>
+              <div id="fit-success" class="hidden text-center py-3 text-emerald-700 text-xs font-semibold">
+                ✓ Tashakkur! Konsyerjimiz 5 daqiqa ichida siz bilan bog'lanib, butikda kutib oladi.
+              </div>
+            </div>
+
+            <!-- Trust Badges List -->
+            <div class="pt-2 grid grid-cols-2 gap-2 text-[11px] text-ink-700">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <span data-i18n="fs_t1">100% Sug'urtalangan xarid</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <span data-i18n="fs_t2">Shaxsiy VIP xona</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <span data-i18n="fs_t3">Bepul o'lchamga moslash</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <span data-i18n="fs_t4">Cheksiz bepul tozalash</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= DIRECT PRODUCT CONCIERGE MODAL (FALLBACK / QUICK) ================= -->
+  <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-sm max-w-lg w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
+      <button onclick="closeConciergeModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold-700 font-bold">
+          <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <span>Xususiy Konsyerj Xizmati</span>
+        </div>
+
+        <h3 class="font-serif text-2xl text-ink-900 font-bold" id="modal-item-title">
+          Mahsulot Bo'yicha Band Qilish
+        </h3>
+
+        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/25 text-xs space-y-1">
+          <div class="flex justify-between">
+            <span class="text-ink-500">Buyum kodi:</span>
+            <span class="font-mono text-gold-700 font-bold" id="modal-item-sku">AUR-001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-500">Ko'rsatilgan narxi:</span>
+            <span class="font-serif text-ink-900 font-bold text-sm" id="modal-item-price">$0</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-ink-600 leading-relaxed" data-i18n="modal_desc">
+          Ushbu buyumni o'zingiz uchun band qilish, jonli video-ko'rik buyurtma qilish yoki butikda o'lchamini ko'rish uchun quyidagi tugmani bosing:
+        </p>
+
+        <div class="space-y-3 pt-2">
+          <a 
+            id="modal-telegram-btn" 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+          >
+            <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+            <span data-i18n="modal_btn_tg">Telegram Orqali So'rash (Pre-filled)</span>
+          </a>
+
+          <a 
+            href="tel:+998712000888" 
+            class="w-full py-3.5 bg-white border border-zinc-300 hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+          >
+            <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+            <span>Konsyergga Qo'ng'iroq Qilish</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VIP CATALOG DOWNLOAD MODAL ================= -->
+  <div id="vip-catalog-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-sm max-w-md w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
+      <button onclick="closeVipCatalogModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-4">
+        <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center border border-gold-metallic/35">
+          <i data-lucide="book-open" class="w-6 h-6"></i>
+        </div>
+
+        <div class="text-center">
+          <h3 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="modal_cat_title">2026 VIP Lookbook & Narxlar</h3>
+          <p class="text-xs text-ink-600 mt-1" data-i18n="modal_cat_desc">Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.</p>
+        </div>
+
+        <form onsubmit="handleModalCatalogSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
+            <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
+          </div>
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_phone_label">Telefon Raqamingiz</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-zinc-500 text-xs font-mono">+998</span>
+              <input type="tel" id="m-phone" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic">
+            </div>
+          </div>
+          <button type="submit" class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition">
+            <i data-lucide="download" class="w-4 h-4 text-gold-300"></i>
+            <span data-i18n="cta_vip_catalog">Katalogni Olish</span>
+          </button>
+        </form>
+
+        <div id="modal-success" class="hidden text-center py-4 text-emerald-700 text-xs space-y-2">
+          <p>✓ Muvaffaqiyatli yuborildi! Tez orada konsyerjimiz bog'lanadi.</p>
+          <a href="https://t.me/aurumgold_uz" target="_blank" class="text-gold-700 underline font-semibold">Telegram @aurumgold_uz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COMPREHENSIVE LUXURY PRODUCT DATABASE & ENGINE ================= -->
+  <script>
+    // Comprehensive Product Database with high-res multi-angle photography and technical specifications
+    const productsDB = [
+      {
+        id: "AUR-RN-082",
+        category: "rings",
+        title_uz: "Venezia Solitaire Diamond Ring",
+        title_ru: "Кольцо-Солитер Venezia с Бриллиантом",
+        price_usd: "$2,450",
+        price_uzs: "~ 31,500,000 UZS",
+        purity_badge: "750° • 18K Yellow Gold",
+        extra_badge: "GIA 0.70ct",
+        short_desc_uz: "Markaziy 0.70ct VVS2 brilliant, 18K italyan oltini asosida klassik 6 oyoqli fiksatsiya.",
+        short_desc_ru: "Центральный бриллиант 0.70ct VVS2, классическая 6-крапановая посадка в золоте 18K.",
+        full_desc_uz: "Venezia Solitaire — Italiyaning qadimiy zargarlik an'analari asosida yaratilgan abadiy muhabbat ramzi. Markaziy 0.70 karatli tabiiy olmos Antwerp kimoshdi savdosida saralangan bo'lib, benuqson D-rang va VVS2 tozalik darajasiga ega. 18K (750°) asillikdagi patentlangan italyancha qotishma teriga mayin teginib, yillar o'tsa ham o'zining nurli jilosini yo'qotmaydi.",
+        full_desc_ru: "Venezia Solitaire — символ вечной любви, рожденный в ювелирных мастерских Виченцы. Центральный природный бриллиант весом 0.70 карат обладает безупречным ледяным цветом D и чистотой VVS2. Запатентованный сплав золота 750° гипоаллергенен и сохраняет зеркальный блеск десятилетиями.",
+        metal_spec_uz: "18K (750°) Italiya Sariq Oltini",
+        metal_spec_ru: "18K (750°) Итальянское Желтое Золото",
+        stone_spec_uz: "Tabiiy Olmos GIA 0.70ct, Rang: D, Tozalik: VVS2, Cut: 3X Excellent",
+        stone_spec_ru: "Природный Бриллиант GIA 0.70ct, Цвет: D, Чистота: VVS2, Огранка: Triple Excellent",
+        weight_spec: "4.85 gramm",
+        origin_spec_uz: "Vicenza, Italiya",
+        origin_spec_ru: "Виченца, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85", caption_uz: "1/2 • Studiya Makro Ko'rinishi", caption_ru: "1/2 • Студийный Макро Ракурс" },
+          { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1200&q=85", caption_uz: "2/2 • Qo'lda Kiyilgan Holati", caption_ru: "2/2 • Посадка на Руке" }
+        ]
+      },
+      {
+        id: "AUR-NC-104",
+        category: "necklaces",
+        title_uz: "Milano Imperial Byzantine Chain",
+        title_ru: "Императорская Цепь Milano Byzantine",
+        price_usd: "$3,100",
+        price_uzs: "~ 39,850,000 UZS",
+        purity_badge: "750° • 24.8 gramm",
+        extra_badge: "Vicenza Oro",
+        short_desc_uz: "Klassik imperatorlik to'qimi, toza 18K sariq oltin, maxsus Italiya qulf mexanizmi.",
+        short_desc_ru: "Классическое византийское плетение, золото 18K, надежный итальянский замок-карабин.",
+        full_desc_uz: "Milano Imperial — Vizantiya imperatorlarining hashamatli uslubidan ilhomlangan qalin, ammo juda silliq quyma zanjir. Har bir bo'g'in qo'lda bir-biriga ulanib, sovuq kompressiya usulida mustahkamlangan. Uzunligi 55 sm, og'irligi 24.8 gramm toza 18K oltin.",
+        full_desc_ru: "Milano Imperial — статусная цепь ручного византийского плетения из мастерских Ареццо. Каждое звено прошло прецизионную шлифовку, создавая эффект струящегося жидкого золота на коже. Длина 55 см, вес 24.8 г чистого золота 750 пробы.",
+        metal_spec_uz: "18K (750°) Italiya Sariq Oltini (Zichlangan)",
+        metal_spec_ru: "18K (750°) Итальянское Желтое Золото (Компрессия)",
+        stone_spec_uz: "Qo'shimcha toshsiz (Monolit toza oltin)",
+        stone_spec_ru: "Без вставок (Чистое монолитное золото)",
+        weight_spec: "24.80 gramm",
+        origin_spec_uz: "Arezzo, Italiya",
+        origin_spec_ru: "Ареццо, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1200&q=85", caption_uz: "Studiya Makro Ko'rinishi", caption_ru: "Студийный Макро Ракурс" }
+        ]
+      },
+      {
+        id: "AUR-BR-209",
+        category: "bridal",
+        title_uz: "Principessa Royal Bridal Parure",
+        title_ru: "Королевский Свадебный Сет Principessa",
+        price_usd: "$8,900",
+        price_uzs: "~ 114,350,000 UZS",
+        purity_badge: "To'liq To'plam • 18K",
+        extra_badge: "Sarpo Exclusive",
+        short_desc_uz: "Toshkent to'ylari uchun qirollik to'plami: marjon, bilaguzuk, sirg'a va uzuk. 2.45ct jami olmos.",
+        short_desc_ru: "Роскошный гарнитур для сарпо: колье, браслет, серьги и кольцо. 2.45 карата бриллиантов.",
+        full_desc_uz: "Principessa to'plami — Toshkentning eng nufuzli to'ylari va kelin sarpolari uchun maxsus tayyorlangan 4 qismli qirollik garnituri. Har bir elementda 18K oq va sariq oltin uyg'unlashgan bo'lib, jami 2.45 karatli eng oliy toifadagi olmoslar bilan bezatilgan. Butun O'zbekiston bo'yicha yagona nusxada taqdim etiladi.",
+        full_desc_ru: "Свадебный гарнитур Principessa — шедевр высокого ювелирного искусства для свадебного торжества и сарпо. Включает колье, браслет, кольцо и серьги. Общий вес бриллиантов 2.45 карат, комбинированное золото 750° белого и лимонного оттенков. Эксклюзивный единственный экземпляр.",
+        metal_spec_uz: "18K (750°) Oq va Sariq Italiya Oltini",
+        metal_spec_ru: "18K (750°) Белое и Желтое Золото Италии",
+        stone_spec_uz: "2.45ct Tabiiy Brilliantlar (F-Color, VS1)",
+        stone_spec_ru: "2.45 карат Природных Бриллиантов (F / VS1)",
+        weight_spec: "68.20 gramm (To'liq to'plam)",
+        origin_spec_uz: "Milano & Vicenza, Italiya",
+        origin_spec_ru: "Милан & Виченца, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85", caption_uz: "1/2 • To'liq Garnitur Ko'rinishi", caption_ru: "1/2 • Полный Комплект Гарнитура" },
+          { url: "https://images.unsplash.com/photo-1543290956-bd1c9793ff16?auto=format&fit=crop&w=1200&q=85", caption_uz: "2/2 • Kelinda Kiyilgan Holati", caption_ru: "2/2 • Образ на Невесте" }
+        ]
+      },
+      {
+        id: "AUR-INV-50G",
+        category: "investment",
+        title_uz: "Swiss & Valcambi 999.9 Gold Ingot",
+        title_ru: "Инвестиционный Слиток Valcambi 999.9",
+        price_usd: "$4,650",
+        price_uzs: "Birja kursi asosida",
+        purity_badge: "999.9 • 50 gramm",
+        extra_badge: "LBMA Sertifikat",
+        short_desc_uz: "Xalqaro bank muhrli va himoyalangan sertifikat kapsulasidagi toza quyma oltin. 100% likvid.",
+        short_desc_ru: "Швейцарский слиток чистого банковского золота в защищенной капсуле CertiCard.",
+        full_desc_uz: "Valcambi Suisse — jahonning eng obro'li LBMA akkreditatsiyasiga ega Shveytsariya oltin quyish korxonasi mahsuloti. 999.9 (24K) tozalikdagi 50 gramm quyma oltin. Har bir quyma xalqaro seriya raqami va CertiCard xavfsizlik himoyasiga ega. Dunyoning istalgan bankida 100% likvidlikka ega.",
+        full_desc_ru: "Швейцарский инвестиционный слиток Valcambi 50 грамм чистоты 999.9 пробы. Международная сертификация LBMA, индивидуальный номер и невскрываемая защитная капсула CertiCard. Абсолютная ликвидность в любой точке мира.",
+        metal_spec_uz: "999.9 (24K) Sof Shveytsariya Oltini",
+        metal_spec_ru: "999.9 (24K) Чистейшее Золото Швейцарии",
+        stone_spec_uz: "Qo'shimchalarsiz (Bank standarti)",
+        stone_spec_ru: "Без вставок (Банковский слиток)",
+        weight_spec: "50.00 gramm",
+        origin_spec_uz: "Balerna, Shveytsariya",
+        origin_spec_ru: "Балерна, Швейцария",
+        images: [
+          { url: "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=85", caption_uz: "1/2 • CertiCard Kapsulasi", caption_ru: "1/2 • Блистер CertiCard" },
+          { url: "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?auto=format&fit=crop&w=1200&q=85", caption_uz: "2/2 • Gravirovka va 999.9 Tamg'a", caption_ru: "2/2 • Гравировка и Проба 999.9" }
+        ]
+      },
+      {
+        id: "AUR-TB-310",
+        category: "necklaces",
+        title_uz: "Firenze Eternity Diamond Bracelet",
+        title_ru: "Бриллиантовый Теннисный Браслет Firenze",
+        price_usd: "$5,200",
+        price_uzs: "~ 66,800,000 UZS",
+        purity_badge: "18K White Gold • 4.20ct",
+        extra_badge: "Tennis Classic",
+        short_desc_uz: "48 dona bir xil kalibrdagi F-color VS1 brilliantlar terilgan oq 18K oltin tennis bilaguzugi.",
+        short_desc_ru: "48 идеально калиброванных бриллиантов цвета F чистоты VS1 в оправе из белого золота 18K.",
+        full_desc_uz: "Firenze Eternity — har bir xonimning zargarlik sandiqchasidagi eng zarur elita buyumi. 48 dona bir xil o'lcham va fasetkaga ega toza brilliantlar nozik qulf mexanizmi bilan uzluksiz nur halqasini hosil qiladi.",
+        full_desc_ru: "Классический теннисный браслет Firenze. 48 бриллиантов идеальной калибровки общим весом 4.20 карат в оправе из белого родированного золота 750 пробы с двойным замком безопасности.",
+        metal_spec_uz: "18K (750°) Rodiy bilan qoplangan Oq Oltin",
+        metal_spec_ru: "18K (750°) Белое Золото с Родированием",
+        stone_spec_uz: "4.20ct Tabiiy Brilliantlar (48 dona x 0.087ct, F-VS1)",
+        stone_spec_ru: "4.20 карат Бриллиантов (48 шт по 0.087ct, F-VS1)",
+        weight_spec: "14.20 gramm",
+        origin_spec_uz: "Valenza, Italiya",
+        origin_spec_ru: "Валенца, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85", caption_uz: "Studiya Makro Ko'rinishi", caption_ru: "Студийный Макро Ракурс" }
+        ]
+      },
+      {
+        id: "AUR-WB-550",
+        category: "rings",
+        title_uz: "Amore Eterno Couple Rings",
+        title_ru: "Парные Обручальные Кольца Amore Eterno",
+        price_usd: "$1,650",
+        price_uzs: "~ 21,200,000 UZS",
+        purity_badge: "Juftlik • 18K Rose & Yellow",
+        extra_badge: "Wedding Pair",
+        short_desc_uz: "Er-xotin uchun maxsus ichki lazerli sana o'ymakorligi bilan tayyorlangan italyan nikoh uzuklari.",
+        short_desc_ru: "Парные обручальные кольца с эргономичной комфортной посадкой Comfort Fit и гравировкой.",
+        full_desc_uz: "Amore Eterno — erkak va ayol uchun uyg'un yaratilgan anatomik 'Comfort Fit' ichki qavariqligiga ega juftlik uzuklari. Ayol uzugida nozik brilliant yo'lakchasi mavjud. Butikimizda juftliklar uchun shaxsiy to'y sanasi bepul lazerda o'yib beriladi.",
+        full_desc_ru: "Идеальная пара обручальных колец Amore Eterno с посадкой Comfort Fit для ежедневного комфортного ношения. Женское кольцо декорировано дорожкой из чистейших бриллиантов. Бесплатная памятная гравировка в бутике.",
+        metal_spec_uz: "18K (750°) Qizil va Sariq Oltin uyg'unligi",
+        metal_spec_ru: "18K (750°) Розовое и Лимонное Золото",
+        stone_spec_uz: "0.22ct Ayol uzugidagi brilliantlar (D-VVS1)",
+        stone_spec_ru: "0.22ct Бриллиантовая дорожка в женском кольце",
+        weight_spec: "11.60 gramm (Ikkala uzuk)",
+        origin_spec_uz: "Arezzo, Italiya",
+        origin_spec_ru: "Ареццо, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1603561596112-0a132b757442?auto=format&fit=crop&w=1200&q=85", caption_uz: "1/2 • Juftlik Studiya Ko'rinishi", caption_ru: "1/2 • Студийная Пара Колец" },
+          { url: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85", caption_uz: "2/2 • Qo'llarda Kiyilgan Holati", caption_ru: "2/2 • На Руках Молодоженов" }
+        ]
+      },
+      {
+        id: "AUR-ER-402",
+        category: "bridal",
+        title_uz: "Smeraldo Imperial Drop Earrings",
+        title_ru: "Серьги с Изумрудами Smeraldo Imperial",
+        price_usd: "$4,800",
+        price_uzs: "~ 61,680,000 UZS",
+        purity_badge: "Kolumbiya Zumrudi + Olmos",
+        extra_badge: "Rare Emerald",
+        short_desc_uz: "2x 1.20ct tabiiy chuqur yashil Kolumbiya zumrudi, atrofida nozik brilliant hoshiyasi bilan.",
+        short_desc_ru: "Натуральные колумбийские изумруды 2х 1.20ct глубокого бархатного цвета в бриллиантовом ореоле.",
+        full_desc_uz: "Smeraldo Imperial — Kolumbiyaning mashhur Muzo konlaridan keltirilgan eng toza 'Muzo Green' zumrudlari bilan bezatilgan osma sirg'alar. Atrofidagi 32 dona Antwerp brilliantlari zumrudning zumrad tusini yanada yorqin namoyon qiladi.",
+        full_desc_ru: "Роскошные вечерние серьги с редчайшими колумбийскими изумрудами весом 2.40 карат в паре. Окружены ореолом из 32 сияющих бриллиантов в белом золоте 750 пробы с надежным английским замком.",
+        metal_spec_uz: "18K (750°) Oq va Sariq Oltin",
+        metal_spec_ru: "18K (750°) Белое и Желтое Золото",
+        stone_spec_uz: "2.40ct Kolumbiya Zumrudi + 0.65ct Brilliantlar",
+        stone_spec_ru: "2.40ct Колумбийские Изумруды + 0.65ct Бриллианты",
+        weight_spec: "9.80 gramm",
+        origin_spec_uz: "Vicenza, Italiya",
+        origin_spec_ru: "Виченца, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=85", caption_uz: "Studiya Makro Ko'rinishi", caption_ru: "Студийный Макро Ракурс" }
+        ]
+      },
+      {
+        id: "AUR-INV-100G",
+        category: "investment",
+        title_uz: "Argor-Heraeus 999.9 Gold Bullion",
+        title_ru: "Золотой Слиток Argor-Heraeus 100g",
+        price_usd: "$9,280",
+        price_uzs: "Birja kursi asosida",
+        purity_badge: "999.9 • 100 gramm",
+        extra_badge: "LBMA Good Delivery",
+        short_desc_uz: "Shveytsariya xalqaro sertifikatiga ega bo'lgan sof investitsion quyma oltin. Maxsus raqamlangan.",
+        short_desc_ru: "100-граммовый слиток высшей пробы 999.9 швейцарского концерна Argor-Heraeus.",
+        full_desc_uz: "Argor-Heraeus — Shveytsariyaning Mendrizio shahridagi afsonaviy quyma korxonasi. 100 grammlik toza investitsion oltin quyma. Shaxsiy kapitalni inflyatsiyadan himoyalash va avlodlarga meros qoldirish uchun ideal aktiv.",
+        full_desc_ru: "Инвестиционный слиток высшей категории Good Delivery от Argor-Heraeus (Швейцария). Вес 100 грамм, проба 999.9. Международное признание и мгновенная конвертируемость в валюту в любом банке мира.",
+        metal_spec_uz: "999.9 (24K) Shveytsariya Sof Oltini",
+        metal_spec_ru: "999.9 (24K) Чистое Золото Argor-Heraeus",
+        stone_spec_uz: "Qo'shimchalarsiz (Bank standarti)",
+        stone_spec_ru: "Без вставок (Банковский слиток)",
+        weight_spec: "100.00 gramm",
+        origin_spec_uz: "Mendrisio, Shveytsariya",
+        origin_spec_ru: "Мендризио, Швейцария",
+        images: [
+          { url: "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?auto=format&fit=crop&w=1200&q=85", caption_uz: "1/2 • 100g Monolit Quyma", caption_ru: "1/2 • Слиток 100 грамм" },
+          { url: "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=85", caption_uz: "2/2 • Himoyalangan Kapsula", caption_ru: "2/2 • Защитный Блистер" }
+        ]
+      },
+      {
+        id: "AUR-REG-01",
+        category: "necklaces",
+        title_uz: "Collezione Regina • 18K Yellow Gold",
+        title_ru: "Колье Collezione Regina • Золото 18K",
+        price_usd: "$3,450",
+        price_uzs: "~ 44,200,000 UZS",
+        purity_badge: "750° • 18K Yellow Gold",
+        extra_badge: "Milan Fashion Week",
+        short_desc_uz: "0.85ct VVS1 Antwerp Cut olmos bilan bezatilgan Milan zargarlik haftaligi marjoni.",
+        short_desc_ru: "Колье-хайлайт недели моды в Милане с бриллиантом 0.85ct VVS1 огранки Антверпена.",
+        full_desc_uz: "Collezione Regina — Milan modalar haftaligida eng katta e'tirofga sazovor bo'lgan nozik geometrik osma marjon. 18K sof italyan oltini va markazidagi 0.85ct VVS1 toifadagi olmos ayol bo'yniga betakror nufuz bag'ishlaydi.",
+        full_desc_ru: "Collezione Regina — триумфатор миланской недели ювелирной моды. Геометрический кулон с центральным бриллиантом 0.85 карата VVS1 в оправе из теплого итальянского золота 750 пробы.",
+        metal_spec_uz: "18K (750°) Italiya Oltini",
+        metal_spec_ru: "18K (750°) Золото Италии",
+        stone_spec_uz: "0.85ct Antwerp Cut Brilliant (D-VVS1)",
+        stone_spec_ru: "0.85ct Бриллиант огранки Антверпена",
+        weight_spec: "12.80 gramm",
+        origin_spec_uz: "Milano, Italiya",
+        origin_spec_ru: "Милан, Италия",
+        images: [
+          { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85", caption_uz: "Studiya Makro Ko'rinishi", caption_ru: "Студийный Макро Ракурс" }
+        ]
+      }
+    ];
+
+    let currentLang = 'uz';
+    let currentActiveProduct = null;
+
+    // Render Product Cards in Catalog Grid
+    function renderProductCards() {
+      const container = document.getElementById('product-grid');
+      if (!container) return;
+      container.innerHTML = '';
+
+      productsDB.forEach(item => {
+        if (item.id === "AUR-REG-01") return; // Hero featured
+        const title = currentLang === 'uz' ? item.title_uz : item.title_ru;
+        const shortDesc = currentLang === 'uz' ? item.short_desc_uz : item.short_desc_ru;
+        const inquireText = currentLang === 'uz' ? "Band qilish" : "Забронировать";
+        const priceLabel = currentLang === 'uz' ? "Narx:" : "Цена:";
+
+        const studioImg = item.images[0].url;
+        const wornImg = (item.images.length > 1) ? item.images[1].url : item.images[0].url;
+        const hasSwap = item.images.length > 1;
+
+        const card = document.createElement('div');
+        card.className = "product-card group luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-500";
+        card.setAttribute('data-category', item.category);
+        card.setAttribute('data-id', item.id);
+        
+        // Card click opens full-screen dedicated detail view
+        card.onclick = (e) => {
+          // If clicked specifically on inquire button, open concierge modal, else open full screen
+          if (e.target.closest('.btn-inquire-quick')) {
+            e.stopPropagation();
+            openConciergeModal(title, item.id, item.price_usd);
+          } else {
+            openProductDetail(item.id);
+          }
+        };
+
+        card.innerHTML = `
+          <div class="relative w-full aspect-square overflow-hidden bg-ivory-200 ${hasSwap ? 'img-swap-container' : ''}">
+            <img 
+              src="${studioImg}" 
+              alt="${title}" 
+              class="${hasSwap ? 'product-studio' : ''} absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
+            >
+            ${hasSwap ? `
+            <img 
+              src="${wornImg}" 
+              alt="${title} Worn" 
+              class="product-worn absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
+            >
+            ` : ''}
+            
+            <div class="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-wider text-gold-700 font-semibold border border-gold-metallic/30 shadow-sm">
+              ${item.purity_badge}
+            </div>
+            <div class="absolute top-3 right-3 px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[9px] uppercase tracking-wider font-bold border border-emerald-300">
+              ${item.extra_badge}
+            </div>
+            
+            <!-- Quick hover hint overlay -->
+            <div class="absolute bottom-3 inset-x-3 py-1.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gold-700 flex items-center justify-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3 h-3 text-gold-700"></i>
+                <span>${currentLang === 'uz' ? "To'liq Ma'lumot & Rasmlar" : "Подробнее и Все Фото"}</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col justify-between flex-grow">
+            <div>
+              <div class="text-[11px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
+              <h3 class="font-serif text-lg text-ink-900 font-bold mt-1 group-hover:text-gold-700 transition">
+                ${title}
+              </h3>
+              <p class="text-xs text-ink-600 mt-1 line-clamp-2">
+                ${shortDesc}
+              </p>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-zinc-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-ink-500 block">${priceLabel}</span>
+                <span class="font-serif text-lg text-gold-700 font-bold">${item.price_usd}</span>
+                <span class="text-[10px] text-ink-500 block font-mono">${item.price_uzs}</span>
+              </div>
+              <button 
+                class="btn-inquire-quick px-3.5 py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center gap-1.5"
+              >
+                <i data-lucide="send" class="w-3 h-3 text-gold-300"></i>
+                <span>${inquireText}</span>
+              </button>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // ================= FULLSCREEN DEDICATED PRODUCT VIEW HANDLERS =================
+    function openProductDetail(productId) {
+      const product = productsDB.find(p => p.id === productId);
+      if (!product) return;
+      currentActiveProduct = product;
+
+      // Populate text fields
+      const title = currentLang === 'uz' ? product.title_uz : product.title_ru;
+      const desc = currentLang === 'uz' ? product.full_desc_uz : product.full_desc_ru;
+      const metal = currentLang === 'uz' ? product.metal_spec_uz : product.metal_spec_ru;
+      const stone = currentLang === 'uz' ? product.stone_spec_uz : product.stone_spec_ru;
+      const origin = currentLang === 'uz' ? product.origin_spec_uz : product.origin_spec_ru;
+
+      document.getElementById('fs-breadcrumb-category').innerText = product.category.toUpperCase();
+      document.getElementById('fs-breadcrumb-title').innerText = title;
+      document.getElementById('fs-title').innerText = title;
+      document.getElementById('fs-sku').innerText = `SKU: ${product.id}`;
+      document.getElementById('fs-price-usd').innerText = product.price_usd;
+      document.getElementById('fs-price-uzs').innerText = product.price_uzs;
+      document.getElementById('fs-description').innerText = desc;
+      document.getElementById('fs-badge-purity').innerText = product.purity_badge;
+      document.getElementById('fs-badge-extra').innerText = product.extra_badge;
+
+      // Specs
+      document.getElementById('fs-spec-metal').innerText = metal;
+      document.getElementById('fs-spec-stones').innerText = stone;
+      document.getElementById('fs-spec-weight').innerText = product.weight_spec;
+      document.getElementById('fs-spec-origin').innerText = origin;
+
+      // Gallery Images
+      const mainImg = document.getElementById('fs-main-image');
+      const caption = document.getElementById('fs-image-caption');
+      const thumbWrapper = document.getElementById('fs-thumbnails-wrapper');
+      const thumbContainer = document.getElementById('fs-thumbnails');
+
+      mainImg.src = product.images[0].url;
+      caption.innerText = currentLang === 'uz' ? product.images[0].caption_uz : product.images[0].caption_ru;
+
+      // Only show thumbnails if there are 2 or more genuine matching photos
+      if (product.images.length > 1) {
+        if (thumbWrapper) thumbWrapper.style.display = 'block';
+        thumbContainer.innerHTML = '';
+        product.images.forEach((img, idx) => {
+          const btn = document.createElement('button');
+          btn.className = `thumb-btn relative w-20 h-20 sm:w-24 sm:h-24 rounded-sm overflow-hidden bg-ivory-100 border-2 transition ${idx === 0 ? 'border-gold-metallic shadow-sm' : 'border-zinc-200 hover:border-gold-metallic/50'}`;
+          btn.onclick = () => {
+            document.querySelectorAll('.thumb-btn').forEach(b => {
+              b.classList.remove('border-gold-metallic', 'shadow-sm');
+              b.classList.add('border-zinc-200');
+            });
+            btn.classList.add('border-gold-metallic', 'shadow-sm');
+            btn.classList.remove('border-zinc-200');
+            mainImg.src = img.url;
+            caption.innerText = currentLang === 'uz' ? img.caption_uz : img.caption_ru;
+          };
+          btn.innerHTML = `<img src="${img.url}" alt="${img.caption_uz}" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'">`;
+          thumbContainer.appendChild(btn);
+        });
+      } else {
+        // If there's only 1 photo, hide thumbnail row completely to avoid fake/redundant images!
+        if (thumbWrapper) thumbWrapper.style.display = 'none';
+        thumbContainer.innerHTML = '';
+      }
+
+      // Prepare Pre-filled Telegram Link
+      const tgMessage = encodeURIComponent(
+        `Assalomu alaykum, Aurum Gold! Men ushbu zargarlik buyumi bo'yicha ma'lumot olishni va butikda ko'rishni xohlayman:\n\n` +
+        `• Mahsulot: ${title}\n` +
+        `• Kodi (SKU): ${product.id}\n` +
+        `• Narxi: ${product.price_usd} (${product.price_uzs})\n` +
+        `• Metall: ${metal}\n\n` +
+        `Iltimos, mavjudligi va qulay vaqtni belgilab bersangiz.`
+      );
+      document.getElementById('fs-telegram-action').href = `https://t.me/aurumgold_uz?text=${tgMessage}`;
+
+      // Reset fitting form
+      document.getElementById('fs-fitting-form-container').classList.add('hidden');
+      document.getElementById('fit-success').classList.add('hidden');
+      document.getElementById('fs-fitting-form').reset();
+
+      // Show Fullscreen View
+      const fsView = document.getElementById('product-fullscreen-view');
+      fsView.classList.remove('view-hidden');
+      fsView.classList.add('view-visible');
+      document.body.style.overflow = 'hidden'; // Lock background scroll
+      fsView.scrollTop = 0;
+
+      lucide.createIcons();
+    }
+
+    function closeProductDetail() {
+      const fsView = document.getElementById('product-fullscreen-view');
+      fsView.classList.remove('view-visible');
+      fsView.classList.add('view-hidden');
+      document.body.style.overflow = ''; // Unlock background scroll
+      currentActiveProduct = null;
+    }
+
+    function toggleFittingForm() {
+      const formCont = document.getElementById('fs-fitting-form-container');
+      formCont.classList.toggle('hidden');
+    }
+
+    function handleFittingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fit-name').value;
+      const phone = document.getElementById('fit-phone').value;
+      const itemTitle = currentActiveProduct ? (currentLang === 'uz' ? currentActiveProduct.title_uz : currentActiveProduct.title_ru) : "Aurum Gold Jewelry";
+
+      document.getElementById('fs-fitting-form').classList.add('hidden');
+      document.getElementById('fit-success').classList.remove('hidden');
+
+      const tgText = encodeURIComponent(
+        `Salom! Men butikda VIP kiyib ko'rishga yozilmoqchiman:\n` +
+        `• Mahsulot: ${itemTitle} (${currentActiveProduct ? currentActiveProduct.id : ''})\n` +
+        `• Mijoz: ${name}\n` +
+        `• Telefon: +998 ${phone}`
+      );
+
+      setTimeout(() => {
+        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+      }, 1000);
+    }
+
+    // Bilingual Translations
+    const translations = {
+      uz: {
+        top_bar_location: "Flagship Boutique Mirabad Avenue",
+        top_bar_hours: "Du-Yak 10:00 — 21:00",
+        nav_collections: "Kolleksiyalar",
+        nav_quality: "18K Italiya Standarti",
+        nav_diamonds: "GIA Olmoslar",
+        nav_concierge: "Xususiy Konsyerj",
+        nav_boutique: "Butik",
+        cta_vip_catalog: "VIP Katalog Olish",
+        hero_badge: "Eksklyuziv Zargarlik Uyi • Toshkent",
+        hero_title_part1: "Mukammal Chiroy.",
+        hero_title_part2: "18K Sertifikatlangan",
+        hero_title_part3: "Italiya Oltini & Olmoslar.",
+        hero_subtitle: "Vicenza va Arezzo ustaxonalarining oliy darajadagi 750° asillikdagi oltin buyumlari hamda xalqaro GIA sertifikatli benuqson toza olmoslar. Toshkent elitasining ishonchli tanlovi.",
+        hero_cta_catalog: "2026 VIP Lookbook Yuklash",
+        hero_cta_explore: "Kolleksiyani Ko'rish",
+        hero_stat1: "Italiya Qonuniy Asilligi",
+        hero_stat2: "Sertifikatlangan Olmos",
+        hero_stat3: "Davlat Probir Nazorati",
+        hero_card_tag: "Milan Fashion Week Highlight",
+        hero_card_title: "Collezione Regina • 18K Yellow Gold",
+        trust_item1_title: "18K (750°) Italiya Oltini",
+        trust_item1_desc: "Arezzo va Vicenza zavodlarining rasmiy tamg'ali toza qotishmasi.",
+        trust_item2_title: "Davlat Asillik Tamg'asi",
+        trust_item2_desc: "O'zbekiston Respublikasi Probir Palatasining qat'iy tekshiruvi va muhri.",
+        trust_item3_title: "GIA / IGI Sertifikati",
+        trust_item3_desc: "Har bir 0.30ct+ tosh uchun lazerli xalqaro seriya raqami va pasporti.",
+        trust_item4_title: "Cheksiz Kafolat & O'lcham",
+        trust_item4_desc: "Bepul individual o'lchamga moslash, tozalash va yillik parvarish.",
+        col_tag: "Aurum Eksklyuziv Kolleksiyasi",
+        col_title: "Oliy San'at Namunasi <span class='italic font-light text-ink-500'>& Benuqson Did</span>",
+        hint_click_full: "Taqinchoq ustiga bosing — to'liq sahifa ochiladi",
+        cat_all: "Barcha Buyumlar",
+        cat_rings: "Uzuklar & Soliter",
+        cat_necklaces: "Marjonlar & Zanjirlar",
+        cat_bridal: "Kelin Sarpolar & To'plamlar",
+        cat_investment: "Investitsion Oltin 999.9",
+        price_label: "Narx:",
+        banner_lock: "Cheklangan Xususiy Kolleksiya",
+        banner_title: "Vitrinalarda Ko'rsatilmagan 120+ Maxsus Zargarlik Buyumlari",
+        banner_desc: "Antwerp va Milan kimoshdi savdolaridan keltirilgan noyob namunalar, xususiy buyurtma asosidagi toshlar katalogimizda jamlangan.",
+        craft_badge: "Nima Uchun 18K (750°) Italiya Oltini?",
+        craft_title: "Hech Qachon Xiralashmaydigan, <span class='italic font-light text-ink-500'>Avlodlarga Qoluvchi</span> Asillik.",
+        craft_p1: "Oddiy 585° (14K) oltindan farqli o'laroq, Italiyaning 750° asillikdagi qotishmasi 75.0% sof oltin va maxsus patentlangan ligaturadan (kumush va mis balansi) iborat. Bu unga betakror 'italyancha shaffof jilo', yuqori zichlik va teriga nisbatan 100% gipoallergen xususiyat beradi.",
+        craft_pure_label: "Eng Oliy Italiya Standarti",
+        craft_origin: "Asl Kelib Chiqish joyi",
+        craft_point1_t: "O'zbekiston Davlat Probir Palatasi Nazorati",
+        craft_point1_d: "Har bir buyum O'zbekistonga olib kirilgach, davlat ekspertizasi va lazerli tamg'alash jarayonidan o'tadi.",
+        craft_point2_t: "Patentlangan Zichlik va Qotishma",
+        craft_point2_d: "Oddiy quyma emas, balki sovuq bosim texnologiyasi orqali har bir zanjir va qisqich sinishga chidamli qilib ishlanadi.",
+        craft_call_expert: "Zargarga Qo'ng'iroq Qilish",
+        dia_tag: "Benuqson Geometriya & Tozalik",
+        dia_title: "GIA & IGI Sertifikatlangan <span class='italic font-light text-ink-500'>Tabiiy Olmoslar</span>",
+        dia_desc: "Biz faqat konfliktlardan xoli qazib olingan, eng yuqori D-F rang va VVS tozalikdagi Antwerp hamda Tel-Aviv fasetkali toshlarini tanlaymiz.",
+        dia_c1_t: "Carat (Og'irlik)",
+        dia_c1_d: "0.30 karatdan 5.00+ karatgacha bo'lgan toshlar individual tanlov va sertifikat bilan taqdim etiladi.",
+        dia_c2_t: "Clarity (Tozalik)",
+        dia_c2_d: "IF (Internally Flawless), VVS1 va VVS2 toifalari. Mikroskop ostida ham ko'rinmaydigan tabiiy tozalik.",
+        dia_c3_t: "Color (Rang)",
+        dia_c3_d: "D, E, F toifalari — mutlaqo rangsiz, muzdek tiniq va yorug'likni maksimal darajada sindiruvchi toshlar.",
+        dia_c4_t: "Cut (Ishlov Berilishi)",
+        dia_c4_d: "Triple Excellent fasetka — toshning yuragidagi betakror nur o'yini.",
+        lead_tag: "Shaxsiy Zargarlik Xizmati",
+        lead_title: "VIP Katalog Yuklab Oling <br><span class='italic font-light text-ink-500'>& Shaxsiy Konsultatsiyaga Yoziling</span>",
+        lead_desc: "Raqamingizni qoldiring va biz sizning Telegramingizga 2026-yilgi yopiq to'plam narxlari bilan to'liq PDF lookbook'ni 2 daqiqada yuboramiz. Shuningdek, butikimizda yopiq qahva va o'lcham tanlash seansiga taklifnoma taqdim etiladi.",
+        lead_perk1: "Haqiqiy narxlar va vazn ro'yxati",
+        lead_perk2: "Maxsus individual o'lchamga bepul buyurtma",
+        lead_perk3: "Telegram orqali zudlik bilan javob",
+        form_name_label: "Ismingiz / Familiyangiz",
+        form_phone_label: "Telefon Raqamingiz",
+        form_interest_label: "Sizni Qiziqtirgan Yo'nalish",
+        opt_all: "To'liq 2026 Lookbook (Barcha to'plam)",
+        opt_bridal: "Kelin Sarpo va Nikoh To'plami",
+        opt_diamonds: "GIA Brilliant Soliter Uzuklar",
+        opt_invest: "Investitsion 999.9 Oltin Quymalari",
+        form_submit_btn: "VIP Katalogni Telegramga Olish",
+        form_privacy: "Ma'lumotlaringiz maxfiy saqlanadi. Spam yo'q, faqat rasmiy zargarlik katalogi.",
+        form_success_t: "Tashakkur! So'rovingiz qabul qilindi",
+        form_success_d: "Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.",
+        form_success_tg: "Telegramda Zudlik Bilan Ochish",
+        btq_tag: "Flagship Butik Manzili",
+        btq_title: "Toshkent Markazidagi <br><span class='italic font-light text-ink-500'>Xususiy Zargarlik Loungi</span>",
+        btq_desc: "Sizni Mirabad Avenue markazidagi shinam VIP zallarimizda kutib olamiz. Qulay to'xtash joyi, xavfsiz xususiy xarid xonalari va sertifikatlangan gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.",
+        btq_addr_title: "Manzilimiz:",
+        btq_hours_title: "Ish Tartibi:",
+        btq_contact_title: "Aloqa va Konsyerj:",
+        rev_tag: "Xaridorlarimiz Fikrlari",
+        rev_title: "Ishonch & Yuqori Ehtirom",
+        rev1_text: "\"Kelin sarposi uchun to'liq 18K to'plam oldik. Toshkentda bunday toza italyan dizaynini va sertifikatli olmoslarni topish qiyin edi. Xizmat ko'rsatish va xususiy qabul madaniyati 10/10.\"",
+        rev2_text: "\"0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Aurum Gold!\"",
+        rev3_text: "\"Investitsion 999.9 oltin quymalari xaridi bo'yicha eng ishonchli manzil. Spot narxlari halol, barcha hujjatlar joyida. Xususiy xarid xonasidagi maxfiylik juda ma'qul keldi.\"",
+        mob_call: "Qo'ng'iroq",
+        mob_catalog: "Katalog",
+        modal_desc: "Ushbu buyumni o'zingiz uchun band qilish, jonli video-ko'rik buyurtma qilish yoki butikda o'lchamini ko'rish uchun quyidagi tugmani bosing:",
+        modal_btn_tg: "Telegram Orqali So'rash (Pre-filled)",
+        modal_cat_title: "2026 VIP Lookbook & Narxlar",
+        modal_cat_desc: "Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.",
+        // Fullscreen strings
+        fs_back_btn: "Katalogga qaytish",
+        fs_hallmark_t: "Davlat Probir Palatasi Rasmiy Tamg'asi",
+        fs_hallmark_d: "Ushbu buyum O'zbekiston Davlat Asillik Palatasi lazerli probir tekshiruvidan to'liq o'tgan va 100% halol 750° qotishmaga ega.",
+        fs_stock_status: "Butikda Mavjud (1 dona)",
+        fs_uzs_label: "So'mdagi ekvivalenti:",
+        fs_desc_title: "Taqinchoq Haqida",
+        fs_specs_title: "Zargarlik Parametrlari:",
+        spec_metal: "Metall & Asillik:",
+        spec_stones: "Toshlar Xususiyati:",
+        spec_weight: "Umumiy Og'irligi:",
+        spec_origin: "Ishlab chiqarilgan joy:",
+        spec_service: "Kafolat & O'lcham:",
+        spec_service_val: "Bepul individual o'lchamga to'g'irlash",
+        fs_cta_sub: "Xususiy Konsyerj Xizmati",
+        fs_cta_head: "Ushbu Taqinchoqni Shaxsan Ko'rish & Band Qilish",
+        fs_cta_body: "Toshkentdagi Mirabad Avenue butikimizda yopiq xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:",
+        fs_btn_tg: "Telegram Orqali So'rash (Pre-filled)",
+        fs_btn_call: "Qo'ng'iroq Qilish",
+        fs_btn_fit: "VIP Zalda Kiyish",
+        fs_form_head: "Mirabad Avenue Butikida Kiyib Ko'rishga Yozilish:",
+        fs_form_submit: "Vaqtni Belgilash",
+        fs_t1: "100% Sug'urtalangan xarid",
+        fs_t2: "Shaxsiy VIP xona",
+        fs_t3: "Bepul o'lchamga moslash",
+        fs_t4: "Cheksiz bepul tozalash"
+      },
+      ru: {
+        top_bar_location: "Флагманский Бутик Mirabad Avenue",
+        top_bar_hours: "Пн-Вс 10:00 — 21:00",
+        nav_collections: "Коллекции",
+        nav_quality: "Итальянский Стандарт 18K",
+        nav_diamonds: "Бриллианты GIA",
+        nav_concierge: "Личный Консьерж",
+        nav_boutique: "Бутик",
+        cta_vip_catalog: "Получить VIP-Каталог",
+        hero_badge: "Эксклюзивный Ювелирный Дом • Ташкент",
+        hero_title_part1: "Совершенная Эстетика.",
+        hero_title_part2: "Сертифицированное 18K",
+        hero_title_part3: "Итальянское Золото & Бриллианты.",
+        hero_subtitle: "Изделия высшей 750° пробы из мануфактур Виченцы и Ареццо, а также безупречно чистые бриллианты с международными сертификатами GIA. Выбор респектабельной публики Ташкента.",
+        hero_cta_catalog: "Скачать VIP Lookbook 2026",
+        hero_cta_explore: "Смотреть Коллекцию",
+        hero_stat1: "Итальянский Стандарт",
+        hero_stat2: "Сертифицированные Бриллианты",
+        hero_stat3: "Госпробирный Надзор",
+        hero_card_tag: "Milan Fashion Week Highlight",
+        hero_card_title: "Collezione Regina • 18K Yellow Gold",
+        trust_item1_title: "Золото 18K (750° Проба)",
+        trust_item1_desc: "Официальное сертифицированное клеймо фабрик Ареццо и Виченцы.",
+        trust_item2_title: "Клеймо Пробирной Палаты",
+        trust_item2_desc: "Строжайшая экспертиза и лазерное клеймо Государственной Пробирной Палаты РУз.",
+        trust_item3_title: "Сертификация GIA / IGI",
+        trust_item3_desc: "Лазерный международный номер и паспорт для каждого камня от 0.30 карат.",
+        trust_item4_title: "Пожизненный Сервис & Подгонка",
+        trust_item4_desc: "Бесплатная посадка под ваш размер, полировка и ежегодное обслуживание.",
+        col_tag: "Эксклюзивные Коллекции Aurum",
+        col_title: "Шедевры Ювелирного Искусства <span class='italic font-light text-ink-500'>& Безупречный Вкус</span>",
+        hint_click_full: "Нажмите на изделие — откроется полный экран",
+        cat_all: "Все Изделия",
+        cat_rings: "Кольца & Солитеры",
+        cat_necklaces: "Колье & Цепи",
+        cat_bridal: "Свадебные Сеты & Сарпо",
+        cat_investment: "Инвестиционное Золото 999.9",
+        price_label: "Цена:",
+        banner_lock: "Закрытая Приватная Коллекция",
+        banner_title: "120+ Особенных Изделий, Не Представленных на Витринах",
+        banner_desc: "Редкие лоты с аукционов Антверпена и Милана, а также изделия под индивидуальный заказ собраны в нашем закрытом каталоге.",
+        craft_badge: "Почему 18K (750°) Итальянское Золото?",
+        craft_title: "Благородный Блеск, <span class='italic font-light text-ink-500'>Переходящий Через Поколения</span>.",
+        craft_p1: "В отличие от распространенной 585° (14K) пробы, итальянский сплав 750° содержит 75% чистого золота и запатентованную лигатуру. Это придает украшениям благородный оттенок, высокую прочность и 100% гипоаллергенность при контакте с кожей.",
+        craft_pure_label: "Высший Итальянский Стандарт",
+        craft_origin: "Оригинальное Происхождение",
+        craft_point1_t: "Контроль Пробирной Палаты РУз",
+        craft_point1_d: "Каждое изделие проходит государственную экспертизу и лазерное клеймение после ввоза в Узбекистан.",
+        craft_point2_t: "Запатентованная Плотность и Сплав",
+        craft_point2_d: "Не пустотелое литье, а высокоточная компрессия сплава для долговечности замков и звеньев.",
+        craft_call_expert: "Звонок Ювелирному Эксперту",
+        dia_tag: "Безупречная Геометрия & Чистота",
+        dia_title: "Природные Бриллианты <span class='italic font-light text-ink-500'>Сертификации GIA & IGI</span>",
+        dia_desc: "Мы отбираем исключительно камни этичного происхождения высших категорий цвета D-F и чистоты VVS огранки Антверпена и Тель-Авива.",
+        dia_c1_t: "Carat (Вес)",
+        dia_c1_d: "Бриллианты от 0.30 до 5.00+ карат с индивидуальным подбором и международным сертификатом.",
+        dia_c2_t: "Clarity (Чистота)",
+        dia_c2_d: "Категории IF, VVS1 и VVS2. Абсолютная чистота, незаметная даже под микроскопом.",
+        dia_c3_t: "Color (Цвет)",
+        dia_c3_d: "Категории D, E, F — абсолютно бесцветные, ледяные камни с максимальной дисперсией света.",
+        dia_c4_t: "Cut (Огранка)",
+        dia_c4_d: "Огранка Triple Excellent — совершенная игра граней и световых всполохов.",
+        lead_tag: "Персональный Ювелирный Сервис",
+        lead_title: "Скачайте VIP-Каталог <br><span class='italic font-light text-ink-500'>& Запишитесь на Закрытую Примерку</span>",
+        lead_desc: "Оставьте контакт, и мы вышлем в Telegram полный PDF-каталог 2026 года с закрытыми ценами. Также вы получите приглашение на приватный кофе-сеанс с геммологом в нашем бутике.",
+        lead_perk1: "Актуальные цены и точный вес изделий",
+        lead_perk2: "Бесплатная подгонка под точный размер",
+        lead_perk3: "Мгновенный ответ консьержа в Telegram",
+        form_name_label: "Ваше Имя и Фамилия",
+        form_phone_label: "Номер Телефона",
+        form_interest_label: "Интересующее Направление",
+        opt_all: "Полный Lookbook 2026 (Все категории)",
+        opt_bridal: "Свадебные Сеты и Сарпо",
+        opt_diamonds: "Бриллиантовые Солитеры GIA",
+        opt_invest: "Инвестиционные Слитки 999.9",
+        form_submit_btn: "Получить Каталог в Telegram",
+        form_privacy: "Конфиденциальность гарантирована. Без спама, только закрытый каталог.",
+        form_success_t: "Благодарим! Запрос успешно принят",
+        form_success_d: "Наш консьерж вышлет PDF-каталог и приглашение в течение 5 минут.",
+        form_success_tg: "Открыть Напрямую в Telegram",
+        btq_tag: "Флагманский Бутик",
+        btq_title: "Приватный Ювелирный Lounge <br><span class='italic font-light text-ink-500'>В Центре Ташкента</span>",
+        btq_desc: "Ждем вас в роскошных залах на Mirabad Avenue. Удобный паркинг, закрытые переговорные для комфортной примерки и консультации сертифицированного геммолога.",
+        btq_addr_title: "Адрес Бутика:",
+        btq_hours_title: "Режим Работы:",
+        btq_contact_title: "Контакты и Консьерж:",
+        rev_tag: "Отзывы Клиентов",
+        rev_title: "Доверие & Высокий Статус",
+        rev1_text: "\"Заказывали полный комплект 18K для сарпо невесты. В Ташкенте сложно найти столь чистый итальянский дизайн и сертифицированные бриллианты. Уровень приватного сервиса 10 из 10.\"",
+        rev2_text: "\"Купил кольцо-солитер 0.70ct с сертификатом GIA. Проверили лазерный номер на камне под микроскопом прямо в бутике, все идеально. Клеймо пробирной палаты на месте. Спасибо!\"",
+        rev3_text: "\"Самое надежное место для покупки инвестиционного золота 999.9 в Ташкенте. Честные биржевые котировки, полная безопасность и конфиденциальность сделки.\"",
+        mob_call: "Звонок",
+        mob_catalog: "Каталог",
+        modal_desc: "Для бронирования этого изделия, заказа персонального видео-обзора или примерки в бутике нажмите ниже:",
+        modal_btn_tg: "Запросить в Telegram (С кодом изделия)",
+        modal_cat_title: "VIP Lookbook 2026 & Прайс-лист",
+        modal_cat_desc: "Оставьте телефон, каталог поступит в ваш Telegram в течение 2 минут.",
+        // Fullscreen strings
+        fs_back_btn: "Назад в каталог",
+        fs_hallmark_t: "Официальное Клеймо Пробирной Палаты",
+        fs_hallmark_d: "Изделие прошло лазерную государственную экспертизу Пробирной Палаты РУз и имеет подтвержденную 750° пробу.",
+        fs_stock_status: "В Наличии в Бутике (1 экз.)",
+        fs_uzs_label: "Эквивалент в сумах:",
+        fs_desc_title: "Об Изделии",
+        fs_specs_title: "Ювелирные Параметры:",
+        spec_metal: "Металл и Проба:",
+        spec_stones: "Характеристика Камней:",
+        spec_weight: "Общий Вес:",
+        spec_origin: "Происхождение:",
+        spec_service: "Сервис и Подгонка:",
+        spec_service_val: "Бесплатная посадка под ваш размер",
+        fs_cta_sub: "Персональный Консьерж-Сервис",
+        fs_cta_head: "Личная Примерка & Бронирование Изделия",
+        fs_cta_body: "Запишитесь на закрытую примерку в бутике на Mirabad Avenue или запросите персональный видеообзор изделия в Telegram:",
+        fs_btn_tg: "Запросить в Telegram (С кодом изделия)",
+        fs_btn_call: "Позвонить в Бутик",
+        fs_btn_fit: "Примерка в VIP-Зале",
+        fs_form_head: "Запись на примерку на Mirabad Avenue:",
+        fs_form_submit: "Забронировать Время",
+        fs_t1: "100% Страхование покупки",
+        fs_t2: "Приватный VIP-кабинет",
+        fs_t3: "Бесплатная подгонка размера",
+        fs_t4: "Бессрочная полировка и чистка"
+      }
+    };
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+      if (!dict) return;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      if (lang === 'uz') {
+        document.getElementById('lang-uz')?.classList.add('text-gold-700', 'font-bold');
+        document.getElementById('lang-uz')?.classList.remove('text-ink-500');
+        document.getElementById('lang-ru')?.classList.add('text-ink-500');
+        document.getElementById('lang-ru')?.classList.remove('text-gold-700', 'font-bold');
+      } else {
+        document.getElementById('lang-ru')?.classList.add('text-gold-700', 'font-bold');
+        document.getElementById('lang-ru')?.classList.remove('text-ink-500');
+        document.getElementById('lang-uz')?.classList.add('text-ink-500');
+        document.getElementById('lang-uz')?.classList.remove('text-gold-700', 'font-bold');
+      }
+
+      // Re-render catalog cards with updated language
+      renderProductCards();
+
+      // If fullscreen view is currently open, re-render it
+      if (currentActiveProduct) {
+        openProductDetail(currentActiveProduct.id);
+      }
+
+      lucide.createIcons();
+    }
+
+    // Category Filtering
+    function filterCategory(category) {
+      const buttons = document.querySelectorAll('.cat-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-cat') === category) {
+          btn.classList.add('bg-ink-900', 'text-white');
+          btn.classList.remove('bg-white', 'text-ink-700');
+        } else {
+          btn.classList.remove('bg-ink-900', 'text-white');
+          btn.classList.add('bg-white', 'text-ink-700');
+        }
+      });
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      if (nav.classList.contains('-translate-x-full')) {
+        nav.classList.remove('-translate-x-full');
+      } else {
+        nav.classList.add('-translate-x-full');
+      }
+    }
+
+    // Direct Concierge Modal Functions
+    function openConciergeModal(title, sku, price) {
+      document.getElementById('modal-item-title').innerText = title;
+      document.getElementById('modal-item-sku').innerText = sku;
+      document.getElementById('modal-item-price').innerText = price;
+
+      const tgMessage = encodeURIComponent(`Assalomu alaykum, Aurum Gold! Men ushbu zargarlik buyumini butikda ko'rish yoki band qilishni xohlayman:\n\n• Mahsulot: ${title}\n• Kodi: ${sku}\n• Narxi: ${price}\n\nIltimos, mavjudligi va o'lchamini aniqlashtirib bersangiz.`);
+      document.getElementById('modal-telegram-btn').href = `https://t.me/aurumgold_uz?text=${tgMessage}`;
+
+      const modal = document.getElementById('concierge-modal');
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeConciergeModal() {
+      document.getElementById('concierge-modal').classList.add('hidden');
+    }
+
+    // VIP Catalog Lead Modal
+    function openVipCatalogModal() {
+      document.getElementById('vip-catalog-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeVipCatalogModal() {
+      document.getElementById('vip-catalog-modal').classList.add('hidden');
+    }
+
+    // Close Modals on Backdrop Click & ESC key
+    window.addEventListener('click', function(e) {
+      const cModal = document.getElementById('concierge-modal');
+      const vModal = document.getElementById('vip-catalog-modal');
+      if (e.target === cModal) closeConciergeModal();
+      if (e.target === vModal) closeVipCatalogModal();
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeProductDetail();
+        closeConciergeModal();
+        closeVipCatalogModal();
+      }
+    });
+
+    // Form Submissions
+    function handleVipFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('vip-catalog-form');
+      const success = document.getElementById('form-success-msg');
+      const name = document.getElementById('lead-name').value;
+      const phone = document.getElementById('lead-phone').value;
+      const interest = document.getElementById('lead-interest').value;
+
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+
+      const tgText = encodeURIComponent(`Salom! Men Aurum Gold 2026 VIP Lookbook katalogini so'rayman.\nIsm: ${name}\nTel: +998 ${phone}\nYo'nalish: ${interest}`);
+      setTimeout(() => {
+        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+      }, 1200);
+    }
+
+    function handleModalCatalogSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('m-name').value;
+      const phone = document.getElementById('m-phone').value;
+      const successDiv = document.getElementById('modal-success');
+
+      successDiv.classList.remove('hidden');
+      const tgText = encodeURIComponent(`Salom! Men Aurum Gold VIP Lookbook so'rayman.\nIsm: ${name}\nTel: +998 ${phone}`);
+      setTimeout(() => {
+        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+      }, 1000);
+    }
+
+    // Phone Number Input Masking (+998 formatting helper)
+    const phoneInputs = [document.getElementById('lead-phone'), document.getElementById('m-phone'), document.getElementById('fit-phone')];
+    phoneInputs.forEach(input => {
+      if (!input) return;
+      input.addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,2})(\d{0,2})/);
+        if (!x[2]) {
+          e.target.value = x[1];
+        } else {
+          e.target.value = `(${x[1]}) ${x[2]}` + (x[3] ? `-${x[3]}` : '') + (x[4] ? `-${x[4]}` : '');
+        }
+      });
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 40) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProductCards();
+      lucide.createIcons();
+    });
+    renderProductCards();
+  </script>
+</body>
+</html>
