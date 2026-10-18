@@ -143,15 +143,18 @@
     }
 
     /* Fullscreen View Animations */
-    #product-fullscreen-view {
+    #product-fullscreen-view,
+    #wishlist-fullscreen-view {
       transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    #product-fullscreen-view.view-hidden {
+    #product-fullscreen-view.view-hidden,
+    #wishlist-fullscreen-view.view-hidden {
       opacity: 0;
       pointer-events: none;
       transform: scale(0.985);
     }
-    #product-fullscreen-view.view-visible {
+    #product-fullscreen-view.view-visible,
+    #wishlist-fullscreen-view.view-visible {
       opacity: 1;
       pointer-events: auto;
       transform: scale(1);
@@ -241,13 +244,14 @@
 
         <!-- Wishlist Header Button with Badge -->
         <button 
-          onclick="openWishlistModal()" 
-          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95" 
+          id="header-wishlist-btn"
+          onclick="openWishlistPage()" 
+          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
-          <i data-lucide="heart" class="w-4 h-4 text-ink-800"></i>
-          <span id="wishlist-badge-header" class="absolute -top-1.5 -right-1.5 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm">0</span>
+          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
+          <span id="wishlist-badge-header" class="absolute -top-1.5 -right-1.5 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
         </button>
 
         <button onclick="openVipCatalogModal()" class="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-ink-900 hover:bg-gold-600 text-white font-semibold text-xs tracking-widest uppercase overflow-hidden shadow-md transition-all duration-300">
@@ -278,8 +282,8 @@
       </div>
 
       <!-- Quick Wishlist Shortcut in Mobile Menu -->
-      <div class="mt-6 p-4 rounded-sm bg-white border border-gold-metallic/30 shadow-sm flex items-center justify-between">
-        <div class="flex items-center gap-3">
+      <div onclick="toggleMobileNav(); openWishlistPage();" class="mt-6 p-4 rounded-sm bg-white border border-gold-metallic/30 shadow-sm flex items-center justify-between cursor-pointer active:scale-98 transition">
+        <div class="flex items-center gap-3 pointer-events-none">
           <div class="w-9 h-9 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center">
             <i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i>
           </div>
@@ -288,7 +292,7 @@
             <span id="wishlist-count-text-mob" class="text-[11px] text-ink-500">0 ta taqinchoq saqlangan</span>
           </div>
         </div>
-        <button onclick="toggleMobileNav(); openWishlistModal();" class="px-3.5 py-1.5 bg-ink-900 text-white rounded-sm text-xs font-bold uppercase tracking-wider active:scale-95 transition">
+        <button type="button" onclick="event.stopPropagation(); toggleMobileNav(); openWishlistPage();" class="px-3.5 py-1.5 bg-ink-900 text-white rounded-sm text-xs font-bold uppercase tracking-wider active:scale-95 transition">
           Ko'rish
         </button>
       </div>
@@ -1351,71 +1355,235 @@
     </div>
   </div>
 
-  <!-- ================= WISHLIST MODAL (SEVIMLILAR) ================= -->
-  <div id="wishlist-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
-    <div class="bg-white rounded-sm max-w-2xl w-full p-5 sm:p-7 border border-gold-metallic/40 relative shadow-2xl flex flex-col max-h-[90vh]">
+  <!-- ================= DEDICATED FULLSCREEN WISHLIST VIEW (ALOHIDA SAHIFA) ================= -->
+  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
+    
+    <!-- Top Sticky Bar inside Wishlist view -->
+    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
+      <button onclick="closeWishlistPage()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
+        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </div>
+        <span>Katalogga qaytish</span>
+      </button>
+
+      <!-- Brand Center -->
+      <div class="text-center">
+        <span class="font-serif text-base sm:text-lg tracking-[0.22em] text-gold-700 font-bold uppercase">
+          AURUM GOLD
+        </span>
+        <span class="block text-[8px] tracking-[0.3em] uppercase text-rose-600 font-bold">
+          SEVIMLILAR • WISHLIST
+        </span>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="clearAllWishlist()" id="wl-clear-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-ivory-100 border border-zinc-200 text-xs text-ink-500 hover:text-rose-600 hover:border-rose-300 transition" title="Barchasini tozalash">
+          <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+          <span>Tozalash</span>
+        </button>
+        <button onclick="closeWishlistPage()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close Wishlist">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       
-      <!-- Modal Header -->
-      <div class="flex items-start justify-between pb-4 border-b border-gold-metallic/20">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-ink-500 mb-6 font-medium">
+        <a href="#collections" onclick="closeWishlistPage()" class="hover:text-gold-700 transition">Kolleksiyalar</a>
+        <span>/</span>
+        <span class="text-gold-700 font-bold">Sevimlilar (Wishlist)</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="pb-6 border-b border-gold-metallic/20 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="flex items-center gap-2 text-rose-600 text-xs font-bold uppercase tracking-wider mb-1">
-            <i data-lucide="heart" class="w-4 h-4 fill-rose-500 text-rose-500"></i>
-            <span data-i18n="wishlist_badge_title">Sizning Tanlovlaringiz</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 border border-rose-200 rounded-full text-rose-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-rose-500 text-rose-500"></i>
+            <span>Sizning Tanlovlaringiz</span>
+            <span id="wl-page-count-badge" class="ml-1 px-1.5 py-0.2 bg-rose-600 text-white rounded-full text-[9px] font-mono">0</span>
           </div>
-          <h3 class="font-serif text-2xl sm:text-3xl text-ink-900 font-bold" data-i18n="wishlist_modal_title">
+          <h1 class="font-serif text-2xl sm:text-4xl text-ink-900 font-bold">
             Saqlangan Zargarlik Buyumlari
-          </h3>
-          <p class="text-xs text-ink-500 mt-0.5" data-i18n="wishlist_modal_sub">
-            O'zingizga yoqqan taqinchoqlarni bir joyda ko'ring va bevosita butik konsyerjiga yuboring.
+          </h1>
+          <p class="text-xs sm:text-sm text-ink-600 max-w-2xl mt-1.5 leading-relaxed">
+            O'zingizga ma'qul kelgan benuqson 18K italyan oltini va sertifikatlangan olmoslar. Ushbu ro'yxatni to'g'ridan-to'g'ri butik konsyerjiga yuborishingiz yoki VIP zalda kiyib ko'rishga buyurtma berishingiz mumkin.
           </p>
         </div>
-        <button onclick="closeWishlistModal()" class="w-8 h-8 rounded-full bg-ivory-100 border border-zinc-200 text-ink-500 hover:text-ink-900 flex items-center justify-center transition active:scale-95" aria-label="Close wishlist">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        
+        <div class="flex items-center gap-2">
+          <button onclick="clearAllWishlist()" id="wl-clear-btn-mob" class="sm:hidden text-xs text-ink-500 hover:text-rose-600 flex items-center gap-1.5 py-1 px-2.5 rounded bg-zinc-100">
+            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+            <span>Barchasini tozalash</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Empty State View (Shown when 0 items) -->
+      <div id="wl-empty-state" class="py-16 text-center space-y-5 bg-white border border-gold-metallic/25 rounded-sm p-8 max-w-lg mx-auto shadow-sm hidden">
+        <div class="w-20 h-20 mx-auto rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-500">
+          <i data-lucide="heart" class="w-10 h-10 stroke-[1.5]"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-2xl text-ink-900 font-bold">Sevimlilar ro'yxati bo'sh</h3>
+          <p class="text-xs sm:text-sm text-ink-600 max-w-md mx-auto mt-2 leading-relaxed">
+            Katalogdagi taqinchoqlarning ustidagi yurakcha tugmasini bosib, o'zingizga yoqqan modellarni shu yerga to'plashingiz mumkin.
+          </p>
+        </div>
+        <button onclick="closeWishlistPage(); location.href='#collections';" class="inline-flex items-center gap-2 px-7 py-3 bg-ink-900 hover:bg-gold-600 text-white rounded-sm text-xs uppercase tracking-widest font-bold shadow-md transition-all active:scale-95">
+          <i data-lucide="sparkles" class="w-4 h-4 text-gold-300"></i>
+          <span>Kolleksiyani Ko'rish</span>
         </button>
       </div>
 
-      <!-- Modal Body: Items List (Scrollable) -->
-      <div id="wishlist-items-container" class="py-4 overflow-y-auto divide-y divide-zinc-100 flex-grow space-y-3">
-        <!-- Dynamically populated via JS -->
-      </div>
+      <!-- Content When Items Exist -->
+      <div id="wl-content-section" class="space-y-10">
+        <!-- 2 Columns on Mobile, 3 on md, 4 on xl -->
+        <div id="wl-items-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+          <!-- Dynamically populated via renderWishlistPage() -->
+        </div>
 
-      <!-- Modal Footer: Summary & Actions -->
-      <div id="wishlist-footer" class="pt-4 border-t border-gold-metallic/20 space-y-3">
-        <div class="flex items-center justify-between text-xs sm:text-sm">
-          <span class="text-ink-600 font-medium" data-i18n="wishlist_total_label">Umumiy hisoblangan qiymat:</span>
-          <div class="text-right">
-            <span id="wishlist-total-usd" class="font-serif text-lg sm:text-xl text-gold-700 font-bold">$0</span>
-            <span id="wishlist-total-uzs" class="text-[10px] sm:text-xs text-ink-500 block font-mono">~ 0 UZS</span>
+        <!-- Order / Concierge Form Box (Submits directly to Telegram Bot!) -->
+        <div class="bg-white border-2 border-gold-metallic/40 rounded-sm p-5 sm:p-8 shadow-xl relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-48 h-48 bg-gold-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            
+            <!-- Summary Info -->
+            <div class="lg:col-span-5 space-y-3">
+              <div class="inline-flex items-center gap-2 text-gold-700 text-xs font-bold uppercase tracking-wider">
+                <i data-lucide="crown" class="w-4 h-4 text-gold-metallic"></i>
+                <span>VIP Konsyerj Xizmati</span>
+              </div>
+              <h3 class="font-serif text-xl sm:text-2xl text-ink-900 font-bold">
+                Tanlangan Buyumlarga Buyurtma Berish
+              </h3>
+              <p class="text-xs text-ink-600 leading-relaxed">
+                Ismingiz va telefon raqamingizni qoldiring. Barcha tanlangan taqinchoqlar ro'yxati rasmiy konsyerjimizga yetkaziladi va 5 daqiqada siz bilan bog'lanamiz.
+              </p>
+
+              <div class="pt-3 border-t border-gold-metallic/20">
+                <div class="text-xs text-ink-500 font-medium">Umumiy hisoblangan qiymat:</div>
+                <div class="flex items-baseline gap-2 mt-0.5">
+                  <span id="wl-total-usd" class="font-serif text-2xl sm:text-3xl text-gold-700 font-bold">$0</span>
+                  <span id="wl-total-uzs" class="text-xs sm:text-sm text-ink-500 font-mono">~ 0 UZS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Lead Form -->
+            <div class="lg:col-span-7 bg-ivory-100 p-4 sm:p-6 rounded-sm border border-gold-metallic/25">
+              
+              <!-- Success State -->
+              <div id="wl-lead-success" class="hidden py-6 text-center space-y-3">
+                <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <i data-lucide="check-circle" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-ink-900">Buyurtmangiz Muvaffaqiyatli Qabul Qilindi!</h4>
+                <p class="text-xs text-ink-600 max-w-sm mx-auto">
+                  Tanlangan zargarlik buyumlari ma'lumotlari konsyerjimizga yuborildi. Tez orada siz bilan bog'lanamiz.
+                </p>
+                <div class="pt-2">
+                  <a id="wl-open-tg-direct" href="https://t.me/aurumgold_uz" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Telegramda Chatni Ochish</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Input Form -->
+              <form id="wl-lead-form" onsubmit="handleWishlistLeadSubmit(event)" class="space-y-3.5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-ink-700 mb-1">
+                      Ismingiz:
+                    </label>
+                    <input 
+                      type="text" 
+                      id="wl-name" 
+                      required 
+                      placeholder="Masalan: Nilufar" 
+                      class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-sm text-sm focus:outline-none focus:border-gold-600"
+                    >
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-ink-700 mb-1">
+                      Telefon Raqamingiz:
+                    </label>
+                    <div class="flex">
+                      <span class="inline-flex items-center px-2.5 bg-zinc-100 border border-r-0 border-gold-metallic/30 rounded-l-sm text-xs font-bold text-ink-700">
+                        +998
+                      </span>
+                      <input 
+                        type="tel" 
+                        id="wl-phone" 
+                        required 
+                        placeholder="(90) 123-45-67" 
+                        class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-r-sm text-sm focus:outline-none focus:border-gold-600"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+                  <button 
+                    type="submit" 
+                    id="wl-submit-btn"
+                    class="flex-1 py-3 px-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98"
+                  >
+                    <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+                    <span>Buyurtmani Yuborish (Telegram Bot)</span>
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="sendWishlistToTelegramDirect()"
+                    class="py-3 px-4 bg-white hover:bg-zinc-50 border border-gold-metallic/40 text-ink-800 font-bold text-xs uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2"
+                  >
+                    <i data-lucide="message-circle" class="w-4 h-4 text-gold-600"></i>
+                    <span>Telegramda Chat</span>
+                  </button>
+                </div>
+
+                <p class="text-[10px] text-ink-500 text-center sm:text-left">
+                  🔒 Ma'lumotlaringiz maxfiy saqlanadi va bevosita butik konsyerjiga yuboriladi.
+                </p>
+              </form>
+
+            </div>
+
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          <button 
-            onclick="sendWishlistToTelegram()" 
-            class="py-3 px-4 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 hover:from-gold-700 hover:to-gold-700 text-white font-bold text-xs uppercase tracking-wider rounded-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2"
-          >
-            <i data-lucide="send" class="w-4 h-4 text-white"></i>
-            <span data-i18n="wishlist_btn_tg">Barchasini Telegramga Yuborish</span>
-          </button>
-
-          <button 
-            onclick="closeWishlistModal(); openVipCatalogModal();" 
-            class="py-3 px-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2"
-          >
-            <i data-lucide="calendar" class="w-4 h-4 text-gold-300"></i>
-            <span data-i18n="wishlist_btn_fit">VIP Zalda Kiyishga Yozilish</span>
-          </button>
-        </div>
       </div>
 
     </div>
   </div>
 
   <!-- ================= FLOATING TOAST NOTIFICATION ================= -->
-  <div id="wishlist-toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] bg-ink-900/95 backdrop-blur-md text-white px-5 py-3 rounded-full border border-gold-metallic/50 shadow-2xl flex items-center gap-2.5 text-xs font-medium transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+  <div id="wishlist-toast" onclick="openWishlistPage()" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] bg-ink-900/95 backdrop-blur-md text-white px-5 py-3 rounded-full border border-gold-metallic/50 shadow-2xl flex items-center gap-2.5 text-xs font-medium transition-all duration-300 opacity-0 pointer-events-none translate-y-4 cursor-pointer">
     <i id="toast-icon" data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
     <span id="toast-text">Sevimlilarga qo'shildi</span>
+    <span class="text-gold-300 underline ml-1 font-bold">Ko'rish →</span>
   </div>
+
+  <!-- ================= FLOATING WISHLIST PILL (APPEARS WHEN ITEMS > 0) ================= -->
+  <button 
+    id="floating-wishlist-pill" 
+    onclick="openWishlistPage()" 
+    class="fixed bottom-20 right-4 z-40 bg-ink-900/95 hover:bg-gold-600 text-white px-3.5 py-2.5 rounded-full border border-gold-metallic/50 shadow-2xl flex items-center gap-2 text-xs font-bold transition-all duration-300 opacity-0 pointer-events-none translate-y-4 hover:scale-105 active:scale-95 cursor-pointer"
+    title="Sevimlilar ro'yxatini ochish"
+  >
+    <div class="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center pointer-events-none">
+      <i data-lucide="heart" class="w-3.5 h-3.5 fill-white text-white"></i>
+    </div>
+    <span class="pointer-events-none font-medium">Sevimlilar</span>
+    <span id="floating-wishlist-badge" class="bg-gold-400 text-ink-900 px-1.5 py-0.2 rounded-full text-[10px] font-bold font-mono pointer-events-none">0</span>
+  </button>
 
   <!-- ================= DIRECT PRODUCT CONCIERGE MODAL (FALLBACK / QUICK) ================= -->
   <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
@@ -1796,6 +1964,41 @@
       updateWishlistUI();
     }
 
+    // ================= TELEGRAM BOT LEAD INTEGRATION =================
+    const TG_BOT_TOKEN = "8900926940:AAErrG_GCxcl_6SgkX5UyiuXmGqF0BxFzRI";
+    const TG_ADMIN_CHAT_ID = "1321389887";
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    async function sendTelegramLeadNotification(messageHtml) {
+      try {
+        const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            chat_id: TG_ADMIN_CHAT_ID,
+            text: messageHtml,
+            parse_mode: "HTML"
+          })
+        });
+        const data = await res.json();
+        console.log("Telegram Bot delivery result:", data);
+        return data.ok;
+      } catch (err) {
+        console.warn("Telegram bot request error:", err);
+        return false;
+      }
+    }
+
     function updateWishlistUI() {
       const list = getWishlist();
       const count = list.length;
@@ -1808,6 +2011,20 @@
           badge.classList.remove('hidden');
         } else {
           badge.classList.add('hidden');
+        }
+      }
+
+      // Update Floating Pill
+      const pill = document.getElementById('floating-wishlist-pill');
+      const pillBadge = document.getElementById('floating-wishlist-badge');
+      if (pill && pillBadge) {
+        if (count > 0) {
+          pillBadge.innerText = count;
+          pill.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+          pill.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          pill.classList.remove('opacity-100', 'translate-y-0');
+          pill.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
         }
       }
 
@@ -1859,10 +2076,10 @@
         }
       }
 
-      // If wishlist modal is open, re-render it
-      const modal = document.getElementById('wishlist-modal');
-      if (modal && !modal.classList.contains('hidden')) {
-        renderWishlistModal();
+      // If Wishlist fullscreen view is open, re-render it
+      const wView = document.getElementById('wishlist-fullscreen-view');
+      if (wView && wView.classList.contains('view-visible')) {
+        renderWishlistPage();
       }
     }
 
@@ -1893,119 +2110,209 @@
       toastTimer = setTimeout(() => {
         toast.classList.remove('opacity-100', 'translate-y-0');
         toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-      }, 2500);
+      }, 3000);
     }
 
-    function openWishlistModal() {
-      renderWishlistModal();
-      const modal = document.getElementById('wishlist-modal');
-      if (modal) {
-        modal.classList.remove('hidden');
+    // ================= FULLSCREEN WISHLIST PAGE HANDLERS =================
+    function openWishlistPage() {
+      renderWishlistPage();
+      const wView = document.getElementById('wishlist-fullscreen-view');
+      if (wView) {
+        wView.classList.remove('view-hidden');
+        wView.classList.add('view-visible');
         document.body.style.overflow = 'hidden';
+        wView.scrollTop = 0;
       }
       lucide.createIcons();
     }
 
-    function closeWishlistModal() {
-      const modal = document.getElementById('wishlist-modal');
-      if (modal) {
-        modal.classList.add('hidden');
-        const fsView = document.getElementById('product-fullscreen-view');
-        if (!fsView || fsView.classList.contains('view-hidden')) {
+    function openWishlistModal() {
+      openWishlistPage();
+    }
+
+    function closeWishlistPage() {
+      const wView = document.getElementById('wishlist-fullscreen-view');
+      if (wView) {
+        wView.classList.remove('view-visible');
+        wView.classList.add('view-hidden');
+        const pView = document.getElementById('product-fullscreen-view');
+        if (!pView || pView.classList.contains('view-hidden')) {
           document.body.style.overflow = '';
         }
       }
     }
 
-    function renderWishlistModal() {
-      const container = document.getElementById('wishlist-items-container');
-      const footer = document.getElementById('wishlist-footer');
-      if (!container) return;
+    function closeWishlistModal() {
+      closeWishlistPage();
+    }
 
+    function clearAllWishlist() {
+      const promptText = currentLang === 'uz' ? "Sevimlilar ro'yxatidagi barcha taqinchoqlarni o'chirishni xohlaysizmi?" : "Очистить список избранных изделий?";
+      if (confirm(promptText)) {
+        saveWishlist([]);
+        updateWishlistUI();
+        renderWishlistPage();
+      }
+    }
+
+    function renderWishlistPage() {
       const list = getWishlist();
-      const items = productsDB.filter(p => list.includes(p.id));
+      const count = list.length;
+      const countBadge = document.getElementById('wl-page-count-badge');
+      if (countBadge) countBadge.innerText = count;
 
-      if (items.length === 0) {
-        container.innerHTML = `
-          <div class="py-12 text-center space-y-4">
-            <div class="w-16 h-16 mx-auto rounded-full bg-ivory-100 border border-gold-metallic/30 flex items-center justify-center text-gold-700">
-              <i data-lucide="heart" class="w-8 h-8 text-gold-metallic"></i>
-            </div>
-            <div>
-              <h4 class="font-serif text-lg sm:text-xl text-ink-900 font-bold">
-                ${currentLang === 'uz' ? "Sevimlilar ro'yxati hozircha bo'sh" : "Список избранного пока пуст"}
-              </h4>
-              <p class="text-xs text-ink-500 max-w-sm mx-auto mt-1 leading-relaxed">
-                ${currentLang === 'uz' ? "Katalogdagi taqinchoqlarning yurakcha tugmasini bosib, o'zingizga ma'qul buyumlarni shu yerda saqlashingiz mumkin." : "Нажимайте на сердечко у понравившихся изделий в каталоге, чтобы сохранить их здесь."}
-              </p>
-            </div>
-            <button onclick="closeWishlistModal(); location.href='#collections';" class="px-6 py-2.5 bg-ink-900 hover:bg-gold-600 text-white rounded-sm text-xs uppercase tracking-widest font-bold transition shadow-sm">
-              ${currentLang === 'uz' ? "Katalogga O'tish" : "Перейти в Каталог"}
-            </button>
-          </div>
-        `;
-        if (footer) footer.style.display = 'none';
+      const emptyView = document.getElementById('wl-empty-state');
+      const contentView = document.getElementById('wl-content-section');
+      const grid = document.getElementById('wl-items-grid');
+      const totalUsdEl = document.getElementById('wl-total-usd');
+      const totalUzsEl = document.getElementById('wl-total-uzs');
+
+      if (count === 0) {
+        if (emptyView) emptyView.classList.remove('hidden');
+        if (contentView) contentView.classList.add('hidden');
         lucide.createIcons();
         return;
       }
 
-      if (footer) footer.style.display = 'block';
+      if (emptyView) emptyView.classList.add('hidden');
+      if (contentView) contentView.classList.remove('hidden');
 
-      // Calculate totals
-      let totalUsdNum = 0;
-      items.forEach(it => {
-        const num = parseInt(it.price_usd.replace(/\D/g, ''), 10) || 0;
-        totalUsdNum += num;
-      });
+      const items = productsDB.filter(p => list.includes(p.id));
 
-      const totalUzsFormatted = (totalUsdNum * 12850).toLocaleString('uz-UZ') + " UZS";
-      const totalUsdFormatted = "$" + totalUsdNum.toLocaleString('en-US');
+      let totalUsd = 0;
+      grid.innerHTML = '';
 
-      document.getElementById('wishlist-total-usd').innerText = totalUsdFormatted;
-      document.getElementById('wishlist-total-uzs').innerText = "~ " + totalUzsFormatted;
+      items.forEach(item => {
+        const numPrice = parseInt(item.price_usd.replace(/\D/g, ''), 10) || 0;
+        totalUsd += numPrice;
 
-      container.innerHTML = '';
-      items.forEach(it => {
-        const title = currentLang === 'uz' ? it.title_uz : it.title_ru;
-        const row = document.createElement('div');
-        row.className = "py-3 flex items-center justify-between gap-3";
-        row.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 cursor-pointer" onclick="closeWishlistModal(); openProductDetail('${it.id}');">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-sm overflow-hidden bg-ivory-100 border border-gold-metallic/30 shrink-0">
-              <img src="${it.images[0].url}" alt="${title}" class="w-full h-full object-cover">
-            </div>
-            <div class="min-w-0">
-              <div class="text-[9px] font-mono text-ink-500 uppercase tracking-widest">SKU: ${it.id} • ${it.purity_badge}</div>
-              <h4 class="font-serif text-sm sm:text-base font-bold text-ink-900 truncate hover:text-gold-700 transition">${title}</h4>
-              <div class="flex items-baseline gap-2 mt-0.5">
-                <span class="font-serif text-sm sm:text-base text-gold-700 font-bold">${it.price_usd}</span>
-                <span class="text-[9px] sm:text-[10px] text-ink-500 font-mono">${it.price_uzs}</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button 
-              onclick="closeWishlistModal(); openProductDetail('${it.id}');" 
-              class="hidden sm:inline-flex px-3 py-1.5 bg-ivory-100 hover:bg-gold-600 hover:text-white text-ink-900 border border-gold-metallic/30 rounded text-xs font-bold uppercase tracking-wider transition"
+        const title = currentLang === 'uz' ? item.title_uz : item.title_ru;
+
+        const card = document.createElement('div');
+        card.className = "luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between group transition-all duration-300 relative";
+        card.innerHTML = `
+          <div class="relative aspect-square overflow-hidden bg-ivory-100 cursor-pointer" onclick="openProductDetail('${item.id}')">
+            <img 
+              src="${item.images[0].url}" 
+              alt="${title}" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             >
-              ${currentLang === 'uz' ? "Ko'rish" : "Открыть"}
-            </button>
+            <div class="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
+              <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/30 shadow-sm">
+                ${item.purity_badge}
+              </span>
+              ${item.extra_badge ? `
+              <span class="px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
+                ${item.extra_badge}
+              </span>
+              ` : ''}
+            </div>
+
+            <!-- Remove Button -->
             <button 
-              onclick="toggleWishlist('${it.id}', event)" 
-              class="w-8 h-8 rounded-full hover:bg-rose-50 text-zinc-400 hover:text-rose-600 flex items-center justify-center transition" 
+              onclick="toggleWishlist('${item.id}', event)" 
+              class="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-md border border-rose-300 text-rose-500 hover:bg-rose-50 flex items-center justify-center transition shadow-sm z-20 active:scale-90"
               title="${currentLang === 'uz' ? "O'chirish" : "Удалить"}"
             >
-              <i data-lucide="trash-2" class="w-4 h-4"></i>
+              <i data-lucide="trash-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
             </button>
           </div>
+
+          <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow">
+            <div>
+              <div class="text-[8px] sm:text-[10px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
+              <h3 
+                onclick="openProductDetail('${item.id}')"
+                class="font-serif text-xs sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] cursor-pointer hover:text-gold-700 transition"
+              >
+                ${title}
+              </h3>
+            </div>
+
+            <div class="mt-2 pt-2 border-t border-zinc-100 flex flex-col gap-2">
+              <div>
+                <span class="font-serif text-xs sm:text-lg text-gold-700 font-bold leading-tight">${item.price_usd}</span>
+                <span class="text-[8px] sm:text-[10px] text-ink-500 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
+              </div>
+              <button 
+                onclick="openProductDetail('${item.id}')"
+                class="w-full py-1.5 sm:py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-sm"
+              >
+                <i data-lucide="eye" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-300"></i>
+                <span>${currentLang === 'uz' ? "Batafsil Ko'rish" : "Подробнее"}</span>
+              </button>
+            </div>
+          </div>
         `;
-        container.appendChild(row);
+        grid.appendChild(card);
       });
+
+      const totalUzs = totalUsd * UZS_RATE;
+      if (totalUsdEl) totalUsdEl.innerText = `$${totalUsd.toLocaleString('en-US')}`;
+      if (totalUzsEl) totalUzsEl.innerText = `~ ${totalUzs.toLocaleString('uz-UZ')} UZS`;
 
       lucide.createIcons();
     }
 
-    function sendWishlistToTelegram() {
+    // Wishlist Lead Submission -> Direct to Telegram Bot
+    async function handleWishlistLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('wl-name').value;
+      const phone = document.getElementById('wl-phone').value;
+      const list = getWishlist();
+      const items = productsDB.filter(p => list.includes(p.id));
+
+      if (items.length === 0) return;
+
+      let itemsText = "";
+      let totalUsd = 0;
+      items.forEach((it, idx) => {
+        const title = currentLang === 'uz' ? it.title_uz : it.title_ru;
+        const num = parseInt(it.price_usd.replace(/\D/g, ''), 10) || 0;
+        totalUsd += num;
+        itemsText += `${idx + 1}. <b>${escapeHtml(title)}</b> (${it.id}) — ${it.price_usd}\n`;
+      });
+
+      const totalUzs = totalUsd * UZS_RATE;
+      const totalUsdStr = `$${totalUsd.toLocaleString('en-US')}`;
+      const totalUzsStr = `~ ${totalUzs.toLocaleString('uz-UZ')} UZS`;
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+
+      const botMsg = 
+        `❤️ <b>YANGI WISHLIST BUYURTMASI / SO'ROV</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
+        `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n\n` +
+        `🛍 <b>Tanlangan Mahsulotlar (${items.length} ta):</b>\n${itemsText}\n` +
+        `💰 <b>Umumiy Qiymat:</b> ${totalUsdStr} (${totalUzsStr})\n` +
+        `⏰ <b>Vaqt:</b> ${now}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+
+      sendTelegramLeadNotification(botMsg);
+
+      const form = document.getElementById('wl-lead-form');
+      const success = document.getElementById('wl-lead-success');
+      if (form) form.classList.add('hidden');
+      if (success) success.classList.remove('hidden');
+
+      const tgDirect = document.getElementById('wl-open-tg-direct');
+      if (tgDirect) {
+        const tgText = encodeURIComponent(
+          `Assalomu alaykum, Aurum Gold! Men saytingizdagi Wishlist orqali buyurtma qoldirdim:\n\n` +
+          `• Mijoz: ${name}\n` +
+          `• Telefon: +998 ${phone}\n` +
+          `• Buyumlar soni: ${items.length} ta\n` +
+          `• Umumiy qiymat: ${totalUsdStr}\n\n` +
+          `Iltimos, aloqaga chiqsangiz.`
+        );
+        tgDirect.href = `https://t.me/aurumgold_uz?text=${tgText}`;
+      }
+
+      lucide.createIcons();
+    }
+
+    function sendWishlistToTelegramDirect() {
       const list = getWishlist();
       const items = productsDB.filter(p => list.includes(p.id));
       if (items.length === 0) return;
@@ -2019,15 +2326,29 @@
         const title = currentLang === 'uz' ? it.title_uz : it.title_ru;
         const num = parseInt(it.price_usd.replace(/\D/g, ''), 10) || 0;
         totalUsd += num;
-        msg += `${idx + 1}. ${title} (SKU: ${it.id}) — ${it.price_usd}\n`;
+        msg += `${idx + 1}. ${title} (SKU: ${it.id})\n   Narxi: ${it.price_usd} (${it.price_uzs})\n`;
       });
 
-      msg += `\nUmumiy hisoblangan qiymat: $${totalUsd.toLocaleString('en-US')}\n`;
-      msg += currentLang === 'uz' 
-        ? "\nIltimos, butikda mavjudligi va kiyib ko'rish uchun qulay vaqtni belgilab bersangiz."
-        : "\nПодскажите, пожалуйста, наличие в бутике и удобное время для закрытой примерки.";
+      const totalUzs = totalUsd * UZS_RATE;
+      msg += currentLang === 'uz'
+        ? `\n💰 Umumiy hisoblangan qiymat: $${totalUsd.toLocaleString('en-US')} (~ ${totalUzs.toLocaleString('uz-UZ')} UZS)\n\nIltimos, butikda mavjudligini tasdiqlab bersangiz.`
+        : `\n💰 Общая ориентировочная стоимость: $${totalUsd.toLocaleString('en-US')} (~ ${totalUzs.toLocaleString('ru-RU')} UZS)\n\nПодскажите, пожалуйста, по наличию в бутике.`;
+
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      sendTelegramLeadNotification(
+        `❤️ <b>WISHLISTDAN TELEGRAMGA O'TISH</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🛍 <b>Mahsulotlar (${items.length} ta):</b>\n` +
+        items.map((it, i) => `${i+1}. ${escapeHtml(it.title_uz)} (${it.id})`).join('\n') +
+        `\n💰 <b>Jami:</b> $${totalUsd.toLocaleString('en-US')}\n` +
+        `⏰ <b>Vaqt:</b> ${now}`
+      );
 
       window.open(`https://t.me/aurumgold_uz?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function sendWishlistToTelegram() {
+      sendWishlistToTelegramDirect();
     }
 
     // Helper to generate consistent, luxurious 2-column mobile & 4-column desktop product cards
@@ -2292,13 +2613,31 @@
       const name = document.getElementById('fit-name').value;
       const phone = document.getElementById('fit-phone').value;
       const itemTitle = currentActiveProduct ? (currentLang === 'uz' ? currentActiveProduct.title_uz : currentActiveProduct.title_ru) : "Aurum Gold Jewelry";
+      const sku = currentActiveProduct ? currentActiveProduct.id : "-";
+      const priceUsd = currentActiveProduct ? currentActiveProduct.price_usd : "-";
+      const priceUzs = currentActiveProduct ? currentActiveProduct.price_uzs : "-";
 
       document.getElementById('fs-fitting-form').classList.add('hidden');
       document.getElementById('fit-success').classList.remove('hidden');
 
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      const botMsg = 
+        `💎 <b>VIP ZALDA KIYIB KO'RISHGA YOZILISH</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `💍 <b>Mahsulot:</b> ${escapeHtml(itemTitle)}\n` +
+        `🏷 <b>Kodi (SKU):</b> ${escapeHtml(sku)}\n` +
+        `💰 <b>Narxi:</b> ${escapeHtml(priceUsd)} (${escapeHtml(priceUzs)})\n` +
+        `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
+        `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
+        `⏰ <b>Vaqt:</b> ${now}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+
+      sendTelegramLeadNotification(botMsg);
+
       const tgText = encodeURIComponent(
         `Salom! Men butikda VIP kiyib ko'rishga yozilmoqchiman:\n` +
-        `• Mahsulot: ${itemTitle} (${currentActiveProduct ? currentActiveProduct.id : ''})\n` +
+        `• Mahsulot: ${itemTitle} (${sku})\n` +
         `• Mijoz: ${name}\n` +
         `• Telefon: +998 ${phone}`
       );
@@ -2669,6 +3008,18 @@
       const tgMessage = encodeURIComponent(`Assalomu alaykum, Aurum Gold! Men ushbu zargarlik buyumini butikda ko'rish yoki band qilishni xohlayman:\n\n• Mahsulot: ${title}\n• Kodi: ${sku}\n• Narxi: ${price}\n\nIltimos, mavjudligi va o'lchamini aniqlashtirib bersangiz.`);
       document.getElementById('modal-telegram-btn').href = `https://t.me/aurumgold_uz?text=${tgMessage}`;
 
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      sendTelegramLeadNotification(
+        `✨ <b>TEZKOR KONS'YERJ SO'ROVI (MODAL)</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `💍 <b>Mahsulot:</b> ${escapeHtml(title)}\n` +
+        `🏷 <b>Kodi (SKU):</b> ${escapeHtml(sku)}\n` +
+        `💰 <b>Narxi:</b> ${escapeHtml(price)}\n` +
+        `⏰ <b>Vaqt:</b> ${now}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 <i>aurumgold.uz orqali yuborildi</i>`
+      );
+
       const modal = document.getElementById('concierge-modal');
       modal.classList.remove('hidden');
       lucide.createIcons();
@@ -2692,18 +3043,16 @@
     window.addEventListener('click', function(e) {
       const cModal = document.getElementById('concierge-modal');
       const vModal = document.getElementById('vip-catalog-modal');
-      const wModal = document.getElementById('wishlist-modal');
       if (e.target === cModal) closeConciergeModal();
       if (e.target === vModal) closeVipCatalogModal();
-      if (e.target === wModal) closeWishlistModal();
     });
 
     window.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeProductDetail();
+        closeWishlistPage();
         closeConciergeModal();
         closeVipCatalogModal();
-        closeWishlistModal();
       }
     });
 
@@ -2719,6 +3068,19 @@
       form.classList.add('hidden');
       success.classList.remove('hidden');
 
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      const botMsg = 
+        `👑 <b>YANGI VIP LOOKBOOK SO'ROVI</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
+        `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
+        `💎 <b>Qiziqish:</b> ${escapeHtml(interest)}\n` +
+        `⏰ <b>Vaqt:</b> ${now}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+
+      sendTelegramLeadNotification(botMsg);
+
       const tgText = encodeURIComponent(`Salom! Men Aurum Gold 2026 VIP Lookbook katalogini so'rayman.\nIsm: ${name}\nTel: +998 ${phone}\nYo'nalish: ${interest}`);
       setTimeout(() => {
         window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
@@ -2732,6 +3094,19 @@
       const successDiv = document.getElementById('modal-success');
 
       successDiv.classList.remove('hidden');
+
+      const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      const botMsg = 
+        `📖 <b>VIP LOOKBOOK 2026 SO'ROVI (MODAL)</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
+        `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
+        `⏰ <b>Vaqt:</b> ${now}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+
+      sendTelegramLeadNotification(botMsg);
+
       const tgText = encodeURIComponent(`Salom! Men Aurum Gold VIP Lookbook so'rayman.\nIsm: ${name}\nTel: +998 ${phone}`);
       setTimeout(() => {
         window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
@@ -2739,7 +3114,12 @@
     }
 
     // Phone Number Input Masking (+998 formatting helper)
-    const phoneInputs = [document.getElementById('lead-phone'), document.getElementById('m-phone'), document.getElementById('fit-phone')];
+    const phoneInputs = [
+      document.getElementById('lead-phone'), 
+      document.getElementById('m-phone'), 
+      document.getElementById('fit-phone'),
+      document.getElementById('wl-phone')
+    ];
     phoneInputs.forEach(input => {
       if (!input) return;
       input.addEventListener('input', function(e) {
