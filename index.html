@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURUM GOLD | Certified 18K Italian Gold & Fine Diamond Jewelry Tashkent</title>
-  <meta name="description" content="Toshkentdagi sertifikatlangan 18K Italiya oltini va tabiiy olmoslar butiki. Eksklyuziv zargarlik buyumlari, to'y to'plamlari va xususiy konsyerj xizmati. Mirabad Avenue.">
+  <title>OLMOS GOLD JEWELLERY | Certified 18K Italian Gold & Fine Diamond Jewelry Tashkent</title>
+  <meta name="description" content="Toshkentdagi sertifikatlangan 18K Italiya oltini va tabiiy olmoslar butiki. OLMOS GOLD JEWELLERY — eksklyuziv zargarlik buyumlari, to'y to'plamlari va xususiy konsyerj xizmati. Bunyodkor shoh ko'chasi 15/1, Chilonzor.">
+  <link rel="icon" type="image/jpeg" href="olmos-logo.jpg">
   
   <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +22,15 @@
       theme: {
         extend: {
           colors: {
+            olmos: {
+              950: '#061718',
+              900: '#0A2526',
+              850: '#0E3131',
+              800: '#133E3F',
+              700: '#1C5456',
+              600: '#267072',
+              50: '#F2F8F8'
+            },
             gold: {
               50: '#FDFBF7',
               100: '#FAF5EA',
@@ -58,7 +68,8 @@
           backgroundImage: {
             'gold-shimmer': 'linear-gradient(135deg, #DFBE74 0%, #C59A3F 50%, #9B7423 100%)',
             'gold-light': 'linear-gradient(135deg, #FFF9ED 0%, #F5E5C0 60%, #E2C682 100%)',
-            'radial-luxury': 'radial-gradient(circle at 50% 15%, rgba(212,175,55,0.09) 0%, rgba(253,251,247,0) 70%)'
+            'radial-luxury': 'radial-gradient(circle at 50% 15%, rgba(212,175,55,0.09) 0%, rgba(253,251,247,0) 70%)',
+            'emerald-shimmer': 'linear-gradient(135deg, #0A2526 0%, #0E3131 50%, #133E3F 100%)'
           }
         }
       }
@@ -183,15 +194,20 @@
       <div class="flex items-center gap-3">
         <span class="inline-flex items-center gap-1.5 text-gold-700 font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span data-i18n="top_bar_location">Flagship Boutique Mirabad Avenue</span>
+          <span data-i18n="top_bar_location">Flagship Butik • Bunyodkor 15/1, Chilonzor</span>
         </span>
         <span class="text-zinc-400 hidden sm:inline">•</span>
         <span class="text-ink-600 hidden sm:inline" data-i18n="top_bar_hours">Du-Yak 10:00 — 21:00</span>
       </div>
       <div class="flex items-center gap-6 text-ink-700">
-        <a href="tel:+998712000888" class="hover:text-gold-600 transition-colors flex items-center gap-1.5 font-medium">
+        <a href="tel:+998977742021" class="hover:text-gold-600 transition-colors flex items-center gap-1.5 font-medium">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
-          <span>+998 (71) 200-08-88</span>
+          <span>+998 (97) 774-20-21</span>
+        </a>
+        <div class="h-3 w-px bg-zinc-300"></div>
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="hover:text-[#0088cc] transition-colors flex items-center gap-1.5 font-medium text-xs">
+          <i data-lucide="send" class="w-3.5 h-3.5 text-[#0088cc]"></i>
+          <span>@OLMOS_GOLD</span>
         </a>
         <div class="h-3 w-px bg-zinc-300"></div>
         <!-- Language Switcher -->
@@ -212,17 +228,22 @@
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
 
-      <!-- Brand Logo -->
-      <div class="flex flex-col items-center lg:items-start text-center">
-        <a href="#" class="group">
-          <span class="font-serif text-xl sm:text-3xl tracking-[0.22em] sm:tracking-[0.25em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase transition group-hover:opacity-90">
-            AURUM GOLD
+      <!-- Brand Logo with Official Emblem -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <img 
+          src="olmos-logo.jpg" 
+          alt="OLMOS GOLD JEWELLERY" 
+          class="w-9 h-9 sm:w-11 sm:h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm transition-transform duration-300 group-hover:scale-105"
+        >
+        <div class="flex flex-col text-left">
+          <span class="font-serif text-lg sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase transition group-hover:opacity-90 leading-tight">
+            OLMOS GOLD
           </span>
-          <span class="block text-[8px] sm:text-[9px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-ink-500 group-hover:text-gold-600 transition">
-            MILANO • TASHKENT
+          <span class="text-[8px] sm:text-[9.5px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold-700 font-semibold leading-none mt-0.5">
+            JEWELLERY
           </span>
-        </a>
-      </div>
+        </div>
+      </a>
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8 text-sm tracking-widest uppercase font-medium">
@@ -246,7 +267,7 @@
         <button 
           id="header-wishlist-btn"
           onclick="openWishlistPage()" 
-          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center" 
+          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
@@ -261,7 +282,7 @@
           </span>
         </button>
 
-        <a href="https://t.me/aurumgold_uz" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-gold-700 hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram Concierge">
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-gold-700 hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram Concierge" title="Telegram: @OLMOS_GOLD">
           <i data-lucide="send" class="w-4 h-4"></i>
         </a>
       </div>
@@ -272,10 +293,13 @@
   <div id="mobile-nav" class="fixed inset-0 z-50 bg-[#FAF9F6] transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-between overflow-y-auto">
     <div class="p-6">
       <div class="flex justify-between items-center pb-5 border-b border-gold-metallic/20">
-        <div class="flex flex-col">
-          <span class="font-serif text-2xl tracking-[0.2em] text-gold-metallic font-bold">AURUM GOLD</span>
-          <span class="text-[8px] tracking-[0.3em] uppercase text-ink-500">MILANO • TASHKENT</span>
-        </div>
+        <a href="#" onclick="toggleMobileNav()" class="flex items-center gap-3">
+          <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-10 h-10 rounded-sm object-cover border border-gold-metallic/40 shadow-sm">
+          <div class="flex flex-col text-left">
+            <span class="font-serif text-xl tracking-[0.18em] text-gold-metallic font-bold uppercase leading-tight">OLMOS GOLD</span>
+            <span class="text-[8.5px] tracking-[0.35em] uppercase text-gold-700 font-semibold leading-none mt-0.5">JEWELLERY</span>
+          </div>
+        </a>
         <button onclick="toggleMobileNav()" class="w-10 h-10 rounded-full bg-white border border-gold-metallic/30 flex items-center justify-center text-ink-700 hover:text-ink-900 active:scale-95 transition shadow-sm" aria-label="Close menu">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
@@ -315,21 +339,29 @@
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
         </a>
         <a href="#boutique" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_boutique">
-          <span>Butik Manzili</span>
+          <span>Butik Manzili & Xarita</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
         </a>
       </nav>
 
       <!-- Direct Contacts in Menu -->
-      <div class="mt-8 pt-6 border-t border-gold-metallic/20 space-y-3">
-        <a href="tel:+998712000888" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-800 font-bold text-xs uppercase tracking-wider">
+      <div class="mt-6 pt-5 border-t border-gold-metallic/20 space-y-2.5">
+        <a href="tel:+998977742021" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-800 font-bold text-xs uppercase tracking-wider shadow-sm">
           <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
-          <span>+998 (71) 200-08-88</span>
+          <span>+998 (97) 774-20-21</span>
         </a>
-        <a href="https://t.me/aurumgold_uz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#2AABEE]/10 rounded-sm border border-[#2AABEE]/30 text-[#0088cc] font-bold text-xs uppercase tracking-wider">
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#2AABEE]/10 rounded-sm border border-[#2AABEE]/30 text-[#0088cc] font-bold text-xs uppercase tracking-wider shadow-sm">
           <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Telegram Konsyerj</span>
+          <span>Telegram: @OLMOS_GOLD</span>
         </a>
+        <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-rose-50/70 rounded-sm border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-wider shadow-sm">
+          <i data-lucide="instagram" class="w-4 h-4 text-rose-600"></i>
+          <span>Instagram: @olmosgold.jewellery</span>
+        </a>
+        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 text-[11px] text-ink-600 flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold-700 shrink-0 mt-0.5"></i>
+          <span>Bunyodkor shoh ko'chasi 15/1, Chilonzor tumani, Toshkent</span>
+        </div>
       </div>
     </div>
 
@@ -407,7 +439,7 @@
             <div class="relative w-full h-full rounded-t-[138px] rounded-b-xl overflow-hidden bg-ivory-100 group cursor-pointer" onclick="openProductDetail('AUR-REG-01')">
               <img 
                 src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85" 
-                alt="Aurum Gold 18K Italian Diamond Necklace" 
+                alt="Olmos Gold 18K Italian Diamond Necklace" 
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               >
               <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/10 to-transparent"></div>
@@ -493,7 +525,7 @@
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="col_tag">Aurum Eksklyuziv Kolleksiyasi</span>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="col_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
           <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="col_title">
             Oliy San'at Namunasi <span class="italic font-light text-ink-500">& Benuqson Did</span>
           </h2>
@@ -625,7 +657,7 @@
             <button onclick="openVipCatalogModal()" class="px-6 py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-widest uppercase rounded-sm transition shadow-md">
               <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
             </button>
-            <a href="tel:+998712000888" class="text-xs uppercase tracking-widest text-gold-700 hover:text-ink-900 font-bold flex items-center gap-2">
+            <a href="tel:+998977742021" class="text-xs uppercase tracking-widest text-gold-700 hover:text-ink-900 font-bold flex items-center gap-2">
               <i data-lucide="phone-call" class="w-4 h-4 text-gold-metallic"></i>
               <span data-i18n="craft_call_expert">Zargarga Qo'ng'iroq Qilish</span>
             </a>
@@ -773,7 +805,7 @@
               </div>
               <h4 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="form_success_t">Tashakkur! So'rovingiz qabul qilindi</h4>
               <p class="text-xs text-ink-600" data-i18n="form_success_d">Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.</p>
-              <a href="https://t.me/aurumgold_uz" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
+              <a href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
                 <i data-lucide="send" class="w-3.5 h-3.5"></i>
                 <span data-i18n="form_success_tg">Telegramda Zudlik Bilan Ochish</span>
               </a>
@@ -788,97 +820,180 @@
   </section>
 
   <!-- ================= BOUTIQUE EXPERIENCE & TASHKENT LOCATION ================= -->
-  <section id="boutique" class="py-24 bg-[#FAF9F6]">
+  <section id="boutique" class="py-24 bg-[#FAF9F6] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block" data-i18n="btq_tag">Flagship Butik Manzili</span>
-          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="btq_title">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-olmos-50 border border-gold-metallic/35 rounded-full text-olmos-800 text-xs font-bold uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span data-i18n="btq_tag">Flagship Butik & Showroom</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal leading-tight" data-i18n="btq_title">
             Toshkent Markazidagi <br>
-            <span class="italic font-light text-ink-500">Xususiy Zargarlik Loungi</span>
+            <span class="italic font-light text-gold-600">Olmos Gold Zargarlik Loungi</span>
           </h2>
           <p class="text-ink-600 text-sm leading-relaxed" data-i18n="btq_desc">
-            Sizni Mirabad Avenue markazidagi shinam VIP zallarimizda kutib olamiz. Qulay to'xtash joyi, xavfsiz xususiy xarid xonalari va sertifikatlangan gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.
+            Sizni Toshkentning nufuzli manzillaridan biri — Bunyodkor shoh ko'chasidagi yangi OLMOS GOLD butikimizda kutib olamiz. 18K asil italiyan oltinlari, GIA sertifikatli tabiiy olmoslar, xavfsiz VIP xarid xonalari hamda professional gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.
           </p>
 
           <div class="space-y-4 pt-2">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+            <!-- Address Card -->
+            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
                 <i data-lucide="map-pin" class="w-5 h-5"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_addr_title">Manzilimiz:</h4>
-                <p class="text-xs text-ink-700 mt-0.5">Toshkent shahri, Mirobod tumani, Mirabad Avenue D-blok, 1-qavat.</p>
-                <p class="text-[11px] text-ink-500 mt-0.5">Mo'ljal: Tashkent City Mall va Amir Temur xiyobonidan 5 daqiqa.</p>
+                <p class="text-xs font-bold text-ink-800 mt-0.5">Bunyodkor shoh ko'chasi, 15/1, Chilonzor tumani, Toshkent</p>
+                <p class="text-[11px] text-ink-500 font-mono mt-0.5">Bunyodkor Avenue, 15/1, Chilonzor District, Tashkent</p>
+                <p class="text-[11px] text-gold-700 mt-1 font-medium">Mo'ljal: Novza va Mirzo Ulug'bek metro bekatlari oralig'ida (Markazdan 7 daqiqa).</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+            <!-- Working Hours -->
+            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
                 <i data-lucide="clock" class="w-5 h-5"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_hours_title">Ish Tartibi:</h4>
-                <p class="text-xs text-ink-700 mt-0.5">Dushanba — Yakshanba: 10:00 dan 21:00 gacha (Dam olish kunlarisiz).</p>
+                <p class="text-xs text-ink-700 mt-0.5 font-medium">Dushanba — Yakshanba: 10:00 dan 21:00 gacha (Dam olish kunlarisiz).</p>
+                <p class="text-[11px] text-emerald-700 mt-0.5 font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                  <span>Butik va VIP zal hozirda ochiq</span>
+                </p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-sm bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0 shadow-sm">
+            <!-- Contacts -->
+            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
                 <i data-lucide="phone" class="w-5 h-5"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_contact_title">Aloqa va Konsyerj:</h4>
-                <p class="text-xs text-ink-700 mt-0.5">+998 (71) 200-08-88 | Telegram: @aurumgold_uz</p>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs">
+                  <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700 transition flex items-center gap-1">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-600"></i>
+                    <span>+998 (97) 774-20-21</span>
+                  </a>
+                  <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-[#0088cc] font-semibold hover:underline flex items-center gap-1">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                    <span>@OLMOS_GOLD</span>
+                  </a>
+                  <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-rose-600 font-semibold hover:underline flex items-center gap-1">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                    <span>@olmosgold.jewellery</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="pt-4 flex flex-wrap gap-4">
+          <!-- Action Navigation Buttons -->
+          <div class="pt-2 flex flex-wrap gap-3">
             <a 
-              href="https://yandex.com/maps/?text=Mirabad+Avenue+Tashkent" 
+              href="https://yandex.uz/maps/?text=Toshkent+Bunyodkor+shoh+ko'chasi+15/1" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-6 py-3.5 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm"
+              class="px-5 py-3 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm active:scale-95"
             >
               <i data-lucide="map" class="w-4 h-4 text-gold-700"></i>
               <span>Yandex Xaritada Ochish</span>
             </a>
             <a 
-              href="https://instagram.com/aurumgold.uz" 
+              href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-6 py-3.5 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm"
+              class="px-5 py-3 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm active:scale-95"
             >
-              <i data-lucide="instagram" class="w-4 h-4 text-gold-700"></i>
-              <span>Instagram @aurumgold.uz</span>
+              <i data-lucide="navigation" class="w-4 h-4 text-gold-700"></i>
+              <span>Google Maps</span>
+            </a>
+            <a 
+              href="https://t.me/OLMOS_GOLD" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="px-5 py-3 bg-olmos-850 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm flex items-center gap-2 transition shadow-sm active:scale-95"
+            >
+              <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+              <span>Telegram Konsyerj</span>
             </a>
           </div>
 
         </div>
 
-        <!-- Boutique Photo & Map Card -->
-        <div class="lg:col-span-6 relative">
-          <div class="bg-white rounded-sm overflow-hidden p-2 border border-gold-metallic/35 shadow-md">
-            <div class="relative aspect-[16/10] rounded-sm overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1200&q=80" 
-                alt="Aurum Gold Luxury VIP Boutique Interior" 
-                class="w-full h-full object-cover"
-              >
-              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 flex items-center justify-between shadow-lg">
-                <div>
-                  <span class="text-[10px] text-gold-700 uppercase tracking-widest font-bold block">VIP Lounge Seanslari</span>
-                  <span class="text-xs text-ink-900 font-medium">Xususiy qabul va qahva bilan kutib olish</span>
+        <!-- Right Column: Live Interactive Map & Branded Landmark Card -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="bg-white rounded-sm overflow-hidden p-2.5 border border-gold-metallic/35 shadow-xl relative">
+            
+            <!-- Live Interactive Map Iframe -->
+            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-sm overflow-hidden bg-zinc-100">
+              <iframe 
+                title="OLMOS GOLD JEWELLERY Joylashuv Xaritasi"
+                src="https://maps.google.com/maps?q=Bunyodkor+Avenue+15/1,+Chilonzor+District,+Tashkent&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                class="w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              <!-- Floating Luxury Emblem Pin on Map -->
+              <div class="absolute top-3 left-3 right-3 sm:right-auto sm:max-w-xs p-3.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/40 shadow-xl flex items-center gap-3 pointer-events-auto">
+                <img 
+                  src="olmos-logo.jpg" 
+                  alt="OLMOS GOLD JEWELLERY" 
+                  class="w-11 h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm shrink-0"
+                >
+                <div class="text-left">
+                  <div class="font-serif text-sm font-bold text-ink-900 uppercase leading-tight tracking-wider">
+                    OLMOS GOLD
+                  </div>
+                  <div class="text-[9px] uppercase tracking-widest text-gold-700 font-bold">
+                    JEWELLERY BOUTIQUE
+                  </div>
+                  <div class="text-[10px] text-ink-600 mt-0.5 line-clamp-1">
+                    Bunyodkor Avenue, 15/1, Tashkent
+                  </div>
                 </div>
-                <a href="https://t.me/aurumgold_uz" target="_blank" class="px-3 py-1.5 bg-ink-900 hover:bg-gold-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-sm transition">
-                  Yozilish
+              </div>
+
+              <!-- Bottom Map Action Tag -->
+              <div class="absolute bottom-3 right-3">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-3.5 py-1.5 bg-ink-900/90 hover:bg-gold-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-sm backdrop-blur-sm transition shadow flex items-center gap-1.5"
+                >
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-gold-300"></i>
+                  <span>Marshrutni Boshlash</span>
                 </a>
               </div>
             </div>
+
+            <!-- Boutique Interior & VIP Service Note -->
+            <div class="mt-3 p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0">
+                  <i data-lucide="gem" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-ink-900 uppercase tracking-wide">Xususiy VIP Xarid Xonasi</div>
+                  <div class="text-[11px] text-ink-500">Qahva, ekspertiza va maxfiy taqinchoq tanlash seansi</div>
+                </div>
+              </div>
+              <button 
+                onclick="openVipCatalogModal()" 
+                class="px-4 py-2 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition shadow-sm shrink-0 w-full sm:w-auto"
+              >
+                Qabulga Yozilish
+              </button>
+            </div>
+
           </div>
         </div>
 
@@ -915,7 +1030,7 @@
           </div>
           <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
             <span class="font-serif text-sm text-ink-900 font-bold">Nigora R.</span>
-            <span class="text-[10px] text-ink-500 font-mono">Mirabad Avenue Boutique</span>
+            <span class="text-[10px] text-ink-500 font-mono">Bunyodkor 15/1 Flagship Boutique</span>
           </div>
         </div>
 
@@ -929,7 +1044,7 @@
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
             </div>
             <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev2_text">
-              "0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Aurum Gold!"
+              "0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Olmos Gold!"
             </p>
           </div>
           <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
@@ -957,31 +1072,34 @@
           </div>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
+   <!-- ================= FOOTER ================= -->
   <footer class="bg-ivory-200 border-t border-zinc-300 text-ink-600 text-xs py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         
         <div class="space-y-4 md:col-span-1">
-          <span class="font-serif text-2xl tracking-[0.2em] text-gold-700 font-bold uppercase block">
-            AURUM GOLD
-          </span>
+          <div class="flex items-center gap-3">
+            <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-11 h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm">
+            <div>
+              <span class="font-serif text-xl tracking-[0.18em] text-gold-700 font-bold uppercase block leading-tight">
+                OLMOS GOLD
+              </span>
+              <span class="text-[8px] tracking-[0.35em] text-ink-500 uppercase font-semibold">
+                JEWELLERY
+              </span>
+            </div>
+          </div>
           <p class="text-[11px] text-ink-600 leading-relaxed" data-i18n="footer_about">
             O'zbekiston Respublikasi hududida sertifikatlangan 18K (750°) Italiya oltini va GIA tabiiy brilliantlari rasmiy yetkazib beruvchisi.
           </p>
           <div class="flex items-center gap-3 text-gold-700">
-            <a href="https://instagram.com/aurumgold.uz" target="_blank" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Instagram">
+            <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Instagram" title="Instagram: @olmosgold.jewellery">
               <i data-lucide="instagram" class="w-4 h-4"></i>
             </a>
-            <a href="https://t.me/aurumgold_uz" target="_blank" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram">
+            <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram" title="Telegram: @OLMOS_GOLD">
               <i data-lucide="send" class="w-4 h-4"></i>
             </a>
-            <a href="tel:+998712000888" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Phone">
+            <a href="tel:+998977742021" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Phone" title="+998 (97) 774-20-21">
               <i data-lucide="phone" class="w-4 h-4"></i>
             </a>
           </div>
@@ -1003,16 +1121,17 @@
             <li><a href="#italian-gold" class="hover:text-gold-700 transition">Oltin Asilligi va Probir Nazorati</a></li>
             <li><a href="#diamonds" class="hover:text-gold-700 transition">GIA Olmos Pasportlarini Tekshirish</a></li>
             <li><button onclick="openVipCatalogModal()" class="hover:text-gold-700 transition text-left">VIP Katalog So'rovi</button></li>
-            <li><a href="https://t.me/aurumgold_uz" target="_blank" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat</a></li>
+            <li><a href="https://t.me/OLMOS_GOLD" target="_blank" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat (@OLMOS_GOLD)</a></li>
           </ul>
         </div>
 
         <div>
           <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_loc_title">Butik & Manzil</h5>
           <p class="text-ink-600 text-[11px] leading-relaxed">
-            Mirabad Avenue D-blok, 1-qavat<br>
-            Toshkent, O'zbekiston<br>
-            Telefon: +998 (71) 200-08-88<br>
+            Bunyodkor shoh ko'chasi, 15/1<br>
+            Chilonzor tumani, Toshkent<br>
+            Telefon: <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700">+998 (97) 774-20-21</a><br>
+            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-[#0088cc] hover:underline font-semibold">@OLMOS_GOLD</a><br>
             Har kuni: 10:00 — 21:00
           </p>
         </div>
@@ -1021,7 +1140,7 @@
 
       <div class="mt-12 pt-6 border-t border-zinc-300 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-ink-500">
         <div>
-          © 2026 AURUM GOLD. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston.
+          © 2026 OLMOS GOLD JEWELLERY. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston.
         </div>
         <div class="flex gap-4">
           <span>18K Certified Italian Gold</span>
@@ -1035,7 +1154,7 @@
   <!-- ================= STICKY MOBILE ACTION BAR ================= -->
   <aside aria-label="Mobile Contact Bar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-t border-gold-metallic/30 p-2.5 flex items-center justify-between gap-2 shadow-xl">
     <a 
-      href="tel:+998712000888" 
+      href="tel:+998977742021" 
       class="flex-1 py-3 px-3 bg-ivory-100 rounded-sm text-gold-700 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 border border-gold-metallic/35 active:scale-95 transition"
     >
       <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
@@ -1043,9 +1162,9 @@
     </a>
 
     <a 
-      href="https://t.me/aurumgold_uz" 
+      href="https://t.me/OLMOS_GOLD" 
       target="_blank" 
-      rel="noopener noreferrer"
+      rel="noopener noreferrer" 
       class="flex-1 py-3 px-3 bg-[#2AABEE]/15 border border-[#2AABEE]/30 text-[#0088cc] rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
     >
       <i data-lucide="send" class="w-3.5 h-3.5"></i>
@@ -1074,20 +1193,23 @@
       </button>
 
       <!-- Brand Center -->
-      <div class="text-center hidden sm:block">
-        <span class="font-serif text-lg tracking-[0.25em] text-gold-700 font-bold uppercase">
-          AURUM GOLD
-        </span>
-        <span class="block text-[8px] tracking-[0.3em] uppercase text-ink-500">
-          PRIVATO • TASHKENT
-        </span>
+      <div class="text-center hidden sm:flex items-center gap-2.5">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <div class="text-left">
+          <span class="font-serif text-base tracking-[0.2em] text-gold-700 font-bold uppercase block leading-tight">
+            OLMOS GOLD
+          </span>
+          <span class="block text-[7.5px] tracking-[0.3em] uppercase text-ink-500">
+            JEWELLERY • TASHKENT
+          </span>
+        </div>
       </div>
 
       <!-- Quick Concierge Hotline & Wishlist -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="tel:+998712000888" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
+        <a href="tel:+998977742021" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
-          <span>+998 (71) 200-08-88</span>
+          <span>+998 (97) 774-20-21</span>
         </a>
         <!-- Wishlist Button inside Product View -->
         <button 
@@ -1126,7 +1248,7 @@
             <img 
               id="fs-main-image" 
               src="" 
-              alt="Aurum Gold High Resolution View" 
+              alt="Olmos Gold High Resolution View" 
               class="w-full h-full object-cover object-center transition-all duration-500"
             >
             <div class="absolute top-4 left-4 flex flex-col gap-2">
@@ -1247,7 +1369,7 @@
                 Ushbu Taqinchoqni Shaxsan Ko'rish & Band Qilish
               </h3>
               <p class="text-xs text-ink-600 leading-relaxed" data-i18n="fs_cta_body">
-                Toshkentdagi Mirabad Avenue butikimizda yopiq xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:
+                Bunyodkor shoh ko'chasi 15/1 dagi butikimizda VIP xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:
               </p>
             </div>
 
@@ -1266,7 +1388,7 @@
             <!-- Primary Action 2: Direct Call Concierge -->
             <div class="grid grid-cols-2 gap-3">
               <a 
-                href="tel:+998712000888" 
+                href="tel:+998977742021" 
                 class="py-3 px-2 bg-white hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-wider rounded-sm border border-zinc-300 flex items-center justify-center gap-2 transition shadow-sm"
               >
                 <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
@@ -1286,7 +1408,7 @@
             <div id="fs-fitting-form-container" class="hidden pt-3 border-t border-gold-metallic/25">
               <form id="fs-fitting-form" onsubmit="handleFittingSubmit(event)" class="space-y-3">
                 <div class="text-[11px] font-bold uppercase tracking-wider text-ink-800" data-i18n="fs_form_head">
-                  Mirabad Avenue Butikida Kiyib Ko'rishga Yozilish:
+                  Bunyodkor 15/1 Butikida Kiyib Ko'rishga Yozilish:
                 </div>
                 <div>
                   <input 
@@ -1345,7 +1467,7 @@
       <div class="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-gold-metallic/25">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-3">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-700 block mb-1" data-i18n="fs_related_tag">Aurum Eksklyuziv Kolleksiyasi</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-700 block mb-1" data-i18n="fs_related_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
             <h3 class="font-serif text-2xl sm:text-3xl text-ink-900 font-normal" data-i18n="fs_related_title">
               Boshqa Eksklyuziv Zargarlik Buyumlari
             </h3>
@@ -1378,13 +1500,16 @@
       </button>
 
       <!-- Brand Center -->
-      <div class="text-center">
-        <span class="font-serif text-base sm:text-lg tracking-[0.22em] text-gold-700 font-bold uppercase">
-          AURUM GOLD
-        </span>
-        <span class="block text-[8px] tracking-[0.3em] uppercase text-rose-600 font-bold">
-          SEVIMLILAR • WISHLIST
-        </span>
+      <div class="flex items-center gap-2.5 text-center">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <div class="text-left">
+          <span class="font-serif text-base tracking-[0.18em] text-gold-700 font-bold uppercase block leading-tight">
+            OLMOS GOLD
+          </span>
+          <span class="block text-[8px] tracking-[0.25em] uppercase text-rose-600 font-bold">
+            SEVIMLILAR • WISHLIST
+          </span>
+        </div>
       </div>
 
       <!-- Quick Actions -->
@@ -1498,9 +1623,9 @@
                   Tanlangan zargarlik buyumlari ma'lumotlari konsyerjimizga yuborildi. Tez orada siz bilan bog'lanamiz.
                 </p>
                 <div class="pt-2">
-                  <a id="wl-open-tg-direct" href="https://t.me/aurumgold_uz" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
+                  <a id="wl-open-tg-direct" href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
                     <i data-lucide="send" class="w-4 h-4"></i>
-                    <span>Telegramda Chatni Ochish</span>
+                    <span>Telegramda Chatni Ochish (@OLMOS_GOLD)</span>
                   </a>
                 </div>
               </div>
@@ -1627,11 +1752,11 @@
           </a>
 
           <a 
-            href="tel:+998712000888" 
+            href="tel:+998977742021" 
             class="w-full py-3.5 bg-white border border-zinc-300 hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
           >
             <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
-            <span>Konsyergga Qo'ng'iroq Qilish</span>
+            <span>Konsyergga Qo'ng'iroq Qilish (+998 97 774 20 21)</span>
           </a>
         </div>
       </div>
@@ -1675,7 +1800,7 @@
 
         <div id="modal-success" class="hidden text-center py-4 text-emerald-700 text-xs space-y-2">
           <p>✓ Muvaffaqiyatli yuborildi! Tez orada konsyerjimiz bog'lanadi.</p>
-          <a href="https://t.me/aurumgold_uz" target="_blank" class="text-gold-700 underline font-semibold">Telegram @aurumgold_uz</a>
+          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-700 underline font-semibold">Telegram @OLMOS_GOLD</a>
         </div>
       </div>
     </div>
@@ -1912,12 +2037,12 @@
     let currentActiveProduct = null;
 
     // ================= WISHLIST ENGINE =================
-    const WISHLIST_STORAGE_KEY = 'aurum_gold_wishlist';
+    const WISHLIST_STORAGE_KEY = 'olmos_gold_wishlist';
     const UZS_RATE = 12850;
 
     function getWishlist() {
       try {
-        const stored = localStorage.getItem(WISHLIST_STORAGE_KEY);
+        const stored = localStorage.getItem(WISHLIST_STORAGE_KEY) || localStorage.getItem('aurum_gold_wishlist');
         return stored ? JSON.parse(stored) : [];
       } catch (e) {
         return [];
@@ -2271,7 +2396,7 @@
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
 
       const botMsg = 
-        `❤️ <b>YANGI WISHLIST BUYURTMASI / SO'ROV</b>\n` +
+        `💎 <b>OLMOS GOLD — YANGI WISHLIST BUYURTMASI / SO'ROV</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
         `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n\n` +
@@ -2279,7 +2404,7 @@
         `💰 <b>Umumiy Qiymat:</b> ${totalUsdStr} (${totalUzsStr})\n` +
         `⏰ <b>Vaqt:</b> ${now}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+        `🌐 <i>olmosgold.jewellery orqali yuborildi</i>`;
 
       sendTelegramLeadNotification(botMsg);
 
@@ -2291,14 +2416,14 @@
       const tgDirect = document.getElementById('wl-open-tg-direct');
       if (tgDirect) {
         const tgText = encodeURIComponent(
-          `Assalomu alaykum, Aurum Gold! Men saytingizdagi Wishlist orqali buyurtma qoldirdim:\n\n` +
+          `Assalomu alaykum, Olmos Gold Jewellery! Men saytingizdagi Wishlist orqali buyurtma qoldirdim:\n\n` +
           `• Mijoz: ${name}\n` +
           `• Telefon: +998 ${phone}\n` +
           `• Buyumlar soni: ${items.length} ta\n` +
           `• Umumiy qiymat: ${totalUsdStr}\n\n` +
           `Iltimos, aloqaga chiqsangiz.`
         );
-        tgDirect.href = `https://t.me/aurumgold_uz?text=${tgText}`;
+        tgDirect.href = `https://t.me/OLMOS_GOLD?text=${tgText}`;
       }
 
       lucide.createIcons();
@@ -2310,8 +2435,8 @@
       if (items.length === 0) return;
 
       let msg = currentLang === 'uz' 
-        ? "Assalomu alaykum, Aurum Gold! Men ushbu sevimlilar ro'yxatidagi taqinchoqlarni ko'rish va band qilishni xohlayman:\n\n"
-        : "Здравствуйте, Aurum Gold! Хочу проконсультироваться и забронировать изделия из моего списка избранного:\n\n";
+        ? "Assalomu alaykum, Olmos Gold Jewellery! Men ushbu sevimlilar ro'yxatidagi taqinchoqlarni ko'rish va band qilishni xohlayman:\n\n"
+        : "Здравствуйте, Olmos Gold Jewellery! Хочу проконсультироваться и забронировать изделия из моего списка избранного:\n\n";
 
       let totalUsd = 0;
       items.forEach((it, idx) => {
@@ -2328,7 +2453,7 @@
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       sendTelegramLeadNotification(
-        `❤️ <b>WISHLISTDAN TELEGRAMGA O'TISH</b>\n` +
+        `💎 <b>OLMOS GOLD — WISHLISTDAN TELEGRAMGA O'TISH</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `🛍 <b>Mahsulotlar (${items.length} ta):</b>\n` +
         items.map((it, i) => `${i+1}. ${escapeHtml(it.title_uz)} (${it.id})`).join('\n') +
@@ -2336,7 +2461,7 @@
         `⏰ <b>Vaqt:</b> ${now}`
       );
 
-      window.open(`https://t.me/aurumgold_uz?text=${encodeURIComponent(msg)}`, '_blank');
+      window.open(`https://t.me/OLMOS_GOLD?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function sendWishlistToTelegram() {
@@ -2545,14 +2670,14 @@
 
       // Prepare Pre-filled Telegram Link
       const tgMessage = encodeURIComponent(
-        `Assalomu alaykum, Aurum Gold! Men ushbu zargarlik buyumi bo'yicha ma'lumot olishni va butikda ko'rishni xohlayman:\n\n` +
+        `Assalomu alaykum, Olmos Gold Jewellery! Men ushbu zargarlik buyumi bo'yicha ma'lumot olishni va butikda ko'rishni xohlayman:\n\n` +
         `• Mahsulot: ${title}\n` +
         `• Kodi (SKU): ${product.id}\n` +
         `• Narxi: ${product.price_usd} (${product.price_uzs})\n` +
         `• Metall: ${metal}\n\n` +
         `Iltimos, mavjudligi va qulay vaqtni belgilab bersangiz.`
       );
-      document.getElementById('fs-telegram-action').href = `https://t.me/aurumgold_uz?text=${tgMessage}`;
+      document.getElementById('fs-telegram-action').href = `https://t.me/OLMOS_GOLD?text=${tgMessage}`;
 
       // Reset fitting form
       document.getElementById('fs-fitting-form-container').classList.add('hidden');
@@ -2604,7 +2729,7 @@
       e.preventDefault();
       const name = document.getElementById('fit-name').value;
       const phone = document.getElementById('fit-phone').value;
-      const itemTitle = currentActiveProduct ? (currentLang === 'uz' ? currentActiveProduct.title_uz : currentActiveProduct.title_ru) : "Aurum Gold Jewelry";
+      const itemTitle = currentActiveProduct ? (currentLang === 'uz' ? currentActiveProduct.title_uz : currentActiveProduct.title_ru) : "Olmos Gold Jewelry";
       const sku = currentActiveProduct ? currentActiveProduct.id : "-";
       const priceUsd = currentActiveProduct ? currentActiveProduct.price_usd : "-";
       const priceUzs = currentActiveProduct ? currentActiveProduct.price_uzs : "-";
@@ -2614,7 +2739,7 @@
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
-        `💎 <b>VIP ZALDA KIYIB KO'RISHGA YOZILISH</b>\n` +
+        `💎 <b>OLMOS GOLD — VIP ZALDA KIYIB KO'RISHGA YOZILISH</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `💍 <b>Mahsulot:</b> ${escapeHtml(itemTitle)}\n` +
         `🏷 <b>Kodi (SKU):</b> ${escapeHtml(sku)}\n` +
@@ -2623,26 +2748,26 @@
         `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
         `⏰ <b>Vaqt:</b> ${now}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+        `🌐 <i>olmosgold.jewellery orqali yuborildi</i>`;
 
       sendTelegramLeadNotification(botMsg);
 
       const tgText = encodeURIComponent(
-        `Salom! Men butikda VIP kiyib ko'rishga yozilmoqchiman:\n` +
+        `Salom! Men Olmos Gold butikida VIP kiyib ko'rishga yozilmoqchiman:\n` +
         `• Mahsulot: ${itemTitle} (${sku})\n` +
         `• Mijoz: ${name}\n` +
         `• Telefon: +998 ${phone}`
       );
 
       setTimeout(() => {
-        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
       }, 1000);
     }
 
     // Bilingual Translations
     const translations = {
       uz: {
-        top_bar_location: "Flagship Boutique Mirabad Avenue",
+        top_bar_location: "Flagship Butik • Bunyodkor 15/1, Chilonzor",
         top_bar_hours: "Du-Yak 10:00 — 21:00",
         nav_collections: "Kolleksiyalar",
         nav_quality: "18K Italiya Standarti",
@@ -2650,7 +2775,7 @@
         nav_concierge: "Xususiy Konsyerj",
         nav_boutique: "Butik",
         cta_vip_catalog: "VIP Katalog Olish",
-        hero_badge: "Eksklyuziv Zargarlik Uyi • Toshkent",
+        hero_badge: "Olmos Gold • Eksklyuziv Zargarlik Uyi",
         hero_title_part1: "Mukammal Chiroy.",
         hero_title_part2: "18K Sertifikatlangan",
         hero_title_part3: "Italiya Oltini & Olmoslar.",
@@ -2670,7 +2795,7 @@
         trust_item3_desc: "Har bir 0.30ct+ tosh uchun lazerli xalqaro seriya raqami va pasporti.",
         trust_item4_title: "Cheksiz Kafolat & O'lcham",
         trust_item4_desc: "Bepul individual o'lchamga moslash, tozalash va yillik parvarish.",
-        col_tag: "Aurum Eksklyuziv Kolleksiyasi",
+        col_tag: "Olmos Gold Eksklyuziv Kolleksiyasi",
         col_title: "Oliy San'at Namunasi <span class='italic font-light text-ink-500'>& Benuqson Did</span>",
         hint_click_full: "Taqinchoq ustiga bosing — to'liq sahifa ochiladi",
         cat_all: "Barcha Buyumlar",
@@ -2722,15 +2847,15 @@
         form_success_d: "Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.",
         form_success_tg: "Telegramda Zudlik Bilan Ochish",
         btq_tag: "Flagship Butik Manzili",
-        btq_title: "Toshkent Markazidagi <br><span class='italic font-light text-ink-500'>Xususiy Zargarlik Loungi</span>",
-        btq_desc: "Sizni Mirabad Avenue markazidagi shinam VIP zallarimizda kutib olamiz. Qulay to'xtash joyi, xavfsiz xususiy xarid xonalari va sertifikatlangan gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.",
+        btq_title: "Toshkent Markazidagi <br><span class='italic font-light text-gold-600'>Olmos Gold Zargarlik Loungi</span>",
+        btq_desc: "Sizni Bunyodkor shoh ko'chasi, 15/1-uyda (Chilonzor tumani) joylashgan shinam va xavfsiz VIP zallarimizda kutib olamiz. Qulay avtoturargoh, xususiy xarid xonalari va sertifikatlangan gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.",
         btq_addr_title: "Manzilimiz:",
         btq_hours_title: "Ish Tartibi:",
         btq_contact_title: "Aloqa va Konsyerj:",
         rev_tag: "Xaridorlarimiz Fikrlari",
         rev_title: "Ishonch & Yuqori Ehtirom",
         rev1_text: "\"Kelin sarposi uchun to'liq 18K to'plam oldik. Toshkentda bunday toza italyan dizaynini va sertifikatli olmoslarni topish qiyin edi. Xizmat ko'rsatish va xususiy qabul madaniyati 10/10.\"",
-        rev2_text: "\"0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Aurum Gold!\"",
+        rev2_text: "\"0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Olmos Gold!\"",
         rev3_text: "\"Investitsion 999.9 oltin quymalari xaridi bo'yicha eng ishonchli manzil. Spot narxlari halol, barcha hujjatlar joyida. Xususiy xarid xonasidagi maxfiylik juda ma'qul keldi.\"",
         mob_call: "Qo'ng'iroq",
         mob_catalog: "Katalog",
@@ -2754,17 +2879,17 @@
         spec_service_val: "Bepul individual o'lchamga to'g'irlash",
         fs_cta_sub: "Xususiy Konsyerj Xizmati",
         fs_cta_head: "Ushbu Taqinchoqni Shaxsan Ko'rish & Band Qilish",
-        fs_cta_body: "Toshkentdagi Mirabad Avenue butikimizda yopiq xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:",
+        fs_cta_body: "Toshkentdagi Bunyodkor 15/1 butikimizda yopiq xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:",
         fs_btn_tg: "Telegram Orqali So'rash (Pre-filled)",
         fs_btn_call: "Qo'ng'iroq Qilish",
         fs_btn_fit: "VIP Zalda Kiyish",
-        fs_form_head: "Mirabad Avenue Butikida Kiyib Ko'rishga Yozilish:",
+        fs_form_head: "Bunyodkor 15/1 Butikida Kiyib Ko'rishga Yozilish:",
         fs_form_submit: "Vaqtni Belgilash",
         fs_t1: "100% Sug'urtalangan xarid",
         fs_t2: "Shaxsiy VIP xona",
         fs_t3: "Bepul o'lchamga moslash",
         fs_t4: "Cheksiz bepul tozalash",
-        fs_related_tag: "Aurum Eksklyuziv Kolleksiyasi",
+        fs_related_tag: "Olmos Gold Eksklyuziv Kolleksiyasi",
         fs_related_title: "Boshqa Eksklyuziv Zargarlik Buyumlari",
         fs_related_hint: "Har qanday buyumni tanlab, to'liq ko'rishingiz mumkin",
         mob_wishlist_title: "Sevimlilar (Wishlist)",
@@ -2776,7 +2901,7 @@
         wishlist_btn_fit: "VIP Zalda Kiyishga Yozilish"
       },
       ru: {
-        top_bar_location: "Флагманский Бутик Mirabad Avenue",
+        top_bar_location: "Флагманский Бутик • Проспект Бунёдкор 15/1, Чиланзар",
         top_bar_hours: "Пн-Вс 10:00 — 21:00",
         nav_collections: "Коллекции",
         nav_quality: "Итальянский Стандарт 18K",
@@ -2784,7 +2909,7 @@
         nav_concierge: "Личный Консьерж",
         nav_boutique: "Бутик",
         cta_vip_catalog: "Получить VIP-Каталог",
-        hero_badge: "Эксклюзивный Ювелирный Дом • Ташкент",
+        hero_badge: "Olmos Gold • Эксклюзивный Ювелирный Дом",
         hero_title_part1: "Совершенная Эстетика.",
         hero_title_part2: "Сертифицированное 18K",
         hero_title_part3: "Итальянское Золото & Бриллианты.",
@@ -2804,7 +2929,7 @@
         trust_item3_desc: "Лазерный международный номер и паспорт для каждого камня от 0.30 карат.",
         trust_item4_title: "Пожизненный Сервис & Подгонка",
         trust_item4_desc: "Бесплатная посадка под ваш размер, полировка и ежегодное обслуживание.",
-        col_tag: "Эксклюзивные Коллекции Aurum",
+        col_tag: "Эксклюзивная Коллекция Olmos Gold",
         col_title: "Шедевры Ювелирного Искусства <span class='italic font-light text-ink-500'>& Безупречный Вкус</span>",
         hint_click_full: "Нажмите на изделие — откроется полный экран",
         cat_all: "Все Изделия",
@@ -2856,15 +2981,15 @@
         form_success_d: "Наш консьерж вышлет PDF-каталог и приглашение в течение 5 минут.",
         form_success_tg: "Открыть Напрямую в Telegram",
         btq_tag: "Флагманский Бутик",
-        btq_title: "Приватный Ювелирный Lounge <br><span class='italic font-light text-ink-500'>В Центре Ташкента</span>",
-        btq_desc: "Ждем вас в роскошных залах на Mirabad Avenue. Удобный паркинг, закрытые переговорные для комфортной примерки и консультации сертифицированного геммолога.",
+        btq_title: "Приватный Ювелирный Lounge Olmos Gold <br><span class='italic font-light text-gold-600'>В Ташкенте</span>",
+        btq_desc: "Ждем вас в роскошных залах по адресу: проспект Бунёдкор 15/1 (Чиланзарский район, Ташкент). Удобный паркинг, закрытые переговорные для комфортной примерки и консультации сертифицированного геммолога.",
         btq_addr_title: "Адрес Бутика:",
         btq_hours_title: "Режим Работы:",
         btq_contact_title: "Контакты и Консьерж:",
         rev_tag: "Отзывы Клиентов",
         rev_title: "Доверие & Высокий Статус",
         rev1_text: "\"Заказывали полный комплект 18K для сарпо невесты. В Ташкенте сложно найти столь чистый итальянский дизайн и сертифицированные бриллианты. Уровень приватного сервиса 10 из 10.\"",
-        rev2_text: "\"Купил кольцо-солитер 0.70ct с сертификатом GIA. Проверили лазерный номер на камне под микроскопом прямо в бутике, все идеально. Клеймо пробирной палаты на месте. Спасибо!\"",
+        rev2_text: "\"Купил кольцо-солитер 0.70ct с сертификатом GIA. Проверили лазерный номер на камне под микроскопом прямо в бутике, все идеально. Клеймо пробирной палаты на месте. Спасибо, Olmos Gold!\"",
         rev3_text: "\"Самое надежное место для покупки инвестиционного золота 999.9 в Ташкенте. Честные биржевые котировки, полная безопасность и конфиденциальность сделки.\"",
         mob_call: "Звонок",
         mob_catalog: "Каталог",
@@ -2888,17 +3013,17 @@
         spec_service_val: "Бесплатная посадка под ваш размер",
         fs_cta_sub: "Персональный Консьерж-Сервис",
         fs_cta_head: "Личная Примерка & Бронирование Изделия",
-        fs_cta_body: "Запишитесь на закрытую примерку в бутике на Mirabad Avenue или запросите персональный видеообзор изделия в Telegram:",
+        fs_cta_body: "Запишитесь на закрытую примерку в бутике по адресу Bunyodkor 15/1 или запросите персональный видеообзор изделия в Telegram:",
         fs_btn_tg: "Запросить в Telegram (С кодом изделия)",
         fs_btn_call: "Позвонить в Бутик",
         fs_btn_fit: "Примерка в VIP-Зале",
-        fs_form_head: "Запись на примерку на Mirabad Avenue:",
+        fs_form_head: "Запись на примерку в бутик Bunyodkor 15/1:",
         fs_form_submit: "Забронировать Время",
         fs_t1: "100% Страхование покупки",
         fs_t2: "Приватный VIP-кабинет",
         fs_t3: "Бесплатная подгонка размера",
         fs_t4: "Бессрочная полировка и чистка",
-        fs_related_tag: "Эксклюзивная Коллекция Aurum",
+        fs_related_tag: "Эксклюзивная Коллекция Olmos Gold",
         fs_related_title: "Другие Шедевры Коллекции",
         fs_related_hint: "Выберите любое изделие для полного просмотра",
         mob_wishlist_title: "Избранное (Wishlist)",
@@ -2997,19 +3122,19 @@
       document.getElementById('modal-item-sku').innerText = sku;
       document.getElementById('modal-item-price').innerText = price;
 
-      const tgMessage = encodeURIComponent(`Assalomu alaykum, Aurum Gold! Men ushbu zargarlik buyumini butikda ko'rish yoki band qilishni xohlayman:\n\n• Mahsulot: ${title}\n• Kodi: ${sku}\n• Narxi: ${price}\n\nIltimos, mavjudligi va o'lchamini aniqlashtirib bersangiz.`);
-      document.getElementById('modal-telegram-btn').href = `https://t.me/aurumgold_uz?text=${tgMessage}`;
+      const tgMessage = encodeURIComponent(`Assalomu alaykum, Olmos Gold Jewellery! Men ushbu zargarlik buyumini butikda ko'rish yoki band qilishni xohlayman:\n\n• Mahsulot: ${title}\n• Kodi: ${sku}\n• Narxi: ${price}\n\nIltimos, mavjudligi va o'lchamini aniqlashtirib bersangiz.`);
+      document.getElementById('modal-telegram-btn').href = `https://t.me/OLMOS_GOLD?text=${tgMessage}`;
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       sendTelegramLeadNotification(
-        `✨ <b>TEZKOR KONS'YERJ SO'ROVI (MODAL)</b>\n` +
+        `💎 <b>OLMOS GOLD — TEZKOR KONS'YERJ SO'ROVI (MODAL)</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `💍 <b>Mahsulot:</b> ${escapeHtml(title)}\n` +
         `🏷 <b>Kodi (SKU):</b> ${escapeHtml(sku)}\n` +
         `💰 <b>Narxi:</b> ${escapeHtml(price)}\n` +
         `⏰ <b>Vaqt:</b> ${now}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌐 <i>aurumgold.uz orqali yuborildi</i>`
+        `🌐 <i>olmosgold.jewellery orqali yuborildi</i>`
       );
 
       const modal = document.getElementById('concierge-modal');
@@ -3062,20 +3187,20 @@
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
-        `👑 <b>YANGI VIP LOOKBOOK SO'ROVI</b>\n` +
+        `👑 <b>OLMOS GOLD — YANGI VIP LOOKBOOK SO'ROVI</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
         `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
         `💎 <b>Qiziqish:</b> ${escapeHtml(interest)}\n` +
         `⏰ <b>Vaqt:</b> ${now}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+        `🌐 <i>olmosgold.jewellery orqali yuborildi</i>`;
 
       sendTelegramLeadNotification(botMsg);
 
-      const tgText = encodeURIComponent(`Salom! Men Aurum Gold 2026 VIP Lookbook katalogini so'rayman.\nIsm: ${name}\nTel: +998 ${phone}\nYo'nalish: ${interest}`);
+      const tgText = encodeURIComponent(`Salom! Men Olmos Gold 2026 VIP Lookbook katalogini so'rayman.\nIsm: ${name}\nTel: +998 ${phone}\nYo'nalish: ${interest}`);
       setTimeout(() => {
-        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
       }, 1200);
     }
 
@@ -3089,19 +3214,19 @@
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
-        `📖 <b>VIP LOOKBOOK 2026 SO'ROVI (MODAL)</b>\n` +
+        `📖 <b>OLMOS GOLD — VIP LOOKBOOK 2026 SO'ROVI (MODAL)</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `👤 <b>Mijoz:</b> ${escapeHtml(name)}\n` +
         `📞 <b>Telefon:</b> +998 ${escapeHtml(phone)}\n` +
         `⏰ <b>Vaqt:</b> ${now}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌐 <i>aurumgold.uz orqali yuborildi</i>`;
+        `🌐 <i>olmosgold.jewellery orqali yuborildi</i>`;
 
       sendTelegramLeadNotification(botMsg);
 
-      const tgText = encodeURIComponent(`Salom! Men Aurum Gold VIP Lookbook so'rayman.\nIsm: ${name}\nTel: +998 ${phone}`);
+      const tgText = encodeURIComponent(`Salom! Men Olmos Gold VIP Lookbook so'rayman.\nIsm: ${name}\nTel: +998 ${phone}`);
       setTimeout(() => {
-        window.open(`https://t.me/aurumgold_uz?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
       }, 1000);
     }
 
