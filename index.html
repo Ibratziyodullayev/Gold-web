@@ -23,27 +23,31 @@
         extend: {
           colors: {
             olmos: {
-              950: '#061718',
-              900: '#0A2526',
-              850: '#0E3131',
-              800: '#133E3F',
-              700: '#1C5456',
-              600: '#267072',
-              50: '#F2F8F8'
+              950: '#041213',
+              900: '#071A1B',
+              850: '#0B282A',
+              800: '#0E3436',
+              750: '#113F42',
+              700: '#164E52',
+              600: '#1D6469',
+              500: '#2A8187',
+              200: '#A3D2D6',
+              100: '#D5EBED',
+              50: '#F0F8F9'
             },
             gold: {
               50: '#FDFBF7',
               100: '#FAF5EA',
-              200: '#F3E8CE',
-              300: '#E7D4A4',
-              400: '#D6B970',
-              500: '#BF9842',
-              600: '#A47D2E',
-              700: '#835E21',
-              800: '#68481D',
-              900: '#4D3418',
-              metallic: '#C59A3F',
-              champagne: '#D4AF37',
+              200: '#F5E8C8',
+              300: '#EBD49A',
+              400: '#DEC06F',
+              500: '#D4AF37',
+              600: '#C59A3F',
+              700: '#9E7728',
+              800: '#755418',
+              900: '#4D340E',
+              metallic: '#D4AF37',
+              champagne: '#EBD49A',
               amber: '#B8860B'
             },
             ivory: {
@@ -54,11 +58,11 @@
               400: '#E2DDCF'
             },
             ink: {
-              900: '#111113',
-              800: '#1D1E22',
-              700: '#2E3038',
-              600: '#4B4E5B',
-              500: '#717482'
+              900: '#F4F8F8',
+              800: '#E2EFEF',
+              700: '#C2D9DB',
+              600: '#9BB8BA',
+              500: '#78999B'
             }
           },
           fontFamily: {
@@ -66,10 +70,11 @@
             sans: ['"Plus Jakarta Sans"', 'sans-serif']
           },
           backgroundImage: {
-            'gold-shimmer': 'linear-gradient(135deg, #DFBE74 0%, #C59A3F 50%, #9B7423 100%)',
+            'gold-shimmer': 'linear-gradient(135deg, #F8E8B8 0%, #D4AF37 50%, #9E7728 100%)',
             'gold-light': 'linear-gradient(135deg, #FFF9ED 0%, #F5E5C0 60%, #E2C682 100%)',
-            'radial-luxury': 'radial-gradient(circle at 50% 15%, rgba(212,175,55,0.09) 0%, rgba(253,251,247,0) 70%)',
-            'emerald-shimmer': 'linear-gradient(135deg, #0A2526 0%, #0E3131 50%, #133E3F 100%)'
+            'radial-luxury': 'radial-gradient(circle at 50% 25%, #13474A 0%, #0A2628 65%, #051516 100%)',
+            'emerald-shimmer': 'linear-gradient(135deg, #071C1E 0%, #0E3638 50%, #14494C 100%)',
+            'emerald-card': 'linear-gradient(180deg, rgba(14, 54, 56, 0.95) 0%, rgba(9, 34, 36, 0.98) 100%)'
           }
         }
       }
@@ -78,13 +83,13 @@
 
   <style>
     ::selection {
-      background: #C59A3F;
-      color: #FFFFFF;
+      background: #D4AF37;
+      color: #041213;
     }
 
     body {
-      background-color: #FAF9F6;
-      color: #111113;
+      background-color: #071C1E;
+      color: #F1F7F7;
     }
 
     /* Bulletproof Sticky Navigation Header for Mobile & Desktop */
@@ -100,7 +105,8 @@
       right: 0 !important;
       width: 100% !important;
       z-index: 45 !important;
-      background-color: rgba(255, 255, 255, 0.98) !important;
+      background-color: rgba(7, 28, 30, 0.96) !important;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
       -webkit-backdrop-filter: blur(16px) !important;
       backdrop-filter: blur(16px) !important;
       transition: box-shadow 0.3s ease, border-color 0.3s ease;
@@ -112,24 +118,24 @@
       width: 100vw !important;
       height: 100vh !important;
       z-index: 99 !important;
-      background-color: #FAF9F6 !important;
+      background-color: #071C1E !important;
       overflow-y: auto !important;
     }
     
     .gold-text-glow {
-      text-shadow: 0 1px 12px rgba(197, 154, 63, 0.25);
+      text-shadow: 0 1px 16px rgba(212, 175, 55, 0.45);
     }
 
     .luxury-white-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(197, 154, 63, 0.22);
-      box-shadow: 0 10px 30px -8px rgba(197, 154, 63, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      background: linear-gradient(180deg, #0D3335 0%, #082325 100%);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 175, 55, 0.05);
       cursor: pointer;
     }
 
     .luxury-white-card:hover {
-      border-color: rgba(197, 154, 63, 0.6);
-      box-shadow: 0 16px 36px -10px rgba(197, 154, 63, 0.22), 0 6px 16px -2px rgba(0, 0, 0, 0.06);
+      border-color: rgba(212, 175, 55, 0.75);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.22);
       transform: translateY(-3px);
     }
 
@@ -149,8 +155,8 @@
 
     /* Thumbnail active border */
     .thumb-btn.active {
-      border-color: #C59A3F;
-      box-shadow: 0 0 0 2px rgba(197, 154, 63, 0.4);
+      border-color: #D4AF37;
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
     }
 
     /* Fullscreen View Animations */
@@ -175,56 +181,56 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #FAF9F6;
+      background: #071C1E;
     }
     ::-webkit-scrollbar-thumb {
-      background: #D6B970;
+      background: #9E7728;
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #C59A3F;
+      background: #D4AF37;
     }
   </style>
 </head>
-<body class="bg-[#FAF9F6] text-ink-900 font-sans antialiased">
+<body class="bg-[#071C1E] text-[#F1F7F7] font-sans antialiased selection:bg-gold-500 selection:text-olmos-950">
 
   <!-- ================= TOP LUXURY STATUS & CONCIERGE BAR ================= -->
-  <aside aria-label="Announcement Bar" class="hidden sm:block bg-ivory-200 border-b border-gold-metallic/20 text-xs tracking-wider uppercase py-2 px-4 relative z-30">
+  <aside aria-label="Announcement Bar" class="hidden sm:block bg-[#041213] border-b border-gold-500/20 text-xs tracking-wider uppercase py-2 px-4 relative z-30">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-gold-700 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+        <span class="inline-flex items-center gap-1.5 text-gold-300 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
           <span data-i18n="top_bar_location">Flagship Butik • Bunyodkor 15/1, Chilonzor</span>
         </span>
-        <span class="text-zinc-400 hidden sm:inline">•</span>
-        <span class="text-ink-600 hidden sm:inline" data-i18n="top_bar_hours">Du-Yak 10:00 — 21:00</span>
+        <span class="text-olmos-700 hidden sm:inline">•</span>
+        <span class="text-emerald-200/80 hidden sm:inline" data-i18n="top_bar_hours">Du-Yak 10:00 — 21:00</span>
       </div>
-      <div class="flex items-center gap-6 text-ink-700">
-        <a href="tel:+998977742021" class="hover:text-gold-600 transition-colors flex items-center gap-1.5 font-medium">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+      <div class="flex items-center gap-6 text-emerald-200/90">
+        <a href="tel:+998977742021" class="hover:text-gold-300 transition-colors flex items-center gap-1.5 font-medium">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i>
           <span>+998 (97) 774-20-21</span>
         </a>
-        <div class="h-3 w-px bg-zinc-300"></div>
-        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="hover:text-[#0088cc] transition-colors flex items-center gap-1.5 font-medium text-xs">
-          <i data-lucide="send" class="w-3.5 h-3.5 text-[#0088cc]"></i>
+        <div class="h-3 w-px bg-olmos-700/60"></div>
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition-colors flex items-center gap-1.5 font-medium text-xs">
+          <i data-lucide="send" class="w-3.5 h-3.5 text-gold-400"></i>
           <span>@OLMOS_GOLD</span>
         </a>
-        <div class="h-3 w-px bg-zinc-300"></div>
+        <div class="h-3 w-px bg-olmos-700/60"></div>
         <!-- Language Switcher -->
         <div class="flex items-center gap-1.5 font-medium">
-          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-700 font-bold">UZ</button>
-          <span class="text-zinc-400">/</span>
-          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-ink-500 hover:text-ink-900">RU</button>
+          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-300 font-bold">UZ</button>
+          <span class="text-olmos-700">/</span>
+          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-emerald-300/60 hover:text-gold-300">RU</button>
         </div>
       </div>
     </div>
   </aside>
 
   <!-- ================= LUXURY HEADER / NAVIGATION ================= -->
-  <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-gold-metallic/15 transition-all duration-300 shadow-sm" id="main-header">
+  <header class="sticky top-0 z-40 bg-[#071C1E]/95 backdrop-blur-md border-b border-gold-500/25 transition-all duration-300 shadow-lg shadow-black/20" id="main-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       <!-- Mobile Menu Trigger -->
-      <button onclick="toggleMobileNav()" class="lg:hidden text-ink-800 hover:text-gold-600 p-1.5" aria-label="Open Menu">
+      <button onclick="toggleMobileNav()" class="lg:hidden text-emerald-100 hover:text-gold-300 p-1.5" aria-label="Open Menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
 
@@ -233,13 +239,13 @@
         <img 
           src="olmos-logo.jpg" 
           alt="OLMOS GOLD JEWELLERY" 
-          class="w-9 h-9 sm:w-11 sm:h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm transition-transform duration-300 group-hover:scale-105"
+          class="w-9 h-9 sm:w-11 sm:h-11 rounded-sm object-cover border border-gold-500/40 shadow-sm transition-transform duration-300 group-hover:scale-105"
         >
         <div class="flex flex-col text-left">
           <span class="font-serif text-lg sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase transition group-hover:opacity-90 leading-tight">
             OLMOS GOLD
           </span>
-          <span class="text-[8px] sm:text-[9.5px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold-700 font-semibold leading-none mt-0.5">
+          <span class="text-[8px] sm:text-[9.5px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold-300 font-semibold leading-none mt-0.5">
             JEWELLERY
           </span>
         </div>
@@ -247,42 +253,42 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8 text-sm tracking-widest uppercase font-medium">
-        <a href="#collections" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_collections">Kolleksiyalar</a>
-        <a href="#italian-gold" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_quality">18K Italiya Standarti</a>
-        <a href="#diamonds" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_diamonds">GIA Olmoslar</a>
-        <a href="#concierge" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_concierge">Xususiy Konsyerj</a>
-        <a href="#boutique" class="text-ink-700 hover:text-gold-600 transition py-1" data-i18n="nav_boutique">Butik</a>
+        <a href="#collections" class="text-emerald-100/85 hover:text-gold-300 transition py-1" data-i18n="nav_collections">Kolleksiyalar</a>
+        <a href="#italian-gold" class="text-emerald-100/85 hover:text-gold-300 transition py-1" data-i18n="nav_quality">18K Italiya Standarti</a>
+        <a href="#diamonds" class="text-emerald-100/85 hover:text-gold-300 transition py-1" data-i18n="nav_diamonds">GIA Olmoslar</a>
+        <a href="#concierge" class="text-emerald-100/85 hover:text-gold-300 transition py-1" data-i18n="nav_concierge">Xususiy Konsyerj</a>
+        <a href="#boutique" class="text-emerald-100/85 hover:text-gold-300 transition py-1" data-i18n="nav_boutique">Butik</a>
       </nav>
 
       <!-- Primary Action CTA -->
       <div class="flex items-center gap-2 sm:gap-4">
         <!-- Compact UZ/RU switcher for mobile right in header -->
         <div class="flex lg:hidden items-center text-[11px] font-bold tracking-wider mr-0.5">
-          <button id="mob-lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded text-gold-700 font-bold">UZ</button>
-          <span class="text-zinc-300">/</span>
-          <button id="mob-lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded text-ink-500">RU</button>
+          <button id="mob-lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded text-gold-300 font-bold">UZ</button>
+          <span class="text-olmos-700">/</span>
+          <button id="mob-lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded text-emerald-300/60">RU</button>
         </div>
 
         <!-- Wishlist Header Button with Badge -->
         <button 
           id="header-wishlist-btn"
           onclick="openWishlistPage()" 
-          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
+          class="relative p-2 sm:p-2.5 rounded-sm bg-[#0B2A2C] border border-gold-500/35 text-gold-300 hover:text-rose-400 hover:border-rose-400 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
-          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
+          <i data-lucide="heart" class="w-4 h-4 text-gold-300 pointer-events-none"></i>
           <span id="wishlist-badge-header" class="absolute -top-1.5 -right-1.5 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
         </button>
 
-        <button onclick="openVipCatalogModal()" class="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-ink-900 hover:bg-gold-600 text-white font-semibold text-xs tracking-widest uppercase overflow-hidden shadow-md transition-all duration-300">
+        <button onclick="openVipCatalogModal()" class="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs tracking-widest uppercase overflow-hidden shadow-lg shadow-gold-500/10 transition-all duration-300">
           <span class="relative z-10 flex items-center gap-2">
-            <i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-300"></i>
+            <i data-lucide="book-open" class="w-3.5 h-3.5 text-olmos-950"></i>
             <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
           </span>
         </button>
 
-        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-gold-700 hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram Concierge" title="Telegram: @OLMOS_GOLD">
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-sm bg-[#0B2A2C] border border-gold-500/35 text-gold-300 hover:bg-gold-500 hover:text-olmos-950 transition shadow-sm" aria-label="Telegram Concierge" title="Telegram: @OLMOS_GOLD">
           <i data-lucide="send" class="w-4 h-4"></i>
         </a>
       </div>
@@ -290,89 +296,89 @@
   </header>
 
   <!-- ================= OPAQUE SOLID MOBILE SLIDEOUT DRAWER (OUTSIDE HEADER) ================= -->
-  <div id="mobile-nav" class="fixed inset-0 z-50 bg-[#FAF9F6] transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-between overflow-y-auto">
+  <div id="mobile-nav" class="fixed inset-0 z-50 bg-[#071C1E] border-r border-gold-500/30 transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-between overflow-y-auto">
     <div class="p-6">
-      <div class="flex justify-between items-center pb-5 border-b border-gold-metallic/20">
+      <div class="flex justify-between items-center pb-5 border-b border-gold-500/25">
         <a href="#" onclick="toggleMobileNav()" class="flex items-center gap-3">
-          <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-10 h-10 rounded-sm object-cover border border-gold-metallic/40 shadow-sm">
+          <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-10 h-10 rounded-sm object-cover border border-gold-500/40 shadow-sm">
           <div class="flex flex-col text-left">
-            <span class="font-serif text-xl tracking-[0.18em] text-gold-metallic font-bold uppercase leading-tight">OLMOS GOLD</span>
-            <span class="text-[8.5px] tracking-[0.35em] uppercase text-gold-700 font-semibold leading-none mt-0.5">JEWELLERY</span>
+            <span class="font-serif text-xl tracking-[0.18em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase leading-tight">OLMOS GOLD</span>
+            <span class="text-[8.5px] tracking-[0.35em] uppercase text-gold-300 font-semibold leading-none mt-0.5">JEWELLERY</span>
           </div>
         </a>
-        <button onclick="toggleMobileNav()" class="w-10 h-10 rounded-full bg-white border border-gold-metallic/30 flex items-center justify-center text-ink-700 hover:text-ink-900 active:scale-95 transition shadow-sm" aria-label="Close menu">
+        <button onclick="toggleMobileNav()" class="w-10 h-10 rounded-full bg-[#0B2A2C] border border-gold-500/30 flex items-center justify-center text-emerald-100 hover:text-gold-300 active:scale-95 transition shadow-sm" aria-label="Close menu">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <!-- Quick Wishlist Shortcut in Mobile Menu -->
-      <div onclick="toggleMobileNav(); openWishlistPage();" class="mt-6 p-4 rounded-sm bg-white border border-gold-metallic/30 shadow-sm flex items-center justify-between cursor-pointer active:scale-98 transition">
+      <div onclick="toggleMobileNav(); openWishlistPage();" class="mt-6 p-4 rounded-sm bg-[#0B2C2E] border border-gold-500/30 shadow-md flex items-center justify-between cursor-pointer active:scale-98 transition">
         <div class="flex items-center gap-3 pointer-events-none">
-          <div class="w-9 h-9 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center">
+          <div class="w-9 h-9 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-400 flex items-center justify-center">
             <i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i>
           </div>
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-ink-900 block" data-i18n="mob_wishlist_title">Sevimlilar (Wishlist)</span>
-            <span id="wishlist-count-text-mob" class="text-[11px] text-ink-500">0 ta taqinchoq saqlangan</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-white block" data-i18n="mob_wishlist_title">Sevimlilar (Wishlist)</span>
+            <span id="wishlist-count-text-mob" class="text-[11px] text-emerald-200/70">0 ta taqinchoq saqlangan</span>
           </div>
         </div>
-        <button type="button" onclick="event.stopPropagation(); toggleMobileNav(); openWishlistPage();" class="px-3.5 py-1.5 bg-ink-900 text-white rounded-sm text-xs font-bold uppercase tracking-wider active:scale-95 transition">
+        <button type="button" onclick="event.stopPropagation(); toggleMobileNav(); openWishlistPage();" class="px-3.5 py-1.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 rounded-sm text-xs font-bold uppercase tracking-wider active:scale-95 transition">
           Ko'rish
         </button>
       </div>
 
       <nav class="flex flex-col gap-4 mt-6 text-sm tracking-widest uppercase font-semibold">
-        <a href="#collections" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_collections">
+        <a href="#collections" onclick="toggleMobileNav()" class="text-emerald-100 hover:text-gold-300 py-2 border-b border-olmos-800 flex items-center justify-between" data-i18n="nav_collections">
           <span>Kolleksiyalar</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-olmos-600"></i>
         </a>
-        <a href="#italian-gold" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_quality">
+        <a href="#italian-gold" onclick="toggleMobileNav()" class="text-emerald-100 hover:text-gold-300 py-2 border-b border-olmos-800 flex items-center justify-between" data-i18n="nav_quality">
           <span>18K Italiya Standarti</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-olmos-600"></i>
         </a>
-        <a href="#diamonds" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_diamonds">
+        <a href="#diamonds" onclick="toggleMobileNav()" class="text-emerald-100 hover:text-gold-300 py-2 border-b border-olmos-800 flex items-center justify-between" data-i18n="nav_diamonds">
           <span>GIA Olmoslar</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-olmos-600"></i>
         </a>
-        <a href="#concierge" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_concierge">
+        <a href="#concierge" onclick="toggleMobileNav()" class="text-emerald-100 hover:text-gold-300 py-2 border-b border-olmos-800 flex items-center justify-between" data-i18n="nav_concierge">
           <span>Xususiy Konsyerj</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-olmos-600"></i>
         </a>
-        <a href="#boutique" onclick="toggleMobileNav()" class="text-ink-800 hover:text-gold-600 py-2 border-b border-zinc-100 flex items-center justify-between" data-i18n="nav_boutique">
+        <a href="#boutique" onclick="toggleMobileNav()" class="text-emerald-100 hover:text-gold-300 py-2 border-b border-olmos-800 flex items-center justify-between" data-i18n="nav_boutique">
           <span>Butik Manzili & Xarita</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-olmos-600"></i>
         </a>
       </nav>
 
       <!-- Direct Contacts in Menu -->
-      <div class="mt-6 pt-5 border-t border-gold-metallic/20 space-y-2.5">
-        <a href="tel:+998977742021" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-800 font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+      <div class="mt-6 pt-5 border-t border-gold-500/25 space-y-2.5">
+        <a href="tel:+998977742021" class="flex items-center gap-3 p-3 bg-[#0B2C2E] rounded-sm border border-gold-500/30 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:border-gold-400 transition">
+          <i data-lucide="phone" class="w-4 h-4 text-gold-300"></i>
           <span>+998 (97) 774-20-21</span>
         </a>
-        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#2AABEE]/10 rounded-sm border border-[#2AABEE]/30 text-[#0088cc] font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="send" class="w-4 h-4"></i>
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#0B2C2E] rounded-sm border border-gold-500/30 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:border-gold-400 transition">
+          <i data-lucide="send" class="w-4 h-4 text-[#2AABEE]"></i>
           <span>Telegram: @OLMOS_GOLD</span>
         </a>
-        <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-rose-50/70 rounded-sm border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="instagram" class="w-4 h-4 text-rose-600"></i>
+        <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#0B2C2E] rounded-sm border border-gold-500/30 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:border-gold-400 transition">
+          <i data-lucide="instagram" class="w-4 h-4 text-rose-400"></i>
           <span>Instagram: @olmosgold.jewellery</span>
         </a>
-        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 text-[11px] text-ink-600 flex items-start gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 text-gold-700 shrink-0 mt-0.5"></i>
+        <div class="p-3 bg-[#0B2C2E] rounded-sm border border-gold-500/20 text-[11px] text-emerald-100/80 flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold-300 shrink-0 mt-0.5"></i>
           <span>Bunyodkor shoh ko'chasi 15/1, Chilonzor tumani, Toshkent</span>
         </div>
       </div>
     </div>
 
-    <div class="p-6 bg-white border-t border-gold-metallic/20 space-y-4">
-      <button onclick="toggleMobileNav(); openVipCatalogModal();" class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold uppercase text-xs tracking-widest rounded-sm text-center shadow-md transition">
+    <div class="p-6 bg-[#051415] border-t border-gold-500/25 space-y-4">
+      <button onclick="toggleMobileNav(); openVipCatalogModal();" class="w-full py-3.5 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold uppercase text-xs tracking-widest rounded-sm text-center shadow-lg transition">
         <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
       </button>
       <div class="flex justify-center gap-4 text-xs tracking-widest font-bold">
-        <button onclick="switchLanguage('uz')" class="text-gold-700">O'ZBEKCHA</button>
-        <span class="text-zinc-300">|</span>
-        <button onclick="switchLanguage('ru')" class="text-ink-500">РУССКИЙ</button>
+        <button onclick="switchLanguage('uz')" class="text-gold-300">O'ZBEKCHA</button>
+        <span class="text-olmos-700">|</span>
+        <button onclick="switchLanguage('ru')" class="text-emerald-300/60">РУССКИЙ</button>
       </div>
     </div>
   </div>
@@ -388,46 +394,46 @@
         <!-- Left: Editorial Value Copy -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-gold-metallic/35 text-xs tracking-[0.2em] uppercase text-gold-700 font-semibold shadow-sm">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0A2628]/90 backdrop-blur-md border border-gold-500/40 text-xs tracking-[0.2em] uppercase text-gold-300 font-semibold shadow-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
             <span data-i18n="hero_badge">Eksklyuziv Zargarlik Uyi • Toshkent</span>
           </div>
 
-          <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal leading-[1.08] tracking-tight text-ink-900">
-            <span class="italic font-light text-ink-600" data-i18n="hero_title_part1">Mukammal Chiroy.</span><br>
+          <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal leading-[1.08] tracking-tight text-white">
+            <span class="italic font-light text-emerald-200/90" data-i18n="hero_title_part1">Mukammal Chiroy.</span><br>
             <span class="text-transparent bg-clip-text bg-gold-shimmer font-semibold gold-text-glow" data-i18n="hero_title_part2">18K Sertifikatlangan</span><br>
             <span data-i18n="hero_title_part3">Italiya Oltini & Olmoslar.</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-ink-600 font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
+          <p class="text-base sm:text-lg text-emerald-100/80 font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
             Vicenza va Arezzo ustaxonalarining oliy darajadagi 750° asillikdagi oltin buyumlari hamda xalqaro GIA sertifikatli benuqson toza olmoslar. Toshkent elitasining ishonchli tanlovi.
           </p>
 
           <!-- Dual Conversion CTAs -->
           <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <button onclick="openVipCatalogModal()" class="w-full sm:w-auto px-8 py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
-              <i data-lucide="crown" class="w-4 h-4 text-gold-300"></i>
+            <button onclick="openVipCatalogModal()" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs tracking-[0.2em] uppercase rounded-sm shadow-lg shadow-gold-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+              <i data-lucide="crown" class="w-4 h-4 text-olmos-950"></i>
               <span data-i18n="hero_cta_catalog">2026 VIP Lookbook Yuklash</span>
             </button>
-            <a href="#collections" class="w-full sm:w-auto px-8 py-4 bg-white text-ink-800 hover:text-gold-700 font-medium text-xs tracking-[0.2em] uppercase rounded-sm border border-gold-metallic/35 hover:border-gold-metallic transition shadow-sm flex items-center justify-center gap-2">
+            <a href="#collections" class="w-full sm:w-auto px-8 py-4 bg-[#0A2628]/80 hover:bg-[#0E3638] text-white hover:text-gold-300 font-medium text-xs tracking-[0.2em] uppercase rounded-sm border border-gold-500/40 hover:border-gold-400 transition shadow-sm flex items-center justify-center gap-2">
               <span data-i18n="hero_cta_explore">Kolleksiyani Ko'rish</span>
-              <i data-lucide="arrow-down-right" class="w-4 h-4 text-gold-metallic"></i>
+              <i data-lucide="arrow-down-right" class="w-4 h-4 text-gold-400"></i>
             </a>
           </div>
 
           <!-- Micro Trust Elements -->
-          <div class="pt-8 border-t border-gold-metallic/20 grid grid-cols-3 gap-4 text-center lg:text-left">
+          <div class="pt-8 border-t border-gold-500/20 grid grid-cols-3 gap-4 text-center lg:text-left">
             <div>
-              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">18K / 750°</div>
-              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat1">Italiya Qonuniy Asilligi</div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-semibold">18K / 750°</div>
+              <div class="text-[11px] text-emerald-200/70 uppercase tracking-wider mt-0.5" data-i18n="hero_stat1">Italiya Qonuniy Asilligi</div>
             </div>
             <div>
-              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">GIA / IGI</div>
-              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat2">Sertifikatlangan Olmos</div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-semibold">GIA / IGI</div>
+              <div class="text-[11px] text-emerald-200/70 uppercase tracking-wider mt-0.5" data-i18n="hero_stat2">Sertifikatlangan Olmos</div>
             </div>
             <div>
-              <div class="font-serif text-2xl sm:text-3xl text-gold-700 font-semibold">100%</div>
-              <div class="text-[11px] text-ink-500 uppercase tracking-wider mt-0.5" data-i18n="hero_stat3">Davlat Probir Nazorati</div>
+              <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-semibold">100%</div>
+              <div class="text-[11px] text-emerald-200/70 uppercase tracking-wider mt-0.5" data-i18n="hero_stat3">Davlat Probir Nazorati</div>
             </div>
           </div>
 
@@ -435,30 +441,30 @@
 
         <!-- Right: Cinematic Visual Showcase -->
         <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md aspect-[4/5] rounded-t-[140px] rounded-b-2xl p-1 bg-gradient-to-b from-gold-metallic/40 via-gold-metallic/15 to-gold-metallic/30 shadow-xl">
-            <div class="relative w-full h-full rounded-t-[138px] rounded-b-xl overflow-hidden bg-ivory-100 group cursor-pointer" onclick="openProductDetail('AUR-REG-01')">
+          <div class="relative w-full max-w-md aspect-[4/5] rounded-t-[140px] rounded-b-2xl p-1 bg-gradient-to-b from-gold-500/50 via-gold-500/20 to-gold-500/40 shadow-2xl shadow-black/40">
+            <div class="relative w-full h-full rounded-t-[138px] rounded-b-xl overflow-hidden bg-[#0A2628] group cursor-pointer" onclick="openProductDetail('AUR-REG-01')">
               <img 
                 src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85" 
                 alt="Olmos Gold 18K Italian Diamond Necklace" 
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               >
-              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#041213]/90 via-[#041213]/20 to-transparent"></div>
               
               <!-- Floating VIP Product Badge -->
-              <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 shadow-lg flex items-center justify-between">
+              <div class="absolute bottom-6 left-6 right-6 p-4 bg-[#071C1E]/95 backdrop-blur-md rounded-sm border border-gold-500/40 shadow-xl flex items-center justify-between">
                 <div>
-                  <span class="text-[10px] uppercase tracking-widest text-gold-700 font-bold" data-i18n="hero_card_tag">Milan Fashion Week Highlight</span>
-                  <h4 class="font-serif text-base text-ink-900 font-semibold" data-i18n="hero_card_title">Collezione Regina • 18K Yellow Gold</h4>
-                  <p class="text-xs text-ink-500">0.85ct VVS1 Antwerp Cut • Batafsil ko'rish &rarr;</p>
+                  <span class="text-[10px] uppercase tracking-widest text-gold-400 font-bold" data-i18n="hero_card_tag">Milan Fashion Week Highlight</span>
+                  <h4 class="font-serif text-base text-white font-semibold" data-i18n="hero_card_title">Collezione Regina • 18K Yellow Gold</h4>
+                  <p class="text-xs text-emerald-200/70">0.85ct VVS1 Antwerp Cut • Batafsil ko'rish &rarr;</p>
                 </div>
-                <button class="p-2.5 bg-ink-900 hover:bg-gold-600 text-white rounded-full transition shadow" title="To'liq ekranda ochish">
-                  <i data-lucide="maximize-2" class="w-4 h-4 font-bold text-gold-300"></i>
+                <button class="p-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 font-bold rounded-full transition shadow hover:scale-105" title="To'liq ekranda ochish">
+                  <i data-lucide="maximize-2" class="w-4 h-4 font-bold"></i>
                 </button>
               </div>
 
               <!-- Top Hallmark Seal Stamp -->
-              <div class="absolute top-6 right-6 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-gold-700 border border-gold-metallic/40 shadow-sm flex items-center gap-1.5 font-bold">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-metallic"></i>
+              <div class="absolute top-6 right-6 px-3 py-1.5 bg-[#071C1E]/95 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-gold-300 border border-gold-500/50 shadow-md flex items-center gap-1.5 font-bold">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-400"></i>
                 <span>750 ITALIA</span>
               </div>
             </div>
@@ -470,47 +476,47 @@
   </section>
 
   <!-- ================= TRUST & ASSAY BAR ================= -->
-  <section class="border-y border-gold-metallic/20 bg-white py-10 relative z-20 shadow-sm">
+  <section class="border-y border-gold-500/25 bg-[#051617] py-10 relative z-20 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+          <div class="w-12 h-12 rounded-sm bg-[#0B2C2E] flex items-center justify-center text-gold-300 shrink-0 border border-gold-500/35 shadow-sm">
             <i data-lucide="award" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item1_title">18K (750°) Italiya Oltini</h4>
-            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item1_desc">Arezzo va Vicenza zavodlarining rasmiy tamg'ali toza qotishmasi.</p>
+            <h4 class="font-serif text-lg text-white font-bold" data-i18n="trust_item1_title">18K (750°) Italiya Oltini</h4>
+            <p class="text-xs text-emerald-200/80 mt-1" data-i18n="trust_item1_desc">Arezzo va Vicenza zavodlarining rasmiy tamg'ali toza qotishmasi.</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+          <div class="w-12 h-12 rounded-sm bg-[#0B2C2E] flex items-center justify-center text-gold-300 shrink-0 border border-gold-500/35 shadow-sm">
             <i data-lucide="badge-check" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item2_title">Davlat Asillik Tamg'asi</h4>
-            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item2_desc">O'zbekiston Respublikasi Probir Palatasining qat'iy tekshiruvi va muhri.</p>
+            <h4 class="font-serif text-lg text-white font-bold" data-i18n="trust_item2_title">Davlat Asillik Tamg'asi</h4>
+            <p class="text-xs text-emerald-200/80 mt-1" data-i18n="trust_item2_desc">O'zbekiston Respublikasi Probir Palatasining qat'iy tekshiruvi va muhri.</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+          <div class="w-12 h-12 rounded-sm bg-[#0B2C2E] flex items-center justify-center text-gold-300 shrink-0 border border-gold-500/35 shadow-sm">
             <i data-lucide="gem" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item3_title">GIA / IGI Sertifikati</h4>
-            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item3_desc">Har bir 0.30ct+ tosh uchun lazerli xalqaro seriya raqami va pasporti.</p>
+            <h4 class="font-serif text-lg text-white font-bold" data-i18n="trust_item3_title">GIA / IGI Sertifikati</h4>
+            <p class="text-xs text-emerald-200/80 mt-1" data-i18n="trust_item3_desc">Har bir 0.30ct+ tosh uchun lazerli xalqaro seriya raqami va pasporti.</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-sm bg-ivory-200 flex items-center justify-center text-gold-700 shrink-0 border border-gold-metallic/30 shadow-sm">
+          <div class="w-12 h-12 rounded-sm bg-[#0B2C2E] flex items-center justify-center text-gold-300 shrink-0 border border-gold-500/35 shadow-sm">
             <i data-lucide="sparkle" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="trust_item4_title">Cheksiz Kafolat & O'lcham</h4>
-            <p class="text-xs text-ink-600 mt-1" data-i18n="trust_item4_desc">Bepul individual o'lchamga moslash, tozalash va yillik parvarish.</p>
+            <h4 class="font-serif text-lg text-white font-bold" data-i18n="trust_item4_title">Cheksiz Kafolat & O'lcham</h4>
+            <p class="text-xs text-emerald-200/80 mt-1" data-i18n="trust_item4_desc">Bepul individual o'lchamga moslash, tozalash va yillik parvarish.</p>
           </div>
         </div>
 
@@ -519,40 +525,40 @@
   </section>
 
   <!-- ================= INTERACTIVE CURATED COLLECTION MODULE ================= -->
-  <section id="collections" class="py-24 relative bg-[#FAF9F6]">
+  <section id="collections" class="py-24 relative bg-[#071C1E]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="col_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
-          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="col_title">
-            Oliy San'at Namunasi <span class="italic font-light text-ink-500">& Benuqson Did</span>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-300 block mb-2" data-i18n="col_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal" data-i18n="col_title">
+            Oliy San'at Namunasi <span class="italic font-light text-emerald-300/80">& Benuqson Did</span>
           </h2>
         </div>
         <div class="text-right">
-          <span class="inline-flex items-center gap-1.5 text-xs text-gold-700 font-semibold bg-white px-3 py-1.5 rounded-full border border-gold-metallic/30 shadow-sm">
-            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+          <span class="inline-flex items-center gap-1.5 text-xs text-gold-300 font-semibold bg-[#0A2628] px-3.5 py-1.5 rounded-full border border-gold-500/35 shadow-sm">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-gold-400"></i>
             <span data-i18n="hint_click_full">Taqinchoq ustiga bosing — to'liq sahifa ochiladi</span>
           </span>
         </div>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar border-b border-zinc-200">
-        <button onclick="filterCategory('all')" class="cat-btn active px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-ink-900 text-white shadow-sm" data-cat="all" data-i18n="cat_all">
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar border-b border-gold-500/20">
+        <button onclick="filterCategory('all')" class="cat-btn active px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 font-bold shadow-md" data-cat="all" data-i18n="cat_all">
           Barcha Buyumlar
         </button>
-        <button onclick="filterCategory('rings')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="rings" data-i18n="cat_rings">
+        <button onclick="filterCategory('rings')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-[#0A2628] border border-gold-500/30 text-emerald-100 hover:text-gold-300 hover:border-gold-400" data-cat="rings" data-i18n="cat_rings">
           Uzuklar & Soliter
         </button>
-        <button onclick="filterCategory('necklaces')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="necklaces" data-i18n="cat_necklaces">
+        <button onclick="filterCategory('necklaces')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-[#0A2628] border border-gold-500/30 text-emerald-100 hover:text-gold-300 hover:border-gold-400" data-cat="necklaces" data-i18n="cat_necklaces">
           Marjonlar & Zanjirlar
         </button>
-        <button onclick="filterCategory('bridal')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="bridal" data-i18n="cat_bridal">
+        <button onclick="filterCategory('bridal')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-[#0A2628] border border-gold-500/30 text-emerald-100 hover:text-gold-300 hover:border-gold-400" data-cat="bridal" data-i18n="cat_bridal">
           Kelin Sarpolar & To'plamlar
         </button>
-        <button onclick="filterCategory('investment')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-white border border-zinc-200 text-ink-700 hover:border-gold-metallic" data-cat="investment" data-i18n="cat_investment">
+        <button onclick="filterCategory('investment')" class="cat-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 bg-[#0A2628] border border-gold-500/30 text-emerald-100 hover:text-gold-300 hover:border-gold-400" data-cat="investment" data-i18n="cat_investment">
           Investitsion Oltin 999.9
         </button>
       </div>
@@ -563,23 +569,23 @@
       </div>
 
       <!-- Private VIP Catalog CTA Banner inside Collections -->
-      <div class="mt-16 p-8 sm:p-12 bg-white rounded-sm border border-gold-metallic/35 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
-        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold-200/40 blur-[80px] rounded-full pointer-events-none"></div>
+      <div class="mt-16 p-8 sm:p-12 bg-gradient-to-br from-[#0B2C2E] via-[#071C1E] to-[#041213] rounded-sm border border-gold-500/35 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold-400/10 blur-[80px] rounded-full pointer-events-none"></div>
         
         <div class="space-y-3 text-center lg:text-left max-w-2xl">
-          <span class="text-[11px] uppercase tracking-[0.25em] text-gold-700 font-bold flex items-center justify-center lg:justify-start gap-2">
-            <i data-lucide="lock" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <span class="text-[11px] uppercase tracking-[0.25em] text-gold-300 font-bold flex items-center justify-center lg:justify-start gap-2">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-gold-400"></i>
             <span data-i18n="banner_lock">Cheklangan Xususiy Kolleksiya</span>
           </span>
-          <h3 class="font-serif text-2xl sm:text-4xl text-ink-900 font-normal" data-i18n="banner_title">
+          <h3 class="font-serif text-2xl sm:text-4xl text-white font-normal" data-i18n="banner_title">
             Vitrinalarda Ko'rsatilmagan 120+ Maxsus Zargarlik Buyumlari
           </h3>
-          <p class="text-sm text-ink-600 leading-relaxed" data-i18n="banner_desc">
+          <p class="text-sm text-emerald-100/80 leading-relaxed" data-i18n="banner_desc">
             Antwerp va Milan kimoshdi savdolaridan keltirilgan noyob namunalar, xususiy buyurtma asosidagi toshlar katalogimizda jamlangan.
           </p>
         </div>
 
-        <button onclick="openVipCatalogModal()" class="shrink-0 px-8 py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm hover:scale-105 active:scale-95 transition shadow-lg">
+        <button onclick="openVipCatalogModal()" class="shrink-0 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs tracking-[0.2em] uppercase rounded-sm hover:scale-105 active:scale-95 transition shadow-lg shadow-gold-500/20">
           <span data-i18n="cta_vip_catalog">VIP Katalog Olish (PDF)</span>
         </button>
       </div>
@@ -588,7 +594,7 @@
   </section>
 
   <!-- ================= ITALIAN GOLD CRAFTSMANSHIP & PURITY ================= -->
-  <section id="italian-gold" class="py-24 bg-white border-t border-zinc-200 relative overflow-hidden">
+  <section id="italian-gold" class="py-24 bg-[#051617] border-t border-gold-500/20 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -596,20 +602,20 @@
         <div class="lg:col-span-6 relative">
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
-              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-ivory-200 border border-gold-metallic/25 shadow-sm">
+              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-[#0A2628] border border-gold-500/30 shadow-md">
                 <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80" alt="Italian Master Goldsmith at work" class="w-full h-full object-cover">
               </div>
-              <div class="p-4 bg-ivory-100 rounded-sm border border-gold-metallic/30 text-center shadow-sm">
-                <span class="font-serif text-2xl text-gold-700 font-bold block">18K / 750°</span>
-                <span class="text-[11px] text-ink-500 uppercase tracking-widest font-medium" data-i18n="craft_pure_label">Eng Oliy Italiya Standarti</span>
+              <div class="p-4 bg-[#0A2628] rounded-sm border border-gold-500/35 text-center shadow-md">
+                <span class="font-serif text-2xl text-gold-300 font-bold block">18K / 750°</span>
+                <span class="text-[11px] text-emerald-200/70 uppercase tracking-widest font-medium" data-i18n="craft_pure_label">Eng Oliy Italiya Standarti</span>
               </div>
             </div>
             <div class="space-y-4 pt-8">
-              <div class="p-4 bg-ivory-100 rounded-sm border border-gold-metallic/30 text-center shadow-sm">
-                <span class="font-serif text-2xl text-ink-900 font-bold block">Vicenza & Arezzo</span>
-                <span class="text-[11px] text-ink-500 uppercase tracking-widest font-medium" data-i18n="craft_origin">Asl Kelib Chiqish joyi</span>
+              <div class="p-4 bg-[#0A2628] rounded-sm border border-gold-500/35 text-center shadow-md">
+                <span class="font-serif text-2xl text-white font-bold block">Vicenza & Arezzo</span>
+                <span class="text-[11px] text-emerald-200/70 uppercase tracking-widest font-medium" data-i18n="craft_origin">Asl Kelib Chiqish joyi</span>
               </div>
-              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-ivory-200 border border-gold-metallic/25 shadow-sm">
+              <div class="rounded-sm overflow-hidden aspect-[3/4] bg-[#0A2628] border border-gold-500/30 shadow-md">
                 <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=800&q=80" alt="Handcrafted Italian Gold Ring detail" class="w-full h-full object-cover">
               </div>
             </div>
@@ -618,47 +624,47 @@
 
         <!-- Narrative & Value Engineering -->
         <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ivory-200 border border-gold-metallic/30 text-xs uppercase tracking-widest text-gold-700 font-bold">
-            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2628] border border-gold-500/35 text-xs uppercase tracking-widest text-gold-300 font-bold">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400"></i>
             <span data-i18n="craft_badge">Nima Uchun 18K (750°) Italiya Oltini?</span>
           </div>
 
-          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal leading-tight" data-i18n="craft_title">
-            Hech Qachon Xiralashmaydigan, <span class="italic font-light text-ink-500">Avlodlarga Qoluvchi</span> Asillik.
+          <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal leading-tight" data-i18n="craft_title">
+            Hech Qachon Xiralashmaydigan, <span class="italic font-light text-emerald-300/80">Avlodlarga Qoluvchi</span> Asillik.
           </h2>
 
-          <p class="text-ink-600 text-sm sm:text-base leading-relaxed" data-i18n="craft_p1">
+          <p class="text-emerald-100/80 text-sm sm:text-base leading-relaxed" data-i18n="craft_p1">
             Oddiy 585° (14K) oltindan farqli o'laroq, Italiyaning 750° asillikdagi qotishmasi 75.0% sof oltin va maxsus patentlangan ligaturadan (kumush va mis balansi) iborat. Bu unga betakror "italyancha shaffof jilo", yuqori zichlik va teriga nisbatan 100% gipoallergen xususiyat beradi.
           </p>
 
           <div class="space-y-4 pt-2">
-            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#FAF9F6] border-l-2 border-l-gold-metallic border border-zinc-200/70 shadow-sm">
-              <div class="text-gold-700 shrink-0 mt-0.5">
+            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#082224] border-l-2 border-l-gold-500 border border-gold-500/20 shadow-sm">
+              <div class="text-gold-400 shrink-0 mt-0.5">
                 <i data-lucide="shield" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="craft_point1_t">O'zbekiston Davlat Probir Palatasi Nazorati</h4>
-                <p class="text-xs text-ink-600 mt-1" data-i18n="craft_point1_d">Har bir buyum O'zbekistonga olib kirilgach, davlat ekspertizasi va lazerli tamg'alash jarayonidan o'tadi.</p>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="craft_point1_t">O'zbekiston Davlat Probir Palatasi Nazorati</h4>
+                <p class="text-xs text-emerald-200/80 mt-1" data-i18n="craft_point1_d">Har bir buyum O'zbekistonga olib kirilgach, davlat ekspertizasi va lazerli tamg'alash jarayonidan o'tadi.</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#FAF9F6] border-l-2 border-l-gold-metallic border border-zinc-200/70 shadow-sm">
-              <div class="text-gold-700 shrink-0 mt-0.5">
+            <div class="flex items-start gap-4 p-4 rounded-sm bg-[#082224] border-l-2 border-l-gold-500 border border-gold-500/20 shadow-sm">
+              <div class="text-gold-400 shrink-0 mt-0.5">
                 <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="craft_point2_t">Patentlangan Zichlik va Qotishma</h4>
-                <p class="text-xs text-ink-600 mt-1" data-i18n="craft_point2_d">Oddiy quyma emas, balki sovuq bosim texnologiyasi orqali har bir zanjir va qisqich sinishga chidamli qilib ishlanadi.</p>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="craft_point2_t">Patentlangan Zichlik va Qotishma</h4>
+                <p class="text-xs text-emerald-200/80 mt-1" data-i18n="craft_point2_d">Oddiy quyma emas, balki sovuq bosim texnologiyasi orqali har bir zanjir va qisqich sinishga chidamli qilib ishlanadi.</p>
               </div>
             </div>
           </div>
 
           <div class="pt-4 flex items-center gap-6">
-            <button onclick="openVipCatalogModal()" class="px-6 py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-widest uppercase rounded-sm transition shadow-md">
+            <button onclick="openVipCatalogModal()" class="px-6 py-3.5 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs tracking-widest uppercase rounded-sm transition shadow-md">
               <span data-i18n="cta_vip_catalog">VIP Katalog Olish</span>
             </button>
-            <a href="tel:+998977742021" class="text-xs uppercase tracking-widest text-gold-700 hover:text-ink-900 font-bold flex items-center gap-2">
-              <i data-lucide="phone-call" class="w-4 h-4 text-gold-metallic"></i>
+            <a href="tel:+998977742021" class="text-xs uppercase tracking-widest text-gold-300 hover:text-white font-bold flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-gold-400"></i>
               <span data-i18n="craft_call_expert">Zargarga Qo'ng'iroq Qilish</span>
             </a>
           </div>
@@ -670,15 +676,15 @@
   </section>
 
   <!-- ================= GIA DIAMONDS EXCELLENCE ================= -->
-  <section id="diamonds" class="py-24 bg-[#FAF9F6] relative">
+  <section id="diamonds" class="py-24 bg-[#071C1E] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-[0.3em] text-gold-700 block mb-2" data-i18n="dia_tag">Benuqson Geometriya & Tozalik</span>
-        <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="dia_title">
-          GIA & IGI Sertifikatlangan <span class="italic font-light text-ink-500">Tabiiy Olmoslar</span>
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-gold-300 block mb-2" data-i18n="dia_tag">Benuqson Geometriya & Tozalik</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal" data-i18n="dia_title">
+          GIA & IGI Sertifikatlangan <span class="italic font-light text-emerald-300/80">Tabiiy Olmoslar</span>
         </h2>
-        <p class="text-ink-600 text-sm mt-4" data-i18n="dia_desc">
+        <p class="text-emerald-100/80 text-sm mt-4" data-i18n="dia_desc">
           Biz faqat konfliktlardan xoli qazib olingan, eng yuqori D-F rang va VVS tozalikdagi Antwerp hamda Tel-Aviv fasetkali toshlarini tanlaymiz.
         </p>
       </div>
@@ -686,28 +692,28 @@
       <!-- 4C Diamond Interactive Guide -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         
-        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
-          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">1</div>
-          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c1_t">Carat (Og'irlik)</h4>
-          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c1_d">0.30 karatdan 5.00+ karatgacha bo'lgan toshlar individual tanlov va sertifikat bilan taqdim etiladi.</p>
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/30 text-center space-y-3 hover:border-gold-400 transition shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-olmos-950 flex items-center justify-center font-serif text-xl font-bold shadow-sm">1</div>
+          <h4 class="font-serif text-lg text-white font-bold" data-i18n="dia_c1_t">Carat (Og'irlik)</h4>
+          <p class="text-xs text-emerald-200/80 leading-relaxed" data-i18n="dia_c1_d">0.30 karatdan 5.00+ karatgacha bo'lgan toshlar individual tanlov va sertifikat bilan taqdim etiladi.</p>
         </div>
 
-        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
-          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">2</div>
-          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c2_t">Clarity (Tozalik)</h4>
-          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c2_d">IF (Internally Flawless), VVS1 va VVS2 toifalari. Mikroskop ostida ham ko'rinmaydigan tabiiy tozalik.</p>
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/30 text-center space-y-3 hover:border-gold-400 transition shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-olmos-950 flex items-center justify-center font-serif text-xl font-bold shadow-sm">2</div>
+          <h4 class="font-serif text-lg text-white font-bold" data-i18n="dia_c2_t">Clarity (Tozalik)</h4>
+          <p class="text-xs text-emerald-200/80 leading-relaxed" data-i18n="dia_c2_d">IF (Internally Flawless), VVS1 va VVS2 toifalari. Mikroskop ostida ham ko'rinmaydigan tabiiy tozalik.</p>
         </div>
 
-        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
-          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">3</div>
-          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c3_t">Color (Rang)</h4>
-          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c3_d">D, E, F toifalari — mutlaqo rangsiz, muzdek tiniq va yorug'likni maksimal darajada sindiruvchi toshlar.</p>
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/30 text-center space-y-3 hover:border-gold-400 transition shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-olmos-950 flex items-center justify-center font-serif text-xl font-bold shadow-sm">3</div>
+          <h4 class="font-serif text-lg text-white font-bold" data-i18n="dia_c3_t">Color (Rang)</h4>
+          <p class="text-xs text-emerald-200/80 leading-relaxed" data-i18n="dia_c3_d">D, E, F toifalari — mutlaqo rangsiz, muzdek tiniq va yorug'likni maksimal darajada sindiruvchi toshlar.</p>
         </div>
 
-        <div class="p-6 bg-white rounded-sm border border-gold-metallic/25 text-center space-y-3 hover:border-gold-metallic transition shadow-sm">
-          <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center font-serif text-xl font-bold border border-gold-metallic/30">4</div>
-          <h4 class="font-serif text-lg text-ink-900 font-bold" data-i18n="dia_c4_t">Cut (Ishlov Berilishi)</h4>
-          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="dia_c4_d">Triple Excellent fasetka — toshning yuragidagi betakror nur o'yini.</p>
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/30 text-center space-y-3 hover:border-gold-400 transition shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-olmos-950 flex items-center justify-center font-serif text-xl font-bold shadow-sm">4</div>
+          <h4 class="font-serif text-lg text-white font-bold" data-i18n="dia_c4_t">Cut (Ishlov Berilishi)</h4>
+          <p class="text-xs text-emerald-200/80 leading-relaxed" data-i18n="dia_c4_d">Triple Excellent fasetka — toshning yuragidagi betakror nur o'yini.</p>
         </div>
 
       </div>
@@ -716,69 +722,69 @@
   </section>
 
   <!-- ================= DIRECT VIP CONCIERGE & LEAD MAGNET ================= -->
-  <section id="concierge" class="py-24 bg-white border-y border-zinc-200 relative">
+  <section id="concierge" class="py-24 bg-[#051617] border-y border-gold-500/20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="bg-ivory-100 rounded-sm p-8 sm:p-14 border border-gold-metallic/35 shadow-xl relative overflow-hidden">
+      <div class="bg-gradient-to-br from-[#0B2C2E] to-[#071C1E] rounded-sm p-8 sm:p-14 border border-gold-500/35 shadow-2xl relative overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div class="lg:col-span-7 space-y-5">
-            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block" data-i18n="lead_tag">Shaxsiy Zargarlik Xizmati</span>
-            <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal" data-i18n="lead_title">
+            <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-300 block" data-i18n="lead_tag">Shaxsiy Zargarlik Xizmati</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal" data-i18n="lead_title">
               VIP Katalog Yuklab Oling <br>
-              <span class="italic font-light text-ink-500">& Shaxsiy Konsultatsiyaga Yoziling</span>
+              <span class="italic font-light text-gold-300">& Shaxsiy Konsultatsiyaga Yoziling</span>
             </h2>
-            <p class="text-ink-600 text-sm leading-relaxed" data-i18n="lead_desc">
+            <p class="text-emerald-100/80 text-sm leading-relaxed" data-i18n="lead_desc">
               Raqamingizni qoldiring va biz sizning Telegramingizga 2026-yilgi yopiq to'plam narxlari bilan to'liq PDF lookbook'ni 2 daqiqada yuboramiz. Shuningdek, butikimizda yopiq qahva va o'lcham tanlash seansiga taklifnoma taqdim etiladi.
             </p>
 
-            <div class="flex flex-wrap gap-6 pt-2 text-xs text-ink-700 font-medium">
+            <div class="flex flex-wrap gap-6 pt-2 text-xs text-emerald-100 font-medium">
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
                 <span data-i18n="lead_perk1">Haqiqiy narxlar va vazn ro'yxati</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
                 <span data-i18n="lead_perk2">Maxsus individual o'lchamga bepul buyurtma</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-gold-700"></i>
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
                 <span data-i18n="lead_perk3">Telegram orqali zudlik bilan javob</span>
               </div>
             </div>
           </div>
 
           <!-- High Converting Lead Capture Form -->
-          <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-sm border border-gold-metallic/30 shadow-lg">
+          <div class="lg:col-span-5 bg-[#071C1E] p-6 sm:p-8 rounded-sm border border-gold-500/35 shadow-2xl">
             <form id="vip-catalog-form" onsubmit="handleVipFormSubmit(event)" class="space-y-4">
               <div>
-                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_name_label">Ismingiz / Familiyangiz</label>
+                <label class="block text-xs uppercase tracking-wider text-emerald-200/80 font-semibold mb-1.5" data-i18n="form_name_label">Ismingiz / Familiyangiz</label>
                 <input 
                   type="text" 
                   id="lead-name" 
                   required 
                   placeholder="Shaxzod Alimov" 
-                  class="w-full px-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
+                  class="w-full px-4 py-3 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white focus:outline-none focus:border-gold-400 transition placeholder-emerald-400/30"
                 >
               </div>
 
               <div>
-                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_phone_label">Telefon Raqamingiz</label>
+                <label class="block text-xs uppercase tracking-wider text-emerald-200/80 font-semibold mb-1.5" data-i18n="form_phone_label">Telefon Raqamingiz</label>
                 <div class="relative">
-                  <span class="absolute left-3.5 top-3.5 text-zinc-500 text-sm font-mono">+998</span>
+                  <span class="absolute left-3.5 top-3.5 text-gold-300 text-sm font-mono">+998</span>
                   <input 
                     type="tel" 
                     id="lead-phone" 
                     required 
                     placeholder="(90) 123-45-67" 
-                    class="w-full pl-16 pr-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
+                    class="w-full pl-16 pr-4 py-3 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white font-mono focus:outline-none focus:border-gold-400 transition placeholder-emerald-400/30"
                   >
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs uppercase tracking-wider text-ink-600 font-semibold mb-1.5" data-i18n="form_interest_label">Sizni Qiziqtirgan Yo'nalish</label>
-                <select id="lead-interest" class="w-full px-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic transition">
+                <label class="block text-xs uppercase tracking-wider text-emerald-200/80 font-semibold mb-1.5" data-i18n="form_interest_label">Sizni Qiziqtirgan Yo'nalish</label>
+                <select id="lead-interest" class="w-full px-4 py-3 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white focus:outline-none focus:border-gold-400 transition">
                   <option value="all" data-i18n="opt_all">To'liq 2026 Lookbook (Barcha to'plam)</option>
                   <option value="bridal" data-i18n="opt_bridal">Kelin Sarpo va Nikoh To'plami</option>
                   <option value="diamonds" data-i18n="opt_diamonds">GIA Brilliant Soliter Uzuklar</option>
@@ -788,24 +794,24 @@
 
               <button 
                 type="submit" 
-                class="w-full py-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-sm active:scale-[0.99] transition shadow-md flex items-center justify-center gap-2"
+                class="w-full py-4 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs tracking-[0.2em] uppercase rounded-sm active:scale-[0.99] transition shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2"
               >
-                <i data-lucide="download" class="w-4 h-4 text-gold-300"></i>
+                <i data-lucide="download" class="w-4 h-4 text-olmos-950"></i>
                 <span data-i18n="form_submit_btn">VIP Katalogni Telegramga Olish</span>
               </button>
 
-              <p class="text-[10px] text-ink-500 text-center leading-normal" data-i18n="form_privacy">
+              <p class="text-[10px] text-emerald-300/60 text-center leading-normal" data-i18n="form_privacy">
                 Ma'lumotlaringiz maxfiy saqlanadi. Spam yo'q, faqat rasmiy zargarlik katalogi.
               </p>
             </form>
 
             <div id="form-success-msg" class="hidden text-center py-8 space-y-4">
-              <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center border border-emerald-300">
+              <div class="w-14 h-14 mx-auto rounded-full bg-emerald-950/80 text-gold-300 flex items-center justify-center border border-gold-500/40">
                 <i data-lucide="check-circle" class="w-8 h-8"></i>
               </div>
-              <h4 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="form_success_t">Tashakkur! So'rovingiz qabul qilindi</h4>
-              <p class="text-xs text-ink-600" data-i18n="form_success_d">Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.</p>
-              <a href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
+              <h4 class="font-serif text-2xl text-white font-bold" data-i18n="form_success_t">Tashakkur! So'rovingiz qabul qilindi</h4>
+              <p class="text-xs text-emerald-200/80" data-i18n="form_success_d">Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.</p>
+              <a href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 text-xs font-bold uppercase tracking-wider rounded-sm transition">
                 <i data-lucide="send" class="w-3.5 h-3.5"></i>
                 <span data-i18n="form_success_tg">Telegramda Zudlik Bilan Ochish</span>
               </a>
@@ -820,71 +826,71 @@
   </section>
 
   <!-- ================= BOUTIQUE EXPERIENCE & TASHKENT LOCATION ================= -->
-  <section id="boutique" class="py-24 bg-[#FAF9F6] relative">
+  <section id="boutique" class="py-24 bg-[#071C1E] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 bg-olmos-50 border border-gold-metallic/35 rounded-full text-olmos-800 text-xs font-bold uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#0A2628] border border-gold-500/35 rounded-full text-gold-300 text-xs font-bold uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
             <span data-i18n="btq_tag">Flagship Butik & Showroom</span>
           </div>
 
-          <h2 class="font-serif text-3xl sm:text-5xl text-ink-900 font-normal leading-tight" data-i18n="btq_title">
+          <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal leading-tight" data-i18n="btq_title">
             Toshkent Markazidagi <br>
-            <span class="italic font-light text-gold-600">Olmos Gold Zargarlik Loungi</span>
+            <span class="italic font-light text-gold-300">Olmos Gold Zargarlik Loungi</span>
           </h2>
-          <p class="text-ink-600 text-sm leading-relaxed" data-i18n="btq_desc">
+          <p class="text-emerald-100/80 text-sm leading-relaxed" data-i18n="btq_desc">
             Sizni Toshkentning nufuzli manzillaridan biri — Bunyodkor shoh ko'chasidagi yangi OLMOS GOLD butikimizda kutib olamiz. 18K asil italiyan oltinlari, GIA sertifikatli tabiiy olmoslar, xavfsiz VIP xarid xonalari hamda professional gemmolog mutaxassis bilan erkin maslahatlashish imkoniyati.
           </p>
 
           <div class="space-y-4 pt-2">
             <!-- Address Card -->
-            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
-              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
+            <div class="flex items-start gap-4 p-3.5 bg-[#0A2628] rounded-sm border border-gold-500/30 shadow-md">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm border border-gold-500/20">
                 <i data-lucide="map-pin" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_addr_title">Manzilimiz:</h4>
-                <p class="text-xs font-bold text-ink-800 mt-0.5">Bunyodkor shoh ko'chasi, 15/1, Chilonzor tumani, Toshkent</p>
-                <p class="text-[11px] text-ink-500 font-mono mt-0.5">Bunyodkor Avenue, 15/1, Chilonzor District, Tashkent</p>
-                <p class="text-[11px] text-gold-700 mt-1 font-medium">Mo'ljal: Novza va Mirzo Ulug'bek metro bekatlari oralig'ida (Markazdan 7 daqiqa).</p>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="btq_addr_title">Manzilimiz:</h4>
+                <p class="text-xs font-bold text-emerald-100 mt-0.5">Bunyodkor shoh ko'chasi, 15/1, Chilonzor tumani, Toshkent</p>
+                <p class="text-[11px] text-emerald-300/70 font-mono mt-0.5">Bunyodkor Avenue, 15/1, Chilonzor District, Tashkent</p>
+                <p class="text-[11px] text-gold-300 mt-1 font-medium">Mo'ljal: Novza va Mirzo Ulug'bek metro bekatlari oralig'ida (Markazdan 7 daqiqa).</p>
               </div>
             </div>
 
             <!-- Working Hours -->
-            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
-              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
+            <div class="flex items-start gap-4 p-3.5 bg-[#0A2628] rounded-sm border border-gold-500/30 shadow-md">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm border border-gold-500/20">
                 <i data-lucide="clock" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_hours_title">Ish Tartibi:</h4>
-                <p class="text-xs text-ink-700 mt-0.5 font-medium">Dushanba — Yakshanba: 10:00 dan 21:00 gacha (Dam olish kunlarisiz).</p>
-                <p class="text-[11px] text-emerald-700 mt-0.5 font-semibold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="btq_hours_title">Ish Tartibi:</h4>
+                <p class="text-xs text-emerald-100 mt-0.5 font-medium">Dushanba — Yakshanba: 10:00 dan 21:00 gacha (Dam olish kunlarisiz).</p>
+                <p class="text-[11px] text-emerald-400 mt-0.5 font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                   <span>Butik va VIP zal hozirda ochiq</span>
                 </p>
               </div>
             </div>
 
             <!-- Contacts -->
-            <div class="flex items-start gap-4 p-3.5 bg-white rounded-sm border border-gold-metallic/30 shadow-sm">
-              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm">
+            <div class="flex items-start gap-4 p-3.5 bg-[#0A2628] rounded-sm border border-gold-500/30 shadow-md">
+              <div class="w-10 h-10 rounded-sm bg-olmos-850 text-gold-300 flex items-center justify-center shrink-0 shadow-sm border border-gold-500/20">
                 <i data-lucide="phone" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_contact_title">Aloqa va Konsyerj:</h4>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="btq_contact_title">Aloqa va Konsyerj:</h4>
                 <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs">
-                  <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700 transition flex items-center gap-1">
-                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-600"></i>
+                  <a href="tel:+998977742021" class="font-bold text-white hover:text-gold-300 transition flex items-center gap-1">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-400"></i>
                     <span>+998 (97) 774-20-21</span>
                   </a>
-                  <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-[#0088cc] font-semibold hover:underline flex items-center gap-1">
+                  <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
                     <i data-lucide="send" class="w-3.5 h-3.5"></i>
                     <span>@OLMOS_GOLD</span>
                   </a>
-                  <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-rose-600 font-semibold hover:underline flex items-center gap-1">
+                  <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-rose-400 font-semibold hover:underline flex items-center gap-1">
                     <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
                     <span>@olmosgold.jewellery</span>
                   </a>
@@ -899,27 +905,27 @@
               href="https://yandex.uz/maps/?text=Toshkent+Bunyodkor+shoh+ko'chasi+15/1" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-5 py-3 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm active:scale-95"
+              class="px-5 py-3 bg-[#0A2628] hover:border-gold-400 text-xs font-bold uppercase tracking-wider text-white rounded-sm border border-gold-500/30 flex items-center gap-2 transition shadow-sm active:scale-95"
             >
-              <i data-lucide="map" class="w-4 h-4 text-gold-700"></i>
+              <i data-lucide="map" class="w-4 h-4 text-gold-400"></i>
               <span>Yandex Xaritada Ochish</span>
             </a>
             <a 
               href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-5 py-3 bg-white hover:border-gold-metallic text-xs font-bold uppercase tracking-wider text-ink-900 rounded-sm border border-zinc-300 flex items-center gap-2 transition shadow-sm active:scale-95"
+              class="px-5 py-3 bg-[#0A2628] hover:border-gold-400 text-xs font-bold uppercase tracking-wider text-white rounded-sm border border-gold-500/30 flex items-center gap-2 transition shadow-sm active:scale-95"
             >
-              <i data-lucide="navigation" class="w-4 h-4 text-gold-700"></i>
+              <i data-lucide="navigation" class="w-4 h-4 text-gold-400"></i>
               <span>Google Maps</span>
             </a>
             <a 
               href="https://t.me/OLMOS_GOLD" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-5 py-3 bg-olmos-850 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm flex items-center gap-2 transition shadow-sm active:scale-95"
+              class="px-5 py-3 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 text-xs font-bold uppercase tracking-wider rounded-sm flex items-center gap-2 transition shadow-md active:scale-95"
             >
-              <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+              <i data-lucide="send" class="w-4 h-4"></i>
               <span>Telegram Konsyerj</span>
             </a>
           </div>
@@ -928,10 +934,10 @@
 
         <!-- Right Column: Live Interactive Map & Branded Landmark Card -->
         <div class="lg:col-span-6 space-y-4">
-          <div class="bg-white rounded-sm overflow-hidden p-2.5 border border-gold-metallic/35 shadow-xl relative">
+          <div class="bg-[#0A2628] rounded-sm overflow-hidden p-2.5 border border-gold-500/35 shadow-2xl relative">
             
             <!-- Live Interactive Map Iframe -->
-            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-sm overflow-hidden bg-zinc-100">
+            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-sm overflow-hidden bg-[#041213]">
               <iframe 
                 title="OLMOS GOLD JEWELLERY Joylashuv Xaritasi"
                 src="https://maps.google.com/maps?q=Bunyodkor+Avenue+15/1,+Chilonzor+District,+Tashkent&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -942,20 +948,20 @@
               ></iframe>
 
               <!-- Floating Luxury Emblem Pin on Map -->
-              <div class="absolute top-3 left-3 right-3 sm:right-auto sm:max-w-xs p-3.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/40 shadow-xl flex items-center gap-3 pointer-events-auto">
+              <div class="absolute top-3 left-3 right-3 sm:right-auto sm:max-w-xs p-3.5 bg-[#071C1E]/95 backdrop-blur-md rounded-sm border border-gold-500/40 shadow-2xl flex items-center gap-3 pointer-events-auto">
                 <img 
                   src="olmos-logo.jpg" 
                   alt="OLMOS GOLD JEWELLERY" 
-                  class="w-11 h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm shrink-0"
+                  class="w-11 h-11 rounded-sm object-cover border border-gold-500/40 shadow-sm shrink-0"
                 >
                 <div class="text-left">
-                  <div class="font-serif text-sm font-bold text-ink-900 uppercase leading-tight tracking-wider">
+                  <div class="font-serif text-sm font-bold text-white uppercase leading-tight tracking-wider">
                     OLMOS GOLD
                   </div>
-                  <div class="text-[9px] uppercase tracking-widest text-gold-700 font-bold">
+                  <div class="text-[9px] uppercase tracking-widest text-gold-300 font-bold">
                     JEWELLERY BOUTIQUE
                   </div>
-                  <div class="text-[10px] text-ink-600 mt-0.5 line-clamp-1">
+                  <div class="text-[10px] text-emerald-200/80 mt-0.5 line-clamp-1">
                     Bunyodkor Avenue, 15/1, Tashkent
                   </div>
                 </div>
@@ -967,28 +973,28 @@
                   href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="px-3.5 py-1.5 bg-ink-900/90 hover:bg-gold-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-sm backdrop-blur-sm transition shadow flex items-center gap-1.5"
+                  class="px-3.5 py-1.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 text-[11px] font-bold uppercase tracking-wider rounded-sm backdrop-blur-sm transition shadow-lg flex items-center gap-1.5"
                 >
-                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-gold-300"></i>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                   <span>Marshrutni Boshlash</span>
                 </a>
               </div>
             </div>
 
             <!-- Boutique Interior & VIP Service Note -->
-            <div class="mt-3 p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div class="mt-3 p-3 bg-[#071C1E] rounded-sm border border-gold-500/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-white border border-gold-metallic/30 flex items-center justify-center text-gold-700 shrink-0">
+                <div class="w-8 h-8 rounded-full bg-[#0B2C2E] border border-gold-500/30 flex items-center justify-center text-gold-300 shrink-0">
                   <i data-lucide="gem" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-bold text-ink-900 uppercase tracking-wide">Xususiy VIP Xarid Xonasi</div>
-                  <div class="text-[11px] text-ink-500">Qahva, ekspertiza va maxfiy taqinchoq tanlash seansi</div>
+                  <div class="text-xs font-bold text-white uppercase tracking-wide">Xususiy VIP Xarid Xonasi</div>
+                  <div class="text-[11px] text-emerald-200/70">Qahva, ekspertiza va maxfiy taqinchoq tanlash seansi</div>
                 </div>
               </div>
               <button 
                 onclick="openVipCatalogModal()" 
-                class="px-4 py-2 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition shadow-sm shrink-0 w-full sm:w-auto"
+                class="px-4 py-2 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 text-xs font-bold uppercase tracking-wider rounded-sm transition shadow-sm shrink-0 w-full sm:w-auto"
               >
                 Qabulga Yozilish
               </button>
@@ -1003,146 +1009,146 @@
   </section>
 
   <!-- ================= AUTHENTIC CLIENT EXPERIENCES ================= -->
-  <section class="py-20 bg-white border-t border-zinc-200">
+  <section class="py-20 bg-[#051617] border-t border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-700 block mb-2" data-i18n="rev_tag">Xaridorlarimiz Fikrlari</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-ink-900 font-normal" data-i18n="rev_title">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-300 block mb-2" data-i18n="rev_tag">Xaridorlarimiz Fikrlari</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal" data-i18n="rev_title">
           Ishonch & Yuqori Ehtirom
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/25 flex flex-col justify-between space-y-4 shadow-lg">
           <div class="space-y-3">
-            <div class="flex text-gold-600 gap-1">
+            <div class="flex text-gold-400 gap-1">
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
             </div>
-            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev1_text">
+            <p class="text-xs text-emerald-100/90 leading-relaxed italic" data-i18n="rev1_text">
               "Kelin sarposi uchun to'liq 18K to'plam oldik. Toshkentda bunday toza italyan dizaynini va sertifikatli olmoslarni topish qiyin edi. Xizmat ko'rsatish va xususiy qabul madaniyati 10/10."
             </p>
           </div>
-          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
-            <span class="font-serif text-sm text-ink-900 font-bold">Nigora R.</span>
-            <span class="text-[10px] text-ink-500 font-mono">Bunyodkor 15/1 Flagship Boutique</span>
+          <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between">
+            <span class="font-serif text-sm text-white font-bold">Nigora R.</span>
+            <span class="text-[10px] text-emerald-300/70 font-mono">Bunyodkor 15/1 Flagship Boutique</span>
           </div>
         </div>
 
-        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/25 flex flex-col justify-between space-y-4 shadow-lg">
           <div class="space-y-3">
-            <div class="flex text-gold-600 gap-1">
+            <div class="flex text-gold-400 gap-1">
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
             </div>
-            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev2_text">
+            <p class="text-xs text-emerald-100/90 leading-relaxed italic" data-i18n="rev2_text">
               "0.70ct GIA sertifikatli soliter uzuk xarid qildim. Davlat probir palatasi muhri ham, GIA raqami ham lazerda to'liq tekshirib berildi. Kelinimiz juda baxtiyor bo'ldi. Rahmat, Olmos Gold!"
             </p>
           </div>
-          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
-            <span class="font-serif text-sm text-ink-900 font-bold">Javohir K.</span>
-            <span class="text-[10px] text-ink-500 font-mono">Tashkent City</span>
+          <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between">
+            <span class="font-serif text-sm text-white font-bold">Javohir K.</span>
+            <span class="text-[10px] text-emerald-300/70 font-mono">Tashkent City</span>
           </div>
         </div>
 
-        <div class="p-6 bg-[#FAF9F6] rounded-sm border border-gold-metallic/25 flex flex-col justify-between space-y-4 shadow-sm">
+        <div class="p-6 bg-[#0A2628] rounded-sm border border-gold-500/25 flex flex-col justify-between space-y-4 shadow-lg">
           <div class="space-y-3">
-            <div class="flex text-gold-600 gap-1">
+            <div class="flex text-gold-400 gap-1">
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               <i data-lucide="star" class="w-4 h-4 fill-current"></i>
             </div>
-            <p class="text-xs text-ink-700 leading-relaxed italic" data-i18n="rev3_text">
+            <p class="text-xs text-emerald-100/90 leading-relaxed italic" data-i18n="rev3_text">
               "Investitsion 999.9 oltin quymalari xaridi bo'yicha eng ishonchli manzil. Spot narxlari halol, barcha hujjatlar joyida. Xususiy xarid xonasidagi maxfiylik juda ma'qul keldi."
             </p>
           </div>
-          <div class="pt-3 border-t border-zinc-200 flex items-center justify-between">
-            <span class="font-serif text-sm text-ink-900 font-bold">Azizbek M.</span>
-            <span class="text-[10px] text-ink-500 font-mono">Xususiy Investor</span>
+          <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between">
+            <span class="font-serif text-sm text-white font-bold">Azizbek M.</span>
+            <span class="text-[10px] text-emerald-300/70 font-mono">Xususiy Investor</span>
           </div>
         </div>
 
    <!-- ================= FOOTER ================= -->
-  <footer class="bg-ivory-200 border-t border-zinc-300 text-ink-600 text-xs py-14">
+  <footer class="bg-[#030E0F] border-t border-gold-500/20 text-emerald-200/80 text-xs py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         
         <div class="space-y-4 md:col-span-1">
           <div class="flex items-center gap-3">
-            <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-11 h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm">
+            <img src="olmos-logo.jpg" alt="OLMOS GOLD JEWELLERY" class="w-11 h-11 rounded-sm object-cover border border-gold-500/40 shadow-sm">
             <div>
-              <span class="font-serif text-xl tracking-[0.18em] text-gold-700 font-bold uppercase block leading-tight">
+              <span class="font-serif text-xl tracking-[0.18em] text-gold-300 font-bold uppercase block leading-tight">
                 OLMOS GOLD
               </span>
-              <span class="text-[8px] tracking-[0.35em] text-ink-500 uppercase font-semibold">
+              <span class="text-[8px] tracking-[0.35em] text-emerald-300/70 uppercase font-semibold">
                 JEWELLERY
               </span>
             </div>
           </div>
-          <p class="text-[11px] text-ink-600 leading-relaxed" data-i18n="footer_about">
+          <p class="text-[11px] text-emerald-300/70 leading-relaxed" data-i18n="footer_about">
             O'zbekiston Respublikasi hududida sertifikatlangan 18K (750°) Italiya oltini va GIA tabiiy brilliantlari rasmiy yetkazib beruvchisi.
           </p>
-          <div class="flex items-center gap-3 text-gold-700">
-            <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Instagram" title="Instagram: @olmosgold.jewellery">
+          <div class="flex items-center gap-3 text-gold-300">
+            <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="p-2 bg-[#0A2628] rounded-full hover:bg-gold-500 hover:text-olmos-950 transition border border-gold-500/30 shadow-sm" aria-label="Instagram" title="Instagram: @olmosgold.jewellery">
               <i data-lucide="instagram" class="w-4 h-4"></i>
             </a>
-            <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Telegram" title="Telegram: @OLMOS_GOLD">
+            <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="p-2 bg-[#0A2628] rounded-full hover:bg-gold-500 hover:text-olmos-950 transition border border-gold-500/30 shadow-sm" aria-label="Telegram" title="Telegram: @OLMOS_GOLD">
               <i data-lucide="send" class="w-4 h-4"></i>
             </a>
-            <a href="tel:+998977742021" class="p-2 bg-white rounded-full hover:bg-gold-600 hover:text-white transition shadow-sm" aria-label="Phone" title="+998 (97) 774-20-21">
+            <a href="tel:+998977742021" class="p-2 bg-[#0A2628] rounded-full hover:bg-gold-500 hover:text-olmos-950 transition border border-gold-500/30 shadow-sm" aria-label="Phone" title="+998 (97) 774-20-21">
               <i data-lucide="phone" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
         <div>
-          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_col_title">Kolleksiyalar</h5>
-          <ul class="space-y-2.5 text-ink-600 text-[11px]">
-            <li><a href="#collections" class="hover:text-gold-700 transition">18K Nikoh va Soliter Uzuklar</a></li>
-            <li><a href="#collections" class="hover:text-gold-700 transition">Italiya Zanjirlari va Marjonlar</a></li>
-            <li><a href="#collections" class="hover:text-gold-700 transition">Kelin Sarpo To'liq To'plamlari</a></li>
-            <li><a href="#collections" class="hover:text-gold-700 transition">LBMA 999.9 Quyma Oltin</a></li>
+          <h5 class="text-gold-300 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_col_title">Kolleksiyalar</h5>
+          <ul class="space-y-2.5 text-emerald-200/80 text-[11px]">
+            <li><a href="#collections" class="hover:text-gold-300 transition">18K Nikoh va Soliter Uzuklar</a></li>
+            <li><a href="#collections" class="hover:text-gold-300 transition">Italiya Zanjirlari va Marjonlar</a></li>
+            <li><a href="#collections" class="hover:text-gold-300 transition">Kelin Sarpo To'liq To'plamlari</a></li>
+            <li><a href="#collections" class="hover:text-gold-300 transition">LBMA 999.9 Quyma Oltin</a></li>
           </ul>
         </div>
 
         <div>
-          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_srv_title">Mijozlar Xizmati</h5>
-          <ul class="space-y-2.5 text-ink-600 text-[11px]">
-            <li><a href="#italian-gold" class="hover:text-gold-700 transition">Oltin Asilligi va Probir Nazorati</a></li>
-            <li><a href="#diamonds" class="hover:text-gold-700 transition">GIA Olmos Pasportlarini Tekshirish</a></li>
-            <li><button onclick="openVipCatalogModal()" class="hover:text-gold-700 transition text-left">VIP Katalog So'rovi</button></li>
-            <li><a href="https://t.me/OLMOS_GOLD" target="_blank" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat (@OLMOS_GOLD)</a></li>
+          <h5 class="text-gold-300 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_srv_title">Mijozlar Xizmati</h5>
+          <ul class="space-y-2.5 text-emerald-200/80 text-[11px]">
+            <li><a href="#italian-gold" class="hover:text-gold-300 transition">Oltin Asilligi va Probir Nazorati</a></li>
+            <li><a href="#diamonds" class="hover:text-gold-300 transition">GIA Olmos Pasportlarini Tekshirish</a></li>
+            <li><button onclick="openVipCatalogModal()" class="hover:text-gold-300 transition text-left">VIP Katalog So'rovi</button></li>
+            <li><a href="https://t.me/OLMOS_GOLD" target="_blank" class="hover:text-gold-300 transition">Konsyerj Bilan Suhbat (@OLMOS_GOLD)</a></li>
           </ul>
         </div>
 
         <div>
-          <h5 class="text-ink-900 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_loc_title">Butik & Manzil</h5>
-          <p class="text-ink-600 text-[11px] leading-relaxed">
+          <h5 class="text-gold-300 uppercase tracking-widest font-bold mb-4 text-[11px]" data-i18n="f_loc_title">Butik & Manzil</h5>
+          <p class="text-emerald-200/80 text-[11px] leading-relaxed">
             Bunyodkor shoh ko'chasi, 15/1<br>
             Chilonzor tumani, Toshkent<br>
-            Telefon: <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700">+998 (97) 774-20-21</a><br>
-            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-[#0088cc] hover:underline font-semibold">@OLMOS_GOLD</a><br>
+            Telefon: <a href="tel:+998977742021" class="font-bold text-white hover:text-gold-300">+998 (97) 774-20-21</a><br>
+            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-cyan-400 hover:underline font-semibold">@OLMOS_GOLD</a><br>
             Har kuni: 10:00 — 21:00
           </p>
         </div>
 
       </div>
 
-      <div class="mt-12 pt-6 border-t border-zinc-300 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-ink-500">
+      <div class="mt-12 pt-6 border-t border-gold-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-emerald-400/60">
         <div>
           © 2026 OLMOS GOLD JEWELLERY. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston.
         </div>
-        <div class="flex gap-4">
+        <div class="flex gap-4 text-emerald-300/70">
           <span>18K Certified Italian Gold</span>
           <span>•</span>
           <span>Davlat Probir Nazorati №750</span>
@@ -1152,12 +1158,12 @@
   </footer>
 
   <!-- ================= STICKY MOBILE ACTION BAR ================= -->
-  <aside aria-label="Mobile Contact Bar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-t border-gold-metallic/30 p-2.5 flex items-center justify-between gap-2 shadow-xl">
+  <aside aria-label="Mobile Contact Bar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-[#051617]/95 backdrop-blur-lg border-t border-gold-500/30 p-2.5 flex items-center justify-between gap-2 shadow-2xl">
     <a 
       href="tel:+998977742021" 
-      class="flex-1 py-3 px-3 bg-ivory-100 rounded-sm text-gold-700 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 border border-gold-metallic/35 active:scale-95 transition"
+      class="flex-1 py-3 px-3 bg-[#0A2628] rounded-sm text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 border border-gold-500/35 active:scale-95 transition shadow-sm"
     >
-      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i>
       <span data-i18n="mob_call">Qo'ng'iroq</span>
     </a>
 
@@ -1165,7 +1171,7 @@
       href="https://t.me/OLMOS_GOLD" 
       target="_blank" 
       rel="noopener noreferrer" 
-      class="flex-1 py-3 px-3 bg-[#2AABEE]/15 border border-[#2AABEE]/30 text-[#0088cc] rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
+      class="flex-1 py-3 px-3 bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition shadow-sm"
     >
       <i data-lucide="send" class="w-3.5 h-3.5"></i>
       <span>Telegram</span>
@@ -1173,20 +1179,20 @@
 
     <button 
       onclick="openVipCatalogModal()" 
-      class="flex-1 py-3 px-3 bg-ink-900 text-white rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
+      class="flex-1 py-3 px-3 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition shadow-md shadow-gold-500/20"
     >
-      <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-300"></i>
+      <i data-lucide="crown" class="w-3.5 h-3.5 text-olmos-950"></i>
       <span data-i18n="mob_catalog">Katalog</span>
     </button>
   </aside>
 
   <!-- ================= DEDICATED FULLSCREEN PRODUCT VIEW ================= -->
-  <div id="product-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
+  <div id="product-fullscreen-view" class="fixed inset-0 z-50 bg-[#071C1E] text-white overflow-y-auto view-hidden">
     
     <!-- Top Sticky Bar inside Fullscreen view -->
-    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-      <button onclick="closeProductDetail()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
-        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+    <div class="sticky top-0 z-30 bg-[#051617]/95 backdrop-blur-md border-b border-gold-500/25 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg">
+      <button onclick="closeProductDetail()" class="flex items-center gap-2 text-emerald-200 hover:text-gold-300 text-xs font-bold uppercase tracking-widest group transition py-1">
+        <div class="w-8 h-8 rounded-full bg-[#0B2C2E] border border-gold-500/30 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-olmos-950 transition">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </div>
         <span data-i18n="fs_back_btn">Katalogga qaytish</span>
@@ -1194,12 +1200,12 @@
 
       <!-- Brand Center -->
       <div class="text-center hidden sm:flex items-center gap-2.5">
-        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-500/40 shadow-sm">
         <div class="text-left">
-          <span class="font-serif text-base tracking-[0.2em] text-gold-700 font-bold uppercase block leading-tight">
+          <span class="font-serif text-base tracking-[0.2em] text-gold-300 font-bold uppercase block leading-tight">
             OLMOS GOLD
           </span>
-          <span class="block text-[7.5px] tracking-[0.3em] uppercase text-ink-500">
+          <span class="block text-[7.5px] tracking-[0.3em] uppercase text-emerald-300/70">
             JEWELLERY • TASHKENT
           </span>
         </div>
@@ -1207,21 +1213,21 @@
 
       <!-- Quick Concierge Hotline & Wishlist -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="tel:+998977742021" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+        <a href="tel:+998977742021" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A2628] border border-gold-500/30 text-xs text-emerald-100 hover:text-gold-300 font-medium transition">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i>
           <span>+998 (97) 774-20-21</span>
         </a>
         <!-- Wishlist Button inside Product View -->
         <button 
           onclick="openWishlistPage()" 
-          class="relative p-2 rounded-full bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
+          class="relative p-2 rounded-full bg-[#0A2628] border border-gold-500/30 text-emerald-100 hover:text-rose-400 hover:border-rose-400/50 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
-          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
+          <i data-lucide="heart" class="w-4 h-4 text-gold-300 pointer-events-none"></i>
           <span class="wishlist-badge-sync absolute -top-1 -right-1 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
         </button>
-        <button onclick="closeProductDetail()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close">
+        <button onclick="closeProductDetail()" class="p-2 text-emerald-300 hover:text-white rounded-full hover:bg-[#0E3638] transition" aria-label="Close">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
@@ -1231,12 +1237,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-ink-500 mb-6 font-medium">
-        <a href="#collections" onclick="closeProductDetail()" class="hover:text-gold-700 transition" data-i18n="nav_collections">Kolleksiyalar</a>
+      <nav class="flex items-center gap-2 text-xs text-emerald-300/60 mb-6 font-medium">
+        <a href="#collections" onclick="closeProductDetail()" class="hover:text-gold-300 transition" data-i18n="nav_collections">Kolleksiyalar</a>
         <span>/</span>
-        <span id="fs-breadcrumb-category" class="text-ink-700 uppercase tracking-wider">Uzuklar</span>
+        <span id="fs-breadcrumb-category" class="text-emerald-100 uppercase tracking-wider">Uzuklar</span>
         <span>/</span>
-        <span id="fs-breadcrumb-title" class="text-gold-700 font-semibold">Venezia Solitaire Diamond Ring</span>
+        <span id="fs-breadcrumb-title" class="text-gold-300 font-semibold">Venezia Solitaire Diamond Ring</span>
       </nav>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -1244,7 +1250,7 @@
         <!-- Left Column: Interactive Multi-Angle Gallery -->
         <div class="lg:col-span-7 space-y-4">
           <!-- Main Large Image View -->
-          <div class="relative w-full aspect-square rounded-sm overflow-hidden bg-white border border-gold-metallic/30 shadow-md">
+          <div class="relative w-full aspect-square rounded-sm overflow-hidden bg-[#051617] border border-gold-500/30 shadow-2xl">
             <img 
               id="fs-main-image" 
               src="" 
@@ -1252,10 +1258,10 @@
               class="w-full h-full object-cover object-center transition-all duration-500"
             >
             <div class="absolute top-4 left-4 flex flex-col gap-2">
-              <span id="fs-badge-purity" class="px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[11px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/35 shadow-sm">
+              <span id="fs-badge-purity" class="px-3 py-1 bg-[#071C1E]/95 backdrop-blur-md rounded-full text-[11px] font-mono tracking-wider text-gold-300 font-bold border border-gold-500/40 shadow-sm">
                 750° • 18K Yellow Gold
               </span>
-              <span id="fs-badge-extra" class="px-3 py-0.5 bg-emerald-50 text-emerald-800 rounded-full text-[10px] font-semibold border border-emerald-300 shadow-sm w-fit">
+              <span id="fs-badge-extra" class="px-3 py-0.5 bg-[#0B2C2E] text-emerald-200 rounded-full text-[10px] font-semibold border border-gold-500/30 shadow-sm w-fit">
                 GIA Sertifikat
               </span>
             </div>
@@ -1264,15 +1270,15 @@
             <button 
               id="fs-wishlist-btn"
               onclick="toggleActiveProductWishlist(event)"
-              class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center text-ink-700 shadow-md hover:scale-105 active:scale-95 transition z-10"
+              class="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#071C1E]/95 backdrop-blur-md border border-gold-500/40 flex items-center justify-center text-gold-300 shadow-md hover:scale-105 active:scale-95 transition z-10"
               aria-label="Sevimlilarga qo'shish"
               title="Sevimlilarga qo'shish"
             >
-              <i id="fs-wishlist-icon" data-lucide="heart" class="w-5 h-5 text-ink-700"></i>
+              <i id="fs-wishlist-icon" data-lucide="heart" class="w-5 h-5 text-gold-300"></i>
             </button>
 
-            <div class="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-ink-700 border border-zinc-200 shadow-sm flex items-center gap-1.5 font-medium">
-              <i data-lucide="sparkles" class="w-3 h-3 text-gold-metallic"></i>
+            <div class="absolute bottom-4 right-4 px-3 py-1 bg-[#071C1E]/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-emerald-200/80 border border-gold-500/30 shadow-sm flex items-center gap-1.5 font-medium">
+              <i data-lucide="sparkles" class="w-3 h-3 text-gold-400"></i>
               <span id="fs-image-caption">1/4 • Studiya Makro Ko'rinishi</span>
             </div>
           </div>
@@ -1285,13 +1291,13 @@
           </div>
 
           <!-- Hallmark & Assay Guarantee Banner -->
-          <div class="p-4 bg-white rounded-sm border border-gold-metallic/25 shadow-sm flex items-center gap-4">
-            <div class="w-12 h-12 rounded-sm bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-700 shrink-0 font-serif font-bold text-lg">
+          <div class="p-4 bg-[#0A2628] rounded-sm border border-gold-500/30 shadow-md flex items-center gap-4">
+            <div class="w-12 h-12 rounded-sm bg-[#0B2C2E] border border-gold-500/35 flex items-center justify-center text-gold-300 shrink-0 font-serif font-bold text-lg">
               750
             </div>
             <div>
-              <h5 class="text-xs uppercase font-bold tracking-wider text-ink-900" data-i18n="fs_hallmark_t">Davlat Probir Palatasi Rasmiy Tamg'asi</h5>
-              <p class="text-xs text-ink-600 mt-0.5" data-i18n="fs_hallmark_d">Ushbu buyum O'zbekiston Davlat Asillik Palatasi lazerli probir tekshiruvidan to'liq o'tgan va 100% halol 750° qotishmaga ega.</p>
+              <h5 class="text-xs uppercase font-bold tracking-wider text-white" data-i18n="fs_hallmark_t">Davlat Probir Palatasi Rasmiy Tamg'asi</h5>
+              <p class="text-xs text-emerald-200/80 mt-0.5" data-i18n="fs_hallmark_d">Ushbu buyum O'zbekiston Davlat Asillik Palatasi lazerli probir tekshiruvidan to'liq o'tgan va 100% halol 750° qotishmaga ega.</p>
             </div>
           </div>
         </div>
@@ -1301,74 +1307,74 @@
           
           <div>
             <div class="flex items-center justify-between">
-              <span id="fs-sku" class="text-xs text-ink-500 uppercase tracking-widest font-mono font-semibold">SKU: AUR-RN-082</span>
-              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="fs-sku" class="text-xs text-emerald-300/70 uppercase tracking-widest font-mono font-semibold">SKU: AUR-RN-082</span>
+              <span class="inline-flex items-center gap-1 text-[11px] text-emerald-300 font-bold bg-[#0A2628] px-2 py-0.5 rounded border border-emerald-500/30">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span data-i18n="fs_stock_status">Butikda Mavjud (1 dona)</span>
               </span>
             </div>
 
-            <h1 id="fs-title" class="font-serif text-3xl sm:text-4xl text-ink-900 font-bold mt-2 leading-tight">
+            <h1 id="fs-title" class="font-serif text-3xl sm:text-4xl text-white font-bold mt-2 leading-tight">
               Venezia Solitaire Diamond Ring
             </h1>
 
             <!-- Price Display -->
-            <div class="mt-4 p-4 bg-white rounded-sm border border-gold-metallic/30 shadow-sm flex items-baseline justify-between">
+            <div class="mt-4 p-4 bg-[#0A2628] rounded-sm border border-gold-500/30 shadow-md flex items-baseline justify-between">
               <div>
-                <span class="text-[11px] text-ink-500 block uppercase tracking-wider" data-i18n="price_label">Katalog Narxi:</span>
-                <span id="fs-price-usd" class="font-serif text-3xl text-gold-700 font-bold">$2,450</span>
+                <span class="text-[11px] text-emerald-300/70 block uppercase tracking-wider" data-i18n="price_label">Katalog Narxi:</span>
+                <span id="fs-price-usd" class="font-serif text-3xl text-gold-300 font-bold">$2,450</span>
               </div>
               <div class="text-right">
-                <span class="text-[11px] text-ink-500 block uppercase tracking-wider" data-i18n="fs_uzs_label">So'mdagi ekvivalenti:</span>
-                <span id="fs-price-uzs" class="font-mono text-sm text-ink-800 font-bold">~ 31,500,000 UZS</span>
+                <span class="text-[11px] text-emerald-300/70 block uppercase tracking-wider" data-i18n="fs_uzs_label">So'mdagi ekvivalenti:</span>
+                <span id="fs-price-uzs" class="font-mono text-sm text-emerald-100 font-bold">~ 31,500,000 UZS</span>
               </div>
             </div>
           </div>
 
           <!-- Product Narrative -->
           <div class="space-y-2">
-            <h4 class="text-xs font-bold uppercase tracking-widest text-ink-800" data-i18n="fs_desc_title">Taqinchoq Haqida</h4>
-            <p id="fs-description" class="text-sm text-ink-600 leading-relaxed">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-gold-300" data-i18n="fs_desc_title">Taqinchoq Haqida</h4>
+            <p id="fs-description" class="text-sm text-emerald-100/90 leading-relaxed">
               Markaziy 0.70ct VVS2 brilliant, 18K italyan oltini asosida klassik 6 oyoqli fiksatsiya. Vicenza zargarlik ustaxonasining qo'l mehnati namunasi.
             </p>
           </div>
 
           <!-- Full Specification Table -->
           <div class="space-y-2">
-            <h4 class="text-xs font-bold uppercase tracking-widest text-ink-800" data-i18n="fs_specs_title">Zargarlik Parametrlari:</h4>
-            <div class="bg-white rounded-sm border border-zinc-200 divide-y divide-zinc-100 text-xs shadow-sm">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-gold-300" data-i18n="fs_specs_title">Zargarlik Parametrlari:</h4>
+            <div class="bg-[#0A2628] rounded-sm border border-gold-500/25 divide-y divide-gold-500/15 text-xs shadow-md">
               <div class="p-3 flex justify-between">
-                <span class="text-ink-500" data-i18n="spec_metal">Metall & Asillik:</span>
-                <span id="fs-spec-metal" class="font-semibold text-ink-900">18K (750°) Italiya Oltini</span>
+                <span class="text-emerald-300/70" data-i18n="spec_metal">Metall & Asillik:</span>
+                <span id="fs-spec-metal" class="font-semibold text-white">18K (750°) Italiya Oltini</span>
               </div>
               <div class="p-3 flex justify-between">
-                <span class="text-ink-500" data-i18n="spec_stones">Toshlar Xususiyati:</span>
-                <span id="fs-spec-stones" class="font-semibold text-ink-900">Tabiiy Brilliant GIA 0.70ct VVS2</span>
+                <span class="text-emerald-300/70" data-i18n="spec_stones">Toshlar Xususiyati:</span>
+                <span id="fs-spec-stones" class="font-semibold text-white">Tabiiy Brilliant GIA 0.70ct VVS2</span>
               </div>
               <div class="p-3 flex justify-between">
-                <span class="text-ink-500" data-i18n="spec_weight">Umumiy Og'irligi:</span>
-                <span id="fs-spec-weight" class="font-semibold text-ink-900">4.85 gramm</span>
+                <span class="text-emerald-300/70" data-i18n="spec_weight">Umumiy Og'irligi:</span>
+                <span id="fs-spec-weight" class="font-semibold text-white">4.85 gramm</span>
               </div>
               <div class="p-3 flex justify-between">
-                <span class="text-ink-500" data-i18n="spec_origin">Ishlab chiqarilgan joy:</span>
-                <span id="fs-spec-origin" class="font-semibold text-ink-900">Vicenza, Italiya</span>
+                <span class="text-emerald-300/70" data-i18n="spec_origin">Ishlab chiqarilgan joy:</span>
+                <span id="fs-spec-origin" class="font-semibold text-white">Vicenza, Italiya</span>
               </div>
               <div class="p-3 flex justify-between">
-                <span class="text-ink-500" data-i18n="spec_service">Kafolat & O'lcham:</span>
-                <span class="font-semibold text-emerald-700" data-i18n="spec_service_val">Bepul individual o'lchamga to'g'irlash</span>
+                <span class="text-emerald-300/70" data-i18n="spec_service">Kafolat & O'lcham:</span>
+                <span class="font-semibold text-gold-300" data-i18n="spec_service_val">Bepul individual o'lchamga to'g'irlash</span>
               </div>
             </div>
           </div>
 
           <!-- HIGH CONVERSION CONTACT & BOOKING BOX -->
-          <div class="p-6 bg-ivory-100 rounded-sm border border-gold-metallic/40 shadow-lg space-y-4">
+          <div class="p-6 bg-gradient-to-br from-[#0B2C2E] to-[#071C1E] rounded-sm border border-gold-500/40 shadow-2xl space-y-4">
             
             <div class="space-y-1">
-              <span class="text-[10px] uppercase tracking-widest text-gold-700 font-bold block" data-i18n="fs_cta_sub">Xususiy Konsyerj Xizmati</span>
-              <h3 class="font-serif text-xl text-ink-900 font-bold" data-i18n="fs_cta_head">
+              <span class="text-[10px] uppercase tracking-widest text-gold-300 font-bold block" data-i18n="fs_cta_sub">Xususiy Konsyerj Xizmati</span>
+              <h3 class="font-serif text-xl text-white font-bold" data-i18n="fs_cta_head">
                 Ushbu Taqinchoqni Shaxsan Ko'rish & Band Qilish
               </h3>
-              <p class="text-xs text-ink-600 leading-relaxed" data-i18n="fs_cta_body">
+              <p class="text-xs text-emerald-100/80 leading-relaxed" data-i18n="fs_cta_body">
                 Bunyodkor shoh ko'chasi 15/1 dagi butikimizda VIP xonada bepul kiyib ko'rish yoki Telegram orqali jonli video-ko'rik buyurtma qilish uchun qulay usulni tanlang:
               </p>
             </div>
@@ -1379,9 +1385,9 @@
               href="#" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="w-full py-4 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 hover:from-gold-700 hover:to-gold-700 text-white font-bold text-xs uppercase tracking-[0.18em] rounded-sm shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition flex items-center justify-center gap-2.5 text-center"
+              class="w-full py-4 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs uppercase tracking-[0.18em] rounded-sm shadow-lg shadow-gold-500/20 hover:scale-[1.01] active:scale-[0.98] transition flex items-center justify-center gap-2.5 text-center"
             >
-              <i data-lucide="send" class="w-4 h-4 text-white"></i>
+              <i data-lucide="send" class="w-4 h-4 text-olmos-950"></i>
               <span data-i18n="fs_btn_tg">Telegram Orqali So'rash (Pre-filled)</span>
             </a>
 
@@ -1389,25 +1395,25 @@
             <div class="grid grid-cols-2 gap-3">
               <a 
                 href="tel:+998977742021" 
-                class="py-3 px-2 bg-white hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-wider rounded-sm border border-zinc-300 flex items-center justify-center gap-2 transition shadow-sm"
+                class="py-3 px-2 bg-[#0A2628] hover:border-gold-400 text-white font-bold text-xs uppercase tracking-wider rounded-sm border border-gold-500/30 flex items-center justify-center gap-2 transition shadow-sm"
               >
-                <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+                <i data-lucide="phone" class="w-4 h-4 text-gold-400"></i>
                 <span data-i18n="fs_btn_call">Qo'ng'iroq Qilish</span>
               </a>
 
               <button 
                 onclick="toggleFittingForm()" 
-                class="py-3 px-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm flex items-center justify-center gap-1.5 transition shadow-sm"
+                class="py-3 px-2 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 font-bold text-xs uppercase tracking-wider rounded-sm flex items-center justify-center gap-1.5 transition shadow-sm"
               >
-                <i data-lucide="calendar" class="w-4 h-4 text-gold-300"></i>
+                <i data-lucide="calendar" class="w-4 h-4 text-olmos-950"></i>
                 <span data-i18n="fs_btn_fit">VIP Zalda Kiyish</span>
               </button>
             </div>
 
             <!-- Expandable VIP Lounge Fitting Booking Form -->
-            <div id="fs-fitting-form-container" class="hidden pt-3 border-t border-gold-metallic/25">
+            <div id="fs-fitting-form-container" class="hidden pt-3 border-t border-gold-500/25">
               <form id="fs-fitting-form" onsubmit="handleFittingSubmit(event)" class="space-y-3">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-ink-800" data-i18n="fs_form_head">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-100" data-i18n="fs_form_head">
                   Bunyodkor 15/1 Butikida Kiyib Ko'rishga Yozilish:
                 </div>
                 <div>
@@ -1416,47 +1422,47 @@
                     id="fit-name" 
                     required 
                     placeholder="Ismingiz" 
-                    class="w-full px-3.5 py-2.5 bg-white border border-zinc-300 rounded-sm text-xs text-ink-900 focus:outline-none focus:border-gold-metallic"
+                    class="w-full px-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-sm text-xs text-white focus:outline-none focus:border-gold-400"
                   >
                 </div>
                 <div class="relative">
-                  <span class="absolute left-3 top-2.5 text-zinc-500 text-xs font-mono">+998</span>
+                  <span class="absolute left-3 top-2.5 text-gold-300 text-xs font-mono">+998</span>
                   <input 
                     type="tel" 
                     id="fit-phone" 
                     required 
                     placeholder="(90) 123-45-67" 
-                    class="w-full pl-14 pr-3.5 py-2.5 bg-white border border-zinc-300 rounded-sm text-xs text-ink-900 font-mono focus:outline-none focus:border-gold-metallic"
+                    class="w-full pl-14 pr-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-sm text-xs text-white font-mono focus:outline-none focus:border-gold-400"
                   >
                 </div>
                 <button 
                   type="submit" 
-                  class="w-full py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm transition"
+                  class="w-full py-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 text-xs font-bold uppercase tracking-widest rounded-sm transition shadow-sm"
                 >
                   <span data-i18n="fs_form_submit">Vaqtni Belgilash</span>
                 </button>
               </form>
-              <div id="fit-success" class="hidden text-center py-3 text-emerald-700 text-xs font-semibold">
+              <div id="fit-success" class="hidden text-center py-3 text-gold-300 text-xs font-semibold">
                 ✓ Tashakkur! Konsyerjimiz 5 daqiqa ichida siz bilan bog'lanib, butikda kutib oladi.
               </div>
             </div>
 
             <!-- Trust Badges List -->
-            <div class="pt-2 grid grid-cols-2 gap-2 text-[11px] text-ink-700">
+            <div class="pt-2 grid grid-cols-2 gap-2 text-[11px] text-emerald-200/80">
               <div class="flex items-center gap-1.5">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i>
                 <span data-i18n="fs_t1">100% Sug'urtalangan xarid</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i>
                 <span data-i18n="fs_t2">Shaxsiy VIP xona</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i>
                 <span data-i18n="fs_t3">Bepul o'lchamga moslash</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-700"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i>
                 <span data-i18n="fs_t4">Cheksiz bepul tozalash</span>
               </div>
             </div>
@@ -1464,16 +1470,16 @@
           </div>
 
       <!-- ================= BOTTOM CATALOG IN FULLSCREEN VIEW (2 COLUMNS ON MOBILE) ================= -->
-      <div class="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-gold-metallic/25">
+      <div class="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-gold-500/25">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-3">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-700 block mb-1" data-i18n="fs_related_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
-            <h3 class="font-serif text-2xl sm:text-3xl text-ink-900 font-normal" data-i18n="fs_related_title">
+            <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-300 block mb-1" data-i18n="fs_related_tag">Olmos Gold Eksklyuziv Kolleksiyasi</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-white font-normal" data-i18n="fs_related_title">
               Boshqa Eksklyuziv Zargarlik Buyumlari
             </h3>
           </div>
-          <span class="text-xs text-gold-700 font-medium inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-gold-metallic/30 shadow-sm w-fit">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-metallic"></i>
+          <span class="text-xs text-gold-300 font-medium inline-flex items-center gap-1.5 bg-[#0A2628] px-3.5 py-1.5 rounded-full border border-gold-500/35 shadow-sm w-fit">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
             <span data-i18n="fs_related_hint">Har qanday buyumni tanlab, to'liq ko'rishingiz mumkin</span>
           </span>
         </div>
@@ -1488,12 +1494,12 @@
   </div>
 
   <!-- ================= DEDICATED FULLSCREEN WISHLIST VIEW (ALOHIDA SAHIFA) ================= -->
-  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-[70] bg-[#FAF9F6] overflow-y-auto view-hidden">
+  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-[70] bg-[#071C1E] text-white overflow-y-auto view-hidden">
     
     <!-- Top Sticky Bar inside Wishlist view -->
-    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-      <button onclick="closeWishlistPage()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
-        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+    <div class="sticky top-0 z-30 bg-[#051617]/95 backdrop-blur-md border-b border-gold-500/25 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg">
+      <button onclick="closeWishlistPage()" class="flex items-center gap-2 text-emerald-200 hover:text-gold-300 text-xs font-bold uppercase tracking-widest group transition py-1">
+        <div class="w-8 h-8 rounded-full bg-[#0B2C2E] border border-gold-500/30 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-olmos-950 transition">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </div>
         <span>Katalogga qaytish</span>
@@ -1501,12 +1507,12 @@
 
       <!-- Brand Center -->
       <div class="flex items-center gap-2.5 text-center">
-        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-500/40 shadow-sm">
         <div class="text-left">
-          <span class="font-serif text-base tracking-[0.18em] text-gold-700 font-bold uppercase block leading-tight">
+          <span class="font-serif text-base tracking-[0.18em] text-gold-300 font-bold uppercase block leading-tight">
             OLMOS GOLD
           </span>
-          <span class="block text-[8px] tracking-[0.25em] uppercase text-rose-600 font-bold">
+          <span class="block text-[8px] tracking-[0.25em] uppercase text-rose-400 font-bold">
             SEVIMLILAR • WISHLIST
           </span>
         </div>
@@ -1514,11 +1520,11 @@
 
       <!-- Quick Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="clearAllWishlist()" id="wl-clear-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-ivory-100 border border-zinc-200 text-xs text-ink-500 hover:text-rose-600 hover:border-rose-300 transition" title="Barchasini tozalash">
+        <button onclick="clearAllWishlist()" id="wl-clear-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0A2628] border border-gold-500/25 text-xs text-emerald-300/80 hover:text-rose-400 hover:border-rose-400/40 transition" title="Barchasini tozalash">
           <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
           <span>Tozalash</span>
         </button>
-        <button onclick="closeWishlistPage()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close Wishlist">
+        <button onclick="closeWishlistPage()" class="p-2 text-emerald-300 hover:text-white rounded-full hover:bg-[#0E3638] transition" aria-label="Close Wishlist">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
@@ -1528,30 +1534,30 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-ink-500 mb-6 font-medium">
-        <a href="#collections" onclick="closeWishlistPage()" class="hover:text-gold-700 transition">Kolleksiyalar</a>
+      <nav class="flex items-center gap-2 text-xs text-emerald-300/60 mb-6 font-medium">
+        <a href="#collections" onclick="closeWishlistPage()" class="hover:text-gold-300 transition">Kolleksiyalar</a>
         <span>/</span>
-        <span class="text-gold-700 font-bold">Sevimlilar (Wishlist)</span>
+        <span class="text-gold-300 font-bold">Sevimlilar (Wishlist)</span>
       </nav>
 
       <!-- Page Header -->
-      <div class="pb-6 border-b border-gold-metallic/20 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div class="pb-6 border-b border-gold-500/20 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 border border-rose-200 rounded-full text-rose-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
-            <i data-lucide="heart" class="w-3.5 h-3.5 fill-rose-500 text-rose-500"></i>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-950/40 border border-rose-500/40 rounded-full text-rose-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-rose-400 text-rose-400"></i>
             <span>Sizning Tanlovlaringiz</span>
             <span id="wl-page-count-badge" class="ml-1 px-1.5 py-0.2 bg-rose-600 text-white rounded-full text-[9px] font-mono">0</span>
           </div>
-          <h1 class="font-serif text-2xl sm:text-4xl text-ink-900 font-bold">
+          <h1 class="font-serif text-2xl sm:text-4xl text-white font-bold">
             Saqlangan Zargarlik Buyumlari
           </h1>
-          <p class="text-xs sm:text-sm text-ink-600 max-w-2xl mt-1.5 leading-relaxed">
+          <p class="text-xs sm:text-sm text-emerald-100/80 max-w-2xl mt-1.5 leading-relaxed">
             O'zingizga ma'qul kelgan benuqson 18K italyan oltini va sertifikatlangan olmoslar. Ushbu ro'yxatni to'g'ridan-to'g'ri butik konsyerjiga yuborishingiz yoki VIP zalda kiyib ko'rishga buyurtma berishingiz mumkin.
           </p>
         </div>
         
         <div class="flex items-center gap-2">
-          <button onclick="clearAllWishlist()" id="wl-clear-btn-mob" class="sm:hidden text-xs text-ink-500 hover:text-rose-600 flex items-center gap-1.5 py-1 px-2.5 rounded bg-zinc-100">
+          <button onclick="clearAllWishlist()" id="wl-clear-btn-mob" class="sm:hidden text-xs text-emerald-300/80 hover:text-rose-400 flex items-center gap-1.5 py-1 px-2.5 rounded bg-[#0A2628] border border-gold-500/25">
             <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
             <span>Barchasini tozalash</span>
           </button>
@@ -1559,18 +1565,18 @@
       </div>
 
       <!-- Empty State View (Shown when 0 items) -->
-      <div id="wl-empty-state" class="py-16 text-center space-y-5 bg-white border border-gold-metallic/25 rounded-sm p-8 max-w-lg mx-auto shadow-sm hidden">
-        <div class="w-20 h-20 mx-auto rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-500">
+      <div id="wl-empty-state" class="py-16 text-center space-y-5 bg-[#0A2628] border border-gold-500/30 rounded-sm p-8 max-w-lg mx-auto shadow-2xl hidden">
+        <div class="w-20 h-20 mx-auto rounded-full bg-rose-950/40 border border-rose-500/40 flex items-center justify-center text-rose-400">
           <i data-lucide="heart" class="w-10 h-10 stroke-[1.5]"></i>
         </div>
         <div>
-          <h3 class="font-serif text-2xl text-ink-900 font-bold">Sevimlilar ro'yxati bo'sh</h3>
-          <p class="text-xs sm:text-sm text-ink-600 max-w-md mx-auto mt-2 leading-relaxed">
+          <h3 class="font-serif text-2xl text-white font-bold">Sevimlilar ro'yxati bo'sh</h3>
+          <p class="text-xs sm:text-sm text-emerald-200/80 max-w-md mx-auto mt-2 leading-relaxed">
             Katalogdagi taqinchoqlarning ustidagi yurakcha tugmasini bosib, o'zingizga yoqqan modellarni shu yerga to'plashingiz mumkin.
           </p>
         </div>
-        <button onclick="closeWishlistPage(); location.href='#collections';" class="inline-flex items-center gap-2 px-7 py-3 bg-ink-900 hover:bg-gold-600 text-white rounded-sm text-xs uppercase tracking-widest font-bold shadow-md transition-all active:scale-95">
-          <i data-lucide="sparkles" class="w-4 h-4 text-gold-300"></i>
+        <button onclick="closeWishlistPage(); location.href='#collections';" class="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 rounded-sm text-xs uppercase tracking-widest font-bold shadow-lg transition-all active:scale-95">
+          <i data-lucide="sparkles" class="w-4 h-4 text-olmos-950"></i>
           <span>Kolleksiyani Ko'rish</span>
         </button>
       </div>
@@ -1583,47 +1589,47 @@
         </div>
 
         <!-- Order / Concierge Form Box (Submits directly to Telegram Bot!) -->
-        <div class="bg-white border-2 border-gold-metallic/40 rounded-sm p-5 sm:p-8 shadow-xl relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-48 h-48 bg-gold-200/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="bg-gradient-to-br from-[#0B2C2E] via-[#071C1E] to-[#041213] border-2 border-gold-500/40 rounded-sm p-5 sm:p-8 shadow-2xl relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-48 h-48 bg-gold-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             
             <!-- Summary Info -->
             <div class="lg:col-span-5 space-y-3">
-              <div class="inline-flex items-center gap-2 text-gold-700 text-xs font-bold uppercase tracking-wider">
-                <i data-lucide="crown" class="w-4 h-4 text-gold-metallic"></i>
+              <div class="inline-flex items-center gap-2 text-gold-300 text-xs font-bold uppercase tracking-wider">
+                <i data-lucide="crown" class="w-4 h-4 text-gold-400"></i>
                 <span>VIP Konsyerj Xizmati</span>
               </div>
-              <h3 class="font-serif text-xl sm:text-2xl text-ink-900 font-bold">
+              <h3 class="font-serif text-xl sm:text-2xl text-white font-bold">
                 Tanlangan Buyumlarga Buyurtma Berish
               </h3>
-              <p class="text-xs text-ink-600 leading-relaxed">
+              <p class="text-xs text-emerald-100/80 leading-relaxed">
                 Ismingiz va telefon raqamingizni qoldiring. Barcha tanlangan taqinchoqlar ro'yxati rasmiy konsyerjimizga yetkaziladi va 5 daqiqada siz bilan bog'lanamiz.
               </p>
 
-              <div class="pt-3 border-t border-gold-metallic/20">
-                <div class="text-xs text-ink-500 font-medium">Umumiy hisoblangan qiymat:</div>
+              <div class="pt-3 border-t border-gold-500/20">
+                <div class="text-xs text-emerald-300/70 font-medium">Umumiy hisoblangan qiymat:</div>
                 <div class="flex items-baseline gap-2 mt-0.5">
-                  <span id="wl-total-usd" class="font-serif text-2xl sm:text-3xl text-gold-700 font-bold">$0</span>
-                  <span id="wl-total-uzs" class="text-xs sm:text-sm text-ink-500 font-mono">~ 0 UZS</span>
+                  <span id="wl-total-usd" class="font-serif text-2xl sm:text-3xl text-gold-300 font-bold">$0</span>
+                  <span id="wl-total-uzs" class="text-xs sm:text-sm text-emerald-300/70 font-mono">~ 0 UZS</span>
                 </div>
               </div>
             </div>
 
             <!-- Direct Lead Form -->
-            <div class="lg:col-span-7 bg-ivory-100 p-4 sm:p-6 rounded-sm border border-gold-metallic/25">
+            <div class="lg:col-span-7 bg-[#071C1E] p-4 sm:p-6 rounded-sm border border-gold-500/30">
               
               <!-- Success State -->
               <div id="wl-lead-success" class="hidden py-6 text-center space-y-3">
-                <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                <div class="w-12 h-12 mx-auto rounded-full bg-emerald-950/80 text-gold-300 flex items-center justify-center border border-gold-500/40">
                   <i data-lucide="check-circle" class="w-6 h-6"></i>
                 </div>
-                <h4 class="font-serif text-xl font-bold text-ink-900">Buyurtmangiz Muvaffaqiyatli Qabul Qilindi!</h4>
-                <p class="text-xs text-ink-600 max-w-sm mx-auto">
+                <h4 class="font-serif text-xl font-bold text-white">Buyurtmangiz Muvaffaqiyatli Qabul Qilindi!</h4>
+                <p class="text-xs text-emerald-200/80 max-w-sm mx-auto">
                   Tanlangan zargarlik buyumlari ma'lumotlari konsyerjimizga yuborildi. Tez orada siz bilan bog'lanamiz.
                 </p>
                 <div class="pt-2">
-                  <a id="wl-open-tg-direct" href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
+                  <a id="wl-open-tg-direct" href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-olmos-950 rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
                     <i data-lucide="send" class="w-4 h-4"></i>
                     <span>Telegramda Chatni Ochish (@OLMOS_GOLD)</span>
                   </a>
@@ -1634,7 +1640,7 @@
               <form id="wl-lead-form" onsubmit="handleWishlistLeadSubmit(event)" class="space-y-3.5">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-ink-700 mb-1">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200/80 mb-1">
                       Ismingiz:
                     </label>
                     <input 
@@ -1642,15 +1648,15 @@
                       id="wl-name" 
                       required 
                       placeholder="Masalan: Nilufar" 
-                      class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-sm text-sm focus:outline-none focus:border-gold-600"
+                      class="w-full px-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white focus:outline-none focus:border-gold-400 placeholder-emerald-400/30"
                     >
                   </div>
                   <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-ink-700 mb-1">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-emerald-200/80 mb-1">
                       Telefon Raqamingiz:
                     </label>
                     <div class="flex">
-                      <span class="inline-flex items-center px-2.5 bg-zinc-100 border border-r-0 border-gold-metallic/30 rounded-l-sm text-xs font-bold text-ink-700">
+                      <span class="inline-flex items-center px-2.5 bg-[#0A2628] border border-r-0 border-gold-500/30 rounded-l-sm text-xs font-bold text-gold-300">
                         +998
                       </span>
                       <input 
@@ -1658,7 +1664,7 @@
                         id="wl-phone" 
                         required 
                         placeholder="(90) 123-45-67" 
-                        class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-r-sm text-sm focus:outline-none focus:border-gold-600"
+                        class="w-full px-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-r-sm text-sm text-white font-mono focus:outline-none focus:border-gold-400 placeholder-emerald-400/30"
                       >
                     </div>
                   </div>
@@ -1668,23 +1674,23 @@
                   <button 
                     type="submit" 
                     id="wl-submit-btn"
-                    class="flex-1 py-3 px-4 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98"
+                    class="flex-1 py-3 px-4 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs uppercase tracking-wider rounded-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98"
                   >
-                    <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+                    <i data-lucide="send" class="w-4 h-4 text-olmos-950"></i>
                     <span>Buyurtmani Yuborish (Telegram Bot)</span>
                   </button>
 
                   <button 
                     type="button"
                     onclick="sendWishlistToTelegramDirect()"
-                    class="py-3 px-4 bg-white hover:bg-zinc-50 border border-gold-metallic/40 text-ink-800 font-bold text-xs uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2"
+                    class="py-3 px-4 bg-[#0A2628] hover:bg-[#0E3638] border border-gold-500/40 text-gold-300 font-bold text-xs uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2"
                   >
-                    <i data-lucide="message-circle" class="w-4 h-4 text-gold-600"></i>
+                    <i data-lucide="message-circle" class="w-4 h-4 text-gold-400"></i>
                     <span>Telegramda Chat</span>
                   </button>
                 </div>
 
-                <p class="text-[10px] text-ink-500 text-center sm:text-left">
+                <p class="text-[10px] text-emerald-300/60 text-center sm:text-left">
                   🔒 Ma'lumotlaringiz maxfiy saqlanadi va bevosita butik konsyerjiga yuboriladi.
                 </p>
               </form>
@@ -1700,7 +1706,7 @@
   </div>
 
   <!-- ================= FLOATING TOAST NOTIFICATION ================= -->
-  <div id="wishlist-toast" onclick="openWishlistPage()" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] bg-ink-900/95 backdrop-blur-md text-white px-5 py-3 rounded-full border border-gold-metallic/50 shadow-2xl flex items-center gap-2.5 text-xs font-medium transition-all duration-300 opacity-0 pointer-events-none translate-y-4 cursor-pointer">
+  <div id="wishlist-toast" onclick="openWishlistPage()" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] bg-[#051617]/95 backdrop-blur-md text-white px-5 py-3 rounded-full border border-gold-500/50 shadow-2xl flex items-center gap-2.5 text-xs font-medium transition-all duration-300 opacity-0 pointer-events-none translate-y-4 cursor-pointer">
     <i id="toast-icon" data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
     <span id="toast-text">Sevimlilarga qo'shildi</span>
     <span class="text-gold-300 underline ml-1 font-bold">Ko'rish →</span>
@@ -1708,34 +1714,34 @@
 
 
   <!-- ================= DIRECT PRODUCT CONCIERGE MODAL (FALLBACK / QUICK) ================= -->
-  <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-sm max-w-lg w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
-      <button onclick="closeConciergeModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+  <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#0A2628] rounded-sm max-w-lg w-full p-6 sm:p-8 border border-gold-500/40 relative shadow-2xl text-white">
+      <button onclick="closeConciergeModal()" class="absolute top-4 right-4 text-emerald-300 hover:text-white p-1">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold-700 font-bold">
-          <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-metallic"></i>
+        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold-300 font-bold">
+          <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-400"></i>
           <span>Xususiy Konsyerj Xizmati</span>
         </div>
 
-        <h3 class="font-serif text-2xl text-ink-900 font-bold" id="modal-item-title">
+        <h3 class="font-serif text-2xl text-white font-bold" id="modal-item-title">
           Mahsulot Bo'yicha Band Qilish
         </h3>
 
-        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/25 text-xs space-y-1">
+        <div class="p-3 bg-[#071C1E] rounded-sm border border-gold-500/25 text-xs space-y-1">
           <div class="flex justify-between">
-            <span class="text-ink-500">Buyum kodi:</span>
-            <span class="font-mono text-gold-700 font-bold" id="modal-item-sku">AUR-001</span>
+            <span class="text-emerald-300/70">Buyum kodi:</span>
+            <span class="font-mono text-gold-300 font-bold" id="modal-item-sku">AUR-001</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-ink-500">Ko'rsatilgan narxi:</span>
-            <span class="font-serif text-ink-900 font-bold text-sm" id="modal-item-price">$0</span>
+            <span class="text-emerald-300/70">Ko'rsatilgan narxi:</span>
+            <span class="font-serif text-white font-bold text-sm" id="modal-item-price">$0</span>
           </div>
         </div>
 
-        <p class="text-xs text-ink-600 leading-relaxed" data-i18n="modal_desc">
+        <p class="text-xs text-emerald-100/80 leading-relaxed" data-i18n="modal_desc">
           Ushbu buyumni o'zingiz uchun band qilish, jonli video-ko'rik buyurtma qilish yoki butikda o'lchamini ko'rish uchun quyidagi tugmani bosing:
         </p>
 
@@ -1745,17 +1751,17 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+            class="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition shadow-md"
           >
-            <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
+            <i data-lucide="send" class="w-4 h-4 text-olmos-950"></i>
             <span data-i18n="modal_btn_tg">Telegram Orqali So'rash (Pre-filled)</span>
           </a>
 
           <a 
             href="tel:+998977742021" 
-            class="w-full py-3.5 bg-white border border-zinc-300 hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+            class="w-full py-3.5 bg-[#071C1E] border border-gold-500/35 hover:border-gold-400 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
           >
-            <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+            <i data-lucide="phone" class="w-4 h-4 text-gold-400"></i>
             <span>Konsyergga Qo'ng'iroq Qilish (+998 97 774 20 21)</span>
           </a>
         </div>
@@ -1764,43 +1770,43 @@
   </div>
 
   <!-- ================= VIP CATALOG DOWNLOAD MODAL ================= -->
-  <div id="vip-catalog-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-sm max-w-md w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
-      <button onclick="closeVipCatalogModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+  <div id="vip-catalog-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#0A2628] rounded-sm max-w-md w-full p-6 sm:p-8 border border-gold-500/40 relative shadow-2xl text-white">
+      <button onclick="closeVipCatalogModal()" class="absolute top-4 right-4 text-emerald-300 hover:text-white p-1">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="space-y-4">
-        <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center border border-gold-metallic/35">
+        <div class="w-12 h-12 mx-auto rounded-full bg-[#0B2C2E] text-gold-300 flex items-center justify-center border border-gold-500/35">
           <i data-lucide="book-open" class="w-6 h-6"></i>
         </div>
 
         <div class="text-center">
-          <h3 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="modal_cat_title">2026 VIP Lookbook & Narxlar</h3>
-          <p class="text-xs text-ink-600 mt-1" data-i18n="modal_cat_desc">Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.</p>
+          <h3 class="font-serif text-2xl text-white font-bold" data-i18n="modal_cat_title">2026 VIP Lookbook & Narxlar</h3>
+          <p class="text-xs text-emerald-200/80 mt-1" data-i18n="modal_cat_desc">Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.</p>
         </div>
 
         <form onsubmit="handleModalCatalogSubmit(event)" class="space-y-3.5">
           <div>
-            <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
-            <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
+            <label class="block text-[11px] uppercase tracking-wider text-emerald-200/80 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
+            <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white focus:outline-none focus:border-gold-400 placeholder-emerald-400/30">
           </div>
           <div>
-            <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_phone_label">Telefon Raqamingiz</label>
+            <label class="block text-[11px] uppercase tracking-wider text-emerald-200/80 font-semibold mb-1" data-i18n="form_phone_label">Telefon Raqamingiz</label>
             <div class="relative">
-              <span class="absolute left-3 top-2.5 text-zinc-500 text-xs font-mono">+998</span>
-              <input type="tel" id="m-phone" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic">
+              <span class="absolute left-3 top-2.5 text-gold-300 text-xs font-mono">+998</span>
+              <input type="tel" id="m-phone" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-[#041213] border border-gold-500/30 rounded-sm text-sm text-white font-mono focus:outline-none focus:border-gold-400 placeholder-emerald-400/30">
             </div>
           </div>
-          <button type="submit" class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition">
-            <i data-lucide="download" class="w-4 h-4 text-gold-300"></i>
+          <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition shadow-lg shadow-gold-500/20">
+            <i data-lucide="download" class="w-4 h-4 text-olmos-950"></i>
             <span data-i18n="cta_vip_catalog">Katalogni Olish</span>
           </button>
         </form>
 
-        <div id="modal-success" class="hidden text-center py-4 text-emerald-700 text-xs space-y-2">
+        <div id="modal-success" class="hidden text-center py-4 text-gold-300 text-xs space-y-2">
           <p>✓ Muvaffaqiyatli yuborildi! Tez orada konsyerjimiz bog'lanadi.</p>
-          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-700 underline font-semibold">Telegram @OLMOS_GOLD</a>
+          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-300 underline font-semibold">Telegram @OLMOS_GOLD</a>
         </div>
       </div>
     </div>
@@ -2155,15 +2161,15 @@
         const icon = btn.querySelector('svg, i');
         if (id && icon) {
           if (list.includes(id)) {
-            btn.classList.add('text-rose-500', 'border-rose-300');
-            btn.classList.remove('text-ink-700');
-            icon.classList.add('text-rose-500', 'fill-rose-500');
-            icon.classList.remove('text-ink-600');
+            btn.classList.add('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+            btn.classList.remove('text-emerald-100', 'border-gold-500/40');
+            icon.classList.add('text-rose-400', 'fill-rose-400');
+            icon.classList.remove('text-emerald-100');
           } else {
-            btn.classList.remove('text-rose-500', 'border-rose-300');
-            btn.classList.add('text-ink-700');
-            icon.classList.remove('text-rose-500', 'fill-rose-500');
-            icon.classList.add('text-ink-600');
+            btn.classList.remove('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+            btn.classList.add('text-emerald-100', 'border-gold-500/40');
+            icon.classList.remove('text-rose-400', 'fill-rose-400');
+            icon.classList.add('text-emerald-100');
           }
         }
       });
@@ -2174,13 +2180,13 @@
         const fsIcon = document.getElementById('fs-wishlist-icon');
         if (fsBtn && fsIcon) {
           if (list.includes(currentActiveProduct.id)) {
-            fsBtn.classList.add('text-rose-500', 'border-rose-300', 'bg-rose-50');
-            fsIcon.classList.add('text-rose-500', 'fill-rose-500');
-            fsIcon.classList.remove('text-ink-700');
+            fsBtn.classList.add('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+            fsIcon.classList.add('text-rose-400', 'fill-rose-400');
+            fsIcon.classList.remove('text-emerald-100');
           } else {
-            fsBtn.classList.remove('text-rose-500', 'border-rose-300', 'bg-rose-50');
-            fsIcon.classList.remove('text-rose-500', 'fill-rose-500');
-            fsIcon.classList.add('text-ink-700');
+            fsBtn.classList.remove('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+            fsIcon.classList.remove('text-rose-400', 'fill-rose-400');
+            fsIcon.classList.add('text-emerald-100');
           }
         }
       }
@@ -2306,20 +2312,20 @@
         const title = currentLang === 'uz' ? item.title_uz : item.title_ru;
 
         const card = document.createElement('div');
-        card.className = "luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between group transition-all duration-300 relative";
+        card.className = "luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between group transition-all duration-300 relative border border-gold-500/30 shadow-lg";
         card.innerHTML = `
-          <div class="relative aspect-square overflow-hidden bg-ivory-100 cursor-pointer" onclick="openProductDetail('${item.id}')">
+          <div class="relative aspect-square overflow-hidden bg-[#041213] cursor-pointer" onclick="openProductDetail('${item.id}')">
             <img 
               src="${item.images[0].url}" 
               alt="${title}" 
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             >
             <div class="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
-              <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/30 shadow-sm">
+              <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-[#071C1E]/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-300 font-bold border border-gold-500/40 shadow-sm">
                 ${item.purity_badge}
               </span>
               ${item.extra_badge ? `
-              <span class="px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
+              <span class="px-1.5 sm:px-2 py-0.5 bg-[#0B2C2E] text-gold-300 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-gold-500/30 shadow-sm">
                 ${item.extra_badge}
               </span>
               ` : ''}
@@ -2328,34 +2334,34 @@
             <!-- Remove Button -->
             <button 
               onclick="toggleWishlist('${item.id}', event)" 
-              class="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-md border border-rose-300 text-rose-500 hover:bg-rose-50 flex items-center justify-center transition shadow-sm z-20 active:scale-90"
+              class="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#071C1E]/90 backdrop-blur-md border border-rose-500/40 text-rose-400 hover:bg-rose-950/60 flex items-center justify-center transition shadow-sm z-20 active:scale-90"
               title="${currentLang === 'uz' ? "O'chirish" : "Удалить"}"
             >
               <i data-lucide="trash-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
             </button>
           </div>
 
-          <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow">
+          <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow bg-[#071C1E]">
             <div>
-              <div class="text-[8px] sm:text-[10px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
+              <div class="text-[8px] sm:text-[10px] text-emerald-300/70 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
               <h3 
                 onclick="openProductDetail('${item.id}')"
-                class="font-serif text-xs sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] cursor-pointer hover:text-gold-700 transition"
+                class="font-serif text-xs sm:text-base text-white font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] cursor-pointer hover:text-gold-300 transition"
               >
                 ${title}
               </h3>
             </div>
 
-            <div class="mt-2 pt-2 border-t border-zinc-100 flex flex-col gap-2">
+            <div class="mt-2 pt-2 border-t border-gold-500/20 flex flex-col gap-2">
               <div>
-                <span class="font-serif text-xs sm:text-lg text-gold-700 font-bold leading-tight">${item.price_usd}</span>
-                <span class="text-[8px] sm:text-[10px] text-ink-500 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
+                <span class="font-serif text-xs sm:text-lg text-gold-300 font-bold leading-tight">${item.price_usd}</span>
+                <span class="text-[8px] sm:text-[10px] text-emerald-200/70 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
               </div>
               <button 
                 onclick="openProductDetail('${item.id}')"
-                class="w-full py-1.5 sm:py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-sm"
+                class="w-full py-1.5 sm:py-2 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-gold"
               >
-                <i data-lucide="eye" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-300"></i>
+                <i data-lucide="eye" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-olmos-950"></i>
                 <span>${currentLang === 'uz' ? "Batafsil Ko'rish" : "Подробнее"}</span>
               </button>
             </div>
@@ -2479,7 +2485,7 @@
       const hasSwap = item.images.length > 1;
 
       const card = document.createElement('div');
-      card.className = "product-card group luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-500 cursor-pointer";
+      card.className = "product-card group luxury-white-card rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-500 cursor-pointer border border-gold-500/30 hover:border-gold-400 hover:shadow-gold";
       card.setAttribute('data-category', item.category);
       card.setAttribute('data-id', item.id);
       
@@ -2498,7 +2504,7 @@
       };
 
       card.innerHTML = `
-        <div class="relative w-full aspect-square overflow-hidden bg-ivory-200 ${hasSwap ? 'img-swap-container' : ''}">
+        <div class="relative w-full aspect-square overflow-hidden bg-[#041213] ${hasSwap ? 'img-swap-container' : ''}">
           <img 
             src="${studioImg}" 
             alt="${title}" 
@@ -2515,11 +2521,11 @@
           ` : ''}
           
           <div class="absolute top-2 left-2 flex flex-col gap-1 items-start z-10 pointer-events-none">
-            <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/30 shadow-sm">
+            <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-[#071C1E]/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-300 font-bold border border-gold-500/40 shadow-sm">
               ${item.purity_badge}
             </span>
             ${item.extra_badge ? `
-            <span class="px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
+            <span class="px-1.5 sm:px-2 py-0.5 bg-[#0B2C2E] text-gold-300 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-gold-500/30 shadow-sm">
               ${item.extra_badge}
             </span>
             ` : ''}
@@ -2528,43 +2534,43 @@
           <!-- Wishlist Heart Button -->
           <button 
             onclick="toggleWishlist('${item.id}', event)" 
-            class="btn-wishlist absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center transition-all shadow-sm z-20 active:scale-90 ${isInWishlist(item.id) ? 'text-rose-500 border-rose-300' : 'text-ink-700 hover:text-rose-600'}"
+            class="btn-wishlist absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#071C1E]/90 backdrop-blur-md border border-gold-500/40 flex items-center justify-center transition-all shadow-sm z-20 active:scale-90 ${isInWishlist(item.id) ? 'text-rose-400 border-rose-500/50' : 'text-emerald-100 hover:text-gold-300'}"
             aria-label="Sevimlilarga qo'shish"
             title="Sevimlilarga qo'shish"
           >
-            <i data-lucide="heart" class="w-3.5 h-3.5 sm:w-4 sm:h-4 ${isInWishlist(item.id) ? 'text-rose-500 fill-rose-500' : 'text-ink-600'}"></i>
+            <i data-lucide="heart" class="w-3.5 h-3.5 sm:w-4 sm:h-4 ${isInWishlist(item.id) ? 'text-rose-400 fill-rose-400' : 'text-emerald-100'}"></i>
           </button>
           
           <!-- Quick hover hint overlay -->
-          <div class="absolute bottom-2.5 inset-x-2.5 py-1 sm:py-1.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm hidden sm:block">
-            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gold-700 flex items-center justify-center gap-1.5">
-              <i data-lucide="maximize-2" class="w-3 h-3 text-gold-700"></i>
+          <div class="absolute bottom-2.5 inset-x-2.5 py-1 sm:py-1.5 bg-[#071C1E]/95 backdrop-blur-md rounded-sm border border-gold-500/40 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm hidden sm:block">
+            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gold-300 flex items-center justify-center gap-1.5">
+              <i data-lucide="maximize-2" class="w-3 h-3 text-gold-300"></i>
               <span>${currentLang === 'uz' ? "To'liq Ma'lumot & Rasmlar" : "Подробнее и Все Фото"}</span>
             </span>
           </div>
         </div>
 
-        <div class="p-2.5 sm:p-5 flex flex-col justify-between flex-grow">
+        <div class="p-2.5 sm:p-5 flex flex-col justify-between flex-grow bg-[#071C1E]">
           <div>
-            <div class="text-[8px] sm:text-[11px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
-            <h3 class="font-serif text-xs sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] group-hover:text-gold-700 transition">
+            <div class="text-[8px] sm:text-[11px] text-emerald-300/70 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
+            <h3 class="font-serif text-xs sm:text-base text-white font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] group-hover:text-gold-300 transition">
               ${title}
             </h3>
-            <p class="hidden sm:block text-xs text-ink-600 mt-1 line-clamp-2">
+            <p class="hidden sm:block text-xs text-emerald-200/80 mt-1 line-clamp-2">
               ${currentLang === 'uz' ? item.short_desc_uz : item.short_desc_ru}
             </p>
           </div>
 
-          <div class="mt-2.5 sm:mt-4 pt-2 sm:pt-4 border-t border-zinc-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+          <div class="mt-2.5 sm:mt-4 pt-2 sm:pt-4 border-t border-gold-500/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
             <div>
-              <span class="text-[8px] sm:text-[10px] text-ink-500 block leading-none">${priceLabel}</span>
-              <span class="font-serif text-xs sm:text-lg text-gold-700 font-bold leading-tight">${item.price_usd}</span>
-              <span class="text-[8px] sm:text-[10px] text-ink-500 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
+              <span class="text-[8px] sm:text-[10px] text-emerald-300/70 block leading-none">${priceLabel}</span>
+              <span class="font-serif text-xs sm:text-lg text-gold-300 font-bold leading-tight">${item.price_usd}</span>
+              <span class="text-[8px] sm:text-[10px] text-emerald-200/70 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
             </div>
             <button 
-              class="btn-inquire-quick w-full sm:w-auto px-2 sm:px-3.5 py-1.5 sm:py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-sm"
+              class="btn-inquire-quick w-full sm:w-auto px-2 sm:px-3.5 py-1.5 sm:py-2 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-olmos-950 font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-gold"
             >
-              <i data-lucide="send" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-300"></i>
+              <i data-lucide="send" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-olmos-950"></i>
               <span>${inquireText}</span>
             </button>
           </div>
@@ -2648,14 +2654,14 @@
         thumbContainer.innerHTML = '';
         product.images.forEach((img, idx) => {
           const btn = document.createElement('button');
-          btn.className = `thumb-btn relative w-20 h-20 sm:w-24 sm:h-24 rounded-sm overflow-hidden bg-ivory-100 border-2 transition ${idx === 0 ? 'border-gold-metallic shadow-sm' : 'border-zinc-200 hover:border-gold-metallic/50'}`;
+          btn.className = `thumb-btn relative w-20 h-20 sm:w-24 sm:h-24 rounded-sm overflow-hidden bg-[#041213] border-2 transition ${idx === 0 ? 'border-gold-400 shadow-gold' : 'border-gold-500/30 hover:border-gold-400'}`;
           btn.onclick = () => {
             document.querySelectorAll('.thumb-btn').forEach(b => {
-              b.classList.remove('border-gold-metallic', 'shadow-sm');
-              b.classList.add('border-zinc-200');
+              b.classList.remove('border-gold-400', 'shadow-gold');
+              b.classList.add('border-gold-500/30');
             });
-            btn.classList.add('border-gold-metallic', 'shadow-sm');
-            btn.classList.remove('border-zinc-200');
+            btn.classList.add('border-gold-400', 'shadow-gold');
+            btn.classList.remove('border-gold-500/30');
             mainImg.src = img.url;
             caption.innerText = currentLang === 'uz' ? img.caption_uz : img.caption_ru;
           };
@@ -2689,13 +2695,13 @@
       const fsIcon = document.getElementById('fs-wishlist-icon');
       if (fsBtn && fsIcon) {
         if (isInWishlist(product.id)) {
-          fsBtn.classList.add('text-rose-500', 'border-rose-300', 'bg-rose-50');
-          fsIcon.classList.add('text-rose-500', 'fill-rose-500');
-          fsIcon.classList.remove('text-ink-700');
+          fsBtn.classList.add('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+          fsIcon.classList.add('text-rose-400', 'fill-rose-400');
+          fsIcon.classList.remove('text-emerald-100');
         } else {
-          fsBtn.classList.remove('text-rose-500', 'border-rose-300', 'bg-rose-50');
-          fsIcon.classList.remove('text-rose-500', 'fill-rose-500');
-          fsIcon.classList.add('text-ink-700');
+          fsBtn.classList.remove('text-rose-400', 'border-rose-500/50', 'bg-rose-950/40');
+          fsIcon.classList.remove('text-rose-400', 'fill-rose-400');
+          fsIcon.classList.add('text-emerald-100');
         }
       }
 
@@ -2796,7 +2802,7 @@
         trust_item4_title: "Cheksiz Kafolat & O'lcham",
         trust_item4_desc: "Bepul individual o'lchamga moslash, tozalash va yillik parvarish.",
         col_tag: "Olmos Gold Eksklyuziv Kolleksiyasi",
-        col_title: "Oliy San'at Namunasi <span class='italic font-light text-ink-500'>& Benuqson Did</span>",
+        col_title: "Oliy San'at Namunasi <span class='italic font-light text-emerald-300/80'>& Benuqson Did</span>",
         hint_click_full: "Taqinchoq ustiga bosing — to'liq sahifa ochiladi",
         cat_all: "Barcha Buyumlar",
         cat_rings: "Uzuklar & Soliter",
@@ -2808,7 +2814,7 @@
         banner_title: "Vitrinalarda Ko'rsatilmagan 120+ Maxsus Zargarlik Buyumlari",
         banner_desc: "Antwerp va Milan kimoshdi savdolaridan keltirilgan noyob namunalar, xususiy buyurtma asosidagi toshlar katalogimizda jamlangan.",
         craft_badge: "Nima Uchun 18K (750°) Italiya Oltini?",
-        craft_title: "Hech Qachon Xiralashmaydigan, <span class='italic font-light text-ink-500'>Avlodlarga Qoluvchi</span> Asillik.",
+        craft_title: "Hech Qachon Xiralashmaydigan, <span class='italic font-light text-emerald-300/80'>Avlodlarga Qoluvchi</span> Asillik.",
         craft_p1: "Oddiy 585° (14K) oltindan farqli o'laroq, Italiyaning 750° asillikdagi qotishmasi 75.0% sof oltin va maxsus patentlangan ligaturadan (kumush va mis balansi) iborat. Bu unga betakror 'italyancha shaffof jilo', yuqori zichlik va teriga nisbatan 100% gipoallergen xususiyat beradi.",
         craft_pure_label: "Eng Oliy Italiya Standarti",
         craft_origin: "Asl Kelib Chiqish joyi",
@@ -2818,7 +2824,7 @@
         craft_point2_d: "Oddiy quyma emas, balki sovuq bosim texnologiyasi orqali har bir zanjir va qisqich sinishga chidamli qilib ishlanadi.",
         craft_call_expert: "Zargarga Qo'ng'iroq Qilish",
         dia_tag: "Benuqson Geometriya & Tozalik",
-        dia_title: "GIA & IGI Sertifikatlangan <span class='italic font-light text-ink-500'>Tabiiy Olmoslar</span>",
+        dia_title: "GIA & IGI Sertifikatlangan <span class='italic font-light text-emerald-300/80'>Tabiiy Olmoslar</span>",
         dia_desc: "Biz faqat konfliktlardan xoli qazib olingan, eng yuqori D-F rang va VVS tozalikdagi Antwerp hamda Tel-Aviv fasetkali toshlarini tanlaymiz.",
         dia_c1_t: "Carat (Og'irlik)",
         dia_c1_d: "0.30 karatdan 5.00+ karatgacha bo'lgan toshlar individual tanlov va sertifikat bilan taqdim etiladi.",
@@ -2829,7 +2835,7 @@
         dia_c4_t: "Cut (Ishlov Berilishi)",
         dia_c4_d: "Triple Excellent fasetka — toshning yuragidagi betakror nur o'yini.",
         lead_tag: "Shaxsiy Zargarlik Xizmati",
-        lead_title: "VIP Katalog Yuklab Oling <br><span class='italic font-light text-ink-500'>& Shaxsiy Konsultatsiyaga Yoziling</span>",
+        lead_title: "VIP Katalog Yuklab Oling <br><span class='italic font-light text-emerald-300/80'>& Shaxsiy Konsultatsiyaga Yoziling</span>",
         lead_desc: "Raqamingizni qoldiring va biz sizning Telegramingizga 2026-yilgi yopiq to'plam narxlari bilan to'liq PDF lookbook'ni 2 daqiqada yuboramiz. Shuningdek, butikimizda yopiq qahva va o'lcham tanlash seansiga taklifnoma taqdim etiladi.",
         lead_perk1: "Haqiqiy narxlar va vazn ro'yxati",
         lead_perk2: "Maxsus individual o'lchamga bepul buyurtma",
@@ -2930,7 +2936,7 @@
         trust_item4_title: "Пожизненный Сервис & Подгонка",
         trust_item4_desc: "Бесплатная посадка под ваш размер, полировка и ежегодное обслуживание.",
         col_tag: "Эксклюзивная Коллекция Olmos Gold",
-        col_title: "Шедевры Ювелирного Искусства <span class='italic font-light text-ink-500'>& Безупречный Вкус</span>",
+        col_title: "Шедевры Ювелирного Искусства <span class='italic font-light text-emerald-300/80'>& Безупречный Вкус</span>",
         hint_click_full: "Нажмите на изделие — откроется полный экран",
         cat_all: "Все Изделия",
         cat_rings: "Кольца & Солитеры",
@@ -2942,7 +2948,7 @@
         banner_title: "120+ Особенных Изделий, Не Представленных на Витринах",
         banner_desc: "Редкие лоты с аукционов Антверпена и Милана, а также изделия под индивидуальный заказ собраны в нашем закрытом каталоге.",
         craft_badge: "Почему 18K (750°) Итальянское Золото?",
-        craft_title: "Благородный Блеск, <span class='italic font-light text-ink-500'>Переходящий Через Поколения</span>.",
+        craft_title: "Благородный Блеск, <span class='italic font-light text-emerald-300/80'>Переходящий Через Поколения</span>.",
         craft_p1: "В отличие от распространенной 585° (14K) пробы, итальянский сплав 750° содержит 75% чистого золота и запатентованную лигатуру. Это придает украшениям благородный оттенок, высокую прочность и 100% гипоаллергенность при контакте с кожей.",
         craft_pure_label: "Высший Итальянский Стандарт",
         craft_origin: "Оригинальное Происхождение",
@@ -2952,7 +2958,7 @@
         craft_point2_d: "Не пустотелое литье, а высокоточная компрессия сплава для долговечности замков и звеньев.",
         craft_call_expert: "Звонок Ювелирному Эксперту",
         dia_tag: "Безупречная Геометрия & Чистота",
-        dia_title: "Природные Бриллианты <span class='italic font-light text-ink-500'>Сертификации GIA & IGI</span>",
+        dia_title: "Природные Бриллианты <span class='italic font-light text-emerald-300/80'>Сертификации GIA & IGI</span>",
         dia_desc: "Мы отбираем исключительно камни этичного происхождения высших категорий цвета D-F и чистоты VVS огранки Антверпена и Тель-Авива.",
         dia_c1_t: "Carat (Вес)",
         dia_c1_d: "Бриллианты от 0.30 до 5.00+ карат с индивидуальным подбором и международным сертификатом.",
@@ -2963,7 +2969,7 @@
         dia_c4_t: "Cut (Огранка)",
         dia_c4_d: "Огранка Triple Excellent — совершенная игра граней и световых всполохов.",
         lead_tag: "Персональный Ювелирный Сервис",
-        lead_title: "Скачайте VIP-Каталог <br><span class='italic font-light text-ink-500'>& Запишитесь на Закрытую Примерку</span>",
+        lead_title: "Скачайте VIP-Каталог <br><span class='italic font-light text-emerald-300/80'>& Запишитесь на Закрытую Примерку</span>",
         lead_desc: "Оставьте контакт, и мы вышлем в Telegram полный PDF-каталог 2026 года с закрытыми ценами. Также вы получите приглашение на приватный кофе-сеанс с геммологом в нашем бутике.",
         lead_perk1: "Актуальные цены и точный вес изделий",
         lead_perk2: "Бесплатная подгонка под точный размер",
@@ -3049,25 +3055,25 @@
       });
 
       if (lang === 'uz') {
-        document.getElementById('lang-uz')?.classList.add('text-gold-700', 'font-bold');
-        document.getElementById('lang-uz')?.classList.remove('text-ink-500');
-        document.getElementById('lang-ru')?.classList.add('text-ink-500');
-        document.getElementById('lang-ru')?.classList.remove('text-gold-700', 'font-bold');
+        document.getElementById('lang-uz')?.classList.add('text-gold-300', 'font-bold');
+        document.getElementById('lang-uz')?.classList.remove('text-emerald-300/60');
+        document.getElementById('lang-ru')?.classList.add('text-emerald-300/60');
+        document.getElementById('lang-ru')?.classList.remove('text-gold-300', 'font-bold');
 
-        document.getElementById('mob-lang-uz')?.classList.add('text-gold-700', 'font-bold');
-        document.getElementById('mob-lang-uz')?.classList.remove('text-ink-500');
-        document.getElementById('mob-lang-ru')?.classList.add('text-ink-500');
-        document.getElementById('mob-lang-ru')?.classList.remove('text-gold-700', 'font-bold');
+        document.getElementById('mob-lang-uz')?.classList.add('text-gold-300', 'font-bold');
+        document.getElementById('mob-lang-uz')?.classList.remove('text-emerald-300/60');
+        document.getElementById('mob-lang-ru')?.classList.add('text-emerald-300/60');
+        document.getElementById('mob-lang-ru')?.classList.remove('text-gold-300', 'font-bold');
       } else {
-        document.getElementById('lang-ru')?.classList.add('text-gold-700', 'font-bold');
-        document.getElementById('lang-ru')?.classList.remove('text-ink-500');
-        document.getElementById('lang-uz')?.classList.add('text-ink-500');
-        document.getElementById('lang-uz')?.classList.remove('text-gold-700', 'font-bold');
+        document.getElementById('lang-ru')?.classList.add('text-gold-300', 'font-bold');
+        document.getElementById('lang-ru')?.classList.remove('text-emerald-300/60');
+        document.getElementById('lang-uz')?.classList.add('text-emerald-300/60');
+        document.getElementById('lang-uz')?.classList.remove('text-gold-300', 'font-bold');
 
-        document.getElementById('mob-lang-ru')?.classList.add('text-gold-700', 'font-bold');
-        document.getElementById('mob-lang-ru')?.classList.remove('text-ink-500');
-        document.getElementById('mob-lang-uz')?.classList.add('text-ink-500');
-        document.getElementById('mob-lang-uz')?.classList.remove('text-gold-700', 'font-bold');
+        document.getElementById('mob-lang-ru')?.classList.add('text-gold-300', 'font-bold');
+        document.getElementById('mob-lang-ru')?.classList.remove('text-emerald-300/60');
+        document.getElementById('mob-lang-uz')?.classList.add('text-emerald-300/60');
+        document.getElementById('mob-lang-uz')?.classList.remove('text-gold-300', 'font-bold');
       }
 
       // Re-render catalog cards with updated language
@@ -3086,11 +3092,11 @@
       const buttons = document.querySelectorAll('.cat-btn');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-cat') === category) {
-          btn.classList.add('bg-ink-900', 'text-white');
-          btn.classList.remove('bg-white', 'text-ink-700');
+          btn.classList.add('bg-gradient-to-r', 'from-gold-500', 'to-gold-400', 'text-olmos-950', 'font-bold', 'shadow-md');
+          btn.classList.remove('bg-[#0A2628]', 'text-emerald-100');
         } else {
-          btn.classList.remove('bg-ink-900', 'text-white');
-          btn.classList.add('bg-white', 'text-ink-700');
+          btn.classList.remove('bg-gradient-to-r', 'from-gold-500', 'to-gold-400', 'text-olmos-950', 'font-bold', 'shadow-md');
+          btn.classList.add('bg-[#0A2628]', 'text-emerald-100');
         }
       });
 
