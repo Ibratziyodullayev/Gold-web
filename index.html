@@ -19,6 +19,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Leaflet Map (1-finger mobile touch navigation) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 
   <script>
     tailwind.config = {
@@ -186,6 +189,33 @@
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #C59A3F;
+    }
+
+    /* 1-Finger Touch Leaflet Map */
+    #boutique-interactive-map {
+      touch-action: pan-x pan-y !important;
+    }
+    .leaflet-touch .leaflet-bar a {
+      background-color: #ffffff;
+      color: #111113;
+      border-color: rgba(197, 154, 63, 0.3);
+    }
+    .leaflet-touch .leaflet-bar a:hover {
+      background-color: #FAF5EA;
+      color: #C59A3F;
+    }
+    .leaflet-popup-content-wrapper {
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(197, 154, 63, 0.4);
+      background: #FFFFFF;
+    }
+    .leaflet-popup-tip {
+      background: #FFFFFF;
+    }
+    .olmos-gold-marker {
+      background: transparent;
+      border: none;
     }
   </style>
 </head>
@@ -902,44 +932,17 @@
         <div class="lg:col-span-6 space-y-4">
           <div class="bg-white rounded-sm overflow-hidden p-2.5 border border-gold-metallic/35 shadow-xl relative">
             
-            <!-- Live Interactive Map Iframe -->
-            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-sm overflow-hidden bg-zinc-100">
-              <iframe 
-                title="OLMOS GOLD JEWELLERY Joylashuv Xaritasi"
-                src="https://maps.google.com/maps?q=Bunyodkor+Avenue+15/1,+Chilonzor+District,+Tashkent&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                class="w-full h-full border-0" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-
-              <!-- Floating Luxury Emblem Pin on Map -->
-              <div class="absolute top-3 left-3 right-3 sm:right-auto sm:max-w-xs p-3.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/40 shadow-xl flex items-center gap-3 pointer-events-auto">
-                <img 
-                  src="olmos-logo.jpg" 
-                  alt="OLMOS GOLD JEWELLERY" 
-                  class="w-11 h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm shrink-0"
-                >
-                <div class="text-left">
-                  <div class="font-serif text-sm font-bold text-ink-900 uppercase leading-tight tracking-wider">
-                    OLMOS GOLD
-                  </div>
-                  <div class="text-[9px] uppercase tracking-widest text-gold-700 font-bold">
-                    JEWELLERY BOUTIQUE
-                  </div>
-                  <div class="text-[10px] text-ink-600 mt-0.5 line-clamp-1">
-                    Bunyodkor Avenue, 15/1, Tashkent
-                  </div>
-                </div>
-              </div>
+            <!-- Live Interactive 1-Finger Touch Map -->
+            <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] min-h-[360px] sm:min-h-[440px] rounded-sm overflow-hidden bg-zinc-100 border border-gold-metallic/30">
+              <div id="boutique-interactive-map" class="w-full h-full min-h-[360px] sm:min-h-[440px] z-10"></div>
 
               <!-- Bottom Map Action Tag -->
-              <div class="absolute bottom-3 right-3">
+              <div class="absolute bottom-3 right-3 z-[400] pointer-events-auto">
                 <a 
                   href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="px-3.5 py-1.5 bg-ink-900/90 hover:bg-gold-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-sm backdrop-blur-sm transition shadow flex items-center gap-1.5"
+                  class="px-3.5 py-2 bg-ink-900/95 hover:bg-gold-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-sm backdrop-blur-md transition shadow-lg flex items-center gap-1.5 border border-gold-metallic/40 active:scale-95"
                 >
                   <i data-lucide="external-link" class="w-3.5 h-3.5 text-gold-300"></i>
                   <span>Marshrutni Boshlash</span>
@@ -3203,6 +3206,72 @@
       }
     });
 
+    // 1-Finger Touch Leaflet Map initialization
+    function initBoutiqueMap() {
+      const container = document.getElementById('boutique-interactive-map');
+      if (!container || typeof L === 'undefined') return;
+
+      // Bunyodkor 15/1, Tashkent (Metro Novza)
+      const lat = 41.2855;
+      const lng = 69.2152;
+
+      try {
+        const map = L.map('boutique-interactive-map', {
+          center: [lat, lng],
+          zoom: 16,
+          zoomControl: true,
+          scrollWheelZoom: false, // Prevents desktop scroll hijacking
+          dragging: true,         // Allows 1-finger / 1-hand touch panning on mobile!
+          touchZoom: true,
+          tap: true
+        });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap &copy; CARTO'
+        }).addTo(map);
+
+        // Custom Luxury Gold Diamond Pin
+        const goldIcon = L.divIcon({
+          className: 'olmos-gold-marker',
+          html: `
+            <div style="position:relative; display:flex; align-items:center; justify-content:center; width:44px; height:44px;">
+              <div style="position:absolute; width:40px; height:40px; background:rgba(212,175,55,0.35); border-radius:50%; animation:ping 2s cubic-bezier(0,0,0.2,1) infinite;"></div>
+              <div style="position:relative; width:38px; height:38px; background:linear-gradient(135deg, #9E7728 0%, #D4AF37 50%, #F8E8B8 100%); border-radius:50%; padding:2px; box-shadow:0 8px 20px rgba(0,0,0,0.3); border:2px solid #ffffff; display:flex; align-items:center; justify-content:center;">
+                <div style="width:100%; height:100%; background:#0E3131; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                </div>
+              </div>
+            </div>
+          `,
+          iconSize: [44, 44],
+          iconAnchor: [22, 22],
+          popupAnchor: [0, -22]
+        });
+
+        const marker = L.marker([lat, lng], { icon: goldIcon }).addTo(map);
+
+        marker.bindPopup(`
+          <div style="font-family:'Plus Jakarta Sans',sans-serif; padding:4px 2px; text-align:center; min-width:180px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:bold; color:#111113; letter-spacing:1px; line-height:1.2;">
+              OLMOS GOLD JEWELLERY
+            </div>
+            <div style="font-size:9.5px; color:#C59A3F; font-weight:700; text-transform:uppercase; margin-top:3px; letter-spacing:0.5px;">
+              Flagship Butik & Showroom
+            </div>
+            <div style="font-size:11px; color:#4B4E5B; margin-top:5px; line-height:1.3;">
+              Bunyodkor shoh ko'chasi, 15/1, Toshkent
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Bunyodkor+Avenue+15/1+Chilonzor+District+Tashkent" target="_blank" style="display:inline-block; margin-top:8px; padding:6px 14px; background:#111113; color:#ffffff; font-size:10px; font-weight:700; text-transform:uppercase; border-radius:2px; text-decoration:none; letter-spacing:0.5px;">
+              Marshrutni Boshlash →
+            </a>
+          </div>
+        `);
+      } catch (err) {
+        console.warn('Map initialization error:', err);
+      }
+    }
+
     // Initial render & listeners
     function initWishlistListeners() {
       const headerBtn = document.getElementById('header-wishlist-btn');
@@ -3218,6 +3287,7 @@
       renderProductCards();
       updateWishlistUI();
       initWishlistListeners();
+      initBoutiqueMap();
       try {
         if (window.lucide && lucide.createIcons) lucide.createIcons();
       } catch (e) {}
@@ -3225,6 +3295,7 @@
     renderProductCards();
     updateWishlistUI();
     initWishlistListeners();
+    initBoutiqueMap();
   </script>
 </body>
 </html>
