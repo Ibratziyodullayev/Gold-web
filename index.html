@@ -12,6 +12,76 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; frame-src 'self' https://maps.google.com https://yandex.uz; connect-src 'self';">
   <link rel="icon" type="image/jpeg" href="olmos-logo.jpg?v=2">
   
+  <!-- Schema.org Structured Data (JSON-LD) for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "JewelryStore",
+        "@id": "https://ibratziyodullayev.github.io/Gold-web/#store",
+        "name": "OLMOS GOLD JEWELLERY",
+        "url": "https://ibratziyodullayev.github.io/Gold-web/",
+        "logo": "https://ibratziyodullayev.github.io/Gold-web/olmos-logo.jpg",
+        "image": "https://ibratziyodullayev.github.io/Gold-web/product-marquise-gold.jpg",
+        "description": "Toshkentdagi sertifikatlangan 18K Italiya oltini va tabiiy olmoslar butiki.",
+        "telephone": "+998977742021",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bunyodkor shoh ko'chasi 15/1",
+          "addressLocality": "Tashkent",
+          "addressRegion": "Chilonzor tumani",
+          "addressCountry": "UZ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.2858,
+          "longitude": 69.2035
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "10:00",
+          "closes": "21:00"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://ibratziyodullayev.github.io/Gold-web/#product-marquise",
+        "name": "Yellow Gold Marquise Engagement Ring with Side Stone",
+        "image": "https://ibratziyodullayev.github.io/Gold-web/product-marquise-gold.jpg",
+        "description": "18K (750°) Italiya Sariq Oltini, Markaziy Marquise Cut Olmos (D-F / VVS1) va 0.25ct yon brilliantlar.",
+        "sku": "OLM-MRQ-01",
+        "brand": {
+          "@type": "Brand",
+          "name": "OLMOS GOLD"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://ibratziyodullayev.github.io/Gold-web/",
+          "priceCurrency": "USD",
+          "price": "673",
+          "priceValidUntil": "2027-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://ibratziyodullayev.github.io/Gold-web/#store"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+  
   <!-- Google Fonts: Tenor Sans & Figtree (Official DiamondsByUK Typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2783,7 +2853,7 @@
       let totalUsd = 0;
       items.forEach((it, idx) => {
         const title = currentLang === 'uz' ? it.title_uz : it.title_ru;
-        const num = parseInt(it.price_usd.replace(/\D/g, ''), 10) || 0;
+        const num = typeof it.base_price_usd === 'number' ? it.base_price_usd : (parseInt(it.price_usd.replace(/\D/g, ''), 10) || 0);
         totalUsd += num;
         msg += `${idx + 1}. ${title} (SKU: ${it.id})\n   Narxi: ${it.price_usd} (${it.price_uzs})\n`;
       });
