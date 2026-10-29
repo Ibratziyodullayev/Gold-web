@@ -86,6 +86,13 @@
     :root {
       --font-heading: 'Tenor Sans', sans-serif;
       --font-body: 'Figtree', sans-serif;
+      --color-gold-primary: #835E21;
+      --color-gold-text: #68481D;
+      --color-gold-light: #C59A3F;
+      --color-ink-dark: #111113;
+      --color-ink-body: #2E3038;
+      --color-ink-muted: #4B4E5B;
+      --color-bg-ivory: #FAF9F6;
     }
 
     body, button, input, select, textarea, p, span, a, label, li, td, th {
@@ -111,8 +118,14 @@
     }
 
     ::selection {
-      background: #C59A3F;
+      background: #835E21;
       color: #FFFFFF;
+    }
+
+    /* Focus Visible Standard (WCAG 2.2 AA) */
+    :focus-visible {
+      outline: 2px solid #835E21 !important;
+      outline-offset: 2px !important;
     }
 
     body {
@@ -150,20 +163,45 @@
     }
     
     .gold-text-glow {
-      text-shadow: 0 1px 12px rgba(197, 154, 63, 0.25);
+      text-shadow: 0 1px 12px rgba(131, 94, 33, 0.18);
     }
 
+    /* Refined Luxury Multi-layer Card Shadow & Hover */
     .luxury-white-card {
       background: #FFFFFF;
-      border: 1px solid rgba(197, 154, 63, 0.22);
-      box-shadow: 0 10px 30px -8px rgba(197, 154, 63, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(131, 94, 33, 0.16);
+      box-shadow: 0 4px 20px -2px rgba(27, 30, 40, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
       cursor: pointer;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .luxury-white-card:hover {
-      border-color: rgba(197, 154, 63, 0.6);
-      box-shadow: 0 16px 36px -10px rgba(197, 154, 63, 0.22), 0 6px 16px -2px rgba(0, 0, 0, 0.06);
-      transform: translateY(-3px);
+      border-color: rgba(131, 94, 33, 0.45);
+      box-shadow: 0 14px 32px -4px rgba(27, 30, 40, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      transform: translateY(-2px);
+    }
+
+    /* Touch target utilities */
+    .touch-target-44 {
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Loading Spinner */
+    .btn-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #ffffff;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     .img-swap-container .product-worn {
@@ -182,8 +220,8 @@
 
     /* Thumbnail active border */
     .thumb-btn.active {
-      border-color: #C59A3F;
-      box-shadow: 0 0 0 2px rgba(197, 154, 63, 0.4);
+      border-color: #835E21;
+      box-shadow: 0 0 0 2px rgba(131, 94, 33, 0.35);
     }
 
     /* Fullscreen View Animations */
@@ -215,7 +253,7 @@
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #C59A3F;
+      background: #835E21;
     }
   </style>
 </head>
@@ -225,8 +263,8 @@
   <!-- ================= LUXURY HEADER / NAVIGATION ================= -->
   <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-gold-metallic/15 transition-all duration-300 shadow-sm" id="main-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-      <!-- Mobile Menu Trigger -->
-      <button onclick="toggleMobileNav()" class="lg:hidden text-ink-800 hover:text-gold-600 p-1.5" aria-label="Open Menu">
+      <!-- Mobile Menu Trigger (44x44px touch target) -->
+      <button onclick="toggleMobileNav()" class="lg:hidden text-ink-800 hover:text-gold-600 w-11 h-11 flex items-center justify-center rounded-sm active:bg-ivory-200 transition" aria-label="Open Menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
 
@@ -235,13 +273,15 @@
         <img 
           src="olmos-logo.jpg" 
           alt="OLMOS GOLD JEWELLERY" 
+          width="44"
+          height="44"
           class="w-9 h-9 sm:w-11 sm:h-11 rounded-sm object-cover border border-gold-metallic/40 shadow-sm transition-transform duration-300 group-hover:scale-105"
         >
         <div class="flex flex-col text-left">
           <span class="font-serif text-lg sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-transparent bg-clip-text bg-gold-shimmer font-bold uppercase transition group-hover:opacity-90 leading-tight">
             OLMOS GOLD
           </span>
-          <span class="text-[8px] sm:text-[9.5px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold-700 font-semibold leading-none mt-0.5">
+          <span class="text-[9px] sm:text-[10.5px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold-800 font-semibold leading-none mt-0.5">
             JEWELLERY
           </span>
         </div>
@@ -260,21 +300,21 @@
       <div class="flex items-center gap-2 sm:gap-4">
         <!-- Universal UZ/RU switcher in header -->
         <div class="flex items-center text-xs font-bold tracking-wider mr-1 border border-gold-metallic/30 rounded px-1.5 py-1 bg-ivory-100 shadow-sm">
-          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-700 font-bold">UZ</button>
+          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-2 py-1 rounded transition text-gold-800 font-bold min-h-[32px] flex items-center justify-center">UZ</button>
           <span class="text-zinc-300 mx-0.5">/</span>
-          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-ink-500 hover:text-ink-900">RU</button>
+          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-2 py-1 rounded transition text-ink-500 hover:text-ink-900 min-h-[32px] flex items-center justify-center">RU</button>
         </div>
 
-        <!-- Wishlist Header Button with Badge -->
+        <!-- Wishlist Header Button with Badge (44x44px touch target) -->
         <button 
           id="header-wishlist-btn"
           onclick="openWishlistPage()" 
-          class="relative p-2 sm:p-2.5 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
+          class="relative w-11 h-11 rounded-sm bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
-          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
-          <span id="wishlist-badge-header" class="absolute -top-1.5 -right-1.5 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
+          <i data-lucide="heart" class="w-5 h-5 text-ink-800 pointer-events-none"></i>
+          <span id="wishlist-badge-header" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-rose-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
         </button>
 
         <button onclick="openVipCatalogModal()" class="relative group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-ink-900 hover:bg-gold-600 text-white font-semibold text-xs tracking-widest uppercase overflow-hidden shadow-md transition-all duration-300">
@@ -348,20 +388,20 @@
 
       <!-- Direct Contacts in Menu -->
       <div class="mt-6 pt-5 border-t border-gold-metallic/20 space-y-2.5">
-        <a href="tel:+998977742021" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-800 font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+        <a href="tel:+998977742021" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-900 hover:border-gold-800 hover:text-gold-800 font-bold text-xs uppercase tracking-wider shadow-sm transition">
+          <i data-lucide="phone" class="w-4 h-4 text-gold-800"></i>
           <span>+998 (97) 774-20-21</span>
         </a>
-        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-[#2AABEE]/10 rounded-sm border border-[#2AABEE]/30 text-[#0088cc] font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="send" class="w-4 h-4"></i>
+        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-900 hover:border-gold-800 hover:text-gold-800 font-bold text-xs uppercase tracking-wider shadow-sm transition">
+          <i data-lucide="send" class="w-4 h-4 text-gold-800"></i>
           <span>Telegram: @OLMOS_GOLD</span>
         </a>
-        <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-rose-50/70 rounded-sm border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-wider shadow-sm">
-          <i data-lucide="instagram" class="w-4 h-4 text-rose-600"></i>
+        <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white rounded-sm border border-gold-metallic/30 text-ink-900 hover:border-gold-800 hover:text-gold-800 font-bold text-xs uppercase tracking-wider shadow-sm transition">
+          <i data-lucide="instagram" class="w-4 h-4 text-gold-800"></i>
           <span>Instagram: @olmosgold.jewellery</span>
         </a>
-        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 text-[11px] text-ink-600 flex items-start gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 text-gold-700 shrink-0 mt-0.5"></i>
+        <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/20 text-xs text-ink-600 flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold-800 shrink-0 mt-0.5"></i>
           <span>Bunyodkor shoh ko'chasi 15/1, Chilonzor tumani, Toshkent</span>
         </div>
       </div>
@@ -878,16 +918,16 @@
               <div>
                 <h4 class="text-sm font-bold text-ink-900 uppercase tracking-wider" data-i18n="btq_contact_title">Aloqa va Konsyerj:</h4>
                 <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs">
-                  <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700 transition flex items-center gap-1">
-                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-600"></i>
+                  <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-800 transition flex items-center gap-1.5 py-1">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-800"></i>
                     <span>+998 (97) 774-20-21</span>
                   </a>
-                  <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-[#0088cc] font-semibold hover:underline flex items-center gap-1">
-                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-gold-800 hover:text-gold-900 font-bold hover:underline flex items-center gap-1.5 py-1">
+                    <i data-lucide="send" class="w-3.5 h-3.5 text-gold-800"></i>
                     <span>@OLMOS_GOLD</span>
                   </a>
-                  <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-rose-600 font-semibold hover:underline flex items-center gap-1">
-                    <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                  <a href="https://www.instagram.com/olmosgold.jewellery?cplk=MWZ1amVxbXlwOWpiZg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-gold-800 hover:text-gold-900 font-bold hover:underline flex items-center gap-1.5 py-1">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5 text-gold-800"></i>
                     <span>@olmosgold.jewellery</span>
                   </a>
                 </div>
@@ -1149,8 +1189,8 @@
           <p class="text-ink-600 text-[11px] leading-relaxed">
             Bunyodkor shoh ko'chasi, 15/1<br>
             Chilonzor tumani, Toshkent<br>
-            Telefon: <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-700">+998 (97) 774-20-21</a><br>
-            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-[#0088cc] hover:underline font-semibold">@OLMOS_GOLD</a><br>
+            Telefon: <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-800 transition">+998 (97) 774-20-21</a><br>
+            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-800 hover:text-gold-900 hover:underline font-bold transition">@OLMOS_GOLD</a><br>
             Har kuni: 10:00 — 21:00
           </p>
         </div>
@@ -1172,12 +1212,12 @@
 
 
   <!-- ================= DEDICATED FULLSCREEN PRODUCT VIEW ================= -->
-  <div id="product-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
+  <div id="product-fullscreen-view" role="dialog" aria-modal="true" aria-labelledby="fs-title" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
     
     <!-- Top Sticky Bar inside Fullscreen view -->
-    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-      <button onclick="closeProductDetail()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
-        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3 flex items-center justify-between shadow-sm">
+      <button onclick="closeProductDetail()" class="flex items-center gap-2 text-ink-800 hover:text-gold-800 text-xs font-bold uppercase tracking-widest group transition min-h-[44px] px-2" aria-label="Katalogga qaytish">
+        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-800 group-hover:text-white transition">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </div>
         <span data-i18n="fs_back_btn">Katalogga qaytish</span>
@@ -1185,12 +1225,12 @@
 
       <!-- Brand Center -->
       <div class="text-center hidden sm:flex items-center gap-2.5">
-        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" width="32" height="32" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
         <div class="text-left">
-          <span class="font-serif text-base tracking-[0.2em] text-gold-700 font-bold uppercase block leading-tight">
+          <span class="font-serif text-base tracking-[0.2em] text-gold-800 font-bold uppercase block leading-tight">
             OLMOS GOLD
           </span>
-          <span class="block text-[7.5px] tracking-[0.3em] uppercase text-ink-500">
+          <span class="block text-[9px] tracking-[0.3em] uppercase text-ink-600 font-semibold">
             JEWELLERY • TASHKENT
           </span>
         </div>
@@ -1198,21 +1238,22 @@
 
       <!-- Quick Concierge Hotline & Wishlist -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="tel:+998977742021" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-700 font-medium transition">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
+        <a href="tel:+998977742021" class="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-full bg-ivory-100 border border-gold-metallic/30 text-xs text-ink-800 hover:text-gold-800 font-medium transition min-h-[40px]">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-800"></i>
           <span>+998 (97) 774-20-21</span>
         </a>
-        <!-- Wishlist Button inside Product View -->
+        <!-- Wishlist Button inside Product View (44x44px touch target) -->
         <button 
           onclick="openWishlistPage()" 
-          class="relative p-2 rounded-full bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
+          class="relative w-11 h-11 rounded-full bg-ivory-100 border border-gold-metallic/30 text-ink-800 hover:text-rose-600 hover:border-rose-300 transition shadow-sm active:scale-95 cursor-pointer flex items-center justify-center select-none" 
           aria-label="Sevimlilar (Wishlist)"
           title="Sevimlilar"
         >
-          <i data-lucide="heart" class="w-4 h-4 text-ink-800 pointer-events-none"></i>
-          <span class="wishlist-badge-sync absolute -top-1 -right-1 min-w-[17px] h-4 px-1 bg-rose-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
+          <i data-lucide="heart" class="w-5 h-5 text-ink-800 pointer-events-none"></i>
+          <span class="wishlist-badge-sync absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-rose-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden shadow-sm pointer-events-none">0</span>
         </button>
-        <button onclick="closeProductDetail()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close">
+        <!-- Close Button (44x44px touch target) -->
+        <button onclick="closeProductDetail()" class="w-11 h-11 flex items-center justify-center text-ink-600 hover:text-ink-950 rounded-full hover:bg-zinc-100 transition" aria-label="Yopish (Close)">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
@@ -1222,12 +1263,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-ink-500 mb-6 font-medium">
-        <a href="#collections" onclick="closeProductDetail()" class="hover:text-gold-700 transition" data-i18n="nav_collections">Kolleksiyalar</a>
+      <nav class="flex items-center gap-2 text-xs text-ink-600 mb-6 font-medium">
+        <a href="#collections" onclick="closeProductDetail()" class="hover:text-gold-800 transition" data-i18n="nav_collections">Kolleksiyalar</a>
         <span>/</span>
-        <span id="fs-breadcrumb-category" class="text-ink-700 uppercase tracking-wider">Uzuklar</span>
+        <span id="fs-breadcrumb-category" class="text-ink-800 uppercase tracking-wider font-semibold">Uzuklar</span>
         <span>/</span>
-        <span id="fs-breadcrumb-title" class="text-gold-700 font-semibold">Venezia Solitaire Diamond Ring</span>
+        <span id="fs-breadcrumb-title" class="text-gold-800 font-semibold">Venezia Solitaire Diamond Ring</span>
       </nav>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -1243,7 +1284,7 @@
               class="w-full h-full object-cover object-center transition-all duration-500"
             >
             <div class="absolute top-4 left-4 flex flex-col gap-2">
-              <span id="fs-badge-purity" class="px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[11px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/35 shadow-sm">
+              <span id="fs-badge-purity" class="px-3 py-1 bg-white/95 backdrop-blur-md rounded-full text-[11px] font-mono tracking-wider text-gold-800 font-bold border border-gold-metallic/35 shadow-sm">
                 750° • 18K Yellow Gold
               </span>
               <span id="fs-badge-extra" class="px-3 py-0.5 bg-emerald-50 text-emerald-800 rounded-full text-[10px] font-semibold border border-emerald-300 shadow-sm w-fit">
@@ -1251,15 +1292,15 @@
               </span>
             </div>
 
-            <!-- Wishlist Heart Button in Fullscreen -->
+            <!-- Wishlist Heart Button in Fullscreen (44x44px touch target) -->
             <button 
               id="fs-wishlist-btn"
               onclick="toggleActiveProductWishlist(event)"
-              class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center text-ink-700 shadow-md hover:scale-105 active:scale-95 transition z-10"
+              class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center text-ink-800 shadow-md hover:scale-105 active:scale-95 transition z-10"
               aria-label="Sevimlilarga qo'shish"
               title="Sevimlilarga qo'shish"
             >
-              <i id="fs-wishlist-icon" data-lucide="heart" class="w-5 h-5 text-ink-700"></i>
+              <i id="fs-wishlist-icon" data-lucide="heart" class="w-5 h-5 text-ink-800"></i>
             </button>
 
             <div class="absolute bottom-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-mono tracking-widest text-ink-700 border border-zinc-200 shadow-sm flex items-center gap-1.5 font-medium">
@@ -1277,7 +1318,7 @@
 
           <!-- Hallmark & Assay Guarantee Banner -->
           <div class="p-4 bg-white rounded-sm border border-gold-metallic/25 shadow-sm flex items-center gap-4">
-            <div class="w-12 h-12 rounded-sm bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-700 shrink-0 font-serif font-bold text-lg">
+            <div class="w-12 h-12 rounded-sm bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-800 shrink-0 font-serif font-bold text-lg">
               750
             </div>
             <div>
@@ -1293,7 +1334,7 @@
           <!-- Top Meta: SKU, Rating, In-Stock -->
           <div>
             <div class="flex items-center justify-between gap-2 flex-wrap">
-              <span id="fs-sku" class="text-xs text-ink-500 uppercase tracking-widest font-mono font-semibold">SKU: OLM-MRQ-01</span>
+              <span id="fs-sku" class="text-xs text-ink-600 uppercase tracking-widest font-mono font-semibold">SKU: OLM-MRQ-01</span>
               <div class="flex items-center gap-2">
                 <!-- Star Rating -->
                 <div class="flex items-center gap-1 text-gold-500 text-xs">
@@ -1317,7 +1358,7 @@
             <h1 id="fs-title" class="font-serif text-2xl sm:text-3xl lg:text-4xl text-ink-900 font-bold mt-2 leading-tight">
               Yellow Gold Marquise Engagement Ring with Side Stone
             </h1>
-            <p class="text-xs text-gold-700 uppercase tracking-[0.2em] font-semibold mt-1">
+            <p class="text-xs text-gold-800 uppercase tracking-[0.2em] font-semibold mt-1">
               OLMOS GOLD JEWELLERY • Bespoke Atelier
             </p>
 
@@ -1332,10 +1373,10 @@
                   </span>
                 </div>
                 <div class="text-right">
-                  <span id="fs-price-uzs" class="font-mono text-xs sm:text-sm text-gold-700 font-bold block">~ 8,648,000 UZS</span>
+                  <span id="fs-price-uzs" class="font-mono text-xs sm:text-sm text-gold-800 font-bold block">~ 8,648,000 UZS</span>
                 </div>
               </div>
-              <p class="text-[11px] text-ink-500 flex items-center gap-1">
+              <p class="text-[11px] text-ink-600 flex items-center gap-1">
                 <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
                 <span>Soliqlar kiritilgan. Toshkent va O'zbekiston bo'ylab bepul sug'urtalangan yetkazib berish.</span>
               </p>
@@ -1357,7 +1398,7 @@
                   type="button" 
                   onclick="selectProductMetal('yg')" 
                   data-metal="yg"
-                  class="metal-opt-btn active p-2 rounded-sm border-2 border-gold-metallic bg-ivory-100/60 flex items-center gap-2 transition hover:border-gold-metallic text-left"
+                  class="metal-opt-btn active min-h-[44px] p-2 rounded-sm border-2 border-gold-metallic bg-ivory-100/60 flex items-center gap-2 transition hover:border-gold-metallic text-left"
                 >
                   <span class="w-4 h-4 rounded-full border border-amber-500 bg-gradient-to-tr from-amber-400 via-amber-300 to-yellow-200 shadow-inner shrink-0"></span>
                   <span class="text-[11px] font-bold text-ink-900 leading-tight">Sariq Oltin</span>
@@ -1367,7 +1408,7 @@
                   type="button" 
                   onclick="selectProductMetal('wg')" 
                   data-metal="wg"
-                  class="metal-opt-btn p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
+                  class="metal-opt-btn min-h-[44px] p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
                 >
                   <span class="w-4 h-4 rounded-full border border-zinc-300 bg-gradient-to-tr from-zinc-300 via-zinc-100 to-white shadow-inner shrink-0"></span>
                   <span class="text-[11px] font-bold text-ink-900 leading-tight">Oq Oltin</span>
@@ -1377,7 +1418,7 @@
                   type="button" 
                   onclick="selectProductMetal('rg')" 
                   data-metal="rg"
-                  class="metal-opt-btn p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
+                  class="metal-opt-btn min-h-[44px] p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
                 >
                   <span class="w-4 h-4 rounded-full border border-rose-300 bg-gradient-to-tr from-rose-300 via-rose-200 to-amber-100 shadow-inner shrink-0"></span>
                   <span class="text-[11px] font-bold text-ink-900 leading-tight">Qizil Oltin</span>
@@ -1387,7 +1428,7 @@
                   type="button" 
                   onclick="selectProductMetal('pt')" 
                   data-metal="pt"
-                  class="metal-opt-btn p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
+                  class="metal-opt-btn min-h-[44px] p-2 rounded-sm border border-zinc-200 bg-white flex items-center gap-2 transition hover:border-gold-metallic text-left"
                 >
                   <span class="w-4 h-4 rounded-full border border-slate-400 bg-gradient-to-tr from-slate-300 via-slate-100 to-zinc-50 shadow-inner shrink-0"></span>
                   <span class="text-[11px] font-bold text-ink-900 leading-tight">Platina 950</span>
@@ -1402,11 +1443,11 @@
                 <span id="fs-selected-carat-name" class="font-bold text-ink-900">1.00 CT</span>
               </div>
               <div class="flex items-center gap-2 flex-wrap" id="fs-carat-buttons">
-                <button type="button" onclick="selectProductCarat('0.75 CT', 540, 780)" class="carat-opt-btn px-3 py-1.5 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">0.75 CT</button>
-                <button type="button" onclick="selectProductCarat('1.00 CT', 673, 962)" class="carat-opt-btn active px-3 py-1.5 rounded-sm border-2 border-gold-metallic bg-ivory-100 text-xs font-bold text-gold-700 transition">1.00 CT</button>
-                <button type="button" onclick="selectProductCarat('1.50 CT', 1120, 1580)" class="carat-opt-btn px-3 py-1.5 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">1.50 CT</button>
-                <button type="button" onclick="selectProductCarat('2.00 CT', 1690, 2390)" class="carat-opt-btn px-3 py-1.5 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">2.00 CT</button>
-                <button type="button" onclick="selectProductCarat('3.00 CT', 2580, 3650)" class="carat-opt-btn px-3 py-1.5 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">3.00 CT</button>
+                <button type="button" onclick="selectProductCarat('0.75 CT', 540, 780)" class="carat-opt-btn min-h-[44px] px-3.5 py-2 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">0.75 CT</button>
+                <button type="button" onclick="selectProductCarat('1.00 CT', 673, 962)" class="carat-opt-btn active min-h-[44px] px-3.5 py-2 rounded-sm border-2 border-gold-metallic bg-ivory-100 text-xs font-bold text-gold-800 transition">1.00 CT</button>
+                <button type="button" onclick="selectProductCarat('1.50 CT', 1120, 1580)" class="carat-opt-btn min-h-[44px] px-3.5 py-2 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">1.50 CT</button>
+                <button type="button" onclick="selectProductCarat('2.00 CT', 1690, 2390)" class="carat-opt-btn min-h-[44px] px-3.5 py-2 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">2.00 CT</button>
+                <button type="button" onclick="selectProductCarat('3.00 CT', 2580, 3650)" class="carat-opt-btn min-h-[44px] px-3.5 py-2 rounded-sm border border-zinc-200 bg-white text-xs font-bold text-ink-800 hover:border-gold-metallic transition">3.00 CT</button>
               </div>
             </div>
 
@@ -1414,20 +1455,20 @@
             <div class="space-y-2 pt-3 border-t border-zinc-100" id="fs-size-section">
               <div class="flex items-center justify-between text-xs">
                 <span class="text-ink-600 uppercase tracking-wider font-semibold">Uzuk O'lchami:</span>
-                <button type="button" onclick="openRingSizeModal()" class="text-gold-700 hover:underline flex items-center gap-1 font-semibold text-[11px]">
-                  <i data-lucide="ruler" class="w-3 h-3"></i>
+                <button type="button" onclick="openRingSizeModal()" class="text-gold-800 hover:underline flex items-center gap-1 font-semibold text-xs min-h-[36px]">
+                  <i data-lucide="ruler" class="w-3.5 h-3.5"></i>
                   <span>O'lcham yo'riqnomasi</span>
                 </button>
               </div>
-              <div class="flex items-center gap-1.5 flex-wrap" id="fs-size-buttons">
-                <button type="button" onclick="selectProductSize('15.5 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">15.5</button>
-                <button type="button" onclick="selectProductSize('16.0 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">16.0</button>
-                <button type="button" onclick="selectProductSize('16.5 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">16.5</button>
-                <button type="button" onclick="selectProductSize('17.0 mm (Standart)')" class="size-opt-btn active px-2.5 py-1 rounded-sm border-2 border-gold-metallic bg-ivory-100 text-xs font-bold text-gold-700 transition">17.0 (Standart)</button>
-                <button type="button" onclick="selectProductSize('17.5 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">17.5</button>
-                <button type="button" onclick="selectProductSize('18.0 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">18.0</button>
-                <button type="button" onclick="selectProductSize('18.5 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">18.5</button>
-                <button type="button" onclick="selectProductSize('19.0 mm')" class="size-opt-btn px-2.5 py-1 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition">19.0</button>
+              <div class="flex items-center gap-2 flex-wrap" id="fs-size-buttons">
+                <button type="button" onclick="selectProductSize('15.5 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">15.5</button>
+                <button type="button" onclick="selectProductSize('16.0 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">16.0</button>
+                <button type="button" onclick="selectProductSize('16.5 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">16.5</button>
+                <button type="button" onclick="selectProductSize('17.0 mm (Standart)')" class="size-opt-btn active min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border-2 border-gold-metallic bg-ivory-100 text-xs font-bold text-gold-800 transition flex items-center justify-center">17.0 (Standart)</button>
+                <button type="button" onclick="selectProductSize('17.5 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">17.5</button>
+                <button type="button" onclick="selectProductSize('18.0 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">18.0</button>
+                <button type="button" onclick="selectProductSize('18.5 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">18.5</button>
+                <button type="button" onclick="selectProductSize('19.0 mm')" class="size-opt-btn min-w-[44px] min-h-[44px] px-3 py-2 rounded-sm border border-zinc-200 text-xs font-medium text-ink-800 hover:border-gold-metallic transition flex items-center justify-center">19.0</button>
               </div>
             </div>
 
@@ -1641,12 +1682,12 @@
   </div>
 
   <!-- ================= DEDICATED FULLSCREEN WISHLIST VIEW (ALOHIDA SAHIFA) ================= -->
-  <div id="wishlist-fullscreen-view" class="fixed inset-0 z-[70] bg-[#FAF9F6] overflow-y-auto view-hidden">
+  <div id="wishlist-fullscreen-view" role="dialog" aria-modal="true" aria-labelledby="wl-page-heading" class="fixed inset-0 z-[70] bg-[#FAF9F6] overflow-y-auto view-hidden">
     
     <!-- Top Sticky Bar inside Wishlist view -->
-    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-sm">
-      <button onclick="closeWishlistPage()" class="flex items-center gap-2 text-ink-700 hover:text-gold-700 text-xs font-bold uppercase tracking-widest group transition py-1">
-        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-600 group-hover:text-white transition">
+    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gold-metallic/20 px-4 sm:px-8 py-3 flex items-center justify-between shadow-sm">
+      <button onclick="closeWishlistPage()" class="flex items-center gap-2 text-ink-800 hover:text-gold-800 text-xs font-bold uppercase tracking-widest group transition min-h-[44px] px-2" aria-label="Katalogga qaytish">
+        <div class="w-8 h-8 rounded-full bg-ivory-200 border border-gold-metallic/30 flex items-center justify-center group-hover:bg-gold-800 group-hover:text-white transition">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
         </div>
         <span>Katalogga qaytish</span>
@@ -1654,12 +1695,12 @@
 
       <!-- Brand Center -->
       <div class="flex items-center gap-2.5 text-center">
-        <img src="olmos-logo.jpg" alt="OLMOS GOLD" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
+        <img src="olmos-logo.jpg" alt="OLMOS GOLD" width="32" height="32" class="w-8 h-8 rounded-sm object-cover border border-gold-metallic/30 shadow-sm">
         <div class="text-left">
-          <span class="font-serif text-base tracking-[0.18em] text-gold-700 font-bold uppercase block leading-tight">
+          <span class="font-serif text-base tracking-[0.18em] text-gold-800 font-bold uppercase block leading-tight">
             OLMOS GOLD
           </span>
-          <span class="block text-[8px] tracking-[0.25em] uppercase text-rose-600 font-bold">
+          <span class="block text-[9px] tracking-[0.25em] uppercase text-rose-700 font-bold">
             SEVIMLILAR • WISHLIST
           </span>
         </div>
@@ -1667,11 +1708,11 @@
 
       <!-- Quick Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="clearAllWishlist()" id="wl-clear-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-ivory-100 border border-zinc-200 text-xs text-ink-500 hover:text-rose-600 hover:border-rose-300 transition" title="Barchasini tozalash">
+        <button onclick="clearAllWishlist()" id="wl-clear-btn" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-ivory-100 border border-zinc-200 text-xs text-ink-600 hover:text-rose-600 hover:border-rose-300 transition min-h-[40px]" title="Barchasini tozalash">
           <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
           <span>Tozalash</span>
         </button>
-        <button onclick="closeWishlistPage()" class="p-2 text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Close Wishlist">
+        <button onclick="closeWishlistPage()" class="w-11 h-11 flex items-center justify-center text-ink-600 hover:text-ink-950 rounded-full hover:bg-zinc-100 transition" aria-label="Sevimlilarni yopish (Close Wishlist)">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
@@ -1861,14 +1902,14 @@
 
 
   <!-- ================= DIRECT PRODUCT CONCIERGE MODAL (FALLBACK / QUICK) ================= -->
-  <div id="concierge-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="concierge-modal" role="dialog" aria-modal="true" aria-labelledby="modal-item-title" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-sm max-w-lg w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
-      <button onclick="closeConciergeModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+      <button onclick="closeConciergeModal()" class="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Yopish">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold-700 font-bold">
+        <div class="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold-800 font-bold">
           <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-metallic"></i>
           <span>Xususiy Konsyerj Xizmati</span>
         </div>
@@ -1879,11 +1920,11 @@
 
         <div class="p-3 bg-ivory-100 rounded-sm border border-gold-metallic/25 text-xs space-y-1">
           <div class="flex justify-between">
-            <span class="text-ink-500">Buyum kodi:</span>
-            <span class="font-mono text-gold-700 font-bold" id="modal-item-sku">AUR-001</span>
+            <span class="text-ink-600">Buyum kodi:</span>
+            <span class="font-mono text-gold-800 font-bold" id="modal-item-sku">AUR-001</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-ink-500">Ko'rsatilgan narxi:</span>
+            <span class="text-ink-600">Ko'rsatilgan narxi:</span>
             <span class="font-serif text-ink-900 font-bold text-sm" id="modal-item-price">$0</span>
           </div>
         </div>
@@ -1898,7 +1939,7 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+            class="w-full py-3.5 bg-ink-900 hover:bg-gold-700 text-white font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition min-h-[44px]"
           >
             <i data-lucide="send" class="w-4 h-4 text-gold-300"></i>
             <span data-i18n="modal_btn_tg">Telegram Orqali So'rash (Pre-filled)</span>
@@ -1906,9 +1947,9 @@
 
           <a 
             href="tel:+998977742021" 
-            class="w-full py-3.5 bg-white border border-zinc-300 hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition"
+            class="w-full py-3.5 bg-white border border-zinc-300 hover:border-gold-metallic text-ink-900 font-bold text-xs uppercase tracking-widest rounded-sm text-center flex items-center justify-center gap-2 transition min-h-[44px]"
           >
-            <i data-lucide="phone" class="w-4 h-4 text-gold-700"></i>
+            <i data-lucide="phone" class="w-4 h-4 text-gold-800"></i>
             <span>Konsyergga Qo'ng'iroq Qilish (+998 97 774 20 21)</span>
           </a>
         </div>
@@ -1917,23 +1958,23 @@
   </div>
 
   <!-- ================= VIP CATALOG DOWNLOAD MODAL ================= -->
-  <div id="vip-catalog-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="vip-catalog-modal" role="dialog" aria-modal="true" aria-labelledby="vip-catalog-modal-title" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-sm max-w-md w-full p-6 sm:p-8 border border-gold-metallic/40 relative shadow-2xl">
-      <button onclick="closeVipCatalogModal()" class="absolute top-4 right-4 text-ink-500 hover:text-ink-900 p-1">
+      <button onclick="closeVipCatalogModal()" class="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-ink-500 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Yopish">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="space-y-4">
-        <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-700 flex items-center justify-center border border-gold-metallic/35">
+        <div class="w-12 h-12 mx-auto rounded-full bg-ivory-200 text-gold-800 flex items-center justify-center border border-gold-metallic/35">
           <i data-lucide="book-open" class="w-6 h-6"></i>
         </div>
 
         <div class="text-center">
-          <h3 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="modal_cat_title">2026 VIP Lookbook & Narxlar</h3>
+          <h3 class="font-serif text-2xl text-ink-900 font-bold" id="vip-catalog-modal-title" data-i18n="modal_cat_title">2026 VIP Lookbook & Narxlar</h3>
           <p class="text-xs text-ink-600 mt-1" data-i18n="modal_cat_desc">Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.</p>
         </div>
 
-        <form onsubmit="handleModalCatalogSubmit(event)" class="space-y-3.5">
+        <form onsubmit="handleModalCatalogSubmit(event)" id="vip-catalog-form" class="space-y-3.5">
           <div>
             <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
             <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
@@ -1945,7 +1986,7 @@
               <input type="tel" id="m-phone" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic">
             </div>
           </div>
-          <button type="submit" class="w-full py-3.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition">
+          <button type="submit" id="m-catalog-submit-btn" class="w-full py-3.5 bg-ink-900 hover:bg-gold-700 text-white font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition min-h-[44px]">
             <i data-lucide="download" class="w-4 h-4 text-gold-300"></i>
             <span data-i18n="cta_vip_catalog">Katalogni Olish</span>
           </button>
@@ -1953,7 +1994,7 @@
 
         <div id="modal-success" class="hidden text-center py-4 text-emerald-700 text-xs space-y-2">
           <p>✓ Muvaffaqiyatli yuborildi! Tez orada konsyerjimiz bog'lanadi.</p>
-          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-700 underline font-semibold">Telegram @OLMOS_GOLD</a>
+          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-800 underline font-semibold">Telegram @OLMOS_GOLD</a>
         </div>
       </div>
     </div>
@@ -1961,18 +2002,18 @@
 
   
   <!-- ================= RING SIZE GUIDE MODAL (DiamondsByUK Style) ================= -->
-  <div id="ring-size-modal" class="fixed inset-0 z-[80] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+  <div id="ring-size-modal" role="dialog" aria-modal="true" aria-labelledby="ring-size-modal-title" class="fixed inset-0 z-[80] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-sm max-w-md w-full p-6 border border-gold-metallic/40 shadow-2xl space-y-4 relative">
-      <button onclick="closeRingSizeModal()" class="absolute top-4 right-4 text-ink-400 hover:text-ink-900 p-1">
+      <button onclick="closeRingSizeModal()" class="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-ink-400 hover:text-ink-900 rounded-full hover:bg-zinc-100 transition" aria-label="Yopish">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-full bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-700">
+        <div class="w-9 h-9 rounded-full bg-ivory-200 border border-gold-metallic/35 flex items-center justify-center text-gold-800">
           <i data-lucide="ruler" class="w-5 h-5"></i>
         </div>
         <div>
-          <h3 class="font-serif text-lg font-bold text-ink-900">Uzuk O'lchamini Aniqlash</h3>
-          <p class="text-[11px] text-ink-500">Xalqaro millimetr standarti bo'yicha</p>
+          <h3 class="font-serif text-lg font-bold text-ink-900" id="ring-size-modal-title">Uzuk O'lchamini Aniqlash</h3>
+          <p class="text-[11px] text-ink-600">Xalqaro millimetr standarti bo'yicha</p>
         </div>
       </div>
       <p class="text-xs text-ink-600 leading-relaxed">
@@ -1981,7 +2022,7 @@
       <div class="bg-ivory-100 rounded-sm p-3 text-xs border border-gold-metallic/20">
         <table class="w-full text-left">
           <thead>
-            <tr class="border-b border-zinc-300 text-[10px] uppercase text-ink-500">
+            <tr class="border-b border-zinc-300 text-[10px] uppercase text-ink-600 font-semibold">
               <th class="pb-1.5">Ichki Diametr (mm)</th>
               <th class="pb-1.5">O'lcham</th>
               <th class="pb-1.5">Tavsiya</th>
@@ -1997,11 +2038,11 @@
           </tbody>
         </table>
       </div>
-      <div class="text-[11px] text-ink-600 bg-amber-50/60 p-2.5 rounded-sm border border-amber-200/60 flex items-start gap-2">
-        <i data-lucide="info" class="w-4 h-4 text-gold-700 shrink-0 mt-0.5"></i>
+      <div class="text-[11px] text-ink-700 bg-amber-50/60 p-2.5 rounded-sm border border-amber-200/60 flex items-start gap-2">
+        <i data-lucide="info" class="w-4 h-4 text-gold-800 shrink-0 mt-0.5"></i>
         <span><strong>Xavotir olmang:</strong> Agar sovg'a uchun olsangiz va o'lcham to'g'ri kelmasa, butikimizda 14 kun ichida bepul o'lchamga to'g'irlab beriladi!</span>
       </div>
-      <button onclick="closeRingSizeModal()" type="button" class="w-full py-2.5 bg-ink-900 hover:bg-gold-600 text-white font-bold text-xs uppercase tracking-wider rounded-sm transition">
+      <button onclick="closeRingSizeModal()" type="button" class="w-full py-3 bg-ink-900 hover:bg-gold-700 text-white font-bold text-xs uppercase tracking-wider rounded-sm transition min-h-[44px]">
         Tushunarli, Davom Etish
       </button>
     </div>
@@ -2509,7 +2550,7 @@
     }
 
     // ================= FULLSCREEN WISHLIST PAGE HANDLERS =================
-    function openWishlistPage() {
+    function openWishlistPage(skipPush = false) {
       try {
         renderWishlistPage();
       } catch (err) {
@@ -2521,6 +2562,9 @@
         wView.classList.add('view-visible');
         document.body.style.overflow = 'hidden';
         wView.scrollTop = 0;
+        if (!skipPush && window.location.hash !== '#wishlist') {
+          history.pushState({ modal: 'wishlist' }, '', '#wishlist');
+        }
       }
       try {
         if (window.lucide && lucide.createIcons) {
@@ -2533,7 +2577,7 @@
       openWishlistPage();
     }
 
-    function closeWishlistPage() {
+    function closeWishlistPage(fromPopstate = false) {
       const wView = document.getElementById('wishlist-fullscreen-view');
       if (wView) {
         wView.classList.remove('view-visible');
@@ -2542,6 +2586,9 @@
         if (!pView || pView.classList.contains('view-hidden')) {
           document.body.style.overflow = '';
         }
+      }
+      if (!fromPopstate && window.location.hash === '#wishlist') {
+        history.back();
       }
     }
 
@@ -2598,51 +2645,54 @@
             <img 
               src="${item.images[0].url}" 
               alt="${title}" 
+              width="400"
+              height="400"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             >
             <div class="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
-              <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/30 shadow-sm">
+              <span class="px-2 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[9px] sm:text-[10px] font-mono tracking-wider text-gold-800 font-bold border border-gold-metallic/35 shadow-sm">
                 ${item.purity_badge}
               </span>
               ${item.extra_badge ? `
-              <span class="px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
+              <span class="px-2 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[8px] sm:text-[9px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
                 ${item.extra_badge}
               </span>
               ` : ''}
             </div>
 
-            <!-- Remove Button -->
+            <!-- Remove Button (44x44px touch target) -->
             <button 
               onclick="toggleWishlist('${item.id}', event)" 
-              class="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-md border border-rose-300 text-rose-500 hover:bg-rose-50 flex items-center justify-center transition shadow-sm z-20 active:scale-90"
+              class="absolute top-2 right-2 w-11 h-11 rounded-full bg-white/95 backdrop-blur-md border border-rose-300 text-rose-500 hover:bg-rose-50 flex items-center justify-center transition shadow-sm z-20 active:scale-90"
               title="${currentLang === 'uz' ? "O'chirish" : "Удалить"}"
+              aria-label="${currentLang === 'uz' ? "O'chirish" : "Удалить"}"
             >
-              <i data-lucide="trash-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              <i data-lucide="trash-2" class="w-4 h-4 sm:w-5 sm:h-5"></i>
             </button>
           </div>
 
-          <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow">
+          <div class="p-3 sm:p-4 flex flex-col justify-between flex-grow">
             <div>
-              <div class="text-[8px] sm:text-[10px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
+              <div class="text-[9px] sm:text-[10.5px] text-ink-600 uppercase tracking-widest font-mono font-medium">SKU: ${item.id}</div>
               <h3 
                 onclick="openProductDetail('${item.id}')"
-                class="font-serif text-xs sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[44px] cursor-pointer hover:text-gold-700 transition"
+                class="font-serif text-[13px] sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[34px] sm:min-h-[44px] cursor-pointer hover:text-gold-800 transition leading-snug"
               >
                 ${title}
               </h3>
             </div>
 
-            <div class="mt-2 pt-2 border-t border-zinc-100 flex flex-col gap-2">
+            <div class="mt-3 pt-2.5 border-t border-zinc-100 flex flex-col gap-2">
               <div>
-                <span class="font-serif text-xs sm:text-lg text-gold-700 font-bold leading-tight">${item.price_usd}</span>
-                <span class="text-[8px] sm:text-[10px] text-ink-500 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
+                <span class="font-serif text-sm sm:text-lg text-ink-900 font-bold leading-tight block">${item.price_usd}</span>
+                <span class="text-[9px] sm:text-[10.5px] text-gold-800 block font-mono truncate leading-none mt-0.5 font-semibold">${item.price_uzs}</span>
               </div>
               <button 
                 onclick="openProductDetail('${item.id}')"
-                class="w-full py-1.5 sm:py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-sm"
+                class="w-full py-2 bg-ink-900 hover:bg-gold-700 text-white font-bold text-[9px] sm:text-xs tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1.5 shadow-sm min-h-[38px]"
               >
-                <i data-lucide="eye" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-300"></i>
-                <span>${currentLang === 'uz' ? "Batafsil Ko'rish" : "Подробнее"}</span>
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-gold-300"></i>
+                <span>${currentLang === 'uz' ? "Ko'rish & Tanlash" : "Посмотреть"}</span>
               </button>
             </div>
           </div>
@@ -2660,6 +2710,11 @@
     // Wishlist Lead Submission -> Direct to Telegram Bot
     async function handleWishlistLeadSubmit(e) {
       e.preventDefault();
+      const submitBtn = document.getElementById('wl-submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="btn-spinner mr-2"></span> Yuborilmoqda...';
+      }
       const name = document.getElementById('wl-name').value;
       const phone = document.getElementById('wl-phone').value;
       const list = getWishlist();
@@ -2788,6 +2843,8 @@
           <img 
             src="${studioImg}" 
             alt="${title}" 
+            width="400"
+            height="400"
             class="${hasSwap ? 'product-studio' : ''} absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
             loading="lazy"
           >
@@ -2795,81 +2852,83 @@
           <img 
             src="${wornImg}" 
             alt="${title} Worn" 
+            width="400"
+            height="400"
             class="product-worn absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
             loading="lazy"
           >
           ` : ''}
           
-          <div class="absolute top-2 left-2 flex flex-col gap-1 items-start z-10 pointer-events-none">
-            <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-mono tracking-wider text-gold-700 font-bold border border-gold-metallic/30 shadow-sm">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1 items-start z-10 pointer-events-none">
+            <span class="px-2 sm:px-2.5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-md rounded-full text-[9px] sm:text-[10px] font-mono tracking-wider text-gold-800 font-bold border border-gold-metallic/35 shadow-sm">
               ${item.purity_badge}
             </span>
             ${item.extra_badge ? `
-            <span class="px-1.5 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[7px] sm:text-[8px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
+            <span class="px-2 sm:px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[8px] sm:text-[9px] uppercase tracking-wider font-bold border border-emerald-300 shadow-sm">
               ${item.extra_badge}
             </span>
             ` : ''}
           </div>
 
-          <!-- Wishlist Heart Button -->
+          <!-- Wishlist Heart Button (44x44px touch target) -->
           <button 
             onclick="toggleWishlist('${item.id}', event)" 
-            class="btn-wishlist absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center transition-all shadow-sm z-20 active:scale-90 ${isInWishlist(item.id) ? 'text-rose-500 border-rose-300' : 'text-ink-700 hover:text-rose-600'}"
+            class="btn-wishlist absolute top-2 right-2 w-11 h-11 rounded-full bg-white/95 backdrop-blur-md border border-gold-metallic/35 flex items-center justify-center transition-all shadow-sm z-20 active:scale-90 ${isInWishlist(item.id) ? 'text-rose-500 border-rose-300' : 'text-ink-700 hover:text-rose-600'}"
             aria-label="Sevimlilarga qo'shish"
             title="Sevimlilarga qo'shish"
           >
-            <i data-lucide="heart" class="w-3.5 h-3.5 sm:w-4 sm:h-4 ${isInWishlist(item.id) ? 'text-rose-500 fill-rose-500' : 'text-ink-600'}"></i>
+            <i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 ${isInWishlist(item.id) ? 'text-rose-500 fill-rose-500' : 'text-ink-700'}"></i>
           </button>
           
           <!-- Quick hover hint overlay -->
-          <div class="absolute bottom-2.5 inset-x-2.5 py-1 sm:py-1.5 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm hidden sm:block">
-            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gold-700 flex items-center justify-center gap-1.5">
-              <i data-lucide="maximize-2" class="w-3 h-3 text-gold-700"></i>
+          <div class="absolute bottom-2.5 inset-x-2.5 py-1.5 sm:py-2 bg-white/95 backdrop-blur-md rounded-sm border border-gold-metallic/30 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm hidden sm:block">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold-800 flex items-center justify-center gap-1.5">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-gold-800"></i>
               <span>${currentLang === 'uz' ? "Ko'rish & Tanlash" : "Посмотреть и Выбрать"}</span>
             </span>
           </div>
         </div>
 
-        <div class="p-2.5 sm:p-4 flex flex-col justify-between flex-grow">
+        <div class="p-3 sm:p-4 flex flex-col justify-between flex-grow">
           <div>
             <!-- Star Rating & Metal Dots -->
             <div class="flex items-center justify-between text-amber-500 mb-1">
               <div class="flex items-center gap-0.5">
-                <i data-lucide="star" class="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400"></i>
-                <i data-lucide="star" class="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400"></i>
-                <i data-lucide="star" class="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400"></i>
-                <i data-lucide="star" class="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400"></i>
-                <i data-lucide="star" class="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400"></i>
-                <span class="text-ink-500 font-mono text-[8px] sm:text-[9px] ml-1">(${item.reviews_count || 24})</span>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <span class="text-ink-600 font-mono text-[9px] sm:text-[10px] ml-1">(${item.reviews_count || 24})</span>
               </div>
               ${item.has_customizer ? `
               <div class="flex items-center gap-1" title="Mavjud metallar">
-                <span class="w-2 h-2 rounded-full bg-amber-400 border border-amber-600"></span>
-                <span class="w-2 h-2 rounded-full bg-zinc-200 border border-zinc-400"></span>
-                <span class="w-2 h-2 rounded-full bg-rose-300 border border-rose-500"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 border border-amber-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-zinc-200 border border-zinc-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-300 border border-rose-500"></span>
               </div>` : ''}
             </div>
 
-            <div class="text-[8px] sm:text-[10px] text-ink-500 uppercase tracking-widest font-mono">SKU: ${item.id}</div>
-            <h3 class="font-serif text-xs sm:text-sm text-ink-900 font-bold mt-1 line-clamp-2 min-h-[30px] sm:min-h-[40px] group-hover:text-gold-700 transition leading-snug">
+            <div class="text-[9px] sm:text-[10.5px] text-ink-600 uppercase tracking-widest font-mono font-medium">SKU: ${item.id}</div>
+            <h3 class="font-serif text-[13px] sm:text-base text-ink-900 font-bold mt-1 line-clamp-2 min-h-[34px] sm:min-h-[44px] group-hover:text-gold-800 transition leading-snug">
               ${title}
             </h3>
           </div>
 
-          <div class="mt-2.5 pt-2 border-t border-zinc-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+          <div class="mt-3 pt-2.5 border-t border-zinc-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
               ${item.compare_usd ? `
               <div class="flex items-center gap-1.5 leading-none mb-0.5">
-                <del class="text-[9px] sm:text-xs text-ink-400 font-normal line-through">${item.compare_usd}</del>
-                <span class="text-[8px] sm:text-[9px] font-bold text-rose-600 bg-rose-50 px-1 py-0.2 rounded">Save 30%</span>
+                <del class="text-[10px] sm:text-xs text-ink-400 font-normal line-through">${item.compare_usd}</del>
+                <span class="text-[9px] sm:text-[10px] font-bold text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded">Save 30%</span>
               </div>` : ''}
-              <span class="font-serif text-xs sm:text-lg text-ink-900 font-bold leading-tight block">${item.price_usd}</span>
-              <span class="text-[8px] sm:text-[10px] text-gold-700 block font-mono truncate leading-none mt-0.5">${item.price_uzs}</span>
+              <span class="font-serif text-sm sm:text-lg text-ink-900 font-bold leading-tight block">${item.price_usd}</span>
+              <span class="text-[9px] sm:text-[10.5px] text-gold-800 block font-mono truncate leading-none mt-0.5 font-semibold">${item.price_uzs}</span>
             </div>
             <button 
-              class="btn-inquire-quick w-full sm:w-auto px-2.5 sm:px-3.5 py-1.5 sm:py-2 bg-ink-900 hover:bg-gold-600 text-white font-bold text-[8px] sm:text-[11px] tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1 shadow-sm"
+              class="btn-inquire-quick w-full sm:w-auto px-3 sm:px-4 py-2 bg-ink-900 hover:bg-gold-700 text-white font-bold text-[9px] sm:text-xs tracking-wider uppercase rounded-sm active:scale-95 transition flex items-center justify-center gap-1.5 shadow-sm min-h-[38px]"
             >
-              <i data-lucide="sliders-horizontal" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-300"></i>
+              <i data-lucide="sliders-horizontal" class="w-3 h-3 text-gold-300"></i>
               <span>${inquireText}</span>
             </button>
           </div>
@@ -3056,7 +3115,7 @@
     }
 
     // ================= FULLSCREEN DEDICATED PRODUCT VIEW HANDLERS =================
-    function openProductDetail(productId) {
+    function openProductDetail(productId, skipPush = false) {
       const product = productsDB.find(p => p.id === productId);
       if (!product) return;
       currentActiveProduct = product;
@@ -3172,17 +3231,25 @@
         fsView.classList.add('view-visible');
         document.body.style.overflow = 'hidden';
         fsView.scrollTop = 0;
+        if (!skipPush && !window.location.hash.startsWith('#product-')) {
+          history.pushState({ modal: 'product', id: product.id }, '', `#product-${product.id}`);
+        }
       }
 
       lucide.createIcons();
     }
 
-    function closeProductDetail() {
+    function closeProductDetail(fromPopstate = false) {
       const fsView = document.getElementById('product-fullscreen-view');
-      fsView.classList.remove('view-visible');
-      fsView.classList.add('view-hidden');
+      if (fsView) {
+        fsView.classList.remove('view-visible');
+        fsView.classList.add('view-hidden');
+      }
       document.body.style.overflow = ''; // Unlock background scroll
       currentActiveProduct = null;
+      if (!fromPopstate && window.location.hash.startsWith('#product-')) {
+        history.back();
+      }
     }
 
     function toggleFittingForm() {
@@ -3192,6 +3259,13 @@
 
     function handleFittingSubmit(e) {
       e.preventDefault();
+      const form = document.getElementById('fs-fitting-form');
+      const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="btn-spinner mr-2"></span> Yuborilmoqda...';
+      }
+
       const name = document.getElementById('fit-name').value;
       const phone = document.getElementById('fit-phone').value;
       const itemTitle = currentActiveProduct ? (currentLang === 'uz' ? currentActiveProduct.title_uz : currentActiveProduct.title_ru) : "Olmos Gold Jewelry";
@@ -3671,6 +3745,11 @@
 
     function handleModalCatalogSubmit(e) {
       e.preventDefault();
+      const submitBtn = document.getElementById('m-catalog-submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="btn-spinner mr-2"></span> Yuborilmoqda...';
+      }
       const name = document.getElementById('m-name').value;
       const phone = document.getElementById('m-phone').value;
       const successDiv = document.getElementById('modal-success');
@@ -3765,17 +3844,76 @@
       }
     }
 
+    // Global Browser Back Button (Popstate) & Hardware Gesture Navigation
+    window.addEventListener('popstate', (e) => {
+      const fsView = document.getElementById('product-fullscreen-view');
+      const wView = document.getElementById('wishlist-fullscreen-view');
+      const cModal = document.getElementById('concierge-modal');
+      const vModal = document.getElementById('vip-catalog-modal');
+      const rModal = document.getElementById('ring-size-modal');
+
+      if (fsView && fsView.classList.contains('view-visible')) {
+        closeProductDetail(true);
+      }
+      if (wView && wView.classList.contains('view-visible')) {
+        closeWishlistPage(true);
+      }
+      if (cModal && !cModal.classList.contains('hidden')) {
+        closeConciergeModal();
+      }
+      if (vModal && !vModal.classList.contains('hidden')) {
+        closeVipCatalogModal();
+      }
+      if (rModal && !rModal.classList.contains('hidden')) {
+        closeRingSizeModal();
+      }
+    });
+
+    // Global ESC Key Dismissal (Accessibility WCAG 2.2)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const fsView = document.getElementById('product-fullscreen-view');
+        const wView = document.getElementById('wishlist-fullscreen-view');
+        const cModal = document.getElementById('concierge-modal');
+        const vModal = document.getElementById('vip-catalog-modal');
+        const rModal = document.getElementById('ring-size-modal');
+
+        if (fsView && fsView.classList.contains('view-visible')) {
+          closeProductDetail();
+        } else if (wView && wView.classList.contains('view-visible')) {
+          closeWishlistPage();
+        } else if (cModal && !cModal.classList.contains('hidden')) {
+          closeConciergeModal();
+        } else if (vModal && !vModal.classList.contains('hidden')) {
+          closeVipCatalogModal();
+        } else if (rModal && !rModal.classList.contains('hidden')) {
+          closeRingSizeModal();
+        }
+      }
+    });
+
+    // Deep Linking Support on Initial Load
+    function handleInitialHash() {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#product-')) {
+        const pId = hash.replace('#product-', '');
+        if (productsDB.some(p => p.id === pId)) {
+          openProductDetail(pId, true);
+        }
+      } else if (hash === '#wishlist') {
+        openWishlistPage(true);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderProductCards();
       updateWishlistUI();
       initWishlistListeners();
+      handleInitialHash();
       try {
         if (window.lucide && lucide.createIcons) lucide.createIcons();
       } catch (e) {}
     });
-    renderProductCards();
-    updateWishlistUI();
-    initWishlistListeners();
   </script>
 </body>
 </html>
