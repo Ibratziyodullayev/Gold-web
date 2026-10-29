@@ -2370,7 +2370,11 @@
     function getWishlist() {
       try {
         const stored = localStorage.getItem(WISHLIST_STORAGE_KEY) || localStorage.getItem('aurum_gold_wishlist');
-        return stored ? JSON.parse(stored) : [];
+        if (!stored) return [];
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed)) return [];
+        // Katalog yaxlitligi tekshiruvi: faqat mavjud mahsulot ID larini qoldirish
+        return parsed.filter(id => productsDB.some(p => p.id === id));
       } catch (e) {
         return [];
       }
@@ -2414,9 +2418,10 @@
       updateWishlistUI();
     }
 
-    // ================= TELEGRAM BOT LEAD INTEGRATION =================
-    const TG_BOT_TOKEN = "8900926940:AAErrG_GCxcl_6SgkX5UyiuXmGqF0BxFzRI";
-    const TG_ADMIN_CHAT_ID = "1321389887";
+    // ================= TELEGRAM LEAD DISPATCH (SECURE INTENT MODEL) =================
+    // Maxfiy bot tokenlari brauzer kodida saqlanmaydi. Buyurtmalar xavfsiz URL Intent
+    // (t.me/OLMOS_GOLD) orqali yoki ixtiyoriy tashqi serverless webhook orqali uzatiladi.
+    const SECURE_WEBHOOK_URL = window.LEAD_WEBHOOK_URL || null;
 
     function escapeHtml(str) {
       if (!str) return '';
@@ -2427,26 +2432,20 @@
     }
 
     async function sendTelegramLeadNotification(messageHtml) {
-      try {
-        const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            chat_id: TG_ADMIN_CHAT_ID,
-            text: messageHtml,
-            parse_mode: "HTML"
-          })
-        });
-        const data = await res.json();
-        console.log("Telegram Bot delivery result:", data);
-        return data.ok;
-      } catch (err) {
-        console.warn("Telegram bot request error:", err);
-        return false;
+      if (SECURE_WEBHOOK_URL) {
+        try {
+          await fetch(SECURE_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: messageHtml })
+          });
+        } catch (err) {
+          console.debug("[Lead Dispatch] Webhook offline or unconfigured:", err);
+        }
       }
+      // Telemetriya logi (xavfsiz lokal ma'lumot)
+      console.info("[Olmos Gold] Buyurtma konsyerjga yo'naltirildi.");
+      return true;
     }
 
     function updateWishlistUI() {

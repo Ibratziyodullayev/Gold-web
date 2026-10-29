@@ -1,4 +1,22 @@
+# OS files
 .DS_Store
 Thumbs.db
+
+# Logs and archives
 *.log
 *.zip
+
+# Secrets and environment files
+.env
+.env.*
+*.pem
+*.key
+*.cert
+secrets.*
+credentials.*
+*.secret
+
+# IDE and local caches
+.idea/
+.vscode/
+*.swp
