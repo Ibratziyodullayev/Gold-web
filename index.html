@@ -8,6 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; frame-src 'self' https://maps.google.com https://yandex.uz; connect-src 'self';">
   <link rel="icon" type="image/jpeg" href="olmos-logo.jpg?v=2">
   
   <!-- Google Fonts: Tenor Sans & Figtree (Official DiamondsByUK Typography) -->
@@ -847,7 +849,7 @@
               </div>
               <h4 class="font-serif text-2xl text-ink-900 font-bold" data-i18n="form_success_t">Tashakkur! So'rovingiz qabul qilindi</h4>
               <p class="text-xs text-ink-600" data-i18n="form_success_d">Konsyerjimiz 5 daqiqa ichida PDF katalog va shaxsiy taklifnomani taqdim etadi.</p>
-              <a href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
+              <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink-900 hover:bg-gold-600 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition">
                 <i data-lucide="send" class="w-3.5 h-3.5"></i>
                 <span data-i18n="form_success_tg">Telegramda Zudlik Bilan Ochish</span>
               </a>
@@ -1180,7 +1182,7 @@
             <li><a href="#italian-gold" class="hover:text-gold-700 transition">Oltin Asilligi va Probir Nazorati</a></li>
             <li><a href="#diamonds" class="hover:text-gold-700 transition">GIA Olmos Pasportlarini Tekshirish</a></li>
             <li><button onclick="openVipCatalogModal()" class="hover:text-gold-700 transition text-left">VIP Katalog So'rovi</button></li>
-            <li><a href="https://t.me/OLMOS_GOLD" target="_blank" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat (@OLMOS_GOLD)</a></li>
+            <li><a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="hover:text-gold-700 transition">Konsyerj Bilan Suhbat (@OLMOS_GOLD)</a></li>
           </ul>
         </div>
 
@@ -1190,7 +1192,7 @@
             Bunyodkor shoh ko'chasi, 15/1<br>
             Chilonzor tumani, Toshkent<br>
             Telefon: <a href="tel:+998977742021" class="font-bold text-ink-900 hover:text-gold-800 transition">+998 (97) 774-20-21</a><br>
-            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-800 hover:text-gold-900 hover:underline font-bold transition">@OLMOS_GOLD</a><br>
+            Telegram: <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-gold-800 hover:text-gold-900 hover:underline font-bold transition">@OLMOS_GOLD</a><br>
             Har kuni: 10:00 — 21:00
           </p>
         </div>
@@ -1817,7 +1819,7 @@
                   Tanlangan zargarlik buyumlari ma'lumotlari konsyerjimizga yuborildi. Tez orada siz bilan bog'lanamiz.
                 </p>
                 <div class="pt-2">
-                  <a id="wl-open-tg-direct" href="https://t.me/OLMOS_GOLD" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
+                  <a id="wl-open-tg-direct" href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-sm">
                     <i data-lucide="send" class="w-4 h-4"></i>
                     <span>Telegramda Chatni Ochish (@OLMOS_GOLD)</span>
                   </a>
@@ -1994,7 +1996,7 @@
 
         <div id="modal-success" class="hidden text-center py-4 text-emerald-700 text-xs space-y-2">
           <p>✓ Muvaffaqiyatli yuborildi! Tez orada konsyerjimiz bog'lanadi.</p>
-          <a href="https://t.me/OLMOS_GOLD" target="_blank" class="text-gold-800 underline font-semibold">Telegram @OLMOS_GOLD</a>
+          <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="text-gold-800 underline font-semibold">Telegram @OLMOS_GOLD</a>
         </div>
       </div>
     </div>
@@ -2801,7 +2803,7 @@
         `⏰ <b>Vaqt:</b> ${now}`
       );
 
-      window.open(`https://t.me/OLMOS_GOLD?text=${encodeURIComponent(msg)}`, '_blank');
+      window.open(`https://t.me/OLMOS_GOLD?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     }
 
     function sendWishlistToTelegram() {
@@ -3298,7 +3300,7 @@
       );
 
       setTimeout(() => {
-        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank', 'noopener,noreferrer');
       }, 1000);
     }
 
@@ -3738,7 +3740,7 @@
 
       const tgText = encodeURIComponent(`Salom! Men Olmos Gold 2026 VIP Lookbook katalogini so'rayman.\nIsm: ${name}\nTel: +998 ${phone}\nYo'nalish: ${interest}`);
       setTimeout(() => {
-        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank', 'noopener,noreferrer');
       }, 1200);
     }
 
@@ -3769,7 +3771,7 @@
 
       const tgText = encodeURIComponent(`Salom! Men Olmos Gold VIP Lookbook so'rayman.\nIsm: ${name}\nTel: +998 ${phone}`);
       setTimeout(() => {
-        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank');
+        window.open(`https://t.me/OLMOS_GOLD?text=${tgText}`, '_blank', 'noopener,noreferrer');
       }, 1000);
     }
 
