@@ -2539,12 +2539,18 @@
 
       if (list.includes(productId)) {
         list = list.filter(id => id !== productId);
+        if (typeof window.olmosTrack === 'function') {
+          window.olmosTrack('remove_from_wishlist', { item_id: productId, item_name: title });
+        }
         showWishlistToast(
           currentLang === 'uz' ? `"${title}" sevimlilardan olib tashlandi` : `"${title}" удалено из избранного`,
           false
         );
       } else {
         list.push(productId);
+        if (typeof window.olmosTrack === 'function') {
+          window.olmosTrack('add_to_wishlist', { item_id: productId, item_name: title });
+        }
         showWishlistToast(
           currentLang === 'uz' ? `"${title}" sevimlilarga saqlandi ❤️` : `"${title}" добавлено в избранное ❤️`,
           true
@@ -2949,6 +2955,13 @@
         : `\n💰 Общая ориентировочная стоимость: $${totalUsd.toLocaleString('en-US')} (~ ${totalUzs.toLocaleString('ru-RU')} UZS)\n\nПодскажите, пожалуйста, по наличию в бутике.`;
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
+      if (typeof window.olmosTrack === 'function') {
+        window.olmosTrack('begin_checkout', {
+          method: 'telegram_wishlist',
+          items_count: items.length,
+          total_usd: totalUsd
+        });
+      }
       sendTelegramLeadNotification(
         `💎 <b>OLMOS GOLD — WISHLISTDAN TELEGRAMGA O'TISH</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
@@ -3278,6 +3291,15 @@
       if (!product) return;
       currentActiveProduct = product;
 
+      if (typeof window.olmosTrack === 'function') {
+        window.olmosTrack('view_item', {
+          item_id: product.id,
+          item_name: product.title_uz,
+          category: product.category,
+          price: product.base_price_usd
+        });
+      }
+
       // Populate text fields
       const title = currentLang === 'uz' ? product.title_uz : product.title_ru;
       const desc = currentLang === 'uz' ? product.full_desc_uz : product.full_desc_ru;
@@ -3433,6 +3455,14 @@
 
       document.getElementById('fs-fitting-form').classList.add('hidden');
       document.getElementById('fit-success').classList.remove('hidden');
+
+      if (typeof window.olmosTrack === 'function') {
+        window.olmosTrack('generate_lead', {
+          lead_type: 'vip_fitting',
+          sku: sku,
+          item_title: itemTitle
+        });
+      }
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
@@ -3882,6 +3912,13 @@
       form.classList.add('hidden');
       success.classList.remove('hidden');
 
+      if (typeof window.olmosTrack === 'function') {
+        window.olmosTrack('generate_lead', {
+          lead_type: 'lookbook_inline',
+          interest: interest
+        });
+      }
+
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
         `👑 <b>OLMOS GOLD — YANGI VIP LOOKBOOK SO'ROVI</b>\n` +
@@ -3915,6 +3952,12 @@
       const form = document.getElementById('vip-modal-catalog-form');
       if (form) form.classList.add('hidden');
       successDiv.classList.remove('hidden');
+
+      if (typeof window.olmosTrack === 'function') {
+        window.olmosTrack('generate_lead', {
+          lead_type: 'lookbook_modal'
+        });
+      }
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
       const botMsg = 
