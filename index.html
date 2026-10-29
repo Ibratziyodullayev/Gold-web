@@ -2050,7 +2050,7 @@
           <p class="text-xs text-ink-600 mt-1" data-i18n="modal_cat_desc">Raqamingizni qoldiring, katalog 2 daqiqada Telegramingizga yuboriladi.</p>
         </div>
 
-        <form onsubmit="handleModalCatalogSubmit(event)" id="vip-catalog-form" class="space-y-3.5">
+        <form onsubmit="handleModalCatalogSubmit(event)" id="vip-modal-catalog-form" class="space-y-3.5">
           <div>
             <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
             <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
@@ -2126,6 +2126,41 @@
 
   <!-- ================= COMPREHENSIVE LUXURY PRODUCT DATABASE & ENGINE ================= -->
   <script>
+    // ================= CLIENT OBSERVABILITY & TELEMETRY =================
+    (function initObservability() {
+      const isDebug = new URLSearchParams(window.location.search).has('debug') || localStorage.getItem('olmos_debug') === '1';
+
+      window.addEventListener('error', (event) => {
+        const payload = {
+          type: 'CLIENT_ERROR',
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          time: new Date().toISOString(),
+          viewport: `${window.innerWidth}x${window.innerHeight}`
+        };
+        if (isDebug) {
+          console.error('[Olmos Telemetry Error]', payload);
+        }
+      });
+
+      window.addEventListener('unhandledrejection', (event) => {
+        if (isDebug) {
+          console.warn('[Olmos Telemetry Unhandled Promise]', event.reason);
+        }
+      });
+
+      window.olmosTrack = function(eventName, data = {}) {
+        if (isDebug) {
+          console.debug(`[Telemetry: ${eventName}]`, data);
+        }
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, data);
+        }
+      };
+    })();
+
     // Comprehensive Product Database with high-res multi-angle photography and technical specifications
     const productsDB = [
       {
@@ -2459,7 +2494,17 @@
     function saveWishlist(list) {
       try {
         localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(list));
-      } catch (e) {}
+      } catch (e) {
+        if (e.name === 'QuotaExceededError' || e.code === 22) {
+          console.warn("[Storage] QuotaExceededError: eskirgan kesh tozalanmoqda");
+          localStorage.removeItem('aurum_gold_wishlist');
+          try {
+            localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(list));
+          } catch (retryErr) {
+            console.error("[Storage] Saqlash imkonsiz:", retryErr);
+          }
+        }
+      }
     }
 
     function isInWishlist(productId) {
@@ -2920,6 +2965,7 @@
             alt="${title}" 
             width="400"
             height="400"
+            onerror="this.onerror=null; this.src='olmos-logo.jpg';"
             class="${hasSwap ? 'product-studio' : ''} absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
             loading="lazy"
           >
@@ -2929,6 +2975,7 @@
             alt="${title} Worn" 
             width="400"
             height="400"
+            onerror="this.onerror=null; this.src='olmos-logo.jpg';"
             class="product-worn absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
             loading="lazy"
           >
@@ -3829,6 +3876,8 @@
       const phone = document.getElementById('m-phone').value;
       const successDiv = document.getElementById('modal-success');
 
+      const form = document.getElementById('vip-modal-catalog-form');
+      if (form) form.classList.add('hidden');
       successDiv.classList.remove('hidden');
 
       const now = new Date().toLocaleString('uz-UZ', { timeZone: 'Asia/Tashkent' });
@@ -3988,6 +4037,14 @@
       try {
         if (window.lucide && lucide.createIcons) lucide.createIcons();
       } catch (e) {}
+
+      // Offline & Online Network Listeners
+      window.addEventListener('offline', () => {
+        showWishlistToast(currentLang === 'uz' ? "Internet bilan aloqa uzildi. Iltimos, tarmoqni tekshiring." : "Связь с интернетом потеряна. Проверьте сеть.", false);
+      });
+      window.addEventListener('online', () => {
+        showWishlistToast(currentLang === 'uz' ? "Internet bilan aloqa tiklandi." : "Связь с интернетом восстановлена.", true);
+      });
     });
   </script>
 </body>
