@@ -191,37 +191,6 @@
 </head>
 <body class="bg-[#FAF9F6] text-ink-900 font-sans antialiased">
 
-  <!-- ================= TOP LUXURY STATUS & CONCIERGE BAR ================= -->
-  <aside aria-label="Announcement Bar" class="hidden sm:block bg-ivory-200 border-b border-gold-metallic/20 text-xs tracking-wider uppercase py-2 px-4 relative z-30">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-gold-700 font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span data-i18n="top_bar_location">Flagship Butik • Bunyodkor 15/1, Chilonzor</span>
-        </span>
-        <span class="text-zinc-400 hidden sm:inline">•</span>
-        <span class="text-ink-600 hidden sm:inline" data-i18n="top_bar_hours">Du-Yak 10:00 — 21:00</span>
-      </div>
-      <div class="flex items-center gap-6 text-ink-700">
-        <a href="tel:+998977742021" class="hover:text-gold-600 transition-colors flex items-center gap-1.5 font-medium">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
-          <span>+998 (97) 774-20-21</span>
-        </a>
-        <div class="h-3 w-px bg-zinc-300"></div>
-        <a href="https://t.me/OLMOS_GOLD" target="_blank" rel="noopener noreferrer" class="hover:text-[#0088cc] transition-colors flex items-center gap-1.5 font-medium text-xs">
-          <i data-lucide="send" class="w-3.5 h-3.5 text-[#0088cc]"></i>
-          <span>@OLMOS_GOLD</span>
-        </a>
-        <div class="h-3 w-px bg-zinc-300"></div>
-        <!-- Language Switcher -->
-        <div class="flex items-center gap-1.5 font-medium">
-          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-700 font-bold">UZ</button>
-          <span class="text-zinc-400">/</span>
-          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-ink-500 hover:text-ink-900">RU</button>
-        </div>
-      </div>
-    </div>
-  </aside>
 
   <!-- ================= LUXURY HEADER / NAVIGATION ================= -->
   <header class="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-gold-metallic/15 transition-all duration-300 shadow-sm" id="main-header">
@@ -259,11 +228,11 @@
 
       <!-- Primary Action CTA -->
       <div class="flex items-center gap-2 sm:gap-4">
-        <!-- Compact UZ/RU switcher for mobile right in header -->
-        <div class="flex lg:hidden items-center text-[11px] font-bold tracking-wider mr-0.5">
-          <button id="mob-lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded text-gold-700 font-bold">UZ</button>
-          <span class="text-zinc-300">/</span>
-          <button id="mob-lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded text-ink-500">RU</button>
+        <!-- Universal UZ/RU switcher in header -->
+        <div class="flex items-center text-xs font-bold tracking-wider mr-1 border border-gold-metallic/30 rounded px-1.5 py-1 bg-ivory-100 shadow-sm">
+          <button id="lang-uz" onclick="switchLanguage('uz')" class="px-1.5 py-0.5 rounded transition text-gold-700 font-bold">UZ</button>
+          <span class="text-zinc-300 mx-0.5">/</span>
+          <button id="lang-ru" onclick="switchLanguage('ru')" class="px-1.5 py-0.5 rounded transition text-ink-500 hover:text-ink-900">RU</button>
         </div>
 
         <!-- Wishlist Header Button with Badge -->
@@ -1154,34 +1123,6 @@
     </div>
   </footer>
 
-  <!-- ================= STICKY MOBILE ACTION BAR ================= -->
-  <aside aria-label="Mobile Contact Bar" class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-t border-gold-metallic/30 p-2.5 flex items-center justify-between gap-2 shadow-xl">
-    <a 
-      href="tel:+998977742021" 
-      class="flex-1 py-3 px-3 bg-ivory-100 rounded-sm text-gold-700 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 border border-gold-metallic/35 active:scale-95 transition"
-    >
-      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-metallic"></i>
-      <span data-i18n="mob_call">Qo'ng'iroq</span>
-    </a>
-
-    <a 
-      href="https://t.me/OLMOS_GOLD" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="flex-1 py-3 px-3 bg-[#2AABEE]/15 border border-[#2AABEE]/30 text-[#0088cc] rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
-    >
-      <i data-lucide="send" class="w-3.5 h-3.5"></i>
-      <span>Telegram</span>
-    </a>
-
-    <button 
-      onclick="openVipCatalogModal()" 
-      class="flex-1 py-3 px-3 bg-ink-900 text-white rounded-sm font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition"
-    >
-      <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-300"></i>
-      <span data-i18n="mob_catalog">Katalog</span>
-    </button>
-  </aside>
 
   <!-- ================= DEDICATED FULLSCREEN PRODUCT VIEW ================= -->
   <div id="product-fullscreen-view" class="fixed inset-0 z-50 bg-[#FAF9F6] overflow-y-auto view-hidden">
