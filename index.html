@@ -89,8 +89,15 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Anti-Clickjacking Framebuster -->
+  <script>
+    if (window.top !== window.self) {
+      window.top.location = window.self.location;
+    }
+  </script>
+
+  <!-- Lucide Icons (Pinned Stable Version) -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -874,6 +881,7 @@
                 <input 
                   type="text" 
                   id="lead-name" 
+                  maxlength="60"
                   required 
                   placeholder="Shaxzod Alimov" 
                   class="w-full px-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
@@ -887,6 +895,8 @@
                   <input 
                     type="tel" 
                     id="lead-phone" 
+                    maxlength="20"
+                    pattern="[0-9\s\(\)\-]{7,15}"
                     required 
                     placeholder="(90) 123-45-67" 
                     class="w-full pl-16 pr-4 py-3 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic transition placeholder-zinc-400"
@@ -1594,6 +1604,7 @@
                   <input 
                     type="text" 
                     id="fit-name" 
+                    maxlength="60"
                     required 
                     placeholder="Ismingiz" 
                     class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-xs text-ink-900 focus:outline-none focus:border-gold-metallic"
@@ -1604,6 +1615,8 @@
                   <input 
                     type="tel" 
                     id="fit-phone" 
+                    maxlength="20"
+                    pattern="[0-9\s\(\)\-]{7,15}"
                     required 
                     placeholder="(90) 123-45-67" 
                     class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-xs text-ink-900 font-mono focus:outline-none focus:border-gold-metallic"
@@ -1910,6 +1923,7 @@
                     <input 
                       type="text" 
                       id="wl-name" 
+                      maxlength="60"
                       required 
                       placeholder="Masalan: Nilufar" 
                       class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-sm text-sm focus:outline-none focus:border-gold-600"
@@ -1926,6 +1940,8 @@
                       <input 
                         type="tel" 
                         id="wl-phone" 
+                        maxlength="20"
+                        pattern="[0-9\s\(\)\-]{7,15}"
                         required 
                         placeholder="(90) 123-45-67" 
                         class="w-full px-3.5 py-2.5 bg-white border border-gold-metallic/30 rounded-r-sm text-sm focus:outline-none focus:border-gold-600"
@@ -2053,13 +2069,13 @@
         <form onsubmit="handleModalCatalogSubmit(event)" id="vip-modal-catalog-form" class="space-y-3.5">
           <div>
             <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_name_label">Ismingiz</label>
-            <input type="text" id="m-name" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
+            <input type="text" id="m-name" maxlength="60" required placeholder="Malika Karimova" class="w-full px-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 focus:outline-none focus:border-gold-metallic">
           </div>
           <div>
             <label class="block text-[11px] uppercase tracking-wider text-ink-600 font-semibold mb-1" data-i18n="form_phone_label">Telefon Raqamingiz</label>
             <div class="relative">
               <span class="absolute left-3 top-2.5 text-zinc-500 text-xs font-mono">+998</span>
-              <input type="tel" id="m-phone" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic">
+              <input type="tel" id="m-phone" maxlength="20" pattern="[0-9\s\(\)\-]{7,15}" required placeholder="(90) 123-45-67" class="w-full pl-14 pr-3.5 py-2.5 bg-ivory-50 border border-zinc-300 rounded-sm text-sm text-ink-900 font-mono focus:outline-none focus:border-gold-metallic">
             </div>
           </div>
           <button type="submit" id="m-catalog-submit-btn" class="w-full py-3.5 bg-ink-900 hover:bg-gold-700 text-white font-bold text-xs uppercase tracking-widest rounded-sm mt-2 flex items-center justify-center gap-2 transition min-h-[44px]">
@@ -2549,7 +2565,9 @@
       return String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
 
     async function sendTelegramLeadNotification(messageHtml) {
