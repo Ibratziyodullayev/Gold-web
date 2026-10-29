@@ -2572,14 +2572,32 @@
 
     async function sendTelegramLeadNotification(messageHtml) {
       if (SECURE_WEBHOOK_URL) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        const idempotencyKey = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
         try {
           await fetch(SECURE_WEBHOOK_URL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: messageHtml })
+            signal: controller.signal,
+            headers: { 
+              "Content-Type": "application/json",
+              "Idempotency-Key": idempotencyKey
+            },
+            body: JSON.stringify({ 
+              text: messageHtml,
+              idempotency_key: idempotencyKey,
+              timestamp: new Date().toISOString()
+            })
           });
         } catch (err) {
-          console.debug("[Lead Dispatch] Webhook offline or unconfigured:", err);
+          if (err.name === 'AbortError') {
+            console.warn("[Lead Dispatch] So'rov vaqti tugadi (Timeout: 8s)");
+          } else {
+            console.debug("[Lead Dispatch] Webhook offline or unconfigured:", err);
+          }
+        } finally {
+          clearTimeout(timeoutId);
         }
       }
       // Telemetriya logi (xavfsiz lokal ma'lumot)
